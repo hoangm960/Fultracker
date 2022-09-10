@@ -1,0 +1,28 @@
+.course-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 40px;
+}
+
+.course-container {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: 450px;
+    padding: 20px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-button {
+    width: 60px;
+}
+
+.add-button-icon {
+    width: 90%;
+}
