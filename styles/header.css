@@ -35,9 +35,9 @@
     flex-shrink: 0;
 }
 
+.home-icon,
 .progress-icon,
 .shopping-cart-icon {
     height: 25px;
     cursor: pointer;
 }
-
