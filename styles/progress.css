@@ -1,0 +1,42 @@
+.progress-section {
+    margin-top: 20px;
+}
+
+.progress-container {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    position: relative;
+    height: 35px;
+    width: 50%;
+    padding-right: 2px;
+    background-color: #abb2bc;
+    border-radius: 35px;
+    margin-top: 10px;
+}
+
+.progress-bar div {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    height: 33px;
+    border-radius: 35px;
+    background-color: #74d04c;
+}
+
+.progress-1 {
+    width: 50%;
+}
+
+.progress-2 {
+    width: 20%;
+}
+
+.progress-3 {
+    width: 70%;
+}
+
+.progress-4 {
+    width: 100%;
+}
