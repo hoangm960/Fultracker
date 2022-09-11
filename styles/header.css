@@ -27,15 +27,14 @@
 
 
 .right-section {
-    width: 180px;
+    width: 100px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-right: 20px;
+    margin-right: 50px;
     flex-shrink: 0;
 }
 
-.sidebar-icon,
 .progress-icon,
 .shopping-cart-icon {
     height: 25px;
