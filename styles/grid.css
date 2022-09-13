@@ -10,6 +10,7 @@
     flex-direction: column;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: 450px;
+    height: 80px;
     padding: 20px;
 
     background: rgba(255, 255, 255, 0.90);
@@ -30,11 +31,11 @@
     margin-top: 10px;
 }
 
-.add-button {
+.info-row button {
     width: 60px;
 }
 
-.add-button-icon {
+.info-row img {
     width: 90%;
 }
 

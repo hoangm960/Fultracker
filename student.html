@@ -9,15 +9,28 @@
     <link rel="stylesheet" href="styles/header.css">
     <link rel="stylesheet" href="styles/grid.css">
     <link rel="stylesheet" href="styles/progress.css">
+    <link rel="stylesheet" href="styles/cart.css">
     <script src="script.js"></script>
-    <script>getHeader()</script>
 </head>
 
 <body>
-    <div id="header" class="header"></div>
-    <div class="side-bar"></div>
-    
-    <div class="course-grid">
+    <div class="header">
+
+        <div class="left-section">
+            <p style="
+        padding-left: 10px;
+        font-size: x-large;
+        font-weight: bold;
+        ">Fultracker</p>
+        </div>
+
+        <div class="right-section">
+            <img class="shopping-cart-icon" src="icons/shopping-cart.png" onclick="openCart()">
+            <a href="index.html">Log out</a>
+        </div>
+    </div>
+
+    <div class="course-grid" id="course-grid">
         <div class="course-container">
             <div class="course-name">
                 <p>Course name
@@ -116,6 +129,27 @@
             <p>Minor name</p>
             <div class="progress-bar">
                 <div class="progress-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cart-menu" id="cart-menu">
+        <button class="close-button" onclick="closeCart()">X</button>
+        <div class="course-container">
+            <div class="course-name">
+                <p>Course name
+                </p>
+            </div>
+            <div class="info-row">
+                <div class="course-type">
+                    <p>Category: Category name</p>
+                </div>
+                <div class="course-credit">
+                    <p>Credits: 4</p>
+                </div>
+                <button>
+                    <img src="icons/remove.png">
+                </button>
             </div>
         </div>
     </div>
