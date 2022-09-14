@@ -1,13 +1,16 @@
+.footer {
+    position: fixed;
+    top: 70%;
+    width: 100%;
+    border-top: 1px solid rgb(222, 222, 222);
+}
 .progress-section {
     margin-top: 20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10px;
     row-gap: 40px;
-    position: fixed;
-    top: 70%;
-    width: 100%;
-    border-top: 1px solid rgb(222, 222, 222);
+    margin-left: 200px;
 }
 
 .progress-container {
@@ -17,7 +20,7 @@
 .progress-bar {
     position: relative;
     height: 35px;
-    width: 50%;
+    width: 70%;
     padding-right: 2px;
     background-color: #abb2bc;
     border-radius: 35px;
@@ -39,4 +42,10 @@
 
 .progress-2 {
     width: 20%;
+}
+
+.category-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
 }
