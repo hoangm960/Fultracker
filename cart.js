@@ -36,7 +36,7 @@ function addToCart(event) {
     course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
     var course = button.parentElement.parentElement.parentElement
     course.remove()
-    updateFooter([1, 20], [0, 2])
+    updateFooter([1, 20], [[0, 2], 1])
 
 }
 
@@ -46,7 +46,7 @@ function removeFromCart(event) {
     course.remove()
     addToHome()
 
-    updateFooter([1, -25], [0, 2])
+    updateFooter([1, -25], [[0, 2], -1])
 }
 
 function addToHome(title) {
@@ -72,14 +72,14 @@ function addToHome(title) {
     course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
 }
 
-function updateFooter(percent, category_list) {
+function updateFooter(percent, category_dict) {
     progress = document.getElementById(`progress-${percent[0]}`)
     progress.style.width = `${Math.round(progress.offsetWidth / progress.parentElement.offsetWidth * 100) + percent[1]}%`
 
     category_section = document.getElementsByClassName("category-section")[0]
     categories = category_section.getElementsByTagName("p")
-    category_list.forEach(i => {
+    category_dict[0].forEach(i => {
         category_texts = categories[i].innerText.split(": ")
-        categories[i].innerHTML = `${category_texts[0]}: ${parseInt(category_texts[1].slice(0, -2)) + 1}/2`
+        categories[i].innerHTML = `${category_texts[0]}: ${parseInt(category_texts[1].slice(0, -2)) + category_dict[1]}/2`
     });
 }
