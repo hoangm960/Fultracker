@@ -23,10 +23,10 @@
         padding-right: 20px;
         " href="index.html">Log out</a>
     </div>
-    <button class="add-course-button">
+    <button class="add-course-button" onclick="addToHome('Course name')">
         <img style="width: 40px;" src="icons/ebook.png">
     </button>
-    <div class="course-grid">
+    <div class="course-grid" id="course-grid">
         <div class="course-container">
             <div class="course-name">
                 <p>Course name
@@ -147,6 +147,30 @@
             </div>
         </div>
     </div>
+    <script>
+        function addToHome(title) {
+            course = document.createElement('div')
+            course.innerHTML = `
+            <div class="course-container">
+                <div class="course-name">
+                    <p>${title}</p>
+                </div>
+                <div class="info-row">
+                    <div class="course-type">
+                        <p>Category: Category name</p>
+                    </div>
+                    <div class="course-credit">
+                        <p>Credits: 4</p>
+                    </div>
+                    <button class="add-button">
+                        <img class="add-button-icon" src="icons/add-to-cart.png">
+                    </button>
+                </div>
+            </div>`
+            document.getElementById("course-grid").append(course)
+            course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
+        }
+    </script>
 </body>
 
 </html>

@@ -18,7 +18,7 @@ function addToCart(event) {
     course.innerHTML = `
     <div class="course-container">
         <div class="course-name">
-            <p>Course name</p>
+            <p>${title}</p>
         </div>
         <div class="info-row">
             <div class="course-type">
@@ -44,7 +44,8 @@ function removeFromCart(event) {
     var button = event.target;
     var course = button.parentElement.parentElement.parentElement
     course.remove()
-    addToHome()
+    var title = course.getElementsByClassName("course-name").innerText
+    addToHome(title)
 
     updateFooter([1, -25], [[0, 2], -1])
 }
@@ -54,7 +55,7 @@ function addToHome(title) {
     course.innerHTML = `
     <div class="course-container">
         <div class="course-name">
-            <p>Course name</p>
+            <p>${title}</p>
         </div>
         <div class="info-row">
             <div class="course-type">
