@@ -33,14 +33,11 @@ function addToCart(event) {
         </div>
     </div>`
     document.getElementById("cart-menu").append(course)
-    course.getElementsByClassName("remove-button")[0].addEventListener("click", function (event) {
-        var button = event.target;
-        var course = button.parentElement.parentElement.parentElement
-        course.remove()
-        addToHome()
-    })
+    course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
     var course = button.parentElement.parentElement.parentElement
     course.remove()
+    updateFooter([1, 20], 5)
+
 }
 
 function removeFromCart(event) {
@@ -48,6 +45,8 @@ function removeFromCart(event) {
     var course = button.parentElement.parentElement.parentElement
     course.remove()
     addToHome()
+
+    updateFooter([1, -25], 5)
 }
 
 function addToHome(title) {
@@ -71,4 +70,9 @@ function addToHome(title) {
     </div>`
     document.getElementById("course-grid").append(course)
     course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
+}
+
+function updateFooter(percent, categories) {
+    progress = document.getElementById(`progress-${percent[0]}`)
+    progress.style.width = `${Math.round(progress.offsetWidth/progress.parentElement.offsetWidth*100) + percent[1]}%`
 }

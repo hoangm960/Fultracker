@@ -1,8 +1,10 @@
 .footer {
     position: fixed;
-    top: 70%;
+    bottom: 0;
+    left: 0;
     width: 100%;
     border-top: 1px solid rgb(222, 222, 222);
+    background-color: white;
 }
 .progress-section {
     margin-top: 20px;
@@ -20,7 +22,7 @@
 .progress-bar {
     position: relative;
     height: 35px;
-    width: 70%;
+    width: 500px;
     padding-right: 2px;
     background-color: #abb2bc;
     border-radius: 35px;
@@ -33,19 +35,21 @@
     overflow: hidden;
     height: 33px;
     border-radius: 35px;
-    background-color: #74d04c;
+    background-color: #60af3f;
+    transition: all 1s;
 }
 
-.progress-1 {
+#progress-1 {
     width: 50%;
 }
 
-.progress-2 {
+#progress-2 {
     width: 20%;
 }
 
 .category-section {
     margin-top: 40px;
+    margin-bottom: 20px;
     display: flex;
     justify-content: space-evenly;
 }
