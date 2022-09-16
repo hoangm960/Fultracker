@@ -5,11 +5,12 @@ html {
 }
 
 .bg {
-    background-image: url("../img/background.jpg");
+    background-image: url("../img/background.png");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-color: #FFBD59;
     display: flex;
     flex-direction: column;
     justify-content: center;
