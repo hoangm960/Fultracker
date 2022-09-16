@@ -24,10 +24,6 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
 }
 
-.course-name:hover {
-    color: #FFC857;
-}
-
 .info-row {
     display: flex;
     justify-content: space-between;
