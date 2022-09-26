@@ -13,12 +13,12 @@ for (var i = 0; i < remove_cart.length; i++) {
 function addToCart(event) {
     cart_menu = document.getElementById("cart-menu")
     if (cart_menu.getElementsByClassName("course-container").length < 4) {
-        var button = event.target;
-        var course = button.parentElement.parentElement.parentElement;
+        var button = event.currentTarget;
+        var course = button.parentElement.parentElement
         var title = course.getElementsByClassName("course-name").innerText
-        course = document.createElement('div')
-        course.innerHTML = `
-        <div class="course-container">
+        new_course = document.createElement('div')
+        new_course.className = "course-container"
+        new_course.innerHTML = `
             <div class="course-name">
                 <p>Course name</p>
             </div>
@@ -32,19 +32,17 @@ function addToCart(event) {
                 <button class="remove-button">
                     <img class="remove-button-icon" src="icons/remove.png">
                 </button>
-            </div>
-        </div>`
-        cart_menu.append(course)
-        course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
-        var course = button.parentElement.parentElement.parentElement
+            </div>`
+        cart_menu.append(new_course)
+        new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
         course.remove()
         updateFooter([1, 25], [[0, 2], 1])
     }
 }
 
 function removeFromCart(event) {
-    var button = event.target;
-    var course = button.parentElement.parentElement.parentElement
+    var button = event.currentTarget;
+    var course = button.parentElement.parentElement
     course.remove()
     var title = course.getElementsByClassName("course-name").innerText
     addToHome(title)
@@ -54,8 +52,8 @@ function removeFromCart(event) {
 
 function addToHome(title) {
     course = document.createElement('div')
+    course.className = "course-container"
     course.innerHTML = `
-    <div class="course-container">
         <div class="course-name">
             <p>Course name</p>
         </div>
@@ -69,15 +67,15 @@ function addToHome(title) {
             <button class="add-button">
                 <img class="add-button-icon" src="icons/add-to-cart.png">
             </button>
-        </div>
-    </div>`
+        </div>`
     document.getElementById("course-grid").append(course)
     course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
 }
 
 function updateFooter(percent, category_dict) {
     progress = document.getElementById(`progress-${percent[0]}`)
-    new_percent = Math.round(progress.offsetWidth / progress.parentElement.offsetWidth * 100) + percent[1]
+    progress_bar = progress.parentElement
+    new_percent = Math.round(progress.clientWidth / (progress_bar.clientWidth - 4) * 100) + percent[1]
     if (new_percent > 100) {
         new_percent = 100
     }

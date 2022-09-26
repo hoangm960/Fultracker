@@ -37,15 +37,15 @@
     height: 33px;   
     border-radius: 35px;
     background-color: #00196E;
-    transition: all 1s;
+    transition: width 0.3s;
 }
 
 #progress-1 {
-    width: 0;
+    width: 0%;
 }
 
 #progress-2 {
-    width: 0;
+    width: 0%;
 }
 
 .category-section {
