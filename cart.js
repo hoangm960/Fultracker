@@ -86,10 +86,8 @@ function updateFooter(percent, category_dict) {
     category_section = document.getElementsByClassName("category-section")[0]
     categories = category_section.getElementsByTagName("p")
     category_dict[0].forEach(i => {
+        category_texts = categories[i].innerText.split(": ")
         cat_val = parseInt(category_texts[1].slice(0, -2)) + category_dict[1]
-        if (cat_val >= 0 && cat_val <= 2) {
-            category_texts = categories[i].innerText.split(": ")
-            categories[i].innerHTML = `${category_texts[0]}: ${cat_val}/2`
-        }
+        categories[i].innerHTML = `${category_texts[0]}: ${cat_val}/2`
     });
 }
