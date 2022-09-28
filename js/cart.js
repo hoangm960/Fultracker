@@ -67,25 +67,25 @@ function getCourse(mode) {
         .then(response => response.json())
         .then(json => {
             course = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
-            updateFooter(course['major'], [1, 12 * mode], [course['category'], 1 * mode])
+            updateFooter(course['major'], 12 * mode, [course['category'], 1 * mode])
         })
 
 }
 
 function updateFooter(major, percent, category_dict) {
-    localStorage[major] = String(parseInt(localStorage[major]) + percent[1])
+    localStorage[major] = String(parseInt(localStorage[major]) + percent)
     footer = document.getElementsByClassName('footer')[0]
-    major = footer.getElementsByClassName('progress-container')[0]
+    var [major, minor] = footer.getElementsByClassName('progress-container')
     major_text = major.getElementsByTagName('p')[0]
-    major_text.innerHTML = Object.keys(localStorage).reduce((a, b) => localStorage[a] > localStorage[b] ? a : b)
+    var [major_val, minor_val] = Object.entries(localStorage).sort(([, a], [, b]) => b - a).slice(0, 2).map(([n]) => n)
+    major_text.innerHTML = major_val
+    minor_text = minor.getElementsByTagName('p')[0]
+    minor_text.innerHTML = minor_val
 
-    progress = document.getElementById(`progress-${percent[0]}`)
-    progress_bar = progress.parentElement
-    new_percent = Math.round(progress.clientWidth / (progress_bar.clientWidth - 4) * 100) + percent[1]
-    if (new_percent > 100) {
-        new_percent = 100
-    }
-    progress.style.width = `${new_percent}%`
+    progress_major = document.getElementById(`progress-1`)
+    progress_major.style.width = `${localStorage[major_val]}%`
+    progress_minor = document.getElementById(`progress-2`)
+    progress_minor.style.width = `${localStorage[minor_val]}%`
 
     category_section = document.getElementsByClassName("category-section")[0]
     categories = category_section.getElementsByTagName("p")
