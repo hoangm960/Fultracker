@@ -1,0 +1,721 @@
+[
+    {
+        "name": "Calculus",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Applied Math",
+        "level": 1
+    },
+    {
+        "name": "Advanced Programming Techniques",
+        "capacity": 30,
+        "enrolled": 13,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Computer Science",
+        "level": 3
+    },
+    {
+        "name": "Algorithm",
+        "capacity": 50,
+        "enrolled": 49,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Computer Science",
+        "level": 2
+    },
+    {
+        "name": "Alien, Uncanny, Strange in E. Asian Cinema",
+        "capacity": 40,
+        "enrolled": 29,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 2
+    },
+    {
+        "name": "Asian Borderlands",
+        "capacity": 30,
+        "enrolled": 14,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "History",
+        "level": 3
+    },
+    {
+        "name": "Behavioural and Experimental Economics",
+        "capacity": 30,
+        "enrolled": 30,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Economics",
+        "level": 3
+    },
+    {
+        "name": "Computer Organization",
+        "capacity": 40,
+        "enrolled": 38,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering",
+            "Maths & Computing"
+        ],
+        "major": "Computer Science",
+        "level": 2
+    },
+    {
+        "name": "Computer Science I",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Computer Science",
+        "level": 1
+    },
+    {
+        "name": "Contending Theories of International Relations: A Comprehensive View of Vietnam",
+        "capacity": 30,
+        "enrolled": 13,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "Vietnam Studies",
+        "level": 2
+    },
+    {
+        "name": "Counseling Psychology",
+        "capacity": 30,
+        "enrolled": 18,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 3
+    },
+    {
+        "name": "Critical Methods in Literary Studies",
+        "capacity": 50,
+        "enrolled": 31,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Literature",
+        "level": 1
+    },
+    {
+        "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
+        "capacity": 50,
+        "enrolled": 30,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "Vietnam Studies",
+        "level": 1
+    },
+    {
+        "name": "Developing Vietnam",
+        "capacity": 25,
+        "enrolled": 15,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Vietnam Studies",
+        "level": 2
+    },
+    {
+        "name": "Digital Humanities in Vietnam Studies Contexts I",
+        "capacity": 50,
+        "enrolled": 43,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences",
+            "Maths & Computing"
+        ],
+        "major": "Vietnam Studies",
+        "level": 1
+    },
+    {
+        "name": "Econometrics",
+        "capacity": 40,
+        "enrolled": 40,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Economics",
+        "level": 2
+    },
+    {
+        "name": "Economics of Inequality",
+        "capacity": 30,
+        "enrolled": 26,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Economics",
+        "level": 3
+    },
+    {
+        "name": "Engineering Exploration: Sink or Swim",
+        "capacity": 30,
+        "enrolled": 30,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 1
+    },
+    {
+        "name": "Environmental Sciences",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Integrated Sciences",
+        "level": 1
+    },
+    {
+        "name": "Ethnographic Research Methods",
+        "capacity": 50,
+        "enrolled": 34,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Social Studies",
+        "level": 1
+    },
+    {
+        "name": "Film, Fiction, and the Making of Modern Vietnams",
+        "capacity": 30,
+        "enrolled": 15,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Literature",
+        "level": 3
+    },
+    {
+        "name": "Foundations in Literary Studies",
+        "capacity": 50,
+        "enrolled": 23,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Literature",
+        "level": 1
+    },
+    {
+        "name": "Giving and Effectiveness",
+        "capacity": 40,
+        "enrolled": 40,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Art & Media Studies",
+        "level": 2
+    },
+    {
+        "name": "Global History Lab: History of the World",
+        "capacity": 50,
+        "enrolled": 19,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "History",
+        "level": 1
+    },
+    {
+        "name": "History of International Communism",
+        "capacity": 30,
+        "enrolled": 8,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "History",
+        "level": 3
+    },
+    {
+        "name": "Ideas of Math",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 1
+    },
+    {
+        "name": "Independent Study: Advanced Readings in Theory",
+        "capacity": 10,
+        "enrolled": 10,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 3
+    },
+    {
+        "name": "Intelligent Robot Studio: From Theory to Practice",
+        "capacity": 30,
+        "enrolled": 30,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering",
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 2
+    },
+    {
+        "name": "Introduction to Art History and Theory",
+        "capacity": 50,
+        "enrolled": 31,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 1
+    },
+    {
+        "name": "Introduction to Champa and Khmer History",
+        "capacity": 50,
+        "enrolled": 10,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "Vietnam Studies",
+        "level": 1
+    },
+    {
+        "name": "Introduction to Data Analysis",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 1
+    },
+    {
+        "name": "Introduction to Machine Learning",
+        "capacity": 30,
+        "enrolled": 18,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Computer Science",
+        "level": 3
+    },
+    {
+        "name": "Introduction to Psychological Disorders, Diagnosis & Treatment",
+        "capacity": 40,
+        "enrolled": 39,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 2
+    },
+    {
+        "name": "Introduction to Science and Technology Studies",
+        "capacity": 40,
+        "enrolled": 31,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Social Studies",
+        "level": 2
+    },
+    {
+        "name": "Introduction to Visual Studies",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 1
+    },
+    {
+        "name": "Introductory Biology",
+        "capacity": 50,
+        "enrolled": 49,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Integrated Sciences",
+        "level": 1
+    },
+    {
+        "name": "Introductory Psychology",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 1
+    },
+    {
+        "name": "Linear Algebra",
+        "capacity": 50,
+        "enrolled": 48,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 1
+    },
+    {
+        "name": "Machine Learning for Data Science",
+        "capacity": 40,
+        "enrolled": 37,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Computer Science",
+        "level": 2
+    },
+    {
+        "name": "Network and Computer Security ",
+        "capacity": 30,
+        "enrolled": 13,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Computer Science",
+        "level": 3
+    },
+    {
+        "name": "Organic Chemistry",
+        "capacity": 40,
+        "enrolled": 7,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Integrated Sciences",
+        "level": 2
+    },
+    {
+        "name": "Organizational Psychology",
+        "capacity": 40,
+        "enrolled": 26,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 2
+    },
+    {
+        "name": "Pacific Voyages in Literature & Film",
+        "capacity": 30,
+        "enrolled": 6,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Literature",
+        "level": 3
+    },
+    {
+        "name": "Personality Psychology",
+        "capacity": 40,
+        "enrolled": 40,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 2
+    },
+    {
+        "name": "Principles of Acting",
+        "capacity": 25,
+        "enrolled": 26,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 2
+    },
+    {
+        "name": "Principles of Economics 1",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Economics",
+        "level": 1
+    },
+    {
+        "name": "Principles of Economics 2",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Economics",
+        "level": 1
+    },
+    {
+        "name": "Product Development",
+        "capacity": 25,
+        "enrolled": 25,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering",
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 2
+    },
+    {
+        "name": "Race and Empire",
+        "capacity": 30,
+        "enrolled": 5,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "History",
+        "level": 3
+    },
+    {
+        "name": "Research Methods & Statistics",
+        "capacity": 50,
+        "enrolled": 51,
+        "credit": 4,
+        "category": [
+            "Social Sciences",
+            "Sciences & Engineering",
+            "Maths & Computing"
+        ],
+        "major": "Social Studies",
+        "level": 1
+    },
+    {
+        "name": "Sensor, Measurement and Analysis",
+        "capacity": 40,
+        "enrolled": 22,
+        "credit": 4,
+        "category": [
+            "Sciences & Engineering"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 2
+    },
+    {
+        "name": "Social Inquiry and the Social Sciences",
+        "capacity": 50,
+        "enrolled": 50,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Social Studies",
+        "level": 1
+    },
+    {
+        "name": "Social Psychology",
+        "capacity": 40,
+        "enrolled": 30,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Psychology",
+        "level": 2
+    },
+    {
+        "name": "Sound Art",
+        "capacity": 30,
+        "enrolled": 27,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 3
+    },
+    {
+        "name": "Sources for Vietnamese and Southeast Asian History",
+        "capacity": 30,
+        "enrolled": 3,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Vietnam Studies",
+        "level": 3
+    },
+    {
+        "name": "South Korea: Society and Culture",
+        "capacity": 40,
+        "enrolled": 7,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Social Studies",
+        "level": 2
+    },
+    {
+        "name": "Stochastic Calculus",
+        "capacity": 30,
+        "enrolled": 6,
+        "credit": 4,
+        "category": [
+            "Maths & Computing"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "level": 3
+    },
+    {
+        "name": "The Challenge of Change: Civil Society and Social Movements in Vietnam ",
+        "capacity": 40,
+        "enrolled": 13,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "Vietnam Studies",
+        "level": 2
+    },
+    {
+        "name": "The Global Vietnam War I",
+        "capacity": 40,
+        "enrolled": 6,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "History",
+        "level": 2
+    },
+    {
+        "name": "The Legacy of the War in Retrospect I",
+        "capacity": 20,
+        "enrolled": 8,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Vietnam Studies",
+        "level": 2
+    },
+    {
+        "name": "US in the World",
+        "capacity": 50,
+        "enrolled": 24,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "History",
+        "level": 1
+    },
+    {
+        "name": "Video and Film Production",
+        "capacity": 25,
+        "enrolled": 25,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 1
+    },
+    {
+        "name": "What Movies Show and Don't Show: Film Adaptations in Asian Contexts",
+        "capacity": 40,
+        "enrolled": 31,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities",
+            "Social Sciences"
+        ],
+        "major": "Vietnam Studies",
+        "level": 2
+    },
+    {
+        "name": "Women and Politics",
+        "capacity": 40,
+        "enrolled": 11,
+        "credit": 4,
+        "category": [
+            "Social Sciences"
+        ],
+        "major": "Social Studies",
+        "level": 2
+    },
+    {
+        "name": "2D/3D Foundations",
+        "capacity": 25,
+        "enrolled": 25,
+        "credit": 4,
+        "category": [
+            "Arts & Humanities"
+        ],
+        "major": "Art & Media Studies",
+        "level": 1
+    }
+]
