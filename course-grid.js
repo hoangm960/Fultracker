@@ -10,7 +10,7 @@ function updateGrid(data) {
             .then(html => {
                 course = document.createElement('div')
                 course.className = "course-container"
-                course.innerHTML = html.replace('Course name', element['name']).replace('Category name', element['category']).toString()
+                course.innerHTML = html.replace('Course name', element['name']).replace('Category name', element['category'].join(', '))
                 document.getElementById("course-grid").append(course)
             })
 
