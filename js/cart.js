@@ -6,6 +6,7 @@ function addToCart(event) {
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
         var credit = course.getElementsByClassName("course-credit")[0].innerText
+        document.cookie = `title=${title}; category=${category}; credit=${credit}`
         fetch("../html/course-cart.html")
             .then(response => response.text())
             .then(html => {
@@ -18,7 +19,7 @@ function addToCart(event) {
                 cart_menu.append(new_course)
                 new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
                 course.remove()
-                updateFooter([1, 25], [[0, 2], 1])
+                getCourse(1)
             })
     }
 }
@@ -29,11 +30,10 @@ function removeFromCart(event) {
     var title = course.getElementsByClassName("course-name")[0].innerText
     var category = course.getElementsByClassName("course-type")[0].innerText
     var credit = course.getElementsByClassName("course-credit")[0].innerText
-
+    document.cookie = `title=${title}; category=${category}; credit=${credit}`
     addToHome(title, category, credit)
     course.remove()
-
-    updateFooter([1, -25], [[0, 2], -1])
+    getCourse(-1)
 }
 
 function addToHome(title, category, credit) {
@@ -53,7 +53,19 @@ function addToHome(title, category, credit) {
 
 }
 
-function updateFooter(percent, category_dict) {
+function getCourse(mode) {
+    fetch("../data/course.json")
+        .then(response => response.json())
+        .then(json => {
+            course = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
+            updateFooter(course['major'], [1, 12*mode], [course['category'], 1*mode])
+        })
+
+}
+
+function updateFooter(major, percent, category_dict) {
+    footer = document.getElementsByClassName('footer')[0]
+    footer.innerHTML = footer.innerHTML.replace('Major name', major)
     progress = document.getElementById(`progress-${percent[0]}`)
     progress_bar = progress.parentElement
     new_percent = Math.round(progress.clientWidth / (progress_bar.clientWidth - 4) * 100) + percent[1]
@@ -64,7 +76,15 @@ function updateFooter(percent, category_dict) {
 
     category_section = document.getElementsByClassName("category-section")[0]
     categories = category_section.getElementsByTagName("p")
-    category_dict[0].forEach(i => {
+    category_indexes = []
+    for (var i = 0; i < categories.length; i++) {
+        for (var j = 0; j < category_dict[0].length; j++) {
+            if (categories[i].innerText.split(": ")[0] == category_dict[0][j]) {
+                category_indexes.push(i)
+            }
+        }
+    }
+    category_indexes.forEach(i => {
         category_texts = categories[i].innerText.split(": ")
         cat_val = parseInt(category_texts[1].slice(0, -2)) + category_dict[1]
         categories[i].innerHTML = `${category_texts[0]}: ${cat_val}/2`
