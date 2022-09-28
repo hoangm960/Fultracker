@@ -1,40 +1,21 @@
-const add_cart = document.getElementsByClassName("add-button");
-for (var add in add_cart) {
-    add.addEventListener("click", event => addToCart(event))
-}
-    
-const remove_cart = document.getElementsByClassName("remove-button");
-for (var remove in remove_cart) {
-    remove.addEventListener("click", event => removeFromCart(event))
-}
-
 function addToCart(event) {
     cart_menu = document.getElementById("cart-menu")
     if (cart_menu.getElementsByClassName("course-container").length < 4) {
         var button = event.currentTarget;
         var course = button.parentElement.parentElement
-        var title = course.getElementsByClassName("course-name").innerText
-        new_course = document.createElement('div')
-        new_course.className = "course-container"
-        new_course.innerHTML = `
-            <div class="course-name">
-                <p>Course name</p>
-            </div>
-            <div class="info-row">
-                <div class="course-type">
-                    <p>Category: Category name</p>
-                </div>
-                <div class="course-credit">
-                    <p>Credits: 4</p>
-                </div>
-                <button class="remove-button">
-                    <img class="remove-button-icon" src="icons/remove.png">
-                </button>
-            </div>`
-        cart_menu.append(new_course)
-        new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
-        course.remove()
-        updateFooter([1, 25], [[0, 2], 1])
+        var title = course.getElementsByClassName("course-name")[0].innerText
+        var category = course.getElementsByClassName("course-type")[0].innerText
+        fetch("./course-cart.html")
+            .then(response => response.text())
+            .then(html => {
+                new_course = document.createElement('div')
+                new_course.className = "course-container"
+                new_course.innerHTML = html.replace('Course name', title).replace('Category: Category name', category)
+                cart_menu.append(new_course)
+                new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
+                course.remove()
+                updateFooter([1, 25], [[0, 2], 1])
+            })
     }
 }
 
@@ -42,32 +23,24 @@ function removeFromCart(event) {
     var button = event.currentTarget;
     var course = button.parentElement.parentElement
     course.remove()
-    var title = course.getElementsByClassName("course-name").innerText
-    addToHome(title)
+    addToHome()
 
     updateFooter([1, -25], [[0, 2], -1])
 }
 
-function addToHome(title) {
-    course = document.createElement('div')
-    course.className = "course-container"
-    course.innerHTML = `
-        <div class="course-name">
-            <p>Course name</p>
-        </div>
-        <div class="info-row">
-            <div class="course-type">
-                <p>Category: Category name</p>
-            </div>
-            <div class="course-credit">
-                <p>Credits: 4</p>
-            </div>
-            <button class="add-button">
-                <img class="add-button-icon" src="icons/add-to-cart.png">
-            </button>
-        </div>`
-    document.getElementById("course-grid").append(course)
-    course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
+function addToHome() {
+    var title = course.getElementsByClassName("course-name")[0].innerText
+    var category = course.getElementsByClassName("course-type")[0].innerText
+    fetch("./course-home.html")
+        .then(response => response.text())
+        .then(html => {
+            course = document.createElement('div')
+            course.className = "course-container"
+            course.innerHTML = html.replace('Course name', title).replace('Category: Category name', category)
+            document.getElementById("course-grid").append(course)
+            course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
+        })
+
 }
 
 function updateFooter(percent, category_dict) {

@@ -1,4 +1,3 @@
-
 fetch("./data/course.json")
     .then(response => response.json())
     .then(json => updateGrid(json))
@@ -12,7 +11,11 @@ function updateGrid(data) {
                 course.className = "course-container"
                 course.innerHTML = html.replace('Course name', element['name']).replace('Category name', element['category'].join(', '))
                 document.getElementById("course-grid").append(course)
+                const add_cart = course.getElementsByClassName("add-button")[0];
+                add_cart.addEventListener("click", event => addToCart(event))
             })
-
     });
 }
+
+
+
