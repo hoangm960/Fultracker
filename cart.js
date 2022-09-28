@@ -1,12 +1,10 @@
 const add_cart = document.getElementsByClassName("add-button");
-for (var i = 0; i < add_cart.length; i++) {
-    var add = add_cart[i];
+for (var add in add_cart) {
     add.addEventListener("click", event => addToCart(event))
 }
-
+    
 const remove_cart = document.getElementsByClassName("remove-button");
-for (var i = 0; i < remove_cart.length; i++) {
-    var remove = remove_cart[i];
+for (var remove in remove_cart) {
     remove.addEventListener("click", event => removeFromCart(event))
 }
 
