@@ -4,20 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="icons/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../icons/favicon.png" type="image/x-icon">
     <title>Fultracker</title>
-    <link rel="stylesheet" href="styles/general.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/grid.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/cart.css">
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="../styles/general.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/grid.css">
+    <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/cart.css">
+    <script src="../js/script.js"></script>
+    <script src="../js/course-grid.js"></script>
+
 </head>
 
 <body>
     <div class="header">
         <div class="left-section">
-            <img height="60px" src="icons/favicon.png">
+            <img height="60px" src="../icons/favicon.png">
             <p style="
             padding-left: 10px;
             font-size: x-large;
@@ -28,8 +30,8 @@
         </div>
 
         <div class="right-section">
-            <img class="shopping-cart-icon" src="icons/shopping-cart.png" onclick="openCart()">
-            <a href="index.html">Log out</a>
+            <img class="shopping-cart-icon" src="../icons/shopping-cart.png" onclick="openCart()">
+            <a href="../index.html">Log out</a>
         </div>
     </div>
 
@@ -61,8 +63,7 @@
     <div class="cart-menu" id="cart-menu">
         <button class="close-button" onclick="closeCart()">X</button>
     </div>
-
-    <script src="course-grid.js"></script>
-    <script src="cart.js"></script>
+    <script>getGrid()</script>
+    <script src="../js/cart.js"></script>
 </body>
 </html>

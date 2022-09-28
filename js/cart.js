@@ -5,12 +5,16 @@ function addToCart(event) {
         var course = button.parentElement.parentElement
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
-        fetch("./course-cart.html")
+        var credit = course.getElementsByClassName("course-credit")[0].innerText
+        fetch("../html/course-cart.html")
             .then(response => response.text())
             .then(html => {
                 new_course = document.createElement('div')
                 new_course.className = "course-container"
-                new_course.innerHTML = html.replace('Course name', title).replace('Category: Category name', category)
+                new_course.innerHTML = html
+                    .replace('Course name', title)
+                    .replace('Category: Category name', category)
+                    .replace("Credits: 4", `Credits: ${credit}`)
                 cart_menu.append(new_course)
                 new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
                 course.remove()
@@ -22,21 +26,27 @@ function addToCart(event) {
 function removeFromCart(event) {
     var button = event.currentTarget;
     var course = button.parentElement.parentElement
+    var title = course.getElementsByClassName("course-name")[0].innerText
+    var category = course.getElementsByClassName("course-type")[0].innerText
+    var credit = course.getElementsByClassName("course-credit")[0].innerText
+
+    addToHome(title, category, credit)
     course.remove()
-    addToHome()
 
     updateFooter([1, -25], [[0, 2], -1])
 }
 
-function addToHome() {
-    var title = course.getElementsByClassName("course-name")[0].innerText
-    var category = course.getElementsByClassName("course-type")[0].innerText
-    fetch("./course-home.html")
+function addToHome(title, category, credit) {
+    fetch("../html/course-home.html")
         .then(response => response.text())
         .then(html => {
             course = document.createElement('div')
             course.className = "course-container"
-            course.innerHTML = html.replace('Course name', title).replace('Category: Category name', category)
+            course.innerHTML = html
+                .replace('Course name', title)
+                .replace('Category: Category name', category)
+                .replace("Credits: 4", `Credits: ${credit}`)
+
             document.getElementById("course-grid").append(course)
             course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
         })
