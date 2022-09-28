@@ -1,3 +1,12 @@
+fetch("../data/major.json")
+    .then(response => response.json())
+    .then(json => {
+        localStorage.clear()
+        for (const [key, value] of Object.entries(json)) {
+            localStorage.setItem(key, value)
+        }
+    })
+
 function addToCart(event) {
     cart_menu = document.getElementById("cart-menu")
     if (cart_menu.getElementsByClassName("course-container").length < 4) {
@@ -6,7 +15,7 @@ function addToCart(event) {
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
         var credit = course.getElementsByClassName("course-credit")[0].innerText
-        document.cookie = `title=${title}; category=${category}; credit=${credit}`
+        document.cookie = `title=${title};category=${category};credit=${credit};major=None`
         fetch("../html/course-cart.html")
             .then(response => response.text())
             .then(html => {
@@ -58,14 +67,18 @@ function getCourse(mode) {
         .then(response => response.json())
         .then(json => {
             course = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
-            updateFooter(course['major'], [1, 12*mode], [course['category'], 1*mode])
+            updateFooter(course['major'], [1, 12 * mode], [course['category'], 1 * mode])
         })
 
 }
 
 function updateFooter(major, percent, category_dict) {
+    localStorage[major] = String(parseInt(localStorage[major]) + percent[1])
     footer = document.getElementsByClassName('footer')[0]
-    footer.innerHTML = footer.innerHTML.replace('Major name', major)
+    major = footer.getElementsByClassName('progress-container')[0]
+    major_text = major.getElementsByTagName('p')[0]
+    major_text.innerHTML = Object.keys(localStorage).reduce((a, b) => localStorage[a] > localStorage[b] ? a : b)
+
     progress = document.getElementById(`progress-${percent[0]}`)
     progress_bar = progress.parentElement
     new_percent = Math.round(progress.clientWidth / (progress_bar.clientWidth - 4) * 100) + percent[1]
