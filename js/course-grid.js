@@ -6,7 +6,7 @@ function getGrid() {
 
 function updateGrid(data) {
     data.forEach(element => {
-        if (element['level'] <= localStorage['level']) {
+        if (element['level'] <= localStorage['level'] && element['enrolled'] < element['capacity']) {
             fetch("../html/course-home.html")
                 .then(response => response.text())
                 .then(html => {
