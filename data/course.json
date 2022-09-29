@@ -8,7 +8,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5efQAD/math101fall2022s01" 
     },
     {
         "name": "Advanced Programming Techniques",
@@ -19,7 +20,8 @@
             "Sciences & Engineering"
         ],
         "major": "Computer Science",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ffQAD/cs309fall2022s01"
     },
     {
         "name": "Algorithm",
@@ -30,7 +32,8 @@
             "Maths & Computing"
         ],
         "major": "Computer Science",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5fGQAT/cs102fall2022s01"
     },
     {
         "name": "Alien, Uncanny, Strange in E. Asian Cinema",
@@ -41,7 +44,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dxQAD/arts211fall2022s01"
     },
     {
         "name": "Asian Borderlands",
@@ -52,7 +56,8 @@
             "Arts & Humanities"
         ],
         "major": "History",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eYQAT/his304fall2022s01"
     },
     {
         "name": "Behavioural and Experimental Economics",
@@ -63,7 +68,8 @@
             "Social Sciences"
         ],
         "major": "Economics",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ePQAT/econ305fall2022s01"
     },
     {
         "name": "Computer Organization",
@@ -75,7 +81,8 @@
             "Maths & Computing"
         ],
         "major": "Computer Science",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eKQAT/cs203fall2022s01"
     },
     {
         "name": "Computer Science I",
@@ -86,7 +93,8 @@
             "Maths & Computing"
         ],
         "major": "Computer Science",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eJQAT/cs101fall2022s01"
     },
     {
         "name": "Contending Theories of International Relations: A Comprehensive View of Vietnam",
@@ -98,7 +106,8 @@
             "Social Sciences"
         ],
         "major": "Vietnam Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f5QAD/vs215fall2022s01"
     },
     {
         "name": "Counseling Psychology",
@@ -109,7 +118,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5epQAD/psy302fall2022s01"
     },
     {
         "name": "Critical Methods in Literary Studies",
@@ -120,7 +130,8 @@
             "Arts & Humanities"
         ],
         "major": "Literature",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5edQAD/lit103fall2022s01"
     },
     {
         "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
@@ -132,7 +143,8 @@
             "Social Sciences"
         ],
         "major": "Vietnam Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5exQAD/vs106fall2022s01"
     },
     {
         "name": "Developing Vietnam",
@@ -143,7 +155,8 @@
             "Arts & Humanities"
         ],
         "major": "Vietnam Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f3QAD/vs214fall2022s01"
     },
     {
         "name": "Digital Humanities in Vietnam Studies Contexts I",
@@ -156,7 +169,8 @@
             "Maths & Computing"
         ],
         "major": "Vietnam Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ezQAD/vs116fall2022s01"
     },
     {
         "name": "Econometrics",
@@ -167,7 +181,8 @@
             "Social Sciences"
         ],
         "major": "Economics",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eOQAT/econ209fall2022s01"
     },
     {
         "name": "Economics of Inequality",
@@ -178,7 +193,8 @@
             "Social Sciences"
         ],
         "major": "Economics",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eQQAT/econ302fall2022s01"
     },
     {
         "name": "Engineering Exploration: Sink or Swim",
@@ -189,7 +205,8 @@
             "Sciences & Engineering"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eSQAT/eng102fall2022s01"
     },
     {
         "name": "Environmental Sciences",
@@ -200,7 +217,8 @@
             "Sciences & Engineering"
         ],
         "major": "Integrated Sciences",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ebQAD/is103fall2022s01"
     },
     {
         "name": "Ethnographic Research Methods",
@@ -211,7 +229,8 @@
             "Social Sciences"
         ],
         "major": "Social Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5etQAD/soci109fall2022s01"
     },
     {
         "name": "Film, Fiction, and the Making of Modern Vietnams",
@@ -222,7 +241,8 @@
             "Arts & Humanities"
         ],
         "major": "Literature",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eeQAD/lit303fall2022s01"
     },
     {
         "name": "Foundations in Literary Studies",
@@ -233,7 +253,8 @@
             "Arts & Humanities"
         ],
         "major": "Literature",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002THKTsQAP/lit101fall2022s01"
     },
     {
         "name": "Giving and Effectiveness",
@@ -244,7 +265,8 @@
             "Social Sciences"
         ],
         "major": "Art & Media Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI3rQAH/econ210fall2022s01"
     },
     {
         "name": "Global History Lab: History of the World",
@@ -256,7 +278,8 @@
             "Social Sciences"
         ],
         "major": "History",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF8DBQA1/his105fall2022s01"
     },
     {
         "name": "History of International Communism",
@@ -267,7 +290,8 @@
             "Arts & Humanities"
         ],
         "major": "History",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI4GQAX/his301fall2022s01"
     },
     {
         "name": "Ideas of Math",
@@ -278,7 +302,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TGw1eQAD/math102fall2022s01"
     },
     {
         "name": "Independent Study: Advanced Readings in Theory",
@@ -289,7 +314,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dzQAD/arts398fall2022s01"
     },
     {
         "name": "Intelligent Robot Studio: From Theory to Practice",
@@ -301,7 +327,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eVQAT/eng202fall2022s01"
     },
     {
         "name": "Introduction to Art History and Theory",
@@ -312,7 +339,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dtQAD/arts102fall2022s01"
     },
     {
         "name": "Introduction to Champa and Khmer History",
@@ -324,7 +352,8 @@
             "Social Sciences"
         ],
         "major": "Vietnam Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eyQAD/vs114fall2022s01"
     },
     {
         "name": "Introduction to Data Analysis",
@@ -335,7 +364,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ehQAD/math105fall2022s01"
     },
     {
         "name": "Introduction to Machine Learning",
@@ -346,7 +376,8 @@
             "Maths & Computing"
         ],
         "major": "Computer Science",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5fVQAT/cs307fall2022s01"
     },
     {
         "name": "Introduction to Psychological Disorders, Diagnosis & Treatment",
@@ -357,7 +388,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5elQAD/psy205fall2022s01"
     },
     {
         "name": "Introduction to Science and Technology Studies",
@@ -368,7 +400,8 @@
             "Social Sciences"
         ],
         "major": "Social Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5euQAD/soci211fall2022s01"
     },
     {
         "name": "Introduction to Visual Studies",
@@ -379,7 +412,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5drQAD/arts101fall2022s01"
     },
     {
         "name": "Introductory Biology",
@@ -390,7 +424,8 @@
             "Sciences & Engineering"
         ],
         "major": "Integrated Sciences",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eaQAD/is101fall2022s01"
     },
     {
         "name": "Introductory Psychology",
@@ -401,7 +436,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ekQAD/psy101fall2022s01"
     },
     {
         "name": "Linear Algebra",
@@ -412,7 +448,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5egQAD/math103fall2022s01"
     },
     {
         "name": "Machine Learning for Data Science",
@@ -423,7 +460,8 @@
             "Sciences & Engineering"
         ],
         "major": "Computer Science",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5faQAD/cs208fall2022s01"
     },
     {
         "name": "Network and Computer Security ",
@@ -434,7 +472,8 @@
             "Sciences & Engineering"
         ],
         "major": "Computer Science",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eLQAT/cs306fall2022s01"
     },
     {
         "name": "Organic Chemistry",
@@ -445,7 +484,8 @@
             "Sciences & Engineering"
         ],
         "major": "Integrated Sciences",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ecQAD/is205fall2022s01"
     },
     {
         "name": "Organizational Psychology",
@@ -456,7 +496,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5emQAD/psy207fall2022s01"
     },
     {
         "name": "Pacific Voyages in Literature & Film",
@@ -467,7 +508,8 @@
             "Arts & Humanities"
         ],
         "major": "Literature",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002THKU2QAP/lit305fall2022s01"
     },
     {
         "name": "Personality Psychology",
@@ -478,7 +520,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eoQAD/psy204fall2022s01"
     },
     {
         "name": "Principles of Acting",
@@ -489,7 +532,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dwQAD/arts206fall2022s01"
     },
     {
         "name": "Principles of Economics 1",
@@ -500,7 +544,8 @@
             "Social Sciences"
         ],
         "major": "Economics",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eMQAT/econ101fall2022s01"
     },
     {
         "name": "Principles of Economics 2",
@@ -511,7 +556,8 @@
             "Social Sciences"
         ],
         "major": "Economics",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eNQAT/econ103fall2022s01"
     },
     {
         "name": "Product Development",
@@ -523,7 +569,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eUQAT/eng201fall2022s01"
     },
     {
         "name": "Race and Empire",
@@ -534,7 +581,8 @@
             "Arts & Humanities"
         ],
         "major": "History",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eZQAT/his306fall2022s01"
     },
     {
         "name": "Research Methods & Statistics",
@@ -547,7 +595,8 @@
             "Maths & Computing"
         ],
         "major": "Social Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5esQAD/soci105fall2022s01"
     },
     {
         "name": "Sensor, Measurement and Analysis",
@@ -558,7 +607,8 @@
             "Sciences & Engineering"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eTQAT/eng204fall2022s01"
     },
     {
         "name": "Social Inquiry and the Social Sciences",
@@ -569,7 +619,8 @@
             "Social Sciences"
         ],
         "major": "Social Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5erQAD/soci102fall2022s01"
     },
     {
         "name": "Social Psychology",
@@ -580,7 +631,8 @@
             "Social Sciences"
         ],
         "major": "Psychology",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5enQAD/psy203fall2022s01"
     },
     {
         "name": "Sound Art",
@@ -591,7 +643,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dyQAD/arts303fall2022s01"
     },
     {
         "name": "Sources for Vietnamese and Southeast Asian History",
@@ -602,7 +655,8 @@
             "Arts & Humanities"
         ],
         "major": "Vietnam Studies",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f4QAD/vs303fall2022s01"
     },
     {
         "name": "South Korea: Society and Culture",
@@ -613,7 +667,8 @@
             "Social Sciences"
         ],
         "major": "Social Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5evQAD/soci212fall2022s01"
     },
     {
         "name": "Stochastic Calculus",
@@ -624,7 +679,8 @@
             "Maths & Computing"
         ],
         "major": "Applied Mathematics, Engineering",
-        "level": 3
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ejQAD/math305fall2022s01"
     },
     {
         "name": "The Challenge of Change: Civil Society and Social Movements in Vietnam ",
@@ -636,7 +692,8 @@
             "Social Sciences"
         ],
         "major": "Vietnam Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f0QAD/vs203fall2022s01"
     },
     {
         "name": "The Global Vietnam War I",
@@ -648,7 +705,8 @@
             "Social Sciences"
         ],
         "major": "History",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eXQAT/his208fall2022s01"
     },
     {
         "name": "The Legacy of the War in Retrospect I",
@@ -659,7 +717,8 @@
             "Arts & Humanities"
         ],
         "major": "Vietnam Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f1QAD/vs204fall2022s01"
     },
     {
         "name": "US in the World",
@@ -671,7 +730,8 @@
             "Social Sciences"
         ],
         "major": "History",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI46QAH/his108fall2022s01"
     },
     {
         "name": "Video and Film Production",
@@ -682,7 +742,8 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5duQAD/arts104fall2022s01"
     },
     {
         "name": "What Movies Show and Don't Show: Film Adaptations in Asian Contexts",
@@ -694,7 +755,8 @@
             "Social Sciences"
         ],
         "major": "Vietnam Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f2QAD/vs210fall2022s01"
     },
     {
         "name": "Women and Politics",
@@ -705,7 +767,8 @@
             "Social Sciences"
         ],
         "major": "Social Studies",
-        "level": 2
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ewQAD/soci213fall2022s01"
     },
     {
         "name": "2D/3D Foundations",
@@ -716,6 +779,7 @@
             "Arts & Humanities"
         ],
         "major": "Art & Media Studies",
-        "level": 1
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dvQAD/arts107fall2022s01"
     }
 ]

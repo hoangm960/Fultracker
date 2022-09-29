@@ -25,6 +25,8 @@ function addToCart(event) {
                     .replace('Course name', title)
                     .replace('Category: Category name', category)
                     .replace("Credits: 4", `Credits: ${credit}`)
+                    .replace("link", element['link'])
+                    
                 cart_menu.append(new_course)
                 new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
                 course.remove()
@@ -55,6 +57,7 @@ function addToHome(title, category, credit) {
                 .replace('Course name', title)
                 .replace('Category: Category name', category)
                 .replace("Credits: 4", `Credits: ${credit}`)
+                .replace("link", element['link'])
 
             document.getElementById("course-grid").append(course)
             course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))

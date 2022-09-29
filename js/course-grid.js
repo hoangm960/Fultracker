@@ -16,9 +16,12 @@ function updateGrid(data) {
                         .replace('Course name', element['name'])
                         .replace('Category name', element['category'].join(', '))
                         .replace("Credits: 4", `Credits: ${element['credit']}`)
+
                     document.getElementById("course-grid").append(course)
                     const add_cart = course.getElementsByClassName("add-button")[0];
                     add_cart.addEventListener("click", event => addToCart(event))
+
+                    course.addEventListener("click", e => window.open(element['link']))
                 })
         }
     });
