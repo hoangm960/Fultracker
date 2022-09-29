@@ -20,3 +20,9 @@ function closeCart() {
     grid_style.marginRight = "0"
     grid_style.gridTemplateColumns = "1fr 1fr 1fr"
 }
+
+function updateClass(e) {
+    class_level = {'Co26': 1, 'Co25':2, 'Co24':3, 'Co23':3}
+    button = e.currentTarget
+    localStorage.setItem('level', class_level[button.innerText])
+}
