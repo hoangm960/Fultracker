@@ -16,21 +16,31 @@ function addToCart(event) {
         var category = course.getElementsByClassName("course-type")[0].innerText
         var credit = course.getElementsByClassName("course-credit")[0].innerText
         document.cookie = `title=${title};category=${category};credit=${credit};major=None`
-        fetch("../html/course-cart.html")
-            .then(response => response.text())
-            .then(html => {
-                new_course = document.createElement('div')
-                new_course.className = "course-container"
-                new_course.innerHTML = html
-                    .replace('Course name', title)
-                    .replace('Category: Category name', category)
-                    .replace("Credits: 4", `Credits: ${credit}`)
-                    .replace("link", element['link'])
-                    
-                cart_menu.append(new_course)
-                new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => removeFromCart(event))
-                course.remove()
-                getCourse(1)
+        fetch("../data/course.json")
+            .then(response => response.json())
+            .then(json => {
+                course_data = json.find(element => element['name'] == title)
+                fetch("../html/course-cart.html")
+                    .then(response => response.text())
+                    .then(html => {
+                        new_course = document.createElement('div')
+                        new_course.className = "course-container"
+                        new_course.innerHTML = html
+                            .replace('Course name', title)
+                            .replace('Category: Category name', category)
+                            .replace("Credits: 4", `Credits: ${credit}`)
+
+                        cart_menu.append(new_course)
+
+                        new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => {
+                            removeFromCart(event)
+                            event.stopPropagation();
+                        })
+                        new_course.addEventListener("click", e => window.open(course_data['link']))
+
+                        course.remove()
+                        getCourse(1)
+                    })
             })
     }
 }
@@ -48,21 +58,29 @@ function removeFromCart(event) {
 }
 
 function addToHome(title, category, credit) {
-    fetch("../html/course-home.html")
-        .then(response => response.text())
-        .then(html => {
-            course = document.createElement('div')
-            course.className = "course-container"
-            course.innerHTML = html
-                .replace('Course name', title)
-                .replace('Category: Category name', category)
-                .replace("Credits: 4", `Credits: ${credit}`)
-                .replace("link", element['link'])
+    fetch("../data/course.json")
+        .then(response => response.json())
+        .then(json => {
+            course_data = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
+            fetch("../html/course-home.html")
+                .then(response => response.text())
+                .then(html => {
+                    course = document.createElement('div')
+                    course.className = "course-container"
+                    course.innerHTML = html
+                        .replace('Course name', title)
+                        .replace('Category: Category name', category)
+                        .replace("Credits: 4", `Credits: ${credit}`)
 
-            document.getElementById("course-grid").append(course)
-            course.getElementsByClassName("add-button")[0].addEventListener("click", event => addToCart(event))
+                    document.getElementById("course-grid").append(course)
+                    course.getElementsByClassName("add-button")[0].addEventListener("click", event => {
+                        addToCart(event)
+                        event.stopPropagation();
+                    })
+                    course.addEventListener("click", e => window.open(course_data['link']))
+
+                })
         })
-
 }
 
 function getCourse(mode) {

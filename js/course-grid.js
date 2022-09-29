@@ -19,7 +19,10 @@ function updateGrid(data) {
 
                     document.getElementById("course-grid").append(course)
                     const add_cart = course.getElementsByClassName("add-button")[0];
-                    add_cart.addEventListener("click", event => addToCart(event))
+                    add_cart.addEventListener("click", event => {
+                        addToCart(event)
+                        event.stopPropagation();
+                    })
 
                     course.addEventListener("click", e => window.open(element['link']))
                 })
