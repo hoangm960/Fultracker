@@ -24,7 +24,7 @@ function updateGrid(data) {
                         event.stopPropagation();
                     })
 
-                    course.addEventListener("click", e => window.open(element['link']))
+                    course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(element['link']))
                 })
         }
     });

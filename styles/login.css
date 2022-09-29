@@ -38,13 +38,9 @@ button:hover {
     background-color: #bc7f15;
 }
 
-#button-container-1 {
+.button-container-1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-#button-container-2 {
-    display: none;
 }
