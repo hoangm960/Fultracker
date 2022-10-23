@@ -15,7 +15,7 @@ function addToCart(event) {
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
         var enrolled = course.getElementsByClassName("course-enrolled")[0].innerText
-        document.cookie = `title=${title};category=${category};enrolled=${enrolled};major=None`
+        document.cookie = `title=${title};`
         fetch("../data/course.json")
             .then(response => response.json())
             .then(json => {
@@ -51,19 +51,16 @@ function removeFromCart(event) {
     var button = event.currentTarget;
     var course = button.parentElement.parentElement
     var title = course.getElementsByClassName("course-name")[0].innerText
-    var category = course.getElementsByClassName("course-type")[0].innerText
-    var enrolled = course.getElementsByClassName("course-enrolled")[0].innerText
-    document.cookie = `title=${title}; category=${category}; enrolled=${enrolled}`
-    addToHome(title, category, enrolled)
+    addToHome(title)
     course.remove()
     getCourse(-1)
 }
 
-function addToHome(title, category, enrolled) {
+function addToHome(title) {
     fetch("../data/course.json")
         .then(response => response.json())
         .then(json => {
-            course_data = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
+            course_data = json.find(element => element['name'] == title)
             fetch("../html/course-home.html")
                 .then(response => response.text())
                 .then(html => {
