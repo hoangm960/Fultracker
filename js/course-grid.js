@@ -18,10 +18,14 @@ function updateGrid(data) {
                     course.className = "course-container"
                     course.innerHTML = html
                         .replace('Course name', element['name'])
-                        .replace('Category name', element['category'].join(', '))
-                        .replace("Credits: 4", `Credits: ${element['credit']}`)
+                        .replace('Enrolled state', `${element['enrolled']}/${element['capacity']}`)
 
                     document.getElementById("course-grid").append(course)
+                    element['category'].forEach(e => {
+                        category = document.createElement('p')
+                        category.innerHTML = e
+                        course.getElementsByClassName("type-list")[0].append(category)
+                    });
                     const add_cart = course.getElementsByClassName("add-button")[0];
                     add_cart.addEventListener("click", event => {
                         addToCart(event)

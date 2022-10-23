@@ -14,8 +14,8 @@ function addToCart(event) {
         var course = button.parentElement.parentElement
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
-        var credit = course.getElementsByClassName("course-credit")[0].innerText
-        document.cookie = `title=${title};category=${category};credit=${credit};major=None`
+        var enrolled = course.getElementsByClassName("course-enrolled")[0].innerText
+        document.cookie = `title=${title};category=${category};enrolled=${enrolled};major=None`
         fetch("../data/course.json")
             .then(response => response.json())
             .then(json => {
@@ -27,17 +27,19 @@ function addToCart(event) {
                         new_course.className = "course-container"
                         new_course.innerHTML = html
                             .replace('Course name', title)
-                            .replace('Category: Category name', category)
-                            .replace("Credits: 4", `Credits: ${credit}`)
+                            .replace('Enrolled: Enrolled state', `Enrolled: ${enrolled}`)
 
                         cart_menu.append(new_course)
-
+                        course_data['category'].forEach(e => {
+                            category = document.createElement('p')
+                            category.innerHTML = e
+                            new_course.getElementsByClassName("type-list")[0].append(category)
+                        });
                         new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => {
                             removeFromCart(event)
                             event.stopPropagation();
                         })
-                        new_course.addEventListener("click", e => window.open(course_data['link']))
-
+                        new_course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
                         course.remove()
                         getCourse(1)
                     })
@@ -50,14 +52,14 @@ function removeFromCart(event) {
     var course = button.parentElement.parentElement
     var title = course.getElementsByClassName("course-name")[0].innerText
     var category = course.getElementsByClassName("course-type")[0].innerText
-    var credit = course.getElementsByClassName("course-credit")[0].innerText
-    document.cookie = `title=${title}; category=${category}; credit=${credit}`
-    addToHome(title, category, credit)
+    var enrolled = course.getElementsByClassName("course-enrolled")[0].innerText
+    document.cookie = `title=${title}; category=${category}; enrolled=${enrolled}`
+    addToHome(title, category, enrolled)
     course.remove()
     getCourse(-1)
 }
 
-function addToHome(title, category, credit) {
+function addToHome(title, category, enrolled) {
     fetch("../data/course.json")
         .then(response => response.json())
         .then(json => {
@@ -69,10 +71,14 @@ function addToHome(title, category, credit) {
                     course.className = "course-container"
                     course.innerHTML = html
                         .replace('Course name', title)
-                        .replace('Category: Category name', category)
-                        .replace("Credits: 4", `Credits: ${credit}`)
+                        .replace('Enrolled state', `${course_data['enrolled']}/${course_data['capacity']}`)
 
                     document.getElementById("course-grid").append(course)
+                    course_data['category'].forEach(e => {
+                        category = document.createElement('p')
+                        category.innerHTML = e
+                        course.getElementsByClassName("type-list")[0].append(category)
+                    });
                     course.getElementsByClassName("add-button")[0].addEventListener("click", event => {
                         addToCart(event)
                         event.stopPropagation();
@@ -94,6 +100,7 @@ function getCourse(mode) {
 }
 
 function updateFooter(major, percent, category_dict) {
+    // Update major progress bar
     localStorage[major] = String(parseInt(localStorage[major]) + percent)
     footer = document.getElementsByClassName('footer')[0]
     var [major, minor] = footer.getElementsByClassName('progress-container')
@@ -108,12 +115,13 @@ function updateFooter(major, percent, category_dict) {
     progress_minor = document.getElementById(`progress-2`)
     progress_minor.style.width = `${localStorage[minor_val]}%`
 
+    // Update category
     category_section = document.getElementsByClassName("category-section")[0]
     categories = category_section.getElementsByTagName("p")
     category_indexes = []
     for (var i = 0; i < categories.length; i++) {
         for (var j = 0; j < category_dict[0].length; j++) {
-            if (categories[i].innerText.split(": ")[0] == category_dict[0][j]) {
+            if (categories[i].innerText.split(": ")[0] == category_dict[0][j].split(" (")[0]) {
                 category_indexes.push(i)
             }
         }

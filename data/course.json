@@ -5,7 +5,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 1,
@@ -17,7 +17,7 @@
         "enrolled": 13,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Computer Science",
         "level": 3,
@@ -29,7 +29,7 @@
         "enrolled": 49,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Computer Science",
         "level": 2,
@@ -41,7 +41,7 @@
         "enrolled": 29,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 2,
@@ -53,7 +53,7 @@
         "enrolled": 14,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "History",
         "level": 3,
@@ -65,7 +65,7 @@
         "enrolled": 30,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Economics",
         "level": 3,
@@ -77,8 +77,8 @@
         "enrolled": 38,
         "credit": 4,
         "category": [
-            "Sciences & Engineering",
-            "Maths & Computing"
+            "Sciences & Engineering (E3)",
+            "Maths & Computing (E4)"
         ],
         "major": "Computer Science",
         "level": 2,
@@ -90,7 +90,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Computer Science",
         "level": 1,
@@ -102,8 +102,8 @@
         "enrolled": 13,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "Vietnam Studies",
         "level": 2,
@@ -115,7 +115,7 @@
         "enrolled": 18,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 3,
@@ -127,7 +127,7 @@
         "enrolled": 31,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Literature",
         "level": 1,
@@ -139,8 +139,8 @@
         "enrolled": 30,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "Vietnam Studies",
         "level": 1,
@@ -152,7 +152,7 @@
         "enrolled": 15,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Vietnam Studies",
         "level": 2,
@@ -164,9 +164,9 @@
         "enrolled": 43,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences",
-            "Maths & Computing"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)",
+            "Maths & Computing (E4)"
         ],
         "major": "Vietnam Studies",
         "level": 1,
@@ -178,7 +178,7 @@
         "enrolled": 40,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Economics",
         "level": 2,
@@ -190,7 +190,7 @@
         "enrolled": 26,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Economics",
         "level": 3,
@@ -202,7 +202,7 @@
         "enrolled": 30,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 1,
@@ -214,7 +214,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Integrated Sciences",
         "level": 1,
@@ -226,7 +226,7 @@
         "enrolled": 34,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Social Studies",
         "level": 1,
@@ -238,7 +238,7 @@
         "enrolled": 15,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Literature",
         "level": 3,
@@ -250,7 +250,7 @@
         "enrolled": 23,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Literature",
         "level": 1,
@@ -262,7 +262,7 @@
         "enrolled": 40,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Art & Media Studies",
         "level": 2,
@@ -274,8 +274,8 @@
         "enrolled": 19,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "History",
         "level": 1,
@@ -287,7 +287,7 @@
         "enrolled": 8,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "History",
         "level": 3,
@@ -299,7 +299,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 1,
@@ -311,7 +311,7 @@
         "enrolled": 10,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 3,
@@ -323,8 +323,8 @@
         "enrolled": 30,
         "credit": 4,
         "category": [
-            "Sciences & Engineering",
-            "Maths & Computing"
+            "Sciences & Engineering (E3)",
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 2,
@@ -336,7 +336,7 @@
         "enrolled": 31,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 1,
@@ -348,8 +348,8 @@
         "enrolled": 10,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "Vietnam Studies",
         "level": 1,
@@ -361,7 +361,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 1,
@@ -373,7 +373,7 @@
         "enrolled": 18,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Computer Science",
         "level": 3,
@@ -385,7 +385,7 @@
         "enrolled": 39,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 2,
@@ -397,7 +397,7 @@
         "enrolled": 31,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Social Studies",
         "level": 2,
@@ -409,7 +409,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 1,
@@ -421,7 +421,7 @@
         "enrolled": 49,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Integrated Sciences",
         "level": 1,
@@ -433,7 +433,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 1,
@@ -445,7 +445,7 @@
         "enrolled": 48,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 1,
@@ -457,7 +457,7 @@
         "enrolled": 37,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Computer Science",
         "level": 2,
@@ -469,7 +469,7 @@
         "enrolled": 13,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Computer Science",
         "level": 3,
@@ -481,7 +481,7 @@
         "enrolled": 7,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Integrated Sciences",
         "level": 2,
@@ -493,7 +493,7 @@
         "enrolled": 26,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 2,
@@ -505,7 +505,7 @@
         "enrolled": 6,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Literature",
         "level": 3,
@@ -517,7 +517,7 @@
         "enrolled": 40,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 2,
@@ -529,7 +529,7 @@
         "enrolled": 26,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 2,
@@ -541,7 +541,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Economics",
         "level": 1,
@@ -553,7 +553,7 @@
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Economics",
         "level": 1,
@@ -565,8 +565,8 @@
         "enrolled": 25,
         "credit": 4,
         "category": [
-            "Sciences & Engineering",
-            "Maths & Computing"
+            "Sciences & Engineering (E3)",
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 2,
@@ -578,7 +578,7 @@
         "enrolled": 5,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "History",
         "level": 3,
@@ -590,9 +590,9 @@
         "enrolled": 51,
         "credit": 4,
         "category": [
-            "Social Sciences",
-            "Sciences & Engineering",
-            "Maths & Computing"
+            "Social Sciences (E2)",
+            "Sciences & Engineering (E3)",
+            "Maths & Computing (E4)"
         ],
         "major": "Social Studies",
         "level": 1,
@@ -604,19 +604,19 @@
         "enrolled": 22,
         "credit": 4,
         "category": [
-            "Sciences & Engineering"
+            "Sciences & Engineering (E3)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 2,
         "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eTQAT/eng204fall2022s01"
     },
     {
-        "name": "Social Inquiry and the Social Sciences",
+        "name": "Social Inquiry and the Social Sciences (E2)",
         "capacity": 50,
         "enrolled": 50,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Social Studies",
         "level": 1,
@@ -628,7 +628,7 @@
         "enrolled": 30,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Psychology",
         "level": 2,
@@ -640,7 +640,7 @@
         "enrolled": 27,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 3,
@@ -652,7 +652,7 @@
         "enrolled": 3,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Vietnam Studies",
         "level": 3,
@@ -664,7 +664,7 @@
         "enrolled": 7,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Social Studies",
         "level": 2,
@@ -676,7 +676,7 @@
         "enrolled": 6,
         "credit": 4,
         "category": [
-            "Maths & Computing"
+            "Maths & Computing (E4)"
         ],
         "major": "Applied Mathematics, Engineering",
         "level": 3,
@@ -688,8 +688,8 @@
         "enrolled": 13,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "Vietnam Studies",
         "level": 2,
@@ -701,8 +701,8 @@
         "enrolled": 6,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "History",
         "level": 2,
@@ -714,7 +714,7 @@
         "enrolled": 8,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Vietnam Studies",
         "level": 2,
@@ -726,8 +726,8 @@
         "enrolled": 24,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "History",
         "level": 1,
@@ -739,7 +739,7 @@
         "enrolled": 25,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 1,
@@ -751,8 +751,8 @@
         "enrolled": 31,
         "credit": 4,
         "category": [
-            "Arts & Humanities",
-            "Social Sciences"
+            "Arts & Humanities (E1)",
+            "Social Sciences (E2)"
         ],
         "major": "Vietnam Studies",
         "level": 2,
@@ -764,7 +764,7 @@
         "enrolled": 11,
         "credit": 4,
         "category": [
-            "Social Sciences"
+            "Social Sciences (E2)"
         ],
         "major": "Social Studies",
         "level": 2,
@@ -776,7 +776,7 @@
         "enrolled": 25,
         "credit": 4,
         "category": [
-            "Arts & Humanities"
+            "Arts & Humanities (E1)"
         ],
         "major": "Art & Media Studies",
         "level": 1,
