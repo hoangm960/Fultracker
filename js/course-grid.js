@@ -1,4 +1,4 @@
-window.onload = fetch("../data/course.json", {
+fetch("../data/course.json", {
     headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'

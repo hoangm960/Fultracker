@@ -1,7 +1,6 @@
 fetch("../data/major.json")
     .then(response => response.json())
     .then(json => {
-        localStorage.clear()
         for (const [key, value] of Object.entries(json)) {
             localStorage.setItem(key, value)
         }
