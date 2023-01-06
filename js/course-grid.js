@@ -9,7 +9,7 @@ fetch("../data/course.json", {
 function updateGrid(data) {
     data.forEach(element => {
         if (element['level'] <= localStorage['level'] && element['enrolled'] < element['capacity']) {
-            window.addToHome(element['name'])
+            window.addToHome(element)
         }
     });
 }

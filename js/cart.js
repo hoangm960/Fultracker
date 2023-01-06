@@ -29,11 +29,12 @@ function addToCart(event) {
                             .replace('Enrolled: Enrolled state', `Enrolled: ${enrolled}`)
 
                         cart_menu.append(new_course)
-                        course_data['category'].forEach(e => {
-                            category = document.createElement('p')
-                            category.innerHTML = e
-                            new_course.getElementsByClassName("type-list")[0].append(category)
-                        });
+                        if (course_data['category'])
+                            course_data['category'].forEach(e => {
+                                category = document.createElement('p')
+                                category.innerHTML = e
+                                new_course.getElementsByClassName("type-list")[0].append(category)
+                            });
                         new_course.getElementsByClassName("remove-button")[0].addEventListener("click", event => {
                             removeFromCart(event)
                             event.stopPropagation();
@@ -55,33 +56,28 @@ function removeFromCart(event) {
     getCourse(-1)
 }
 
-function addToHome(title) {
-    fetch("../data/course.json")
-        .then(response => response.json())
-        .then(json => {
-            course_data = json.find(element => element['name'] == title)
-            fetch("../html/course-home.html")
-                .then(response => response.text())
-                .then(html => {
-                    course = document.createElement('div')
-                    course.className = "course-container"
-                    course.innerHTML = html
-                        .replace('Course name', title)
-                        .replace('Enrolled state', `${course_data['enrolled']}/${course_data['capacity']}`)
+function addToHome(course_data) {
+    fetch("../html/course-home.html")
+        .then(response => response.text())
+        .then(html => {
+            course = document.createElement('div')
+            course.className = "course-container"
+            course.innerHTML = html
+                .replace('Course name', course_data['name'])
+                .replace('Enrolled state', `${course_data['enrolled']}/${course_data['capacity']}`)
 
-                    document.getElementById("course-grid").append(course)
-                    console.log(course_data['name']);
-                    course_data['category'].forEach(e => {
-                        category = document.createElement('p')
-                        category.innerHTML = e
-                        course.getElementsByClassName("type-list")[0].append(category)
-                    });
-                    course.getElementsByClassName("add-button")[0].addEventListener("click", event => {
-                        addToCart(event)
-                        event.stopPropagation();
-                    })
-                    course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
-                })
+            document.getElementById("course-grid").append(course)
+            if (course_data['category'])
+                course_data['category'].forEach(e => {
+                    category = document.createElement('p')
+                    category.innerHTML = e
+                    course.getElementsByClassName("type-list")[0].append(category)
+                });
+            course.getElementsByClassName("add-button")[0].addEventListener("click", event => {
+                addToCart(event)
+                event.stopPropagation();
+            })
+            course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
         })
 }
 
@@ -121,7 +117,6 @@ function updateFooter(major, percent, category_dict) {
     category_indexes = []
     for (var i = 0; i < categories.length; i++) {
         for (var j = 0; j < category_dict[0].length; j++) {
-            console.log(category_dict[0][j].split(" (")[0]);
             if (categories[i].innerText.split(": ")[0] == category_dict[0][j].split(" (")[0]) {
                 category_indexes.push(i)
             }
