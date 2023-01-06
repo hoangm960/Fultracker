@@ -92,29 +92,9 @@ function getCourse(mode) {
         .then(response => response.json())
         .then(json => {
             course = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
-            // updateProgressBar(course['major'], 12 * mode)
             updateCategory(course['category'], mode)
         })
 
-}
-
-function updateProgressBar(major, percent) {
-    localStorage[major] = String(parseInt(localStorage[major]) + percent)
-    footer = document.getElementsByClassName('footer')[0]
-    var [major, minor] = footer.getElementsByClassName('progress-container')
-    var [major_val, minor_val] = Object.entries(localStorage).sort(([, a], [, b]) => b - a).slice(0, 2).map(([n]) => n)
-    major_text = major.getElementsByTagName('p')[0]
-    minor_text = minor.getElementsByTagName('p')[0]
-    if (localStorage[major_val] > 1) {
-        major_text.innerHTML = major_val
-        progress_major = document.getElementById(`progress-1`)
-        progress_major.style.width = `${localStorage[major_val]}%`
-    }
-    if (localStorage[minor_val] > 1) {
-        minor_text.innerHTML = minor_val
-        progress_minor = document.getElementById(`progress-2`)
-        progress_minor.style.width = `${localStorage[minor_val]}%`
-    }
 }
 
 function updateCategory(category_dict, mode) {

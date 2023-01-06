@@ -3,51 +3,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 200px;
+    height: 100px;
     margin-bottom: 0px;
     border-top: 1px solid rgb(222, 222, 222);
     background-color: white;
-}
-.progress-section {
-    margin-top: 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10px;
-    row-gap: 40px;
-    margin-left: 200px;
-}
-
-.progress-container {
-    margin-top: 20px;
-}
-
-.progress-bar {
-    position: relative;
-    height: 35px;
-    width: 500px;
-    padding-right: 2px;
-    background-color: #FFAD1D;
-    border-radius: 35px;
-    margin-top: 10px;
-    padding: 2px;
-}
-
-.progress-bar div {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    height: 33px;   
-    border-radius: 35px;
-    background-color: #00196E;
-    transition: width 0.3s;
-}
-
-#progress-1 {
-    width: 0%;
-}
-
-#progress-2 {
-    width: 0%;
 }
 
 .category-section {
