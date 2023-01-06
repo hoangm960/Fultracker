@@ -70,6 +70,7 @@ function addToHome(title) {
                         .replace('Enrolled state', `${course_data['enrolled']}/${course_data['capacity']}`)
 
                     document.getElementById("course-grid").append(course)
+                    console.log(course_data['name']);
                     course_data['category'].forEach(e => {
                         category = document.createElement('p')
                         category.innerHTML = e
@@ -79,8 +80,7 @@ function addToHome(title) {
                         addToCart(event)
                         event.stopPropagation();
                     })
-                    course.addEventListener("click", e => window.open(course_data['link']))
-
+                    course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
                 })
         })
 }
@@ -97,19 +97,23 @@ function getCourse(mode) {
 
 function updateFooter(major, percent, category_dict) {
     // Update major progress bar
+
     localStorage[major] = String(parseInt(localStorage[major]) + percent)
     footer = document.getElementsByClassName('footer')[0]
     var [major, minor] = footer.getElementsByClassName('progress-container')
-    major_text = major.getElementsByTagName('p')[0]
     var [major_val, minor_val] = Object.entries(localStorage).sort(([, a], [, b]) => b - a).slice(0, 2).map(([n]) => n)
-    major_text.innerHTML = major_val
+    major_text = major.getElementsByTagName('p')[0]
     minor_text = minor.getElementsByTagName('p')[0]
-    minor_text.innerHTML = minor_val
-
-    progress_major = document.getElementById(`progress-1`)
-    progress_major.style.width = `${localStorage[major_val]}%`
-    progress_minor = document.getElementById(`progress-2`)
-    progress_minor.style.width = `${localStorage[minor_val]}%`
+    if (localStorage[major_val] > 1) {
+        major_text.innerHTML = major_val
+        progress_major = document.getElementById(`progress-1`)
+        progress_major.style.width = `${localStorage[major_val]}%`
+    }
+    if (localStorage[minor_val] > 1) {
+        minor_text.innerHTML = minor_val
+        progress_minor = document.getElementById(`progress-2`)
+        progress_minor.style.width = `${localStorage[minor_val]}%`
+    }
 
     // Update category
     category_section = document.getElementsByClassName("category-section")[0]
@@ -117,6 +121,7 @@ function updateFooter(major, percent, category_dict) {
     category_indexes = []
     for (var i = 0; i < categories.length; i++) {
         for (var j = 0; j < category_dict[0].length; j++) {
+            console.log(category_dict[0][j].split(" (")[0]);
             if (categories[i].innerText.split(": ")[0] == category_dict[0][j].split(" (")[0]) {
                 category_indexes.push(i)
             }
