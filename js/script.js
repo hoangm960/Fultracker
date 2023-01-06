@@ -20,7 +20,7 @@ function closeCart() {
 function updateClass(e) {
     class_level = { 'Co26': 1, 'Co25': 2, 'Co24': 3, 'Co23': 3 }
     button = e.currentTarget
-    setCookie('class', class_level[button.innerText])
+    setCookie('class', class_level[button.innerText], 365)
 }
 
 function getCookie(name) {
