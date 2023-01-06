@@ -14,7 +14,6 @@ function addToCart(event) {
         var title = course.getElementsByClassName("course-name")[0].innerText
         var category = course.getElementsByClassName("course-type")[0].innerText
         var enrolled = course.getElementsByClassName("course-enrolled")[0].innerText
-        document.cookie = `title=${title};`
         fetch("../data/course.json")
             .then(response => response.json())
             .then(json => {
@@ -41,7 +40,7 @@ function addToCart(event) {
                         })
                         new_course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
                         course.remove()
-                        getCourse(1)
+                        updateCategory(course_data['category'], 1)
                     })
             })
     }
@@ -51,15 +50,15 @@ function removeFromCart(event) {
     var button = event.currentTarget;
     var course = button.parentElement.parentElement
     var title = course.getElementsByClassName("course-name")[0].innerText
-    document.cookie = `title=${title};`
     fetch("../data/course.json")
         .then(response => response.json())
         .then(json => {
             course_data = json.find(element => element['name'] == title)
             addToHome(course_data)
+            updateCategory(course_data['category'], -1)
         })
     course.remove()
-    getCourse(-1)
+
 }
 
 function addToHome(course_data) {
@@ -85,16 +84,6 @@ function addToHome(course_data) {
             })
             course.getElementsByClassName("course-name")[0].addEventListener("click", e => window.open(course_data['link']))
         })
-}
-
-function getCourse(mode) {
-    fetch("../data/course.json")
-        .then(response => response.json())
-        .then(json => {
-            course = json.find(element => element['name'] == document.cookie.split(';')[0].split('=')[1])
-            updateCategory(course['category'], mode)
-        })
-
 }
 
 function updateCategory(category_dict, mode) {
