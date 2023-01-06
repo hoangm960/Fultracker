@@ -5,7 +5,7 @@ fetch("../data/course.json")
 
 function updateGrid(data) {
     data.forEach(element => {
-        if (element['level'] <= getCookie('class') && element['enrolled'] < element['capacity']) {
+        if (element['level'] <= localStorage.getItem('class') && element['enrolled'] < element['capacity']) {
             window.addToHome(element)
         }
     });
