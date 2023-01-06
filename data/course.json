@@ -1,785 +1,1001 @@
 [
     {
-        "name": "Calculus",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5efQAD/math101fall2022s01" 
-    },
-    {
-        "name": "Advanced Programming Techniques",
-        "capacity": 30,
-        "enrolled": 13,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Computer Science",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ffQAD/cs309fall2022s01"
-    },
-    {
-        "name": "Algorithm",
-        "capacity": 50,
-        "enrolled": 49,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Computer Science",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5fGQAT/cs102fall2022s01"
-    },
-    {
-        "name": "Alien, Uncanny, Strange in E. Asian Cinema",
-        "capacity": 40,
-        "enrolled": 29,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dxQAD/arts211fall2022s01"
-    },
-    {
-        "name": "Asian Borderlands",
-        "capacity": 30,
-        "enrolled": 14,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "History",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eYQAT/his304fall2022s01"
-    },
-    {
-        "name": "Behavioural and Experimental Economics",
-        "capacity": 30,
-        "enrolled": 30,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Economics",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ePQAT/econ305fall2022s01"
-    },
-    {
-        "name": "Computer Organization",
-        "capacity": 40,
-        "enrolled": 38,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)",
-            "Maths & Computing (E4)"
-        ],
-        "major": "Computer Science",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eKQAT/cs203fall2022s01"
-    },
-    {
-        "name": "Computer Science I",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Computer Science",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eJQAT/cs101fall2022s01"
-    },
-    {
-        "name": "Contending Theories of International Relations: A Comprehensive View of Vietnam",
-        "capacity": 30,
-        "enrolled": 13,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f5QAD/vs215fall2022s01"
-    },
-    {
-        "name": "Counseling Psychology",
-        "capacity": 30,
-        "enrolled": 18,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5epQAD/psy302fall2022s01"
-    },
-    {
-        "name": "Critical Methods in Literary Studies",
-        "capacity": 50,
-        "enrolled": 31,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Literature",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5edQAD/lit103fall2022s01"
-    },
-    {
-        "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
-        "capacity": 50,
-        "enrolled": 30,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5exQAD/vs106fall2022s01"
-    },
-    {
-        "name": "Developing Vietnam",
-        "capacity": 25,
-        "enrolled": 15,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f3QAD/vs214fall2022s01"
-    },
-    {
-        "name": "Digital Humanities in Vietnam Studies Contexts I",
-        "capacity": 50,
-        "enrolled": 43,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)",
-            "Maths & Computing (E4)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ezQAD/vs116fall2022s01"
-    },
-    {
-        "name": "Econometrics",
-        "capacity": 40,
-        "enrolled": 40,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Economics",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eOQAT/econ209fall2022s01"
-    },
-    {
-        "name": "Economics of Inequality",
-        "capacity": 30,
-        "enrolled": 26,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Economics",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eQQAT/econ302fall2022s01"
-    },
-    {
-        "name": "Engineering Exploration: Sink or Swim",
-        "capacity": 30,
-        "enrolled": 30,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eSQAT/eng102fall2022s01"
-    },
-    {
-        "name": "Environmental Sciences",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Integrated Sciences",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ebQAD/is103fall2022s01"
-    },
-    {
-        "name": "Ethnographic Research Methods",
-        "capacity": 50,
-        "enrolled": 34,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Social Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5etQAD/soci109fall2022s01"
-    },
-    {
-        "name": "Film, Fiction, and the Making of Modern Vietnams",
-        "capacity": 30,
-        "enrolled": 15,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Literature",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eeQAD/lit303fall2022s01"
-    },
-    {
-        "name": "Foundations in Literary Studies",
-        "capacity": 50,
-        "enrolled": 23,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Literature",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002THKTsQAP/lit101fall2022s01"
-    },
-    {
-        "name": "Giving and Effectiveness",
-        "capacity": 40,
-        "enrolled": 40,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI3rQAH/econ210fall2022s01"
-    },
-    {
-        "name": "Global History Lab: History of the World",
-        "capacity": 50,
-        "enrolled": 19,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "History",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF8DBQA1/his105fall2022s01"
-    },
-    {
-        "name": "History of International Communism",
-        "capacity": 30,
-        "enrolled": 8,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "History",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI4GQAX/his301fall2022s01"
-    },
-    {
-        "name": "Ideas of Math",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TGw1eQAD/math102fall2022s01"
-    },
-    {
-        "name": "Independent Study: Advanced Readings in Theory",
-        "capacity": 10,
-        "enrolled": 10,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dzQAD/arts398fall2022s01"
-    },
-    {
-        "name": "Intelligent Robot Studio: From Theory to Practice",
-        "capacity": 30,
-        "enrolled": 30,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)",
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eVQAT/eng202fall2022s01"
-    },
-    {
-        "name": "Introduction to Art History and Theory",
-        "capacity": 50,
-        "enrolled": 31,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dtQAD/arts102fall2022s01"
-    },
-    {
-        "name": "Introduction to Champa and Khmer History",
-        "capacity": 50,
-        "enrolled": 10,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eyQAD/vs114fall2022s01"
-    },
-    {
-        "name": "Introduction to Data Analysis",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ehQAD/math105fall2022s01"
-    },
-    {
-        "name": "Introduction to Machine Learning",
-        "capacity": 30,
-        "enrolled": 18,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Computer Science",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5fVQAT/cs307fall2022s01"
-    },
-    {
-        "name": "Introduction to Psychological Disorders, Diagnosis & Treatment",
-        "capacity": 40,
-        "enrolled": 39,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5elQAD/psy205fall2022s01"
-    },
-    {
-        "name": "Introduction to Science and Technology Studies",
-        "capacity": 40,
-        "enrolled": 31,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Social Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5euQAD/soci211fall2022s01"
-    },
-    {
+        "code": "ARTS101",
         "name": "Introduction to Visual Studies",
+        "instructor": "Jacqueline Hoang-Nguyen",
         "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
+        "enrolled": 0,
         "category": [
-            "Arts & Humanities (E1)"
+            "E1"
         ],
         "major": "Art & Media Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5drQAD/arts101fall2022s01"
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86mGQAR/arts101spring2023s03",
+        "level": 1
     },
     {
-        "name": "Introductory Biology",
-        "capacity": 50,
-        "enrolled": 49,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Integrated Sciences",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eaQAD/is101fall2022s01"
-    },
-    {
-        "name": "Introductory Psychology",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ekQAD/psy101fall2022s01"
-    },
-    {
-        "name": "Linear Algebra",
-        "capacity": 50,
-        "enrolled": 48,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5egQAD/math103fall2022s01"
-    },
-    {
-        "name": "Machine Learning for Data Science",
-        "capacity": 40,
-        "enrolled": 37,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Computer Science",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5faQAD/cs208fall2022s01"
-    },
-    {
-        "name": "Network and Computer Security ",
-        "capacity": 30,
-        "enrolled": 13,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Computer Science",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eLQAT/cs306fall2022s01"
-    },
-    {
-        "name": "Organic Chemistry",
-        "capacity": 40,
-        "enrolled": 7,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Integrated Sciences",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ecQAD/is205fall2022s01"
-    },
-    {
-        "name": "Organizational Psychology",
-        "capacity": 40,
-        "enrolled": 26,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5emQAD/psy207fall2022s01"
-    },
-    {
-        "name": "Pacific Voyages in Literature & Film",
-        "capacity": 30,
-        "enrolled": 6,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Literature",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002THKU2QAP/lit305fall2022s01"
-    },
-    {
-        "name": "Personality Psychology",
-        "capacity": 40,
-        "enrolled": 40,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eoQAD/psy204fall2022s01"
-    },
-    {
-        "name": "Principles of Acting",
-        "capacity": 25,
-        "enrolled": 26,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dwQAD/arts206fall2022s01"
-    },
-    {
-        "name": "Principles of Economics 1",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Economics",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eMQAT/econ101fall2022s01"
-    },
-    {
-        "name": "Principles of Economics 2",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Economics",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eNQAT/econ103fall2022s01"
-    },
-    {
-        "name": "Product Development",
-        "capacity": 25,
-        "enrolled": 25,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)",
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eUQAT/eng201fall2022s01"
-    },
-    {
-        "name": "Race and Empire",
-        "capacity": 30,
-        "enrolled": 5,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "History",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eZQAT/his306fall2022s01"
-    },
-    {
-        "name": "Research Methods & Statistics",
-        "capacity": 50,
-        "enrolled": 51,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)",
-            "Sciences & Engineering (E3)",
-            "Maths & Computing (E4)"
-        ],
-        "major": "Social Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5esQAD/soci105fall2022s01"
-    },
-    {
-        "name": "Sensor, Measurement and Analysis",
-        "capacity": 40,
-        "enrolled": 22,
-        "credit": 4,
-        "category": [
-            "Sciences & Engineering (E3)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eTQAT/eng204fall2022s01"
-    },
-    {
-        "name": "Social Inquiry and the Social Sciences (E2)",
-        "capacity": 50,
-        "enrolled": 50,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Social Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5erQAD/soci102fall2022s01"
-    },
-    {
-        "name": "Social Psychology",
-        "capacity": 40,
-        "enrolled": 30,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Psychology",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5enQAD/psy203fall2022s01"
-    },
-    {
-        "name": "Sound Art",
-        "capacity": 30,
-        "enrolled": 27,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Art & Media Studies",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dyQAD/arts303fall2022s01"
-    },
-    {
-        "name": "Sources for Vietnamese and Southeast Asian History",
-        "capacity": 30,
-        "enrolled": 3,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f4QAD/vs303fall2022s01"
-    },
-    {
-        "name": "South Korea: Society and Culture",
-        "capacity": 40,
-        "enrolled": 7,
-        "credit": 4,
-        "category": [
-            "Social Sciences (E2)"
-        ],
-        "major": "Social Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5evQAD/soci212fall2022s01"
-    },
-    {
-        "name": "Stochastic Calculus",
-        "capacity": 30,
-        "enrolled": 6,
-        "credit": 4,
-        "category": [
-            "Maths & Computing (E4)"
-        ],
-        "major": "Applied Mathematics, Engineering",
-        "level": 3,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ejQAD/math305fall2022s01"
-    },
-    {
-        "name": "The Challenge of Change: Civil Society and Social Movements in Vietnam ",
-        "capacity": 40,
-        "enrolled": 13,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f0QAD/vs203fall2022s01"
-    },
-    {
-        "name": "The Global Vietnam War I",
-        "capacity": 40,
-        "enrolled": 6,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "History",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5eXQAT/his208fall2022s01"
-    },
-    {
-        "name": "The Legacy of the War in Retrospect I",
-        "capacity": 20,
-        "enrolled": 8,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)"
-        ],
-        "major": "Vietnam Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f1QAD/vs204fall2022s01"
-    },
-    {
-        "name": "US in the World",
-        "capacity": 50,
-        "enrolled": 24,
-        "credit": 4,
-        "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
-        ],
-        "major": "History",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TFI46QAH/his108fall2022s01"
-    },
-    {
+        "code": "ARTS104",
         "name": "Video and Film Production",
+        "instructor": "Trinh Dinh Le Minh",
         "capacity": 25,
-        "enrolled": 25,
-        "credit": 4,
+        "enrolled": 0,
         "category": [
-            "Arts & Humanities (E1)"
+            "E1"
         ],
         "major": "Art & Media Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5duQAD/arts104fall2022s01"
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86mHQAR/arts104spring2023s02",
+        "level": 1
     },
     {
-        "name": "What Movies Show and Don't Show: Film Adaptations in Asian Contexts",
-        "capacity": 40,
-        "enrolled": 31,
-        "credit": 4,
+        "code": "ARTS105",
+        "name": "Introduction to Film History and Theory",
+        "instructor": "Linda Zhang",
+        "capacity": 50,
+        "enrolled": 0,
         "category": [
-            "Arts & Humanities (E1)",
-            "Social Sciences (E2)"
+            "E1"
         ],
-        "major": "Vietnam Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5f2QAD/vs210fall2022s01"
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u0QAB/arts105spring2023s01",
+        "level": 1
     },
     {
-        "name": "Women and Politics",
-        "capacity": 40,
-        "enrolled": 11,
-        "credit": 4,
+        "code": "ARTS106",
+        "name": "Dance and Performance Production",
+        "instructor": "Alex Tu Nguyen",
+        "capacity": 25,
+        "enrolled": 0,
         "category": [
-            "Social Sciences (E2)"
+            "E1"
+        ],
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u1QAB/arts106spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "ARTS107",
+        "name": "2D/3D Foundations",
+        "instructor": "Richard Streitmatter-Tran",
+        "capacity": 25,
+        "enrolled": 0,
+        "category": [
+            "E1"
+        ],
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u2QAB/arts107spring2023s02",
+        "level": 1
+    },
+    {
+        "code": "ARTS212",
+        "name": "Interdisciplinary Drawing",
+        "instructor": "Richard Streitmatter-Tran",
+        "capacity": 25,
+        "enrolled": 0,
+        "category": [
+            "E1"
+        ],
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u3QAB/arts212spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ARTS213",
+        "name": "Dance Creation to Performance",
+        "instructor": "Alex Tu Nguyen",
+        "capacity": 25,
+        "enrolled": 0,
+        "category": [
+            "E1"
+        ],
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u4QAB/arts213spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ARTS304",
+        "name": "Gender and Sexuality in East Asian Film and Fiction",
+        "instructor": "Linda Zhang",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u5QAB/arts304spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "ARTS305",
+        "name": "Curating in Context",
+        "instructor": "Arlette Quynh-Anh Tran",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Art & Media Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X86u6QAB/arts305spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "CS201",
+        "name": "Computer Science 2",
+        "instructor": "Phan Thanh Trung",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87N4QAJ/cs201spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "CS205",
+        "name": "Computational Social Media",
+        "instructor": "Phan Thanh Trung",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87N3QAJ/cs205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "CS207",
+        "name": "Object-Oriented Analysis and Design Course",
+        "instructor": "Ha Viet Uyen Synh",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PpQAJ/cs207spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "CS209",
+        "name": "Deep Learning for Artificial Intelligence",
+        "instructor": "Dang Huynh",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87N1QAJ/cs209spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "CS301",
+        "name": "Software Engineering",
+        "instructor": "Klyne Smith",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": null,
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PqQAJ/cs301spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "CS302",
+        "name": "Theory of computing",
+        "instructor": "Huynh Viet Linh",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87N2QAJ/cs302spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "CS310",
+        "name": "Web Development and Human Computer Interaction\u00a0",
+        "instructor": "Nguyen Duc Anh",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Computer Science",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X8l9lQAB/cs310spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "ECON101",
+        "name": "Principles of Economics 1",
+        "instructor": "Lan Nguyen",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PrQAJ/econ101spring2023s02",
+        "level": 1
+    },
+    {
+        "code": "ECON103",
+        "name": "Principles of Economics 2",
+        "instructor": "Hoang Van Khieu",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PsQAJ/econ103spring2023s02",
+        "level": 1
+    },
+    {
+        "code": "ECON201",
+        "name": "Microeconomic Analysis",
+        "instructor": "Graeme Walker",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PtQAJ/econ201spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ECON203",
+        "name": "Macroeconomic Analysis",
+        "instructor": "Luu Duc Thi",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PuQAJ/econ203spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ECON205",
+        "name": "Digital Marketing",
+        "instructor": "Willem Smit",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PwQAJ/econ205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ECON210",
+        "name": "Giving and Effectiveness",
+        "instructor": "Dana Doan and Graeme Walker",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PvQAJ/econ210spring2023s02",
+        "level": 2
+    },
+    {
+        "code": "ECON303",
+        "name": "Economics of Education",
+        "instructor": "Lan Nguyen",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PxQAJ/econ303spring2023s02",
+        "level": 3
+    },
+    {
+        "code": "ECON306",
+        "name": "Economic Development and Globalization",
+        "instructor": "Phan Tuan Ngoc",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Economics",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PyQAJ/econ306spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "EL101",
+        "name": "Psychology Experiential Learning Program",
+        "instructor": "Lan Thi Nguyen",
+        "capacity": 20,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87PzQAJ/el101spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "ENG205",
+        "name": "Intergrated Engineering Project",
+        "instructor": "Nguyen Hop Minh",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q0QAJ/eng205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ENG207",
+        "name": "Mechanical Design",
+        "instructor": "Doan Nhat Minh",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q1QAJ/eng207spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ENG208",
+        "name": "Electronic Devices and Circuits",
+        "instructor": "Le Quan",
+        "capacity": 25,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q2QAJ/eng208spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ENG209",
+        "name": "Signals, Systems and Control",
+        "instructor": "Truong Trung Kien",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q3QAJ/eng209spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "ENG301",
+        "name": "Computer Vision",
+        "instructor": "Phung Manh Duong",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q4QAJ/eng301spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "HIS102",
+        "name": "Atlantic World",
+        "instructor": "Elsa Costa",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q5QAJ/his102spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "HIS104",
+        "name": "Modern East Asia",
+        "instructor": "Mark Frank",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q6QAJ/his104spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "HIS209",
+        "name": "The Global Vietnam War II",
+        "instructor": "Sean Fear",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q7QAJ/his209spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "HIS210",
+        "name": "History of Capitalism and the Corporation",
+        "instructor": "Elsa Costa",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q8QAJ/his210spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "HIS211",
+        "name": "Fulbright History Lab",
+        "instructor": "Mark Frank",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87Q9QAJ/his211spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "HIS307",
+        "name": "History of the Republic of Vietnam",
+        "instructor": "Sean Fear",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "History",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X87QAQAZ/his307spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "IS106",
+        "name": "Physics of Smart Devices",
+        "instructor": "Nhan Nguyen",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89iwQAB/is106spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "IS107",
+        "name": "Sustainable Development: Science and Industries",
+        "instructor": "Nguyen Thi Trang",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89ivQAB/is107spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "IS206",
+        "name": "Physics for light-based technology",
+        "instructor": "Son Cao",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89ixQAB/is206spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "IS210",
+        "name": "Introduction to Bioinformatics",
+        "instructor": "Huynh Viet Linh",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E3",
+            "E4"
+        ],
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89iyQAB/is210spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "IS212",
+        "name": "Cell Biology",
+        "instructor": "Nguyen Thi Hong Dung",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E3"
+        ],
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89kvQAB/is212spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "IS302",
+        "name": "Integrated Sciences Advanced Seminar",
+        "instructor": "Nguyen Thi Huyen Trang",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89kwQAB/is302spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "IS303",
+        "name": "Advanced Organic Chemistry",
+        "instructor": "Nguyen Thi Trang",
+        "capacity": 15,
+        "enrolled": 0,
+        "category": null,
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89kxQAB/is303spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "IS304",
+        "name": "Medical Biochemistry",
+        "instructor": "Takato Suito",
+        "capacity": 15,
+        "enrolled": 0,
+        "category": null,
+        "major": "Integrated Sciences",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89kyQAB/is304spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "LIT205",
+        "name": "American Short Story",
+        "instructor": "Quan Ha",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Literature",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89kzQAB/lit205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "LIT307",
+        "name": "Transatlantic Fashions",
+        "instructor": "Katarzyna Stempniak",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Literature",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l0QAB/lit307spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "LIT308",
+        "name": "American Drama since 1900",
+        "instructor": "Quan Ha",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Literature",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l1QAB/lit308spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "LIT309",
+        "name": "Consumption, Modernity and Global Queer Identities",
+        "instructor": "Vinh Phu Pham",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Literature",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l2QAB/lit309spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "MATH104",
+        "name": "Multivariable Calculus",
+        "instructor": "Van Phung Truong Son",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l3QAB/math104spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "MATH105",
+        "name": "Introduction to Data analysis",
+        "instructor": "Tran Duy Hien",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l4QAB/math105spring2023s02",
+        "level": 1
+    },
+    {
+        "code": "MATH201",
+        "name": "Differential Equations",
+        "instructor": "Nguyen Trung Hieu",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l5QAB/math201spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "MATH202",
+        "name": "Discrete Mathematics",
+        "instructor": "Tran Vinh Linh",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l6QAB/math202spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "MATH205",
+        "name": "Probability",
+        "instructor": "Le Nhat Tan",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E4"
+        ],
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l7QAB/math205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "MATH306",
+        "name": "Financial Mathematics",
+        "instructor": "Le Nhat Tan",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l8QAB/math306spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "MATH307",
+        "name": "Real Analysis",
+        "instructor": "Nguyen Trung Hieu",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Applied Mathematics, Engineering",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89l9QAB/math307spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "PSY101",
+        "name": "Introductory Psychology",
+        "instructor": "Nguyen Thi Lan",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lAQAR/psy101spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "PSY202",
+        "name": "Developmental Psychology",
+        "instructor": "Ki\u1ec1u Th\u1ecb Thanh Tr\u00e0",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lBQAR/psy202spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "PSY206",
+        "name": "Community Development",
+        "instructor": "Hoa Nguyen",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lCQAR/psy206spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "PSY208",
+        "name": "The Psychology of Sex & Gender",
+        "instructor": "Gary Giss",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X8n7DQAR/psy208spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "PSY301",
+        "name": "Applied Social Psychology",
+        "instructor": "Matthew McDonald",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lDQAR/psy301spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "PSY305",
+        "name": "Cross Cultural Leadership & Management",
+        "instructor": "Matthew McDonald",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lFQAR/psy305spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "PSY307",
+        "name": "Cognitive Behavioural Therapy",
+        "instructor": "Ho\u00e0ng Minh T\u1ed1 Nga",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Psychology",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lEQAR/psy307spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "SEM302",
+        "name": "Spring Seminar",
+        "instructor": "Faculty Members",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E2"
         ],
         "major": "Social Studies",
-        "level": 2,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5ewQAD/soci213fall2022s01"
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lGQAR/sem302spring2023s01",
+        "level": 3
     },
     {
-        "name": "2D/3D Foundations",
-        "capacity": 25,
-        "enrolled": 25,
-        "credit": 4,
+        "code": "SOCI102",
+        "name": "Social Inquiry and the Social Sciences",
+        "instructor": "Liz Miles",
+        "capacity": 50,
+        "enrolled": 0,
         "category": [
-            "Arts & Humanities (E1)"
+            "E2",
+            "E3",
+            "E4"
         ],
-        "major": "Art & Media Studies",
-        "level": 1,
-        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002TF5dvQAD/arts107fall2022s01"
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lIQAR/soci102spring2023s02",
+        "level": 1
+    },
+    {
+        "code": "SOCI105",
+        "name": "Research Methods & Statistics",
+        "instructor": "Hoa Nguyen",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lJQAR/soci105spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "SOCI214",
+        "name": "Introduction to Political Science",
+        "instructor": "Tobias Burgers",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lKQAR/soci214spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "SOCI215",
+        "name": "Theories of Culture",
+        "instructor": "Ivan Small",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lLQAR/soci215spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "SOCI216",
+        "name": "Ethics and Moral Philosophy",
+        "instructor": "Ian Kalman",
+        "capacity": 40,
+        "enrolled": 1,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lMQAR/soci216spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "SOCI303",
+        "name": "Ethnographic Film: History, Theory, and Practice",
+        "instructor": "Tram Luong",
+        "capacity": 25,
+        "enrolled": 0,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lHQAR/soci303spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "SOCI308",
+        "name": "Technology, Innovation and Military Conflict",
+        "instructor": "Tobias Burgers",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lNQAR/soci308spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "SOCI309",
+        "name": "The Anthropology of Sex",
+        "instructor": "Liz Miles",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lOQAR/soci309spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "SOCI310",
+        "name": "The Anthropology of Law",
+        "instructor": "Ian Kalman",
+        "capacity": 30,
+        "enrolled": 0,
+        "category": null,
+        "major": "Social Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lPQAR/soci310spring2023s01",
+        "level": 3
+    },
+    {
+        "code": "VS103",
+        "name": "How to become a writer: lessons from Vietnamese and non-Vietnamese writers",
+        "instructor": "Dao Le Na",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lQQAR/vs103spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "VS104",
+        "name": "Introduction to Comparative Politics: Bringing in Vietnam",
+        "instructor": "Nguyen Thanh Trung",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E2"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lRQAR/vs104spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "VS112",
+        "name": "Analysis of Vietnamese identities through contemporary Vietnam cinema",
+        "instructor": "Pham Quang Trung (Viet Vu)",
+        "capacity": 50,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lSQAR/vs112spring2023s01",
+        "level": 1
+    },
+    {
+        "code": "VS205",
+        "name": "Theory & Method in Vietnam Studies",
+        "instructor": "Vu Minh Hoang",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lTQAR/vs205spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "VS206",
+        "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese II",
+        "instructor": "Phan Thu Van",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": null,
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lUQAR/vs206spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "VS212",
+        "name": "Modern Vietnam and its neighbors",
+        "instructor": "Nicolas Weber",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lVQAR/vs212spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "VS216",
+        "name": "Applied Digital Humanities for Vietnam Studies",
+        "instructor": "Nguyen Nam",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2",
+            "E4"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lWQAR/vs216spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "VS218",
+        "name": "How to Share Your Stories on the Silver Screen: Film Production in Contemporary Vietnam",
+        "instructor": "Phan Dang Di",
+        "capacity": 40,
+        "enrolled": 0,
+        "category": [
+            "E1",
+            "E2"
+        ],
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X8lkIQAR/vs218spring2023s01",
+        "level": 2
+    },
+    {
+        "code": "VS304",
+        "name": "The Legacy of the War in Retrospect II",
+        "instructor": "Nguyen Nam",
+        "capacity": 30,
+        "enrolled": 7,
+        "category": null,
+        "major": "Vietnam Studies",
+        "link": "https://onestop.fulbright.edu.vn/s/course-offering/a046F00002X89lXQAR/vs304spring2023s01",
+        "level": 3
     }
 ]
