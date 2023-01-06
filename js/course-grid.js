@@ -1,9 +1,6 @@
-fetch("../data/course.json", {
-    headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-    }
-}).then(response => response.json()).then(json => updateGrid(json))
+fetch("../data/course.json")
+    .then(response => response.json())
+    .then(json => updateGrid(json))
 
 
 function updateGrid(data) {

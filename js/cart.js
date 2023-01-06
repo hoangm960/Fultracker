@@ -52,7 +52,12 @@ function removeFromCart(event) {
     var course = button.parentElement.parentElement
     var title = course.getElementsByClassName("course-name")[0].innerText
     document.cookie = `title=${title};`
-    addToHome(title)
+    fetch("../data/course.json")
+        .then(response => response.json())
+        .then(json => {
+            course_data = json.find(element => element['name'] == title)
+            addToHome(course_data)
+        })
     course.remove()
     getCourse(-1)
 }
