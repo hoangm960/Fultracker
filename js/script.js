@@ -1,3 +1,8 @@
+function checkClass() {
+    if (getCookie('class')) {
+        window.location.href = "html/home.html"
+    }
+}
 function openCart() {
     document.getElementById("cart-menu").style.width = "34%"
     grid_style = document.getElementById("course-grid").style
