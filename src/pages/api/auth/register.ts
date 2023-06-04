@@ -31,5 +31,5 @@ export const post: APIRoute = async ({ request, redirect }) => {
       { status: 400 }
     );
   }
-  return redirect("/Fultracker/signin");
+  return redirect("/signin");
 };

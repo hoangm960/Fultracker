@@ -4,5 +4,5 @@ export const get: APIRoute = async ({ redirect, cookies }) => {
   cookies.delete("session", {
     path: "/",
   });
-  return redirect("/Fultracker/signin");
+  return redirect("/signin");
 };
