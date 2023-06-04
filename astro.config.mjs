@@ -1,12 +1,10 @@
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
+import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-    output: 'server',
-    site: 'https://hoangm960.github.io',
-    base: '/Fultracker',
-    adapter: node({
-        mode: 'standalone'
-    }),
-});
+  output: 'server',
+  site: 'https://hoangm960.github.io',
+  base: '/Fultracker',
+  adapter: netlify()
+}); 
