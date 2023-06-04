@@ -10,7 +10,6 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/netlify": "^2.2.3",
     "astro": "^2.5.7",
     "firebase": "^9.22.1",
     "firebase-admin": "^11.9.0"
