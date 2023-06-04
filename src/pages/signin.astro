@@ -53,7 +53,7 @@ if (sessionCookie) {
       password
     );
     const idToken = await userCredential.user.getIdToken();
-    const response = await fetch("/api/auth/signin", {
+    const response = await fetch("/Fultracker/api/auth/signin", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${idToken}`,
