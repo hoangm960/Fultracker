@@ -17,7 +17,7 @@ if (sessionCookie) {
 <Layout title="Sign in">
   <h1>Sign in</h1>
   <p>New here? <a href="/register">Create an account</a></p>
-  <form action="/api/auth/signin" method="post">
+  <form action="/hooks/auth/signin" method="post">
     <label for="email" for="email">Email</label>
     <input type="email" name="email" id="email" />
     <label for="password">Password</label>
@@ -53,7 +53,7 @@ if (sessionCookie) {
       password
     );
     const idToken = await userCredential.user.getIdToken();
-    const response = await fetch("/Fultracker/api/auth/signin", {
+    const response = await fetch("/hooks/auth/signin", {
       method: "GET",
       headers: {
         Authorization: `Bearer ${idToken}`,
