@@ -1,5 +1,5 @@
 ---
-import { app } from "../firebase/server";
+import { app } from "../lib/firebase/server";
 import { getAuth } from "firebase-admin/auth";
 import Layout from "../layouts/Layout.astro";
 
@@ -31,7 +31,7 @@ if (sessionCookie) {
     inMemoryPersistence,
     signInWithEmailAndPassword,
   } from "firebase/auth";
-  import { app } from "../firebase/client";
+  import { app } from "../lib/firebase/client";
 
   const auth = getAuth(app);
   // This will prevent the browser from storing session data
