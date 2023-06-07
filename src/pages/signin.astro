@@ -1,7 +1,9 @@
 ---
 import { app } from "../lib/firebase/server";
 import { getAuth } from "firebase-admin/auth";
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/MainLayout.astro";
+import AuthLayout from "../layouts/AuthLayout.astro";
+import InputField from "../components/InputField.astro";
 
 /* Check if the user is authenticated */
 const auth = getAuth(app);
@@ -9,23 +11,12 @@ const sessionCookie = Astro.cookies.get("session").value;
 if (sessionCookie) {
   const decodedCookie = await auth.verifySessionCookie(sessionCookie);
   if (decodedCookie) {
-    return Astro.redirect("/dashboard");
+    return Astro.redirect("/");
   }
 }
 ---
 
-<Layout title="Sign in">
-  <h1>Sign in</h1>
-  <p>New here? <a href="/register">Create an account</a></p>
-  <form action="/api/auth/signin" method="post">
-    <label for="email" for="email">Email</label>
-    <input type="email" name="email" id="email" />
-    <label for="password">Password</label>
-    <input type="password" name="password" id="password" />
-    <button type="submit">Login</button>
-  </form>
-  <button id="google">Sign in with Google</button>
-</Layout>
+<AuthLayout action="signin" title="Login" />
 <script>
   import {
     getAuth,

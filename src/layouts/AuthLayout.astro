@@ -1,0 +1,103 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "@astrojs/image/components";
+import backgroundIcon1 from "../assets/icons/backgroundIcon1.png";
+import backgroundIcon2 from "../assets/icons/backgroundIcon2.png";
+import InputField from "../components/InputField.astro";
+const { action, title } = Astro.props;
+---
+
+<MainLayout>
+    <p class="appName">Fultracker</p>
+    <form action=`/api/auth/${action}` method="post" autocomplete="off">
+        <p class="title">{title}</p>
+        <InputField name="Email" , type="email" />
+        <InputField name="Password" , type="password" />
+        <button class="signBtn" type="submit">Let me INN!!!</button>
+    </form>
+    <div class="backgroundIcon1Box">
+        <Image src={backgroundIcon1} alt="" height={280} />
+    </div>
+    <div class="backgroundIcon2Box">
+        <Image src={backgroundIcon2} alt="" height={250} />
+    </div>
+    <p class="schoolName">Fulbright</p>
+</MainLayout>
+
+<style>
+    html {
+        background-color: var(--lightSecondary);
+    }
+
+    .backgroundIcon1Box {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .backgroundIcon2Box {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    .appName {
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin: 0;
+        font-size: 70px;
+        font-weight: 900;
+        color: var(--darkPrimary);
+    }
+
+    .title {
+        position: absolute;
+        top: -170px;
+        right: 50%;
+        transform: translate(50%, 0);
+
+        font-size: 100px;
+        font-weight: 900;
+        color: var(--darkPrimary);
+    }
+
+    form {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--background);
+        padding: 100px 100px 20px;
+        border-radius: 40px;
+
+        width: 60%;
+        height: 60%;
+    }
+
+    .signBtn {
+        background-color: var(--darkPrimary);
+        width: 515px;
+        height: 101px;
+        color: white;
+        border-radius: 40px;
+        font-weight: bold;
+        font-size: 30px;
+    }
+
+    .schoolName {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 0;
+        margin-right: 10px;
+        font-family: "Garamond Premier Pro";
+        font-size: 50px;
+        font-weight: 600;
+        color: var(--darkPrimary);
+    }
+</style>
