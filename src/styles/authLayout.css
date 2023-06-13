@@ -57,10 +57,16 @@ form {
     height: 40%;
 }
 
-.switch-box {
+.option-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     height: 25%;
-    padding-left: 100px;
+}
+
+.switch-box {
+    padding-left: 30px;
     color: white;
     font-weight: 300;
 }

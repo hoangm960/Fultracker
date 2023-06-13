@@ -7,6 +7,7 @@ import "../styles/authLayout.css";
 import SignOptionBtn from "../components/SignOptionBtn.astro";
 import googleIcon from "../assets/icons/google.png";
 import githubIcon from "../assets/icons/github.png";
+import LevelDropDown from "../components/LevelDropDown.astro";
 const { action, title } = Astro.props;
 ---
 
@@ -18,8 +19,11 @@ const { action, title } = Astro.props;
             <InputField name="Email" , type="email" />
             <InputField name="Password" , type="password" />
         </div>
-        <div class="switch-box">
-            <p id="switch-title">Don't have account? Create new!</p>
+        <div class="option-box">
+            <div class="switch-box">
+                <p id="switch-title">Don't have account? Create new!</p>
+            </div>
+            <LevelDropDown />
         </div>
         <div class="btn-box">
             <button id="sign-btn" type="submit">Let me INN!!!</button>
@@ -67,5 +71,4 @@ for (ele in changeElemIds) {
     document.getElementById(ele).innerHTML =
         changeElemIds[ele][+(action == "register")];
 }
-
 </script>
