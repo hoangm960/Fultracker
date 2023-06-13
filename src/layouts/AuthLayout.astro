@@ -18,13 +18,20 @@ const { action, title } = Astro.props;
         <div class="input-box">
             <InputField name="Email" , type="email" />
             <InputField name="Password" , type="password" />
-        </div>
-        <div class="option-box">
-            <div class="switch-box">
-                <p id="switch-title">Don't have account? Create new!</p>
-            </div>
-            <LevelDropDown />
-        </div>
+        </div>{
+            action == "register" ? (
+                <div class="option-box">
+                    <div class="switch-box">
+                        <p id="switch-title">Don't have account? Create new!</p>
+                    </div>
+                    <LevelDropDown />
+                </div>
+            ) : (
+                <div class="switch-box" style="width:100%;">
+                    <p id="switch-title">Don't have account? Create new!</p>
+                </div>
+            )
+        }
         <div class="btn-box">
             <button id="sign-btn" type="submit">Let me INN!!!</button>
         </div>
