@@ -4,6 +4,9 @@ import backgroundIcon1 from "../assets/icons/backgroundIcon1.png";
 import backgroundIcon2 from "../assets/icons/backgroundIcon2.png";
 import InputField from "../components/InputField.astro";
 import "../styles/authLayout.css";
+import SignOptionBtn from "../components/SignOptionBtn.astro";
+import googleIcon from "../assets/icons/google.png";
+import githubIcon from "../assets/icons/github.png";
 const { action, title } = Astro.props;
 ---
 
@@ -27,7 +30,18 @@ const { action, title } = Astro.props;
                 <p class="divider-title">or</p>
             </div>
         </div>
-        <div class="different-option-box"></div>
+        <div class="sign-option-box">
+            <SignOptionBtn
+                name="Google"
+                icon={googleIcon}
+                backgroundColor="#1639B6"
+            />
+            <SignOptionBtn
+                name="Github"
+                icon={githubIcon}
+                backgroundColor="#707070"
+            />
+        </div>
     </form>
     <div style="position: absolute; top: 0; right: 0;">
         <img src={backgroundIcon1} alt="Background icon 1" height="300" />
