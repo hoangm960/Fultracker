@@ -1,5 +1,5 @@
 ---
-const { icon, name, backgroundColor } = Astro.props;
+const { icon, title, backgroundColor, action } = Astro.props;
 ---
 
 <button class="sign-option-btn">
@@ -7,7 +7,7 @@ const { icon, name, backgroundColor } = Astro.props;
         <img src={icon} height="90%"/>
     </div>
     <div class="sign-option-title">
-        <p>Sign in with {name}</p>
+        {action == "sigin" ? <p>Sign in with {title}</p> : <p>Sign up with {title}</p>}
     </div>
 </button>
 

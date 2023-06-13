@@ -71,7 +71,7 @@ form {
     height: 17%;
 }
 
-.sign-btn {
+#sign-btn {
     position: absolute;
     top: 50%;
     left: 50%;

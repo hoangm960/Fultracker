@@ -19,10 +19,10 @@ const { action, title } = Astro.props;
             <InputField name="Password" , type="password" />
         </div>
         <div class="switch-box">
-            <p>Don't have account? Create new!</p>
+            <p id="switch-title">Don't have account? Create new!</p>
         </div>
         <div class="btn-box">
-            <button class="sign-btn" type="submit">Let me INN!!!</button>
+            <button id="sign-btn" type="submit">Let me INN!!!</button>
         </div>
         <div class="option-divider-box">
             <div class="divider"></div>
@@ -32,14 +32,16 @@ const { action, title } = Astro.props;
         </div>
         <div class="sign-option-box">
             <SignOptionBtn
-                name="Google"
+                title="Google"
                 icon={googleIcon}
                 backgroundColor="#1639B6"
+                action={action}
             />
             <SignOptionBtn
-                name="Github"
+                title="Github"
                 icon={githubIcon}
                 backgroundColor="#707070"
+                action={action}
             />
         </div>
     </form>
@@ -51,3 +53,19 @@ const { action, title } = Astro.props;
     </div>
     <p class="schoolName">Fulbright</p>
 </MainLayout>
+
+<script define:vars={{ action }}>
+changeElemIds = {
+    "sign-btn": ["Let me INN!!!", "Sign me Upp!!"],
+    "switch-title": [
+        "Don't have account? Create new!",
+        "Already have an account? Sign in!",
+    ],
+};
+
+for (ele in changeElemIds) {
+    document.getElementById(ele).innerHTML =
+        changeElemIds[ele][+(action == "register")];
+}
+
+</script>
