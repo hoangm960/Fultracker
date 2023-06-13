@@ -1,0 +1,89 @@
+.app-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    font-size: 70px;
+    font-weight: 900;
+    color: var(--darkPrimary);
+}
+
+.schoolName {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    margin-right: 10px;
+    font-family: "Garamond Premier Pro";
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--darkPrimary);
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 5px;
+    background-color: var(--background);
+    padding: 100px 100px 20px;
+    border-radius: 40px;
+
+    width: 50%;
+    height: 60%;
+}
+
+.title {
+    position: absolute;
+    top: -170px;
+    right: 50%;
+    transform: translate(50%, 0);
+
+    font-size: 100px;
+    font-weight: 900;
+    color: var(--darkPrimary);
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 35px;
+    width: 100%;
+    height: 40%;
+}
+
+.switch-box {
+    width: 100%;
+    height: 25%;
+    padding-left: 100px;
+    color: white;
+    font-weight: 300;
+}
+
+.btn-box {
+    position: relative;
+    width: 100%;
+    height: 17%;
+}
+
+.sign-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background-color: var(--darkPrimary);
+    width: 50%;
+    height: 100%;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
