@@ -1,12 +1,12 @@
 ---
-const { icon, title, backgroundColor, action } = Astro.props;
+const { id, icon, title, backgroundColor, action } = Astro.props;
 ---
 
-<button class="flex items-center justify-center h-full p-3 rounded-2xl" style=`background-color: ${backgroundColor};`>
+<button class="flex items-center justify-center h-full p-3 rounded-2xl" style=`background-color: ${backgroundColor};` id={id}>
     <div class="h-full pr-2">
         <img class="h-full" src={icon}/>
     </div>
     <div class="text-white text-base font-bold">
-        {action == "sigin" ? `Sign in with ${title}` : `Sign up with ${title}`}
+        {action == "signin" ? `Sign in with ${title}` : `Sign up with ${title}`}
     </div>
 </button>

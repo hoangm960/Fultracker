@@ -24,6 +24,7 @@ if (sessionCookie) {
     signInWithEmailAndPassword,
     GoogleAuthProvider,
     signInWithPopup,
+    GithubAuthProvider,
   } from "firebase/auth";
   import { app } from "../lib/firebase/client";
 
@@ -67,6 +68,33 @@ if (sessionCookie) {
         Authorization: `Bearer ${idToken}`,
       },
     });
+
+    if (!res.ok) {
+      const data = await res.json();
+      console.log(data);
+    }
+
+    if (res.redirected) {
+      window.location.assign(res.url);
+    }
+  });
+
+  const githubSignin = document.querySelector("#github") as HTMLButtonElement;
+  githubSignin.addEventListener("click", async () => {
+    const provider = new GithubAuthProvider();
+    const userCredential = await signInWithPopup(auth, provider);
+    const idToken = await userCredential.user.getIdToken();
+    console.log(idToken);
+    const res = await fetch("/api/auth/signin", {
+      headers: {
+        Authorization: `Bearer ${idToken}`,
+      },
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      console.log(data);
+    }
 
     if (res.redirected) {
       window.location.assign(res.url);
