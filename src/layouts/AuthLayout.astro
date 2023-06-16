@@ -29,15 +29,15 @@ const { action, title } = Astro.props;
         </div>{
             action == "register" ? (
                 <div class="flex justify-between items-center w-full h-1/4">
-                    <div class="pl-8 text-white cursor-pointer font-light">
+                    <a class="pl-8 text-white cursor-pointer font-light" id="switch-title" href="/signin">
                         Don't have account? Create new!
-                    </div>
+                    </a>
                     <LevelDropDown />
                 </div>
             ) : (
-                <div class="pl-8 text-white cursor-pointer w-full font-light">
-                    <p id="switch-title">Don't have account? Create new!</p>
-                </div>
+                <a class="pl-8 text-white cursor-pointer w-full font-light" id="switch-title" href="/register">
+                    Don't have account? Create new!
+                </a>
             )
         }
         <button
