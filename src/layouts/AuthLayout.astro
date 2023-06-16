@@ -3,9 +3,6 @@ import MainLayout from "../layouts/MainLayout.astro";
 import backgroundIcon1 from "../assets/icons/backgroundIcon1.png";
 import backgroundIcon2 from "../assets/icons/backgroundIcon2.png";
 import InputField from "../components/InputField.astro";
-import SignOptionBtn from "../components/SignOptionBtn.astro";
-import googleIcon from "../assets/icons/google.png";
-import githubIcon from "../assets/icons/github.png";
 import LevelDropDown from "../components/LevelDropDown.jsx";
 const { action, title } = Astro.props;
 ---
@@ -29,13 +26,21 @@ const { action, title } = Astro.props;
         </div>{
             action == "register" ? (
                 <div class="flex justify-between items-center w-full h-1/4">
-                    <a class="pl-8 text-white cursor-pointer font-light" id="switch-title" href="/signin">
+                    <a
+                        class="pl-8 text-white cursor-pointer font-light"
+                        id="switch-title"
+                        href="/signin"
+                    >
                         Don't have account? Create new!
                     </a>
                     <LevelDropDown />
                 </div>
             ) : (
-                <a class="pl-8 text-white cursor-pointer w-full font-light" id="switch-title" href="/register">
+                <a
+                    class="pl-8 text-white cursor-pointer w-full font-light"
+                    id="switch-title"
+                    href="/register"
+                >
                     Don't have account? Create new!
                 </a>
             )
@@ -45,30 +50,7 @@ const { action, title } = Astro.props;
             id="sign-btn"
             type="submit">Let me INN!!!</button
         >
-        <div class="relative w-full h-[2%] mt-5">
-            <div class="w-full h-4/5 bg-dark-secondary"></div>
-            <div
-                class="absolute w-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-brown px-2 text-dark-primary text-center text-2xl font-bold"
-            >
-                or
-            </div>
-        </div>
-        <div class="flex justify-evenly mt-7 w-full h-[10%]">
-            <SignOptionBtn
-                id="google"
-                title="Google"
-                icon={googleIcon}
-                backgroundColor="#1639B6"
-                action={action}
-            />
-            <SignOptionBtn
-                id="github"
-                title="Github"
-                icon={githubIcon}
-                backgroundColor="#707070"
-                action={action}
-            />
-        </div>
+        <slot />
     </form>
     <div class="absolute top-0 right-0">
         <img class="h-72" src={backgroundIcon1} alt="Background icon 1" />
@@ -84,11 +66,11 @@ const { action, title } = Astro.props;
 </MainLayout>
 
 <script define:vars={{ action }}>
-    changeElemIds = {
-        "sign-btn": ["Let me INN!!!", "Sign me Upp!!"],
-        "switch-title": [
-            "Don't have account? Create new!",
-            "Already have an account? Sign in!",
+changeElemIds = {
+    "sign-btn": ["Let me INN!!!", "Sign me Upp!!"],
+    "switch-title": [
+        "Don't have account? Create new!",
+        "Already have an account? Sign in!",
         ],
     };
 
