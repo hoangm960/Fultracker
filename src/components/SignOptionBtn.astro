@@ -2,36 +2,11 @@
 const { icon, title, backgroundColor, action } = Astro.props;
 ---
 
-<button class="sign-option-btn">
-    <div class="icon-box">
-        <img src={icon} height="90%"/>
+<button class=`flex items-center justify-center h-full p-3 rounded-2xl` style=`background-color: ${backgroundColor};`>
+    <div class="h-full pr-2">
+        <img class="h-full" src={icon}/>
     </div>
-    <div class="sign-option-title">
-        {action == "sigin" ? <p>Sign in with {title}</p> : <p>Sign up with {title}</p>}
+    <div class="text-white text-base font-bold">
+        {action == "sigin" ? `Sign in with ${title}` : `Sign up with ${title}`}
     </div>
 </button>
-
-<style define:vars={{ backgroundColor }}>
-    .sign-option-btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--backgroundColor);
-        height: 100%;
-        padding: 10px;
-        border: none;
-        border-radius: 20px;
-    }
-    
-    .icon-box{
-        height: 100%;
-        padding-right: 10px;
-    }
-
-    p {
-        color: white;
-        font-size: 16px;
-        font-weight: 600;
-        margin: 0;
-    }
-</style>

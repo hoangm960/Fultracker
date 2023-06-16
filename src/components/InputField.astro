@@ -2,44 +2,9 @@
 const { name, type } = Astro.props;
 ---
 
-<div class="inputField">
-    <div class="input-title-box">
-        <p>{name}</p>
+<div class="relative w-full h-full">
+    <div class="absolute h-fit -top-4 left-4 px-2 bg-dark-brown text-lg font-light italic text-white text-center">
+        {name}
     </div>
-    <input type={type} name={type} id={type} autocomplete="off" />
+    <input class="w-full h-4/5 pl-3 bg-transparent border-light-primary border-4 rounded-2xl" type={type} name={type} id={type} autocomplete="off" />
 </div>
-
-<style>
-    .inputField {
-        position: relative;
-        width: 100%;
-        height: 100%;
-    }
-    
-    .input-title-box {
-        position: absolute;
-        height: fit-content;
-        bottom: 80%;
-        left: 15px;
-        padding: 0px 5px;
-        background-color: var(--background);
-    }
-
-    .input-title-box p {
-        font-size: 24px;
-        font-weight: 300;
-        font-style: italic;
-        color: white;
-        text-align: center;
-        margin: 0;
-    }
-
-    input {
-        width: 100%;
-        height: 80%;
-        padding-left: 10px;
-        background-color: transparent;
-        border: 5px solid var(--lightPrimary);
-        border-radius: 20px;
-    }
-</style>

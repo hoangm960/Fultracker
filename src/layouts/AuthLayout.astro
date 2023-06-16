@@ -3,45 +3,57 @@ import MainLayout from "../layouts/MainLayout.astro";
 import backgroundIcon1 from "../assets/icons/backgroundIcon1.png";
 import backgroundIcon2 from "../assets/icons/backgroundIcon2.png";
 import InputField from "../components/InputField.astro";
-import "../styles/authLayout.css";
 import SignOptionBtn from "../components/SignOptionBtn.astro";
 import googleIcon from "../assets/icons/google.png";
 import githubIcon from "../assets/icons/github.png";
-import LevelDropDown from "../components/LevelDropDown.astro";
+import LevelDropDown from "../components/LevelDropDown.jsx";
 const { action, title } = Astro.props;
 ---
 
 <MainLayout>
-    <p class="app-title">Fultracker</p>
-    <form action=`/api/auth/${action}` method="post" autocomplete="off">
-        <p class="title">{title}</p>
-        <div class="input-box">
+    <div class="absolute top-0 left-0 font-black text-7xl text-dark-primary">
+        Fultracker
+    </div>
+    <form
+        class="absolute pt-24 pb-5 px-24 h-3/4 w-4/6 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-y-2 bg-dark-brown rounded-2xl"
+        action=`/api/auth/${action}`
+        method="post"
+        autocomplete="off"
+    >
+        <p class="absolute -top-[10%] text-8xl font-black text-dark-primary">
+            {title}
+        </p>
+        <div class="flex flex-col gap-y-9 w-full h-2/5">
             <InputField name="Email" , type="email" />
             <InputField name="Password" , type="password" />
         </div>{
             action == "register" ? (
-                <div class="option-box">
-                    <div class="switch-box">
-                        <p id="switch-title">Don't have account? Create new!</p>
+                <div class="flex justify-between items-center w-full h-1/4">
+                    <div class="pl-8 text-white cursor-pointer font-light">
+                        Don't have account? Create new!
                     </div>
                     <LevelDropDown />
                 </div>
             ) : (
-                <div class="switch-box" style="width:100%;">
+                <div class="pl-8 text-white cursor-pointer w-full font-light">
                     <p id="switch-title">Don't have account? Create new!</p>
                 </div>
             )
         }
-        <div class="btn-box">
-            <button id="sign-btn" type="submit">Let me INN!!!</button>
-        </div>
-        <div class="option-divider-box">
-            <div class="divider"></div>
-            <div class="divider-title-box">
-                <p class="divider-title">or</p>
+        <button
+            class="bg-dark-primary w-1/2 h-[17%] text-white rounded-full font-bold text-4xl tracking-wide mt-6"
+            id="sign-btn"
+            type="submit">Let me INN!!!</button
+        >
+        <div class="relative w-full h-[2%] mt-5">
+            <div class="w-full h-4/5 bg-dark-secondary"></div>
+            <div
+                class="absolute w-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-brown px-2 text-dark-primary text-center text-2xl font-bold"
+            >
+                or
             </div>
         </div>
-        <div class="sign-option-box">
+        <div class="flex justify-evenly mt-7 w-full h-[10%]">
             <SignOptionBtn
                 title="Google"
                 icon={googleIcon}
@@ -56,26 +68,30 @@ const { action, title } = Astro.props;
             />
         </div>
     </form>
-    <div style="position: absolute; top: 0; right: 0;">
-        <img src={backgroundIcon1} alt="Background icon 1" height="300" />
+    <div class="absolute top-0 right-0">
+        <img class="h-72" src={backgroundIcon1} alt="Background icon 1" />
     </div>
-    <div style="position: absolute; bottom: 0; left: 0;">
-        <img src={backgroundIcon2} alt="Background icon 2" height="260" />
+    <div class="absolute bottom-0 left-0">
+        <img class="h-64" src={backgroundIcon2} alt="Background icon 2" />
     </div>
-    <p class="schoolName">Fulbright</p>
+    <div
+        class="absolute bottom-1 right-1 font-garamond-premier-pro text-5xl font-semibold text-dark-primary"
+    >
+        Fulbright
+    </div>
 </MainLayout>
 
 <script define:vars={{ action }}>
-changeElemIds = {
-    "sign-btn": ["Let me INN!!!", "Sign me Upp!!"],
-    "switch-title": [
-        "Don't have account? Create new!",
-        "Already have an account? Sign in!",
-    ],
-};
+    changeElemIds = {
+        "sign-btn": ["Let me INN!!!", "Sign me Upp!!"],
+        "switch-title": [
+            "Don't have account? Create new!",
+            "Already have an account? Sign in!",
+        ],
+    };
 
-for (ele in changeElemIds) {
-    document.getElementById(ele).innerHTML =
-        changeElemIds[ele][+(action == "register")];
-}
+    for (ele in changeElemIds) {
+        document.getElementById(ele).innerHTML =
+            changeElemIds[ele][+(action == "register")];
+    }
 </script>
