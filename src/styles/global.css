@@ -12,10 +12,6 @@
     --fullwidth: 100%;
 }
 
-html {
-    background-color: var(--lightSecondary);
-}
-
 html * {
     font-size: 20px;
     font-family: 'Montserrat';

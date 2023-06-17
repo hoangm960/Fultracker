@@ -1,7 +1,7 @@
 ---
-import { app } from "../lib/firebase/server";
+import { app } from "@lib/firebase/server";
 import { getAuth } from "firebase-admin/auth";
-import Layout from "../layouts/MainLayout.astro";
+import Layout from "@layouts/MainLayout.astro";
 
 const auth = getAuth(app);
 

@@ -4,7 +4,7 @@ const { id, icon, title, backgroundColor} = Astro.props;
 
 <button class="flex items-center justify-center h-full p-3 rounded-2xl" style=`background-color: ${backgroundColor};` id={id}>
     <div class="h-full pr-2">
-        <img class="h-full" src={icon}/>
+        <img class="h-full w-full" src={icon}/>
     </div>
     <div class="text-white text-base font-bold">
         Sign in with {title}

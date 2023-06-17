@@ -1,11 +1,11 @@
 ---
-import { app } from "../lib/firebase/server";
+import { app } from "@lib/firebase/server";
 import { getAuth } from "firebase-admin/auth";
-import AuthLayout from "../layouts/AuthLayout.astro";
+import AuthLayout from "@layouts/AuthLayout.astro";
 
-import SignOptionBtn from "../components/SignOptionBtn.astro";
-import googleIcon from "../assets/icons/google.png";
-import githubIcon from "../assets/icons/github.png";
+import SignOptionBtn from "@components/SignOptionBtn.astro";
+import googleIcon from "@assets/icons/google.png";
+import githubIcon from "@assets/icons/github.png";
 
 /* Check if the user is authenticated */
 const auth = getAuth(app);
@@ -52,7 +52,7 @@ if (sessionCookie) {
 		signInWithPopup,
 		GithubAuthProvider,
 	} from "firebase/auth";
-	import { app } from "../lib/firebase/client";
+	import { app } from "@lib/firebase/client";
 
 	const auth = getAuth(app);
 	auth.setPersistence(inMemoryPersistence);
