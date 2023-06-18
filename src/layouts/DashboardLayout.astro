@@ -19,10 +19,23 @@ import SettingIcon from "@assets/icons/settings.png";
         </div>
         <SearchBar />
         <nav class="flex flex-row gap-x-5">
-            <NavButton icon={HomeIcon} description="Dashboard" link="/"/>
-            <NavButton icon={CourseListIcon} description="Courses List" link="/courses"/>
-            <NavButton icon={InfoIcon} description="More Information" link="/info"/>
-            <NavButton icon={SettingIcon} description="Settings" link="/settings"/>
+            <NavButton icon={HomeIcon} description="Dashboard" link="/" />
+            <NavButton
+                icon={CourseListIcon}
+                description="Courses List"
+                link="/courses"
+            />
+            <NavButton
+                icon={InfoIcon}
+                description="More Information"
+                link="/info"
+            />
+            <NavButton
+                icon={SettingIcon}
+                description="Settings"
+                link="/settings"
+            />
         </nav>
     </header>
+    <slot />
 </MainLayout>

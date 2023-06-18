@@ -20,4 +20,10 @@ if (!user) {
 ---
 
 <DashboardLayout title="dashboard">
+  <h1>Welcome {user.displayName}</h1>
+  <p>We are happy to see you here</p>
+  <form action="/api/auth/signout">
+    <button type="submit">Sign out</button>
+  </form>
+</Layout>
 </DashboardLayout>
