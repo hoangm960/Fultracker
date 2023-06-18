@@ -21,36 +21,23 @@ const { action, title } = Astro.props;
             {title}
         </p>
         <div class="flex flex-col gap-y-7 w-full h-2/5">
-            <InputField name="Email" , type="email" />
-            <InputField name="Password" , type="password" />
-        </div>{
-            action == "register" ? (
-                <div class="flex justify-between items-center w-full h-1/4">
-                    <a
-                        class="pl-8 text-white cursor-pointer font-light"
-                        id="switch-title"
-                        href="/signin"
-                    >
-                        Don't have account? Create new!
-                    </a>
-                    <LevelDropDown />
-                </div>
-            ) : (
-                <a
-                    class="pl-8 text-white cursor-pointer w-full font-light"
-                    id="switch-title"
-                    href="/register"
-                >
-                    Don't have account? Create new!
-                </a>
-            )
-        }
+            <slot name="input" />
+        </div>
+        <div class="flex justify-between items-center w-full h-1/4 mt-4">
+            <a
+                class="pl-8 text-white cursor-pointer font-light"
+                id="switch-title"
+                href={action == "register" ? "/signin" : "/register"}
+            >
+                Don't have account? Create new!
+            </a>
+        </div>
         <button
-            class="bg-dark-primary px-9 py-5 text-white rounded-[34px] font-bold text-4xl text-center tracking-wide mt-6"
+            class="bg-dark-primary px-9 py-5 text-white rounded-[34px] font-bold text-4xl text-center tracking-wide"
             id="sign-btn"
             type="submit">Let me INN!!!</button
         >
-        <slot />
+        <slot name="otherSignInOption" />
     </form>
     <div class="absolute top-0 right-0">
         <img class="h-72" src={backgroundIcon1} alt="Background icon 1" />
@@ -71,11 +58,11 @@ changeElemIds = {
     "switch-title": [
         "Don't have account? Create new!",
         "Already have an account? Sign in!",
-        ],
-    };
+    ],
+};
 
-    for (ele in changeElemIds) {
-        document.getElementById(ele).innerHTML =
-            changeElemIds[ele][+(action == "register")];
-    }
+for (ele in changeElemIds) {
+    document.getElementById(ele).innerHTML =
+        changeElemIds[ele][+(action == "register")];
+}
 </script>

@@ -6,6 +6,7 @@ import AuthLayout from "@layouts/AuthLayout.astro";
 import SignOptionBtn from "@components/SignOptionBtn.astro";
 import googleIcon from "@assets/icons/google.png";
 import githubIcon from "@assets/icons/github.png";
+import InputField from "@components/InputField.astro";
 
 /* Check if the user is authenticated */
 const auth = getAuth(app);
@@ -19,7 +20,10 @@ if (sessionCookie) {
 ---
 
 <AuthLayout action="signin" title="Login">
-	<div class="relative w-full h-[2%] mt-5">
+	<InputField name="Email" , type="email" slot="input"/>
+	<InputField name="Password" , type="password" slot="input"/>
+
+	<div class="relative w-full h-[2%] mt-5" slot="otherSignInOption">
 		<div class="w-full h-4/5 bg-dark-secondary"></div>
 		<div
 			class="absolute w-fit top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-dark-brown px-2 text-dark-primary text-center text-2xl font-bold"
@@ -27,7 +31,10 @@ if (sessionCookie) {
 			or
 		</div>
 	</div>
-	<div class="flex justify-evenly mt-7 w-full h-[10%]">
+	<div
+		class="flex justify-evenly mt-7 w-full h-[10%]"
+		slot="otherSignInOption"
+	>
 		<SignOptionBtn
 			id="google"
 			title="Google"

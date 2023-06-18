@@ -1,5 +1,9 @@
 ---
+import InputField from "@components/InputField.astro";
 import AuthLayout from "@layouts/AuthLayout.astro";
 ---
 
-<AuthLayout action="register" title="Sign Up" />
+<AuthLayout action="register" title="Sign Up">
+    <InputField name="Email" , type="email" , slot="input" />
+    <InputField name="Password" , type="password" , slot="input" />
+</AuthLayout>
