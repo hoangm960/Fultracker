@@ -1,7 +1,7 @@
 ---
 import { app } from "@lib/firebase/server";
 import { getAuth } from "firebase-admin/auth";
-import Layout from "@layouts/MainLayout.astro";
+import DashboardLayout from "@layouts/DashboardLayout.astro";
 
 const auth = getAuth(app);
 
@@ -19,10 +19,5 @@ if (!user) {
 }
 ---
 
-<Layout title="dashboard">
-  <h1>Welcome {user.displayName}</h1>
-  <p>We are happy to see you here</p>
-  <form action="/api/auth/signout">
-    <button type="submit">Sign out</button>
-  </form>
-</Layout>
+<DashboardLayout title="dashboard">
+</DashboardLayout>

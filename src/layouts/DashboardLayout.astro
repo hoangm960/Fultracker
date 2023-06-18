@@ -1,0 +1,28 @@
+---
+import SearchBar from "@components/SearchBar.astro";
+import MainLayout from "./MainLayout.astro";
+import NavButton from "@components/NavButton.astro";
+import HomeIcon from "@assets/icons/home.png";
+import CourseListIcon from "@assets/icons/folders.png";
+import InfoIcon from "@assets/icons/info.png";
+import SettingIcon from "@assets/icons/settings.png";
+---
+
+<MainLayout>
+    <header
+        class="w-full h-24 bg-dark-primary flex flex-row items-center justify-between px-4 py-2 gap-x-10"
+    >
+        <div
+            class="w-fit h-fit bg-light-secondary rounded-xl text-dark-primary text-6xl font-black p-2"
+        >
+            Fultracker
+        </div>
+        <SearchBar />
+        <nav class="flex flex-row gap-x-5">
+            <NavButton icon={HomeIcon} description="Dashboard" link="/"/>
+            <NavButton icon={CourseListIcon} description="Courses List" link="/courses"/>
+            <NavButton icon={InfoIcon} description="More Information" link="/info"/>
+            <NavButton icon={SettingIcon} description="Settings" link="/settings"/>
+        </nav>
+    </header>
+</MainLayout>

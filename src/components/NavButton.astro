@@ -1,0 +1,11 @@
+---
+const { icon, description, link } = Astro.props;
+---
+
+<a href={link}>
+    <button
+        class="w-16 h-16 bg-dark-secondary rounded-full p-2 flex items-center justify-center border-4"
+    >
+        <img class="w-8" src={icon} alt={description} />
+    </button>
+</a>
