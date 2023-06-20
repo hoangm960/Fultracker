@@ -11,7 +11,8 @@ module.exports = {
 				"light-primary": "#1639B6",
 				"dark-secondary": "#FFAD1D",
 				"light-secondary": "#FFBD59",
-				"dark-brown": "#B98F5E"
+				"dark-brown": "#B98F5E",
+				"almost-white": "#F5F5F5",
 			},
 			fontFamily: {
 				"garamond-premier-pro": ["GaramondPremrPro", "san-serif"]
