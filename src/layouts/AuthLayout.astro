@@ -25,7 +25,7 @@ const { action, title } = Astro.props;
         </div>
         <div class="flex justify-between items-center w-full h-1/4 mt-4">
             <a
-                class="pl-8 text-almost-white cursor-pointer font-light"
+                class="pl-8 text-almost-white cursor-pointer font-light hover:opacity-70"
                 id="switch-title"
                 href={action == "register" ? "/signin" : "/register"}
             >
@@ -33,10 +33,11 @@ const { action, title } = Astro.props;
             </a>
         </div>
         <button
-            class="bg-dark-primary px-9 py-5 text-almost-white rounded-[34px] font-bold text-4xl text-center tracking-wide"
+            class="bg-dark-primary px-9 py-5 text-almost-white rounded-[34px] font-bold text-4xl text-center tracking-wide hover:bg-[#001254] active:bg-[#010e40]"
             id="sign-btn"
-            type="submit">Let me INN!!!</button
-        >
+            type="submit"
+            >Let me INN!!!
+        </button>
         <slot name="otherSignInOption" />
     </form>
     <div class="absolute top-0 right-0">

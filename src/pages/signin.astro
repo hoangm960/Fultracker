@@ -4,8 +4,6 @@ import { getAuth } from "firebase-admin/auth";
 import AuthLayout from "@layouts/AuthLayout.astro";
 
 import SignOptionBtn from "@components/SignOptionBtn.astro";
-import googleIcon from "@assets/icons/google.png";
-import githubIcon from "@assets/icons/github.png";
 import InputField from "@components/InputField.astro";
 
 /* Check if the user is authenticated */
@@ -20,8 +18,8 @@ if (sessionCookie) {
 ---
 
 <AuthLayout action="signin" title="Login">
-	<InputField name="Email" , type="email" slot="input"/>
-	<InputField name="Password" , type="password" slot="input"/>
+	<InputField name="Email" , type="email" slot="input" />
+	<InputField name="Password" , type="password" slot="input" />
 
 	<div class="relative w-full h-[2%] mt-5" slot="otherSignInOption">
 		<div class="w-full h-4/5 bg-dark-secondary"></div>
@@ -35,18 +33,8 @@ if (sessionCookie) {
 		class="flex justify-evenly mt-7 w-full h-[10%]"
 		slot="otherSignInOption"
 	>
-		<SignOptionBtn
-			id="google"
-			title="Google"
-			icon={googleIcon}
-			backgroundColor="#1639B6"
-		/>
-		<SignOptionBtn
-			id="github"
-			title="Github"
-			icon={githubIcon}
-			backgroundColor="#707070"
-		/>
+		<SignOptionBtn id="google" />
+		<SignOptionBtn id="github" />
 	</div>
 </AuthLayout>
 

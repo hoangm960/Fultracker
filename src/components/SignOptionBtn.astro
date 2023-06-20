@@ -1,12 +1,33 @@
 ---
-const { id, icon, title, backgroundColor} = Astro.props;
+import googleIcon from "@assets/icons/google.png";
+import githubIcon from "@assets/icons/github.png";
+
+class SignOption {
+    constructor(
+        private id: string,
+        private title: string,
+        private icon: string,
+        private backgroundColor: string,
+        private backgroundHover?: string,
+        private backgroundClick?: string,
+    ) {}
+}
+
+const { id } = Astro.props;
+const SignOptionMap = {
+    google: new SignOption(id, "Google", googleIcon, "bg-[#1639B6]", "hover:bg-[#112f99]", "active:opacity-90"),
+    github: new SignOption(id, "Github", githubIcon, "bg-[#707070]", "hover:bg-[#606060]", "active:opacity-90"),
+};
 ---
 
-<button class="flex items-center justify-center h-full p-3 rounded-2xl" style=`background-color: ${backgroundColor};` id={id}>
+<button
+    class={`${SignOptionMap[id].backgroundColor} ${SignOptionMap[id].backgroundHover} ${SignOptionMap[id].backgroundClick} flex items-center justify-center h-full p-3 rounded-2xl`}
+    id={id}
+>
     <div class="h-full pr-2">
-        <img class="h-full w-full" src={icon}/>
+        <img class="h-full w-full" src={SignOptionMap[id].icon} />
     </div>
     <div class="text-almost-white text-base font-bold">
-        Sign in with {title}
+        Sign in with {SignOptionMap[id].title}
     </div>
 </button>
