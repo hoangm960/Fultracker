@@ -8,4 +8,4 @@ Admittedly, I have to give credit to my group from Orientation Week at school fo
 
 ### ⚙️Functionalities
 
-* [ ]
+* [ ] Display all courses in a flowchart
