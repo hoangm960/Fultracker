@@ -1,5 +1,5 @@
 ---
-const { name, type } = Astro.props;
+const { name, type, id } = Astro.props;
 ---
 
 <div class="flex flex-col items-start justify-start w-[853px] relative">
@@ -28,7 +28,7 @@ const { name, type } = Astro.props;
             style="font: 400 24px 'Montserrat', sans-serif"
             type={type}
             name={type}
-            id={type}
+            id={id==null ? name : id}
             autocomplete="false"
         />
     </div>
