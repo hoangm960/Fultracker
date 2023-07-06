@@ -7,12 +7,10 @@ module.exports = {
 				center: true
 			},
 			colors: {
-				"dark-primary": "#00186E",
-				"light-primary": "#1639B6",
-				"dark-secondary": "#FFAD1D",
-				"light-secondary": "#FFBD59",
-				"dark-brown": "#B98F5E",
-				"almost-white": "#F5F5F5",
+				"background": "#B7EBF3",
+				"action": "#008CAF",
+				"text": "#445953",
+				"highlight": "#DFFCF6"
 			},
 			fontFamily: {
 				"garamond-premier-pro": ["GaramondPremrPro", "san-serif"]

@@ -4,42 +4,21 @@
 @tailwind utilities;
 
 :root {
-    --darkPrimary: #00186E;
-    --lightPrimary: #1639B6;
-    --darkSecondary: #FFAD1D;
-    --lightSecondary: #FFBD59;
-    --darkBrown: #B98F5E;
-    --almostWhite: #F5F5F5;
-    --fullwidth: 100%;
+    /* Colors */
+    --highlight: #dffcf6;
+    --background: #b7ebf3;
+    --text: #445953;
+    --action: #008caf;
+
+    /* Fonts */
+    --heading-1: 700 32px "Montserrat", sans-serif;
+    --heading-2: 700 24px "Montserrat", sans-serif;
+    --heading-3: 600 18.72px "Montserrat", sans-serif;
+    --description: 500 16px "Montserrat", sans-serif;
 }
 
 html * {
-    font-size: 20px;
+    font-size: 16px;
     font-family: 'Montserrat';
     font-weight: 400;
-}
-
-@font-face {
-    font-family: 'GaramondPremrPro';
-    src: url('/fonts/GaramondPremrPro.otf') format('otf');
-}
-
-@font-face {
-    font-family: 'GaramondPremrPro';
-    src: url('/fonts/GaramondPremrPro-Smbd.otf') format('otf');
-    font-weight: 600;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'GaramondPremrPro';
-    src: url('/fonts/GaramondPremrPro-SmbdIt.otf') format('otf');
-    font-weight: 600;
-    font-style: italic;
-}
-
-@font-face {
-    font-family: 'GaramondPremrPro';
-    src: url('/fonts/GaramondPremrPro-It.otf') format('otf');
-    font-style: italic;
 }

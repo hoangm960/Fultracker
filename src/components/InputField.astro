@@ -2,9 +2,36 @@
 const { name, type } = Astro.props;
 ---
 
-<div class="relative w-full h-full">
-    <div class="absolute h-fit -top-4 left-4 px-2 bg-dark-brown text-lg font-light italic text-almost-white text-center">
-        {name}
+<div class="flex flex-col items-start justify-start w-[853px] relative">
+    <div
+        class="top-4 pt-0 pr-0 pb-0 pl-[25px] flex flex-row gap-2.5 items-start justify-start shrink-0 relative"
+    >
+        <div
+            class="bg-highlight pt-0 pr-[30px] pb-0 pl-[30px] flex flex-row gap-2.5 items-center justify-center shrink-0 relative"
+            style="max-width: 850px"
+        >
+            <div
+                class="text-text text-center relative flex items-center justify-center"
+                style="font: 500 28px 'Montserrat', sans-serif"
+            >
+                {name}
+            </div>
+        </div>
     </div>
-    <input class="w-full h-4/5 pl-3 pt-4 pb-2 bg-transparent border-light-primary border-4 rounded-2xl focus:outline-none focus:outline-dark-primary focus:outline-offset-0" type={type} name={type} id={type} autocomplete="false" />
+
+    <div
+        class="rounded-[20px] border-solid border-action border-[10px] pt-0 pr-[30px] pb-0 pl-[30px] flex flex-row items-center justify-between self-stretch shrink-0"
+        style="min-width: 400px; min-height: 60px"
+    >
+        <input
+            class="bg-transparent text-text text-left flex-1 flex items-center justify-start focus:outline-none focus:outline-dark-primary focus:outline-offset-0"
+            style="font: 400 24px 'Montserrat', sans-serif"
+            type={type}
+            name={type}
+            id={type}
+            autocomplete="false"
+        />
+    </div>
+
+    <!-- TODO: add show password button -->
 </div>
