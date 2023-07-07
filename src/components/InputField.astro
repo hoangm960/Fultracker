@@ -1,4 +1,7 @@
 ---
+import ActionButton from "./ActionButton.astro";
+import showPasswordIcon from "@assets/icons/PasswordShow.svg";
+import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
 const { name, type, id } = Astro.props;
 ---
 
@@ -20,18 +23,39 @@ const { name, type, id } = Astro.props;
     </div>
 
     <div
-        class="rounded-[20px] border-solid border-action border-[10px] pt-5 pr-[30px] pb-3 pl-[30px] flex flex-row items-center justify-between self-stretch shrink-0"
+        class="rounded-[20px] border-solid border-action border-[10px] pt-5 pr-[30px] pb-3 pl-[30px] flex flex-row items-center justify-between self-stretch shrink-0 gap-x-5"
         style="min-width: 400px; min-height: 60px"
     >
         <input
             class="bg-transparent text-text text-left flex-1 flex items-center justify-start focus:outline-none focus:outline-dark-primary focus:outline-offset-0"
             style="font: 400 24px 'Montserrat', sans-serif"
             type={type}
-            name={type}
-            id={id==null ? name : id}
+            id={id == null ? name : id}
             autocomplete="false"
         />
+        <ActionButton
+            id="show-password"
+            style="neutral"
+            rightIcon={showPasswordIcon}
+            hasSpacer={false}
+            customStyle="border-style:none; padding:0;"
+        />
     </div>
-
-    <!-- TODO: add show password button -->
 </div>
+
+<script define:vars={{ hidePasswordIcon, showPasswordIcon }}>
+var showPassword = false;
+const showPwBtn = document.getElementById("show-password");
+showPwBtn.addEventListener("click", () => {
+    showPassword = !showPassword;
+    const icon = showPwBtn.getElementsByTagName("img")[1];
+    const inputPwField = document.getElementById("password");
+    if (showPassword) {
+        icon.src = hidePasswordIcon;
+        inputPwField.type = "text";
+    } else {
+        icon.src = showPasswordIcon;
+        inputPwField.type = "password";
+    }
+});
+</script>
