@@ -18,9 +18,20 @@ class Type {
     constructor(
         private bgColor: string,
         private textColor: string,
-        private hoverColor?: string,
         private clickColor?: string
     ) {}
+
+    public getBackgroundColor(): string {
+        return this.bgColor;
+    }
+
+    public getTextColor(): string {
+        return this.textColor;
+    }
+    
+    public getClickColor(): string {
+        return this.clickColor;
+    }
 }
 
 const {
@@ -37,15 +48,15 @@ const {
     hasRightIcon = rightIcon != null,
 } = Astro.props;
 const types = {
-    positive: new Type("action", "highlight"),
-    neutral: new Type("highlight", "text"),
-    destructive: new Type("orange", "text"),
-    disable: new Type("text", "highlight"),
+    positive: new Type("bg-action", "text-highlight", "active:bg-[#006680]"),
+    neutral: new Type("bg-highlight", "text-text", "active:bg-[#c5faef]"),
+    destructive: new Type("bg-[#f49531]", "text-text", "active:bg-[#f16c64]"),
+    disable: new Type("bg-[#374843]", "text-highlight", "active:bg-[#212b28]"),
 };
 ---
 
 <button
-    class=`bg-${types[style].bgColor} rounded-[20px] border-solid border-text border-4 pt-[18px] pr-5 pb-[18px] pl-5 flex flex-row gap-5 items-center justify-start shrink-0 relative self-stretch`
+    class=`${types[style].getBackgroundColor()} ${types[style].getClickColor()} rounded-[20px] border-solid border-text border-4 pt-[18px] pr-5 pb-[18px] pl-5 flex flex-row gap-5 items-center justify-start shrink-0 relative self-stretch hover:shadow-2xl`
     id={id}
     type={type}
 >
@@ -60,7 +71,7 @@ const types = {
     </div>
 
     <div
-        class=`text-${types[style].textColor} text-left relative font-montserrat`
+        class=`${types[style].getTextColor()} text-left relative font-montserrat`
         style=`font-size: ${textSize}px; font-weight: ${fontWeight}`
     >
         {text}

@@ -7,12 +7,10 @@ module.exports = {
 				center: true
 			},
 			colors: {
+				"highlight": "#DFFCF6",
 				"background": "#B7EBF3",
 				"action": "#008CAF",
 				"text": "#445953",
-				"highlight": "#DFFCF6",
-				"orange": "#F49531",
-				"light-red": "#F16C64"
 			},
 			fontFamily: {
 				"montserrat": ["Montserrat", "san-serif"]

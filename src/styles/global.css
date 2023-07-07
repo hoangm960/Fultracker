@@ -3,12 +3,16 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
     /* Colors */
     --highlight: #dffcf6;
     --background: #b7ebf3;
     --text: #445953;
     --action: #008caf;
+    --dark-action: #005C73;
+    --destructive: #F49531;
+    --light-red: #F16C64;
 
     /* Fonts */
     --heading-1: 700 32px "Montserrat", sans-serif;
