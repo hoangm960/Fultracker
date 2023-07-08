@@ -87,21 +87,24 @@ import ActionButton from "@components/ActionButton.astro";
 </AuthLayout>
 
 <script>
-    const invalidMessages =
-                document.getElementById("invalidRpPw");
-            invalidMessages.style.visibility = "hidden";
-
+    const pwField = document
+        .getElementById("password")
+        .getElementsByTagName("input")[0];
+    const repeatPwField = document
+        .getElementById("repeat-password")
+        .getElementsByTagName("input")[0];
+    const invalidMessages = document.getElementById("invalidRpPw");
+    invalidMessages.style.visibility = "hidden";
+    pwField.addEventListener("focus", () => {
+        invalidMessages.style.visibility = "hidden";
+    });
+    repeatPwField.addEventListener("focus", () => {
+        invalidMessages.style.visibility = "hidden";
+    });
 
     const signUpBtn = document.getElementById("register");
     signUpBtn.addEventListener("click", () => {
-        const pwField = document
-            .getElementById("password")
-            .getElementsByTagName("input")[0];
-        const repeatPwField = document
-            .getElementById("repeat-password")
-            .getElementsByTagName("input")[0];
         if (pwField.value != repeatPwField.value) {
-            
             invalidMessages.style.visibility = "visible";
             invalidMessages.textContent =
                 "*New password does not match! Retype the new password here.";
