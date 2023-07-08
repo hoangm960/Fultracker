@@ -3,6 +3,7 @@ import InputField from "@components/InputField.astro";
 import AuthLayout from "@layouts/AuthLayout.astro";
 
 import arrowIcon from "@assets/icons/Arrow.svg";
+import ActionButton from "@components/ActionButton.astro";
 ---
 
 <AuthLayout>
@@ -26,41 +27,35 @@ import arrowIcon from "@assets/icons/Arrow.svg";
             <div
                 class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
             >
-                <InputField name="Email" type="email" id="email"/>
-                <InputField name="Password" type="password" id="password"/>
+                <InputField name="Email" type="email" id="email" />
+                <InputField name="Password" type="password" id="password" />
+                <div
+                    class="w-full -m-5 pl-20 text-[#f16c64] italic hidden"
+                    id="invalidPw"
+                >
+                    *Warning
+                </div>
                 <InputField
                     name="Repeat Password"
                     type="password"
-                    id="repeate-pasword"
+                    id="repeat-password"
                 />
+                <div
+                    class="w-full -m-5 pl-20 text-[#f16c64] italic"
+                    id="invalidRpPw"
+                >
+                    *Warning
+                </div>
             </div>
 
-            <button
-                class="bg-action rounded-[20px] border-solid border-[#445953] border-4 pt-[18px] pr-5 pb-[18px] pl-5 flex flex-row gap-5 items-center justify-start self-stretch shrink-0 relative"
-                type="submit"
-            >
-                <div
-                    class="flex flex-row items-center justify-between self-stretch flex-1 relative"
-                >
-                </div>
-
-                <div
-                    class="text-highlight text-left relative"
-                    style="font: 700 35px 'Montserrat', sans-serif"
-                >
-                    Let me INNN!!!
-                </div>
-
-                <div
-                    class="flex flex-row items-center justify-between self-stretch flex-1 relative"
-                >
-                </div>
-
-                <img
-                    class="flex flex-row gap-2.5 items-start justify-start shrink-0 relative overflow-visible"
-                    src={arrowIcon}
-                />
-            </button>
+            <ActionButton
+                id="register"
+                style="positive"
+                text="Sign me UPPP!!!!"
+                rightIcon={arrowIcon}
+                hasSpacer={true}
+                textSize={35}
+            />
 
             <div
                 class="p-2.5 flex flex-col gap-2.5 items-center justify-center shrink-0 w-[407px] relative overflow-hidden"
@@ -90,3 +85,26 @@ import arrowIcon from "@assets/icons/Arrow.svg";
         </form>
     </div>
 </AuthLayout>
+
+<script>
+    const invalidMessages =
+                document.getElementById("invalidRpPw");
+            invalidMessages.style.visibility = "hidden";
+
+
+    const signUpBtn = document.getElementById("register");
+    signUpBtn.addEventListener("click", () => {
+        const pwField = document
+            .getElementById("password")
+            .getElementsByTagName("input")[0];
+        const repeatPwField = document
+            .getElementById("repeat-password")
+            .getElementsByTagName("input")[0];
+        if (pwField.value != repeatPwField.value) {
+            
+            invalidMessages.style.visibility = "visible";
+            invalidMessages.textContent =
+                "*New password does not match! Retype the new password here.";
+        }
+    });
+</script>
