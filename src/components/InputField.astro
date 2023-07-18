@@ -32,8 +32,10 @@ const { name, type, id } = Astro.props;
         <input
             class="bg-transparent text-text text-left flex-1 flex items-center justify-start focus:outline-none focus:outline-dark-primary focus:outline-offset-0"
             style="font: 400 24px 'Montserrat', sans-serif"
+            name={id}
             type={type}
             autocomplete="false"
+            required
         />
         <ActionButton
             className="show-password"
