@@ -20,7 +20,7 @@ import ActionButton from "@components/ActionButton.astro";
         <form
             class="bg-highlight rounded-[100px] pt-20 pr-10 pb-[50px] pl-10 flex flex-col gap-20 items-center justify-center self-stretch shrink-0"
             style="box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);"
-            action=`/api/auth/register`
+            action="/api/auth/register"
             method="post"
             autocomplete="off"
         >
@@ -50,6 +50,7 @@ import ActionButton from "@components/ActionButton.astro";
 
             <ActionButton
                 id="register"
+                type="submit"
                 style="positive"
                 text="Sign me UPPP!!!!"
                 rightIcon={arrowIcon}
