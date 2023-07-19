@@ -7,7 +7,6 @@ const { name, type, id } = Astro.props;
 
 <div
     class="flex flex-col items-start justify-start w-[853px] relative"
-    id={id}
 >
     <div
         class="top-4 pt-0 pr-0 pb-0 pl-[25px] flex flex-row gap-2.5 items-start justify-start shrink-0 relative"
@@ -32,6 +31,7 @@ const { name, type, id } = Astro.props;
         <input
             class="bg-transparent text-text text-left flex-1 flex items-center justify-start focus:outline-none focus:outline-dark-primary focus:outline-offset-0"
             style="font: 400 24px 'Montserrat', sans-serif"
+            id={id}
             name={id}
             type={type}
             autocomplete="false"
@@ -49,24 +49,24 @@ const { name, type, id } = Astro.props;
 </div>
 
 <script define:vars={{ hidePasswordIcon, showPasswordIcon, type, id }}>
-var showPassword = false;
+// var showPassword = false;
 
-const inputBox = document.getElementById(`${id}`);
-const showPwBtn = inputBox.getElementsByClassName("show-password")[0]
-if (type != "password") {
-    showPwBtn.remove();
-} else {
-    showPwBtn.addEventListener("click", () => {
-        showPassword = !showPassword;
-        const icon = showPwBtn.getElementsByTagName("img")[1];
-        const inputField = inputBox.getElementsByTagName("input")[0];
-        if (showPassword) {
-            icon.src = hidePasswordIcon;
-            inputField.type = "text";
-        } else {
-            icon.src = showPasswordIcon;
-            inputField.type = "password";
-        }
-    });
-}
+// const inputBox = document.getElementById(`${id}`);
+// const showPwBtn = inputBox.getElementsByClassName("show-password")[0]
+// if (type != "password") {
+//     showPwBtn.remove();
+// } else {
+//     showPwBtn.addEventListener("click", () => {
+//         showPassword = !showPassword;
+//         const icon = showPwBtn.getElementsByTagName("img")[1];
+//         const inputField = inputBox.getElementsByTagName("input")[0];
+//         if (showPassword) {
+//             icon.src = hidePasswordIcon;
+//             inputField.type = "text";
+//         } else {
+//             icon.src = showPasswordIcon;
+//             inputField.type = "password";
+//         }
+//     });
+// }
 </script>

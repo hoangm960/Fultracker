@@ -7,108 +7,89 @@ import ActionButton from "@components/ActionButton.astro";
 ---
 
 <AuthLayout>
+  <div
+    class="flex flex-col items-center justify-start shrink-0 w-[1003px] mb-4"
+  >
     <div
-        class="flex flex-col items-center justify-start shrink-0 w-[1003px] mb-4"
+      class="top-12 text-text text-center relative self-stretch"
+      style="font: 900 90px 'Montserrat', sans-serif"
     >
+      Create Account
+    </div>
+
+    <form
+      class="bg-highlight rounded-[100px] pt-20 pr-10 pb-[50px] pl-10 flex flex-col gap-20 items-center justify-center self-stretch shrink-0"
+      style="box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);"
+      action="/api/auth/register"
+      method="post"
+      autocomplete="off"
+    >
+      <div
+        class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
+      >
+        <InputField name="Email" type="email" id="email" />
+        <InputField name="Password" type="password" id="password" />
+        <InputField
+          name="Confirm Password"
+          type="password"
+          id="confirm-password"
+        />
+      </div>
+
+      <ActionButton
+        id="register"
+        type="submit"
+        style="positive"
+        text="Sign me UPPP!!!!"
+        rightIcon={arrowIcon}
+        hasSpacer={true}
+        textSize={35}
+      />
+
+      <div
+        class="p-2.5 flex flex-col gap-2.5 items-center justify-center shrink-0 w-[407px] relative overflow-hidden"
+      >
         <div
-            class="top-12 text-text text-center relative self-stretch"
-            style="font: 900 90px 'Montserrat', sans-serif"
+          class="pt-0 pr-5 pb-0 pl-5 flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative"
         >
-            Create Account
-        </div>
+          <div
+            class="text-text text-left relative"
+            style="font: 500 20px 'Montserrat', sans-serif"
+          >
+            Already have an account?
+          </div>
 
-        <form
-            class="bg-highlight rounded-[100px] pt-20 pr-10 pb-[50px] pl-10 flex flex-col gap-20 items-center justify-center self-stretch shrink-0"
-            style="box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);"
-            action="/api/auth/register"
-            method="post"
-            autocomplete="off"
-        >
-            <div
-                class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
-            >
-                <InputField name="Email" type="email" id="email" />
-                <InputField name="Password" type="password" id="password" />
-                <div
-                    class="w-full -m-5 pl-20 text-[#f16c64] italic hidden"
-                    id="invalidPw"
-                >
-                    *Warning
-                </div>
-                <InputField
-                    name="Repeat Password"
-                    type="password"
-                    id="repeat-password"
-                />
-                <div
-                    class="w-full -m-5 pl-20 text-[#f16c64] italic"
-                    id="invalidRpPw"
-                >
-                    *Warning
-                </div>
-            </div>
-
-            <ActionButton
-                id="register"
-                type="submit"
-                style="positive"
-                text="Sign me UPPP!!!!"
-                rightIcon={arrowIcon}
-                hasSpacer={true}
-                textSize={35}
-            />
-
-            <div
-                class="p-2.5 flex flex-col gap-2.5 items-center justify-center shrink-0 w-[407px] relative overflow-hidden"
-            >
-                <div
-                    class="pt-0 pr-5 pb-0 pl-5 flex flex-row gap-2.5 items-center justify-start self-stretch shrink-0 relative"
-                >
-                    <div
-                        class="text-text text-left relative"
-                        style="font: 500 20px 'Montserrat', sans-serif"
-                    >
-                        Already have an account?
-                    </div>
-
-                    <a
-                        class="text-action text-left relative"
-                        style="
+          <a
+            class="text-action text-left relative"
+            style="
                             font: 500 20px 'Montserrat', sans-serif;
                             text-decoration: underline;
                         "
-                        href="/signin"
-                    >
-                        Sign in!
-                    </a>
-                </div>
-            </div>
-        </form>
-    </div>
+            href="/signin"
+          >
+            Sign in!
+          </a>
+        </div>
+      </div>
+    </form>
+  </div>
 </AuthLayout>
 
 <script>
-    const pwField = document
-        .getElementById("password")
-        .getElementsByTagName("input")[0];
-    const repeatPwField = document
-        .getElementById("repeat-password")
-        .getElementsByTagName("input")[0];
-    const invalidMessages = document.getElementById("invalidRpPw");
-    invalidMessages.style.visibility = "hidden";
-    pwField.addEventListener("focus", () => {
-        invalidMessages.style.visibility = "hidden";
-    });
-    repeatPwField.addEventListener("focus", () => {
-        invalidMessages.style.visibility = "hidden";
-    });
+  var password = document.getElementById("password") as HTMLInputElement;
+  var confirm_password = document.getElementById(
+    "confirm-password"
+  ) as HTMLInputElement;
 
-    const signUpBtn = document.getElementById("register");
-    signUpBtn.addEventListener("click", () => {
-        if (pwField.value != repeatPwField.value) {
-            invalidMessages.style.visibility = "visible";
-            invalidMessages.textContent =
-                "*New password does not match! Retype the new password here.";
-        }
-    });
+  console.log(password);
+  function validatePassword() {
+    if (password.value != confirm_password.value) {
+      confirm_password.setCustomValidity("Passwords Don't Match.");
+    } else {
+      confirm_password.setCustomValidity("");
+    }
+  }
+
+  password.onchange = validatePassword;
+  confirm_password.onkeyup = validatePassword;
 </script>
