@@ -4,6 +4,8 @@ import AuthLayout from "@layouts/AuthLayout.astro";
 
 import arrowIcon from "@assets/icons/Arrow.svg";
 import ActionButton from "@components/ActionButton.astro";
+import showPasswordIcon from "@assets/icons/PasswordShow.svg";
+import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
 ---
 
 <AuthLayout>
@@ -28,12 +30,32 @@ import ActionButton from "@components/ActionButton.astro";
         class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
       >
         <InputField name="Email" type="email" id="email" />
-        <InputField name="Password" type="password" id="password" />
+
+        <InputField name="Password" type="password" id="password">
+          <ActionButton
+            className="show-password"
+            type="button"
+            style="neutral"
+            rightIcon={showPasswordIcon}
+            hasSpacer={false}
+            customStyle="border-style:none; padding:0;"
+          />
+        </InputField>
+
         <InputField
           name="Confirm Password"
           type="password"
           id="confirm-password"
-        />
+        >
+          <ActionButton
+            className="show-password"
+            type="button"
+            style="neutral"
+            rightIcon={showPasswordIcon}
+            hasSpacer={false}
+            customStyle="border-style:none; padding:0;"
+          />
+        </InputField>
       </div>
 
       <ActionButton
@@ -75,21 +97,39 @@ import ActionButton from "@components/ActionButton.astro";
   </div>
 </AuthLayout>
 
-<script>
-  var password = document.getElementById("password") as HTMLInputElement;
-  var confirm_password = document.getElementById(
-    "confirm-password"
-  ) as HTMLInputElement;
+<script define:vars={{ hidePasswordIcon, showPasswordIcon }}>
+var password = document.getElementById("password");
+var confirm_password = document.getElementById("confirm-password");
 
-  console.log(password);
-  function validatePassword() {
-    if (password.value != confirm_password.value) {
-      confirm_password.setCustomValidity("Passwords Don't Match.");
-    } else {
-      confirm_password.setCustomValidity("");
-    }
+function validatePassword() {
+  if (password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords don't match.");
+  } else {
+    confirm_password.setCustomValidity("");
   }
+}
 
-  password.onchange = validatePassword;
-  confirm_password.onkeyup = validatePassword;
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+
+function togglePassword(e, inputFieldId) {
+  const inputField = document.getElementById(inputFieldId);
+  const icon = e.target;
+  if (inputField.type === "password") {
+    icon.src = hidePasswordIcon;
+    inputField.type = "text";
+  } else {
+    icon.src = showPasswordIcon;
+    inputField.type = "password";
+  }
+}
+
+const showPwBtns = document.getElementsByClassName("show-password");
+const inputFieldIds = ["password", "confirm-password"];
+
+for (let i = 0; i < showPwBtns.length; i++) {
+  showPwBtns[i].addEventListener("click", (e) =>
+    togglePassword(e, inputFieldIds[i])
+  );
+}
 </script>
