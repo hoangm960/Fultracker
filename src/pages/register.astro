@@ -98,22 +98,12 @@ import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
 </AuthLayout>
 
 <script define:vars={{ hidePasswordIcon, showPasswordIcon }}>
-var password = document.getElementById("password");
-var confirm_password = document.getElementById("confirm-password");
+const passwordField = document.getElementById("password");
+const confirmPasswordField = document.getElementById("confirm-password");
+const showPwBtns = document.getElementsByClassName("show-password");
+const inputFieldIds = [passwordField, confirmPasswordField];
 
-function validatePassword() {
-  if (password.value != confirm_password.value) {
-    confirm_password.setCustomValidity("Passwords don't match.");
-  } else {
-    confirm_password.setCustomValidity("");
-  }
-}
-
-password.onchange = validatePassword;
-confirm_password.onkeyup = validatePassword;
-
-function togglePassword(e, inputFieldId) {
-  const inputField = document.getElementById(inputFieldId);
+function togglePassword(e, inputField) {
   const icon = e.target;
   if (inputField.type === "password") {
     icon.src = hidePasswordIcon;
@@ -124,8 +114,23 @@ function togglePassword(e, inputFieldId) {
   }
 }
 
-const showPwBtns = document.getElementsByClassName("show-password");
-const inputFieldIds = ["password", "confirm-password"];
+function validatePassword() {
+  if (passwordField.value != confirmPasswordField.value) {
+    confirmPasswordField.setCustomValidity("Passwords don't match.");
+  } else {
+    if (passwordField.value.length < 6) {
+      passwordField.setCustomValidity(
+        "Password's length has to be atleast 6 characters long."
+      );
+    } else {
+      passwordField.setCustomValidity("");
+      confirmPasswordField.setCustomValidity("");
+    }
+  }
+}
+
+passwordField.onchange = validatePassword;
+confirmPasswordField.onkeyup = validatePassword;
 
 for (let i = 0; i < showPwBtns.length; i++) {
   showPwBtns[i].addEventListener("click", (e) =>
