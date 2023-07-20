@@ -20,9 +20,29 @@ if (!user) {
 ---
 
 <DashboardLayout page="home">
-  <!-- <h1>Welcome {user.displayName}</h1>
-  <p>We are happy to see you here</p>
-  <form action="/api/auth/signout">
-    <button type="submit">Sign out</button>
-  </form> -->
+  <div
+    class="p-2.5 flex flex-row gap-2.5 items-start justify-start self-stretch flex-1"
+  >
+    <div
+      class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1"
+    >
+      <div
+        class="bg-highlight rounded-[30px] self-stretch flex-1 relative overflow-hidden"
+        style="opacity: 0.699999988079071"
+      >
+      </div>
+
+      <div
+        class="bg-highlight rounded-[30px] self-stretch shrink-0 h-[200px] relative overflow-hidden"
+        style="opacity: 0.699999988079071"
+      >
+      </div>
+    </div>
+
+    <div
+      class="bg-highlight rounded-[30px] self-stretch shrink-0 w-[700px]"
+      style="opacity: 0.699999988079071"
+    >
+    </div>
+  </div>
 </DashboardLayout>

@@ -12,81 +12,83 @@ btnStyles[page] = "positive";
 ---
 
 <MainLayout>
-  <div
-    class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0 relative"
-  >
-    <ActionButton
-      style="neutral"
-      leftIcon={LogoIcon}
-      iconSize={70}
-      text="Fultracker"
-      textSize={24}
-      fontWeight={900}
-      customStyle="padding: 5px 30px 5px 10px;"
-    />
-
+  <div class="flex flex-col items-center justify-between h-screen relative overflow-hidden">
     <div
-      class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 relative"
+      class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0 relative"
     >
-      <div
-        class="text-text text-left relative"
-        style="font: 800 20px 'Montserrat', sans-serif"
-      >
-        Current Term:
-      </div>
-
-      <div
-        class="text-action text-left relative"
-        style="
-        font: 500 20px 'Montserrat', sans-serif;
-        text-decoration: underline;
-      "
-      >
-        <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
-          Term Link
-        </a>
-      </div>
-    </div>
-
-    <nav
-      class="flex flex-row gap-3 items-center justify-center shrink-0 relative"
-    >
-      <a href="/">
-        <ActionButton
-          style={btnStyles["home"]}
-          leftIcon={HomeIcon}
-          iconSize={20}
-          text="Home"
-          textSize={20}
-          fontWeight={600}
-          customStyle="padding: 12px 20px;"
-        />
-      </a>
-
-      <a href="/settings">
-        <ActionButton
-          id="settings"
-          style={btnStyles["settings"]}
-          leftIcon={SettingsIcon}
-          iconSize={20}
-          text="Settings"
-          textSize={20}
-          fontWeight={600}
-          customStyle="padding: 12px 20px;"
-        />
-      </a>
-    </nav>
-
-    <form action="/api/auth/signout">
       <ActionButton
-        id="exit"
-        type="submit"
-        style="destructive"
-        rightIcon={ExitIcon}
-        iconSize={25}
-        customStyle="padding: 15px;"
+        style="neutral"
+        leftIcon={LogoIcon}
+        iconSize={70}
+        text="Fultracker"
+        textSize={24}
+        fontWeight={900}
+        customStyle="padding: 5px 30px 5px 10px;"
       />
-    </form>
+
+      <div
+        class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 relative"
+      >
+        <div
+          class="text-text text-left relative"
+          style="font: 800 20px 'Montserrat', sans-serif"
+        >
+          Current Term:
+        </div>
+
+        <div
+          class="text-action text-left relative"
+          style="
+    font: 500 20px 'Montserrat', sans-serif;
+    text-decoration: underline;
+    "
+        >
+          <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
+            Term Link
+          </a>
+        </div>
+      </div>
+
+      <nav
+        class="flex flex-row gap-3 items-center justify-center shrink-0 relative"
+      >
+        <a href="/">
+          <ActionButton
+            style={btnStyles["home"]}
+            leftIcon={HomeIcon}
+            iconSize={20}
+            text="Home"
+            textSize={20}
+            fontWeight={600}
+            customStyle="padding: 12px 20px;"
+          />
+        </a>
+
+        <a href="/settings">
+          <ActionButton
+            id="settings"
+            style={btnStyles["settings"]}
+            leftIcon={SettingsIcon}
+            iconSize={20}
+            text="Settings"
+            textSize={20}
+            fontWeight={600}
+            customStyle="padding: 12px 20px;"
+          />
+        </a>
+      </nav>
+
+      <form action="/api/auth/signout">
+        <ActionButton
+          id="exit"
+          type="submit"
+          style="destructive"
+          rightIcon={ExitIcon}
+          iconSize={25}
+          customStyle="padding: 15px;"
+        />
+      </form>
+    </div>
+    <slot />
   </div>
-  <slot />
 </MainLayout>
