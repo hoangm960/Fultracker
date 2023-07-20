@@ -14,11 +14,11 @@ import ActionButton from "@components/ActionButton.astro";
     <ActionButton
       style="neutral"
       leftIcon={LogoIcon}
-      iconSize={50}
+      iconSize={70}
       text="Fultracker"
       textSize={24}
       fontWeight={900}
-      customStyle="padding: 10px 40px 10px 20px;"
+      customStyle="padding: 5px 30px 5px 10px;"
     />
 
     <div
@@ -66,12 +66,18 @@ import ActionButton from "@components/ActionButton.astro";
       />
     </div>
 
-    <ActionButton
-      style="destructive"
-      rightIcon={ExitIcon}
-      iconSize={25}
-      customStyle="padding: 15px; "
-    />
+    <form action="/api/auth/signout">
+      <ActionButton
+        id="exit"
+        type="submit"
+        style="destructive"
+        rightIcon={ExitIcon}
+        iconSize={25}
+        customStyle="padding: 15px;"
+      />
+    </form>
   </div>
   <slot />
 </MainLayout>
+
+<script></script>
