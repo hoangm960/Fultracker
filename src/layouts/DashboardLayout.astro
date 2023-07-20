@@ -1,10 +1,74 @@
 ---
-import SearchBar from "@components/SearchBar.astro";
 import MainLayout from "./MainLayout.astro";
-import NavButton from "@components/NavButton.astro";
+import LogoIcon from "@assets/icons/backgroundIcon1.png";
+import HomeIcon from "@assets/icons/Home.svg";
+import SettingsIcon from "@assets/icons/Gear.svg";
+import ExitIcon from "@assets/icons/Exit.svg";
+import ActionButton from "@components/ActionButton.astro";
 ---
 
 <MainLayout>
-    
-    <slot />
+  <div
+    class="border-solid border-action border-b-2 pt-[30px] pr-5 pb-[30px] pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative"
+  >
+    <ActionButton
+      style="neutral"
+      leftIcon={LogoIcon}
+      iconSize={50}
+      text="Fultracker"
+      textSize={24}
+      fontWeight={900}
+      customStyle="padding: 10px 40px 10px 20px;"
+    />
+
+    <div class="self-stretch flex-1 relative overflow-hidden"></div>
+
+    <div
+      class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 relative"
+    >
+      <div
+        class="text-text text-left relative"
+        style="font: 800 20px 'Montserrat', sans-serif"
+      >
+        Current Term:
+      </div>
+
+      <div
+        class="text-action text-left relative"
+        style="
+        font: 500 20px 'Montserrat', sans-serif;
+        text-decoration: underline;
+      "
+      >
+        Term Link
+      </div>
+    </div>
+
+    <div class="self-stretch flex-1 relative overflow-hidden"></div>
+
+    <div
+      class="flex flex-row gap-3 items-center justify-center shrink-0 relative"
+    >
+      <ActionButton
+        style="positive"
+        leftIcon={HomeIcon}
+        text="Home"
+        textSize={20}
+        fontWeight={600}
+      />
+
+      <ActionButton
+        style="neutral"
+        leftIcon={SettingsIcon}
+        text="Settings"
+        textSize={20}
+        fontWeight={600}
+      />
+    </div>
+
+    <div class="self-stretch flex-1 relative overflow-hidden"></div>
+
+    <ActionButton style="destructive" rightIcon={ExitIcon} />
+  </div>
+  <slot />
 </MainLayout>
