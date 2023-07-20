@@ -5,6 +5,10 @@ import HomeIcon from "@assets/icons/Home.svg";
 import SettingsIcon from "@assets/icons/Gear.svg";
 import ExitIcon from "@assets/icons/Exit.svg";
 import ActionButton from "@components/ActionButton.astro";
+
+const { page } = Astro.props;
+var btnStyles = { home: "neutral", settings: "neutral" };
+btnStyles[page] = "positive";
 ---
 
 <MainLayout>
@@ -49,7 +53,7 @@ import ActionButton from "@components/ActionButton.astro";
     >
       <a href="/">
         <ActionButton
-          style="positive"
+          style={btnStyles["home"]}
           leftIcon={HomeIcon}
           iconSize={20}
           text="Home"
@@ -61,7 +65,8 @@ import ActionButton from "@components/ActionButton.astro";
 
       <a href="/settings">
         <ActionButton
-          style="neutral"
+          id="settings"
+          style={btnStyles["settings"]}
           leftIcon={SettingsIcon}
           iconSize={20}
           text="Settings"
@@ -85,5 +90,3 @@ import ActionButton from "@components/ActionButton.astro";
   </div>
   <slot />
 </MainLayout>
-
-<script></script>
