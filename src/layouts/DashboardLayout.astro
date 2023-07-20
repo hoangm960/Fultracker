@@ -9,7 +9,7 @@ import ActionButton from "@components/ActionButton.astro";
 
 <MainLayout>
   <div
-    class="border-solid border-action border-b-2 pt-[30px] pr-5 pb-[30px] pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative"
+    class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0 relative"
   >
     <ActionButton
       style="neutral"
@@ -20,8 +20,6 @@ import ActionButton from "@components/ActionButton.astro";
       fontWeight={900}
       customStyle="padding: 10px 40px 10px 20px;"
     />
-
-    <div class="self-stretch flex-1 relative overflow-hidden"></div>
 
     <div
       class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 relative"
@@ -44,31 +42,36 @@ import ActionButton from "@components/ActionButton.astro";
       </div>
     </div>
 
-    <div class="self-stretch flex-1 relative overflow-hidden"></div>
-
     <div
       class="flex flex-row gap-3 items-center justify-center shrink-0 relative"
     >
       <ActionButton
         style="positive"
         leftIcon={HomeIcon}
+        iconSize={20}
         text="Home"
         textSize={20}
         fontWeight={600}
+        customStyle="padding: 12px 20px;"
       />
 
       <ActionButton
         style="neutral"
         leftIcon={SettingsIcon}
+        iconSize={20}
         text="Settings"
         textSize={20}
         fontWeight={600}
+        customStyle="padding: 12px 20px;"
       />
     </div>
 
-    <div class="self-stretch flex-1 relative overflow-hidden"></div>
-
-    <ActionButton style="destructive" rightIcon={ExitIcon} />
+    <ActionButton
+      style="destructive"
+      rightIcon={ExitIcon}
+      iconSize={25}
+      customStyle="padding: 15px; "
+    />
   </div>
   <slot />
 </MainLayout>
