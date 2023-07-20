@@ -38,33 +38,39 @@ import ActionButton from "@components/ActionButton.astro";
         text-decoration: underline;
       "
       >
-        Term Link
+        <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
+          Term Link
+        </a>
       </div>
     </div>
 
-    <div
+    <nav
       class="flex flex-row gap-3 items-center justify-center shrink-0 relative"
     >
-      <ActionButton
-        style="positive"
-        leftIcon={HomeIcon}
-        iconSize={20}
-        text="Home"
-        textSize={20}
-        fontWeight={600}
-        customStyle="padding: 12px 20px;"
-      />
+      <a href="/">
+        <ActionButton
+          style="positive"
+          leftIcon={HomeIcon}
+          iconSize={20}
+          text="Home"
+          textSize={20}
+          fontWeight={600}
+          customStyle="padding: 12px 20px;"
+        />
+      </a>
 
-      <ActionButton
-        style="neutral"
-        leftIcon={SettingsIcon}
-        iconSize={20}
-        text="Settings"
-        textSize={20}
-        fontWeight={600}
-        customStyle="padding: 12px 20px;"
-      />
-    </div>
+      <a href="/settings">
+        <ActionButton
+          style="neutral"
+          leftIcon={SettingsIcon}
+          iconSize={20}
+          text="Settings"
+          textSize={20}
+          fontWeight={600}
+          customStyle="padding: 12px 20px;"
+        />
+      </a>
+    </nav>
 
     <form action="/api/auth/signout">
       <ActionButton
