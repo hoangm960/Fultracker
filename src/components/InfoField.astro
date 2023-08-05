@@ -2,13 +2,13 @@
 interface Props {
     title: string;
     value: string;
-    subTotal?: number;
+    total?: number;
     icon?: any;
     hasProgressBar?: boolean;
     progressBarWidth?: number;
 }
 
-const {title, value, subTotal, icon, hasProgressBar=false, progressBarWidth=200 } = Astro.props
+const {title, value, total: total, icon, hasProgressBar=false, progressBarWidth=200 } = Astro.props
 ---
 <div
   class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start"
@@ -29,10 +29,10 @@ const {title, value, subTotal, icon, hasProgressBar=false, progressBarWidth=200 
     </div>
     
     <div
-      class=`text-text text-left relative ${subTotal ? "":"hidden"}`
+      class=`text-text text-left relative ${total ? "":"hidden"}`
       style="font: var(--description, 500 16px 'Montserrat', sans-serif)"
     >
-      /{subTotal}
+      /{total}
     </div>
     
   </div>

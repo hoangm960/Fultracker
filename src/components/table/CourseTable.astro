@@ -1,120 +1,137 @@
 ---
+interface Props {
+  height: number;
+}
 import CourseRow from "./CourseRow.astro";
 import HeaderCell from "./HeaderCell.astro";
+const { height } = Astro.props;
 ---
 
-<table
-  class="rounded-[10px] border-solid border-text border-4 self-stretch shrink-0 w-full relative overflow-y-auto"
+<div
+  class="overflow-y-auto max-h-[630px] rounded-xl w-full"
+  style=`height:${height}px`
 >
-  <thead
-    class="bg-action border-solid border-text border-b-4 self-stretch relative"
+  <table
+    class="w-full rounded-xl border-solid border-text border-4 self-stretch"
   >
-    <tr>
-      <HeaderCell>Term</HeaderCell>
-      <HeaderCell>Code</HeaderCell>
-      <HeaderCell>Title</HeaderCell>
-      <HeaderCell>Grade</HeaderCell>
-      <HeaderCell>Actions</HeaderCell>
-    </tr>
-  </thead>
-  <tbody
-    class="bg-background border-solid border-text border-b self-stretch relative"
-  >
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-    <CourseRow
-      term="Spring 2023"
-      code="MATH105"
-      title="Introduction to Statistics"
-      grade="A"
-    />
-  </tbody>
-</table>
+    <thead class="bg-action border-solid border-text border-b-4 self-stretch">
+      <tr>
+        <HeaderCell>Term</HeaderCell>
+        <HeaderCell>Code</HeaderCell>
+        <HeaderCell>Title</HeaderCell>
+        <HeaderCell>Grade</HeaderCell>
+        <HeaderCell>Actions</HeaderCell>
+      </tr>
+    </thead>
+    <tbody class="bg-background border-solid border-text border-b self-stretch">
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+      <CourseRow
+        term="Spring 2023"
+        code="MATH105"
+        title="Introduction to Statistics"
+        grade="A"
+      />
+    </tbody>
+  </table>
+</div>
