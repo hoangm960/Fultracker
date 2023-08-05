@@ -2,8 +2,10 @@
 interface Props {
   height: number;
 }
+import ActionButton from "@components/ActionButton.astro";
 import CourseRow from "./CourseRow.astro";
 import HeaderCell from "./HeaderCell.astro";
+import AddIcon from "@assets/icons/Add_white.svg";
 const { height } = Astro.props;
 ---
 
@@ -134,4 +136,6 @@ const { height } = Astro.props;
       />
     </tbody>
   </table>
+
 </div>
+<ActionButton style="positive" rightIcon={AddIcon} customStyle="border-radius: 999999px; position: absolute; bottom: 10px; right: 10px; padding: 10px;"/>
