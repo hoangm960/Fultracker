@@ -6,6 +6,7 @@ import InfoField from "@components/InfoField.astro";
 import CourseTable from "@components/table/CourseTable.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
+import MajorDropdown from "@components/MajorDropdown.astro";
 
 const auth = getAuth(app);
 
@@ -66,8 +67,16 @@ if (!user) {
         >
           <InfoField title="E1 (Arts and Humanities):" value="0" total={2} />
           <InfoField title="E2 (Social Sciences):" value="1" total={2} />
-          <InfoField title="E3 (Sciences and Engineering):" value="3" total={2} />
-          <InfoField title="E4 (Mathematics and Computing):" value="3" total={2} />
+          <InfoField
+            title="E3 (Sciences and Engineering):"
+            value="3"
+            total={2}
+          />
+          <InfoField
+            title="E4 (Mathematics and Computing):"
+            value="3"
+            total={2}
+          />
         </div>
       </footer>
     </div>
@@ -76,6 +85,9 @@ if (!user) {
       class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
       style="overflow-y: auto"
     >
+      <div class="w-full flex flex-col content-end">
+        <MajorDropdown />
+      </div>
     </side>
   </div>
 </DashboardLayout>
