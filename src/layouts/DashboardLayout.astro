@@ -5,16 +5,31 @@ import HomeIcon from "@assets/icons/Home.svg";
 import SettingsIcon from "@assets/icons/Gear.svg";
 import ExitIcon from "@assets/icons/Exit.svg";
 import ActionButton from "@components/ActionButton.astro";
+import { app } from "@lib/firebase/server";
+import { getFirestore } from "firebase-admin/firestore";
 
 const { page } = Astro.props;
 var btnStyles = { home: "neutral", settings: "neutral" };
 btnStyles[page] = "positive";
+
+interface Term {
+  id: string;
+  name: string;
+}
+
+const db = getFirestore(app);
+const termsRef = db.collection("term");
+const termsSnapshot = await termsRef.get();
+var terms = termsSnapshot.docs.map((doc) => ({
+  id: doc.id,
+  ...doc.data(),
+})) as Term[];
+terms.pop()
+
 ---
 
 <MainLayout>
-  <div
-    class="flex flex-col items-center justify-between h-screen"
-  >
+  <div class="flex flex-col items-center justify-between h-screen">
     <div
       class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0"
     >
@@ -46,14 +61,12 @@ btnStyles[page] = "positive";
           "
         >
           <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
-            Term Link
+            {terms[terms.length - 1]["name"]}
           </a>
         </div>
       </div>
 
-      <nav
-        class="flex flex-row gap-3 items-center justify-center shrink-0"
-      >
+      <nav class="flex flex-row gap-3 items-center justify-center shrink-0">
         <a href="/">
           <ActionButton
             style={btnStyles["home"]}
