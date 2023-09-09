@@ -1,18 +1,25 @@
 ---
+import ActionButton from "./ActionButton.astro";
 interface Props {
-    title: string;
-    value: string;
-    total?: number;
-    icon?: any;
-    hasProgressBar?: boolean;
-    progressBarWidth?: number;
+  title: string;
+  value: string;
+  total?: number;
+  icon?: string;
+  hasProgressBar?: boolean;
+  progressBarWidth?: number;
 }
 
-const {title, value, total: total, icon, hasProgressBar=false, progressBarWidth=200 } = Astro.props
+const {
+  title,
+  value,
+  total: total,
+  icon,
+  hasProgressBar = false,
+  progressBarWidth = 200,
+} = Astro.props;
 ---
-<div
-  class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start"
->
+
+<div class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start">
   <div
     class="text-text text-left relative"
     style="font: var(--heading-3, 600 18.72px 'Montserrat', sans-serif)"
@@ -27,14 +34,13 @@ const {title, value, total: total, icon, hasProgressBar=false, progressBarWidth=
     >
       {value}
     </div>
-    
+
     <div
       class=`text-text text-left relative ${total ? "":"hidden"}`
       style="font: var(--description, 500 16px 'Montserrat', sans-serif)"
     >
       /{total}
     </div>
-    
   </div>
 
   <div class=`shrink-0 w-8 h-8 relative ${icon ? "":"hidden"}`>
