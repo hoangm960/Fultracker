@@ -3,44 +3,39 @@ import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"button"> {
   type?: "button" | "submit";
-  size?: "sm" | "md" | "lg";
   isfilled?: boolean;
-  theme?:
-    | "action"
-    | "destructive"
-    | "neutral"
-    | "disable";
+  theme?: "action" | "destructive" | "neutral" | "disable";
   classes?: string;
+  padding?: string;
 }
 
 const {
   type = "button",
-  size = "md",
   isfilled,
   theme = "action",
   classes,
+  padding = "pt-[18px] pr-5 pb-[18px] pl-5",
   ...rest
 } = Astro.props;
-const themeBG = `var(--${theme})`;
-const themeFG =
-  theme in ["neutral", "destructive"] ? `var(--text)` : `var(--highlight)`;
-const clickDict = {
-  action: "dark-action",
-  destructive: "light-red",
-  neutral: "active-light",
-  disable: "dark-text",
+const themeDict = {
+  action: ["action", "highlight", "dark-action"],
+  neutral: ["highlight", "text", "active-light"],
+  destructive: ["destructive", "text", "light-red"],
+  disable: ["text", "highlight", "dark-text"],
 };
-const clickBG = `var(--${clickDict[theme]})`;
+const themeBG = `var(--${themeDict[theme][0]})`;
+const themeFG = `var(--${themeDict[theme][1]})`;
+const clickBG = `var(--${themeDict[theme][2]})`;
 ---
 
 <button
   class:list={[
     classes,
     { filled: isfilled },
-    "h-fit rounded-[20px] pt-[18px] pr-5 pb-[18px] pl-5 flex flex-row gap-5 items-center justify-start hover:shadow-2xl hover:opacity-80",
+    padding,
+    "h-fit rounded-2xl flex flex-row gap-5 items-center justify-start hover:shadow-2xl hover:opacity-80",
   ]}
   {type}
-  data-size={size}
   {...rest}
 >
   <slot />
