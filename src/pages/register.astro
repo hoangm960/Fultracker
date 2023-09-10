@@ -6,6 +6,7 @@ import arrowIcon from "@assets/icons/Arrow.svg";
 import ActionButton from "@components/ActionButton.astro";
 import showPasswordIcon from "@assets/icons/PasswordShow.svg";
 import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
+import Button from "@components/Button.astro";
 ---
 
 <AuthLayout>
@@ -32,13 +33,9 @@ import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
         <InputField name="Email" type="email" id="email" />
 
         <InputField name="Password" type="password" id="password">
-          <ActionButton
-            className="show-password"
-            type="button"
-            style="neutral"
-            rightIcon={showPasswordIcon}
-            customStyle="border-style:none; padding:0;"
-          />
+          <Button classes="show-password" theme="neutral" padding="p-0">
+            <img src={showPasswordIcon} alt="eye" />
+          </Button>
         </InputField>
 
         <InputField
@@ -46,25 +43,16 @@ import hidePasswordIcon from "@assets/icons/PasswordHide.svg";
           type="password"
           id="confirm-password"
         >
-          <ActionButton
-            className="show-password"
-            type="button"
-            style="neutral"
-            rightIcon={showPasswordIcon}
-            customStyle="border-style:none; padding:0;"
-          />
+          <Button classes="show-password" theme="neutral" padding="p-0">
+            <img src={showPasswordIcon} alt="eye" />
+          </Button>
         </InputField>
       </div>
-
-      <ActionButton
-        id="register"
-        type="submit"
-        style="positive"
-        text="Sign me UPPP!!!!"
-        rightIcon={arrowIcon}
-        hasSpacer={true}
-        textSize={35}
-      />
+      
+      <Button id="register" type="submit" isfilled>
+        <span class="text-4xl font-bold">Sign me UPPP!!!!</span>
+				<img src={arrowIcon} alt="arrow" />
+      </Button>
 
       <div
         class="p-2.5 flex flex-col gap-2.5 items-center justify-center shrink-0 w-[407px] relative overflow-hidden"
