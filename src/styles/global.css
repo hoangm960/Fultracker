@@ -7,8 +7,10 @@
 :root {
     /* Colors */
     --highlight: #dffcf6;
+    --active-light: #c5faef;
     --background: #b7ebf3;
     --text: #445953;
+    --dark-text: #212b28;
     --action: #008caf;
     --dark-action: #005C73;
     --destructive: #F49531;

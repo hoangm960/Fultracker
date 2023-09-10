@@ -1,0 +1,73 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"button"> {
+  type?: "button" | "submit";
+  size?: "sm" | "md" | "lg";
+  isfilled?: boolean;
+  theme?:
+    | "action"
+    | "destructive"
+    | "neutral"
+    | "disable";
+  classes?: string;
+}
+
+const {
+  type = "button",
+  size = "md",
+  isfilled,
+  theme = "action",
+  classes,
+  ...rest
+} = Astro.props;
+const themeBG = `var(--${theme})`;
+const themeFG =
+  theme in ["neutral", "destructive"] ? `var(--text)` : `var(--highlight)`;
+const clickDict = {
+  action: "dark-action",
+  destructive: "light-red",
+  neutral: "active-light",
+  disable: "dark-text",
+};
+const clickBG = `var(--${clickDict[theme]})`;
+---
+
+<button
+  class:list={[
+    classes,
+    { filled: isfilled },
+    "h-fit rounded-[20px] pt-[18px] pr-5 pb-[18px] pl-5 flex flex-row gap-5 items-center justify-start hover:shadow-2xl hover:opacity-80",
+  ]}
+  {type}
+  data-size={size}
+  {...rest}
+>
+  <slot />
+</button>
+
+<style define:vars={{ themeBG, themeFG, clickBG }}>
+  button {
+    font: inherit;
+    cursor: pointer;
+
+    --bkg: var(--themeBG);
+    --color: var(--themeFG);
+
+    color: var(--bkg) !important;
+    border: 3px solid var(--bkg);
+    transition: box-shadow 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+      opacity 0.2s cubic-bezier(0.075, 0.82, 0.165, 1),
+      scale 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
+
+  button.filled {
+    background-color: var(--bkg) !important;
+    color: var(--color) !important;
+    border: 3px solid var(--text);
+  }
+
+  button:active {
+    background-color: var(--clickBG) !important;
+  }
+</style>
