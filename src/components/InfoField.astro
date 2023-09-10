@@ -4,7 +4,6 @@ interface Props {
   title: string;
   value: string;
   total?: number;
-  icon?: string;
   hasProgressBar?: boolean;
   progressBarWidth?: number;
 }
@@ -13,7 +12,6 @@ const {
   title,
   value,
   total: total,
-  icon,
   hasProgressBar = false,
   progressBarWidth = 200,
 } = Astro.props;
@@ -43,9 +41,7 @@ const {
     </div>
   </div>
 
-  <div class=`shrink-0 w-8 h-8 relative ${icon ? "":"hidden"}`>
-    <img class="w-8 h-8 absolute left-0 top-0" src={icon} />
-  </div>
+  <slot />
 
   <div
     class=`bg-background rounded-[20px] flex flex-col gap-0 items-start justify-start shrink-0 h-3 overflow-hidden relative ${hasProgressBar ? "":"hidden"} `

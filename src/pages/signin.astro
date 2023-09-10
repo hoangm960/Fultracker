@@ -8,6 +8,7 @@ import arrowIcon from "@assets/icons/Arrow.svg";
 import ActionButton from "@components/ActionButton.astro";
 import googleIcon from "@assets/icons/Google.svg";
 import githubIcon from "@assets/icons/Github.svg";
+import Button from "@components/Button.astro";
 
 /* Check if the user is authenticated */
 const auth = getAuth(app);
@@ -41,8 +42,8 @@ if (sessionCookie) {
 			<div
 				class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
 			>
-				<InputField name="Email" type="email" id="email"/>
-				<InputField name="Password" type="password" id="password"/>
+				<InputField name="Email" type="email" id="email" />
+				<InputField name="Password" type="password" id="password" />
 			</div>
 
 			<div
@@ -89,15 +90,10 @@ if (sessionCookie) {
 				</div>
 			</div>
 
-			<ActionButton
-				id="signin"
-				type="submit"
-				style="positive"
-				text="Let me INNN!!!"
-				rightIcon={arrowIcon}
-				hasSpacer={true}
-				textSize={35}
-			/>
+			<Button id="signin" type="submit" isfilled>
+				<span class="text-4xl font-bold">Let me INNN!!!</span>
+				<img src={arrowIcon} alt="arrow" />
+			</Button>
 
 			<div
 				class="flex flex-col gap-[50px] items-center justify-center self-stretch shrink-0 relative"
@@ -120,20 +116,14 @@ if (sessionCookie) {
 				<div
 					class="pt-0 pr-[50px] pb-0 pl-[50px] flex flex-row items-center justify-between self-stretch shrink-0 relative"
 				>
-					<ActionButton
-						id="google"
-						style="neutral"
-						leftIcon={googleIcon}
-						text="Sign in with Google"
-						fontWeight={600}
-					/>
-					<ActionButton
-						id="github"
-						style="neutral"
-						leftIcon={githubIcon}
-						text="Sign in with Github"
-						fontWeight={600}
-					/>
+					<Button id="google" theme="neutral" isfilled>
+						<img src={googleIcon} alt="google" />
+						<span class="font-semibold text-2xl">Sign in with Google</span>
+					</Button>
+					<Button id="github" theme="neutral" isfilled>
+						<img src={githubIcon} alt="google" />
+						<span class="font-semibold text-2xl">Sign in with Github</span>
+					</Button>
 				</div>
 			</div>
 		</form>

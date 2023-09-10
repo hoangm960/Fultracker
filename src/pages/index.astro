@@ -4,6 +4,7 @@ import { getAuth } from "firebase-admin/auth";
 import DashboardLayout from "@layouts/DashboardLayout.astro";
 import InfoField from "@components/InfoField.astro";
 import CourseTable from "@components/table/CourseTable.astro";
+import Button from "@components/Button.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import MajorDropdown from "@components/MajorDropdown.astro";
@@ -37,16 +38,36 @@ if (!user) {
         <div
           class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
         >
-          <InfoField title="Name:" value="Student's Name" icon={EditIcon} />
-          <InfoField title="Student ID:" value="xxxxxx" icon={EditIcon} />
-          <InfoField title="DOB:" value="xx/xx/xxxx" icon={EditIcon} />
-          <InfoField title="Major:" value="Major Name" icon={EditIcon} />
-          <InfoField title="Double Major:" value="Major Name" icon={EditIcon} />
-          <InfoField
-            title="Minor(s)"
-            value="Minor Name, Minor Name"
-            icon={EditIcon}
-          />
+          <InfoField title="Name:" value="Student's Name">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
+          <InfoField title="Student ID:" value="xxxxxx">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
+          <InfoField title="DOB:" value="xx/xx/xxxx">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
+          <InfoField title="Major:" value="Major Name">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
+          <InfoField title="Double Major:" value="Major Name">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
+          <InfoField title="Minor(s)" value="Minor Name, Minor Name">
+            <Button size="sm" padding="p-1">
+              <img src={EditIcon} alt="edit" />
+            </Button>
+          </InfoField>
         </div>
         <CourseTable height={500} />
       </main>
@@ -85,19 +106,17 @@ if (!user) {
       class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
       style="overflow-y: auto"
     >
-        <MajorDropdown />
-      <div
-        class="text-text text-left relative font-bold text-2xl"
-      >
+      <MajorDropdown />
+      <div class="text-text text-left relative font-bold text-2xl">
         Requirements:
       </div>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true}></InfoField>
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
+      <InfoField title="Title:" value="Value" total={8} hasProgressBar={true} />
     </side>
   </div>
 </DashboardLayout>
