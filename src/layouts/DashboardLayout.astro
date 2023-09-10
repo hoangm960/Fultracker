@@ -7,10 +7,14 @@ import ExitIcon from "@assets/icons/Exit.svg";
 import ActionButton from "@components/ActionButton.astro";
 import { app } from "@lib/firebase/server";
 import { getFirestore } from "firebase-admin/firestore";
+import Button from "@components/Button.astro";
 
 const { page } = Astro.props;
-var btnStyles = { home: "neutral", settings: "neutral" };
-btnStyles[page] = "positive";
+var btnStyles: { [key: string]: "action" | "neutral" } = {
+  home: "neutral",
+  settings: "neutral",
+};
+btnStyles[page] = "action";
 
 interface Term {
   id: string;
@@ -24,8 +28,7 @@ var terms = termsSnapshot.docs.map((doc) => ({
   id: doc.id,
   ...doc.data(),
 })) as Term[];
-terms.pop()
-
+terms.pop();
 ---
 
 <MainLayout>
@@ -33,15 +36,12 @@ terms.pop()
     <div
       class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0"
     >
-      <ActionButton
-        style="neutral"
-        leftIcon={LogoIcon}
-        iconSize={70}
-        text="Fultracker"
-        textSize={24}
-        fontWeight={900}
-        customStyle="padding: 5px 30px 5px 10px;"
-      />
+      <a href="/">
+        <Button theme="neutral" isfilled padding="py-2 pl-2 pr-8">
+          <img class="h-16" src={LogoIcon} alt="logo" />
+          <span class="text-2xl font-black">Fultracker</span>
+        </Button>
+      </a>
 
       <div
         class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0"
@@ -68,40 +68,24 @@ terms.pop()
 
       <nav class="flex flex-row gap-3 items-center justify-center shrink-0">
         <a href="/">
-          <ActionButton
-            style={btnStyles["home"]}
-            leftIcon={HomeIcon}
-            iconSize={20}
-            text="Home"
-            textSize={20}
-            fontWeight={600}
-            customStyle="padding: 12px 20px;"
-          />
+          <Button theme={btnStyles["home"]} isfilled padding="px-5 py-3">
+            <img class="h-5" src={HomeIcon} alt="home">
+            <span class="text-xl font-semibold">Home</span>
+          </Button>
         </a>
 
         <a href="/settings">
-          <ActionButton
-            id="settings"
-            style={btnStyles["settings"]}
-            leftIcon={SettingsIcon}
-            iconSize={20}
-            text="Settings"
-            textSize={20}
-            fontWeight={600}
-            customStyle="padding: 12px 20px;"
-          />
+          <Button theme={btnStyles["settings"]} isfilled padding="px-5 py-3">
+            <img class="h-5" src={SettingsIcon} alt="settings">
+            <span class="text-xl font-semibold">Settings</span>
+          </Button>
         </a>
       </nav>
 
       <form action="/api/auth/signout">
-        <ActionButton
-          id="exit"
-          type="submit"
-          style="destructive"
-          rightIcon={ExitIcon}
-          iconSize={25}
-          customStyle="padding: 15px;"
-        />
+        <Button id="exit" type="submit" theme="destructive" isfilled padding="p-4">
+          <img class="h-6" src={ExitIcon} alt="exit">
+        </Button>
       </form>
     </div>
     <slot />
