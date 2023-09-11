@@ -7,6 +7,7 @@ import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
+import SaveIcon from "@assets/icons/save.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
 
 const auth = getAuth(app);
@@ -15,108 +16,146 @@ const auth = getAuth(app);
 const sessionCookie = Astro.cookies.get("session").value;
 
 if (!sessionCookie) {
-  return Astro.redirect("/signin");
+	return Astro.redirect("/signin");
 }
 const decodedCookie = await auth.verifySessionCookie(sessionCookie);
 const user = await auth.getUser(decodedCookie.uid);
 
 if (!user) {
-  return Astro.redirect("/signin");
+	return Astro.redirect("/signin");
 }
 ---
 
 <DashboardLayout page="home">
-  <div
-    class="p-2.5 flex flex-row gap-2.5 items-start justify-start self-stretch flex-1 relative"
-  >
-    <div
-      class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
-    >
-      <main
-        class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 pb-2 px-4 relative"
-      >
-        <div
-          class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
-        >
-          <InfoField title="Name:" value="Student's Name">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-          <InfoField title="Student ID:" value="xxxxxx">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-          <InfoField title="DOB:" value="xx/xx/xxxx">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-          <InfoField title="Major:" value="Major Name">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-          <InfoField title="Double Major:" value="Major Name">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-          <InfoField title="Minor(s)" value="Minor Name, Minor Name">
-            <Button padding="p-1">
-              <img src={EditIcon} alt="edit" />
-            </Button>
-          </InfoField>
-        </div>
-        <CourseTable height={500} />
-      </main>
+	<div
+		class="p-2.5 flex flex-row gap-2.5 items-start justify-start self-stretch flex-1 relative"
+	>
+		<div
+			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
+		>
+			<main
+				class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 pb-2 px-4 relative"
+			>
+				<div
+					class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
+				>
+					<InfoField title="Name:" value="Student's Name" isEditable>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+					<InfoField title="Student ID:" value="xxxxxx" isEditable>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+					<InfoField title="DOB:" value="xx/xx/xxxx" isEditable>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+					<InfoField title="Major:" value="Major Name" isEditable>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+					<InfoField
+						title="Double Major:"
+						value="Major Name"
+						isEditable
+					>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+					<InfoField
+						title="Minor(s)"
+						value="Minor Name, Minor Name"
+						isEditable
+					>
+						<Button classes="edit" theme="neutral" padding="p-1">
+							<img class="h-8" src={EditIcon} alt="edit" />
+						</Button>
+					</InfoField>
+				</div>
+				<CourseTable height={500} />
+			</main>
 
-      <footer
-        class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
-      >
-        <div
-          class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-        >
-          <InfoField title="Overall Credits:" value="32" total={128} />
-          <InfoField title="Major Credits:" value="16" total={128} />
-          <InfoField title="Core Courses:" value="4" total={5} />
-          <InfoField title="GPA:" value="2.5" total={4} />
-        </div>
-        <div
-          class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-        >
-          <InfoField title="E1 (Arts and Humanities):" value="0" total={2} />
-          <InfoField title="E2 (Social Sciences):" value="1" total={2} />
-          <InfoField
-            title="E3 (Sciences and Engineering):"
-            value="3"
-            total={2}
-          />
-          <InfoField
-            title="E4 (Mathematics and Computing):"
-            value="3"
-            total={2}
-          />
-        </div>
-      </footer>
-    </div>
+			<footer
+				class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
+			>
+				<div
+					class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
+				>
+					<InfoField
+						title="Overall Credits:"
+						value="32"
+						total={128}
+					/>
+					<InfoField title="Major Credits:" value="16" total={128} />
+					<InfoField title="Core Courses:" value="4" total={5} />
+					<InfoField title="GPA:" value="2.5" total={4} />
+				</div>
+				<div
+					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
+				>
+					<InfoField
+						title="E1 (Arts and Humanities):"
+						value="0"
+						total={2}
+					/>
+					<InfoField
+						title="E2 (Social Sciences):"
+						value="1"
+						total={2}
+					/>
+					<InfoField
+						title="E3 (Sciences and Engineering):"
+						value="3"
+						total={2}
+					/>
+					<InfoField
+						title="E4 (Mathematics and Computing):"
+						value="3"
+						total={2}
+					/>
+				</div>
+			</footer>
+		</div>
 
-    <side
-      class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
-      style="overflow-y: auto"
-    >
-      <MajorDropdown />
-      <div class="text-text text-left relative font-bold text-2xl">
-        Requirements:
-      </div>
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-      <InfoField title="Title:" value="Value" total={8} hasProgressBar />
-    </side>
-  </div>
+		<side
+			class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
+			style="overflow-y: auto"
+		>
+			<MajorDropdown />
+			<div class="text-text text-left relative font-bold text-2xl">
+				Requirements:
+			</div>
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+		</side>
+	</div>
 </DashboardLayout>
+
+<script define:vars={{ EditIcon, SaveIcon }}>
+var editBtns = document.getElementsByClassName("edit");
+var editableValues = document.getElementsByClassName("editableValue");
+for (let i = 0; i < editBtns.length; i++) {
+	editBtns[i].addEventListener("click", (e) => {
+		const icon = e.target;
+		if ((editableValues[i].contentEditable == "true")) {
+			icon.src = EditIcon;
+			editableValues[i].contentEditable = "false";
+		} else {
+			icon.src = SaveIcon;
+			editableValues[i].contentEditable = "true";
+			editableValues[i].focus();
+		}
+	});
+}
+</script>

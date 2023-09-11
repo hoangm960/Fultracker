@@ -1,8 +1,10 @@
 ---
-interface Props {
+import type { HTMLAttributes } from "astro/types";
+interface Props extends HTMLAttributes<"div"> {
   title: string;
   value: string;
   total?: number;
+  isEditable?: boolean;
   hasProgressBar?: boolean;
   progressBarWidth?: number;
 }
@@ -11,12 +13,17 @@ const {
   title,
   value,
   total: total,
+  isEditable = false,
   hasProgressBar = false,
   progressBarWidth = 200,
+  ...rest
 } = Astro.props;
 ---
 
-<div class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start">
+<div
+  class="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start"
+  {...rest}
+>
   <div
     class="text-text text-left relative"
     style="font: var(--heading-3, 600 18.72px 'Montserrat', sans-serif)"
@@ -26,7 +33,7 @@ const {
 
   <div class="flex flex-row gap-0 items-center justify-start shrink-0 relative">
     <div
-      class="text-action text-left relative"
+      class:list={[{editableValue : isEditable}, "text-action text-left relative"]}
       style="font: var(--description, 500 16px 'Montserrat', sans-serif)"
     >
       {value}
