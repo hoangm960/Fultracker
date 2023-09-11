@@ -10,13 +10,7 @@ const { term, code, title, grade } = Astro.props;
 ---
 
 <tr>
-  <th
-    scope="row"
-    class="text-text text-left relative px-6 py-3"
-    style="font: 500 20px 'Montserrat', sans-serif"
-  >
-    {term}
-  </th>
+  <CourseCell>{term}</CourseCell>
   <CourseCell>{code}</CourseCell>
   <CourseCell>{title}</CourseCell>
   <CourseCell>{grade}</CourseCell>

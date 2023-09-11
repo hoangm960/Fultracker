@@ -10,13 +10,13 @@ const { height } = Astro.props;
 ---
 
 <div
-  class="overflow-y-auto max-h-[630px] rounded-xl w-full"
+  class="shadow overflow-y-scroll max-h-[630px] w-full rounded-xl"
   style=`height:${height}px`
 >
   <table
-    class="w-full rounded-xl border-solid border-text border-4 self-stretch"
+    class="table-auto w-full self-stretch"
   >
-    <thead class="bg-action border-solid border-text border-b-4 self-stretch">
+    <thead class="bg-action self-stretch sticky top-0">
       <tr>
         <HeaderCell>Term</HeaderCell>
         <HeaderCell>Code</HeaderCell>
@@ -25,7 +25,7 @@ const { height } = Astro.props;
         <HeaderCell>Actions</HeaderCell>
       </tr>
     </thead>
-    <tbody class="bg-background border-solid border-text border-b self-stretch">
+    <tbody class="bg-background self-stretch">
       <CourseRow
         term="Spring 2023"
         code="MATH105"
