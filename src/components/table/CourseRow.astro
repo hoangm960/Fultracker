@@ -1,18 +1,49 @@
 ---
-import CourseCell from "./CourseCell.astro";
 interface Props {
-  term: string;
-  code: string;
-  title: string;
-  grade: string;
+  classes?: string;
+  term?: string;
+  code?: string;
+  title?: string;
+  grade?: string;
 }
-const { term, code, title, grade } = Astro.props;
+const {
+  classes = "mainBody",
+  term = "Term",
+  code = "Course Code",
+  title = "Course Name",
+  grade = "Grade",
+} = Astro.props;
 ---
 
-<tr>
-  <CourseCell>{term}</CourseCell>
-  <CourseCell>{code}</CourseCell>
-  <CourseCell>{title}</CourseCell>
-  <CourseCell>{grade}</CourseCell>
-  <CourseCell>Actions</CourseCell>
+<tr class:list={[classes, "h-7"]}>
+  <td
+    class="text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    {term}
+  </td>
+  <td
+    class="text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    {code}
+  </td>
+  <td
+    class="text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    {title}
+  </td>
+  <td
+    class="text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    {grade}
+  </td>
+  <td
+    class="text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    <slot />
+  </td>
 </tr>
