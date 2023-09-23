@@ -32,8 +32,8 @@ const db = getFirestore(app);
 const termsRef = db.collection("term");
 const termsSnapshot = await termsRef.get();
 const terms = termsSnapshot.docs.map((doc) => ({
-  id: doc.id,
-  ...doc.data(),
+	id: doc.id,
+	...doc.data(),
 }));
 terms.pop();
 ---
@@ -115,7 +115,7 @@ terms.pop();
 					</InfoField>
 				</div>
 				<CourseTable height={470}>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -124,7 +124,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -133,7 +133,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -142,7 +142,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -151,7 +151,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -160,7 +160,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -169,7 +169,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -178,7 +178,7 @@ terms.pop();
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
-					<CourseRow classes="sample">
+					<CourseRow classes="courseRow">
 						<Button
 							classes="editCourse"
 							theme="neutral"
@@ -259,7 +259,7 @@ terms.pop();
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon }}>
+<script define:vars={{ EditIcon, SaveIcon, terms }}>
 var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editInfoBtns.length; i++) {
@@ -277,17 +277,31 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 }
 
 var editCourseBtns = document.getElementsByClassName("editCourse");
-var editableValues = document.getElementsByClassName("editableValue");
+var termValue = document.getElementsByClassName("term");
 for (let i = 0; i < editCourseBtns.length; i++) {
 	editCourseBtns[i].addEventListener("click", (e) => {
 		const icon = e.target;
-		if (editableValues[i].contentEditable == "true") {
+		if (termValue[i].contentEditable == "true") {
 			icon.src = EditIcon;
-			editableValues[i].contentEditable = "false";
+			termValue[i].contentEditable = "false";
+			selectElem = termValue[i].getElementsByTagName("select")[0];
+			termValue[i].removeChild(selectElem);
+			termValue[i].textContent = selectElem.value;
 		} else {
 			icon.src = SaveIcon;
-			editableValues[i].contentEditable = "true";
-			editableValues[i].focus();
+			termValue[i].contentEditable = "true";
+			termValue[i].focus();
+			termSelect = document.createElement("select");
+			termSelect.innerHTML = terms
+				.map(
+					(term) =>
+						`<option ${termValue[i].textContent == term.name &&
+						"selected"
+						}>${term.name}</option>`
+				)
+				.join("\n");
+			termValue[i].textContent = "";
+			termValue[i].appendChild(termSelect);
 		}
 	});
 }

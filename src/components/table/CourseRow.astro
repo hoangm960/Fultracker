@@ -7,7 +7,7 @@ interface Props {
   grade?: string;
 }
 const {
-  classes = "mainBody",
+  classes,
   term = "Term",
   code = "Course Code",
   title = "Course Name",
@@ -17,25 +17,25 @@ const {
 
 <tr class:list={[classes, "h-7"]}>
   <td
-    class="text-text text-left px-6 py-3"
+    class="term text-text text-left px-6 py-3"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {term}
   </td>
   <td
-    class="text-text text-left px-6 py-3"
+    class="code text-text text-left px-6 py-3"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {code}
   </td>
   <td
-    class="text-text text-left px-6 py-3"
+    class="title text-text text-left px-6 py-3"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {title}
   </td>
   <td
-    class="text-text text-left px-6 py-3"
+    class="grade text-text text-left px-6 py-3"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {grade}
