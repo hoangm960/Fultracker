@@ -11,6 +11,7 @@ import SaveIcon from "@assets/icons/save.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
 import AddIcon from "@assets/icons/Add_white.svg";
 import CourseRow from "@components/table/CourseRow.astro";
+import { getFirestore } from "firebase-admin/firestore";
 
 const auth = getAuth(app);
 
@@ -26,7 +27,15 @@ const user = await auth.getUser(decodedCookie.uid);
 if (!user) {
 	return Astro.redirect("/signin");
 }
-const emptyCourseRow = CourseRow;
+
+const db = getFirestore(app);
+const termsRef = db.collection("term");
+const termsSnapshot = await termsRef.get();
+const terms = termsSnapshot.docs.map((doc) => ({
+  id: doc.id,
+  ...doc.data(),
+}));
+terms.pop();
 ---
 
 <DashboardLayout page="home">
@@ -43,22 +52,38 @@ const emptyCourseRow = CourseRow;
 					class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
 				>
 					<InfoField title="Name:" value="Student's Name" isEditable>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
 					<InfoField title="Student ID:" value="xxxxxx" isEditable>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
 					<InfoField title="DOB:" value="xx/xx/xxxx" isEditable>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
 					<InfoField title="Major:" value="Major Name" isEditable>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
@@ -67,7 +92,11 @@ const emptyCourseRow = CourseRow;
 						value="Major Name"
 						isEditable
 					>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
@@ -76,49 +105,85 @@ const emptyCourseRow = CourseRow;
 						value="Minor Name, Minor Name"
 						isEditable
 					>
-						<Button classes="editInfo" theme="neutral" padding="p-1">
+						<Button
+							classes="editInfo"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editInfo" />
 						</Button>
 					</InfoField>
 				</div>
 				<CourseTable height={470}>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
 					<CourseRow classes="sample">
-						<Button classes="editCourse" theme="neutral" padding="p-1">
+						<Button
+							classes="editCourse"
+							theme="neutral"
+							padding="p-1"
+						>
 							<img class="h-8" src={EditIcon} alt="editCourse" />
 						</Button>
 					</CourseRow>
@@ -204,13 +269,13 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 			icon.src = EditIcon;
 			editableValues[i].contentEditable = "false";
 		} else {
-				icon.src = SaveIcon;
-				editableValues[i].contentEditable = "true";
-				editableValues[i].focus();
-			}
-		});
-	}
-	
+			icon.src = SaveIcon;
+			editableValues[i].contentEditable = "true";
+			editableValues[i].focus();
+		}
+	});
+}
+
 var editCourseBtns = document.getElementsByClassName("editCourse");
 var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editCourseBtns.length; i++) {
@@ -220,10 +285,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			icon.src = EditIcon;
 			editableValues[i].contentEditable = "false";
 		} else {
-				icon.src = SaveIcon;
-				editableValues[i].contentEditable = "true";
-				editableValues[i].focus();
-			}
-		});
-	}
+			icon.src = SaveIcon;
+			editableValues[i].contentEditable = "true";
+			editableValues[i].focus();
+		}
+	});
+}
 </script>
