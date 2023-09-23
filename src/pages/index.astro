@@ -9,6 +9,7 @@ import Button from "@components/Button.astro";
 import EditIcon from "@assets/icons/Edit.svg";
 import SaveIcon from "@assets/icons/save.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
+import AddIcon from "@assets/icons/Add_white.svg";
 
 const auth = getAuth(app);
 
@@ -78,7 +79,14 @@ if (!user) {
 						</Button>
 					</InfoField>
 				</div>
-				<CourseTable height={500} />
+				<CourseTable height={470} />
+				<Button
+					classes="rounded-full absolute bottom-2 right-2 p-2"
+					isfilled
+					
+				>
+					<img src={AddIcon} alt="add" />
+				</Button>
 			</main>
 
 			<footer
@@ -148,14 +156,14 @@ var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editBtns.length; i++) {
 	editBtns[i].addEventListener("click", (e) => {
 		const icon = e.target;
-		if ((editableValues[i].contentEditable == "true")) {
+		if (editableValues[i].contentEditable == "true") {
 			icon.src = EditIcon;
 			editableValues[i].contentEditable = "false";
 		} else {
 			icon.src = SaveIcon;
 			editableValues[i].contentEditable = "true";
 			editableValues[i].focus();
-		}
-	});
-}
+			}
+		});
+	}
 </script>

@@ -1,0 +1,45 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { app } from "@lib/firebase/server";
+import { getFirestore } from "firebase-admin/firestore";
+
+interface Course {
+    id: string;
+    name: string;
+    credit: number;
+    level: number;
+    link: string;
+    category: Array<string>;
+    "pre-requisite": {
+        course: Array<string>;
+        major: Array<{ level: number; name: string; quantity: number }>;
+    };
+}
+
+const { id } = Astro.params;
+
+if (!id) {
+    return Astro.redirect("/404");
+}
+
+const db = getFirestore(app);
+const term = db.collection("term").doc("2023-2024_Fall_2023_Term");
+const courseSnapshot = await term.collection("courses").doc(id).get();
+
+if (!courseSnapshot.exists) {
+    return Astro.redirect("/404");
+}
+
+var course = courseSnapshot.data() as Course;
+course["id"] = id
+console.log(course != undefined ? `Retrived successfully: ${course["id"]}` : "Cannot retrive course data!");
+---
+
+<p>{course["id"]}</p>
+<p>{course["name"]}</p>
+<p>{course["credit"]}</p>
+<p>{course["level"]}</p>
+<p>{course["link"]}</p>
+<p>{course["category"]}</p>
+<p>{course["pre-requisite"]["course"]}</p>
+<p>{course["pre-requisite"]["major"]}</p>
