@@ -115,87 +115,24 @@ terms.pop();
 					</InfoField>
 				</div>
 				<CourseTable height={470}>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
-					<CourseRow classes="courseRow">
-						<Button
-							classes="editCourse"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img class="h-8" src={EditIcon} alt="editCourse" />
-						</Button>
-					</CourseRow>
+					{
+						[...Array(40).keys()].map((num) => (
+							<CourseRow classes="courseRow" num={num+1}>
+								<Button
+									classes="editCourse"
+									theme="neutral"
+									padding="p-1"
+								>
+									<img
+										class="h-8"
+										src={EditIcon}
+										alt="editCourse"
+									/>
+								</Button>
+							</CourseRow>
+						))
+					}
 				</CourseTable>
-				<Button
-					id="add"
-					classes="rounded-full absolute bottom-2 right-2 p-2"
-					isfilled
-					onclick=""
-				>
-					<img src={AddIcon} alt="add" />
-				</Button>
 			</main>
 
 			<footer
@@ -300,9 +237,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 						}>${term.name}</option>`
 				)
 				.join("\n");
-			termValue[i].textContent = "";
-			termValue[i].appendChild(termSelect);
-		}
-	});
-}
+				termValue[i].textContent = "";
+				termValue[i].appendChild(termSelect);
+			}
+		});
+	}
 </script>

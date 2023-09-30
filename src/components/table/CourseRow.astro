@@ -1,5 +1,6 @@
 ---
 interface Props {
+  num?: number;
   classes?: string;
   term?: string;
   code?: string;
@@ -8,6 +9,7 @@ interface Props {
 }
 const {
   classes,
+  num = 0,
   term = "Term",
   code = "Course Code",
   title = "Course Name",
@@ -16,6 +18,12 @@ const {
 ---
 
 <tr class:list={[classes, "h-7"]}>
+  <td
+    class="num text-text text-left px-6 py-3"
+    style="font: 500 20px 'Montserrat', sans-serif"
+  >
+    {num}
+  </td>
   <td
     class="term text-text text-left px-6 py-3"
     style="font: 500 20px 'Montserrat', sans-serif"
