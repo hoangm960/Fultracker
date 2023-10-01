@@ -237,12 +237,11 @@ var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
 
 var clickChecks = [];
 for (let i = 0; i < editCourseBtns.length; i++) {
-	function deleteCourse() {
+	function deleteCourse(e) {
 		termValue[i].textContent = "Term";
 		codeValue[i].textContent = "Course Code";
 		titleValue[i].textContent = "Course Name";
 		gradeValue[i].textContent = "Grade";
-		return handler;
 	}
 
 	deleteCourseBtns[i].addEventListener("click", deleteCourse);
@@ -269,6 +268,19 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				grade: gradeValue[i].textContent,
 			};
 
+			function cancelEdit(e) {
+				termValue[i].textContent = currentValue["term"];
+				codeValue[i].textContent = currentValue["code"];
+				titleValue[i].textContent = currentValue["title"];
+				gradeValue[i].textContent = currentValue["grade"];
+
+				clickChecks[i] = false;
+				editIcon.src = EditIcon;
+
+				delIcon.src = DeleteIcon;
+				deleteCourseBtns[i].addEventListener("click", deleteCourse);
+			}
+
 			editIcon.src = SaveIcon;
 			termValue[i].focus();
 			termSelect = document.createElement("select");
@@ -285,25 +297,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
 			delIcon.src = CancelIcon;
 			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", (e) => {
-				termValue[i].textContent = currentValue[term];
-				codeValue[i].textContent = currentValue[code];
-				titleValue[i].textContent = currentValue[title];
-				gradeValue[i].textContent = currentValue[grade];
-
-				// editIcon.src = EditIcon;
-				// termValue[i].contentEditable = "false";
-				// selectElem = termValue[i].getElementsByTagName("select")[0];
-				// termValue[i].removeChild(selectElem);
-				// termValue[i].textContent = selectElem.value;
-
-				// deleteCourseBtns[i].addEventListener("click", (e) => {
-				// 	termValue[i].textContent = "Term";
-				// 	codeValue[i].textContent = "Course Code";
-				// 	titleValue[i].textContent = "Course Name";
-				// 	gradeValue[i].textContent = "Grade";
-				// });
-			});
+			deleteCourseBtns[i].addEventListener("click", cancelEdit);
 		}
 	});
 }
