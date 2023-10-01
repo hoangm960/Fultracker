@@ -9,6 +9,7 @@ import Button from "@components/Button.astro";
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
 import SaveIcon from "@assets/icons/save.png";
+import CancelIcon from "@assets/icons/cancel.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
 import CourseRow from "@components/table/CourseRow.astro";
 import { getFirestore } from "firebase-admin/firestore";
@@ -114,7 +115,7 @@ terms.pop();
 						</Button>
 					</InfoField>
 				</div>
-				<CourseTable height={470}>
+				<CourseTable height={386}>
 					{
 						[...Array(40).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -209,7 +210,7 @@ terms.pop();
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon, terms }}>
+<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, terms }}>
 var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editInfoBtns.length; i++) {
@@ -226,20 +227,49 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 	});
 }
 
-var editCourseBtns = document.getElementsByClassName("editCourse");
 var termValue = document.getElementsByClassName("term");
+var codeValue = document.getElementsByClassName("code");
+var titleValue = document.getElementsByClassName("title");
+var gradeValue = document.getElementsByClassName("grade");
+
+var editCourseBtns = document.getElementsByClassName("editCourse");
+var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
+
+var clickChecks = [];
 for (let i = 0; i < editCourseBtns.length; i++) {
+	function deleteCourse() {
+		termValue[i].textContent = "Term";
+		codeValue[i].textContent = "Course Code";
+		titleValue[i].textContent = "Course Name";
+		gradeValue[i].textContent = "Grade";
+		return handler;
+	}
+
+	deleteCourseBtns[i].addEventListener("click", deleteCourse);
+
+	clickChecks.push(false);
 	editCourseBtns[i].addEventListener("click", (e) => {
-		const icon = e.target;
-		if (termValue[i].contentEditable == "true") {
-			icon.src = EditIcon;
-			termValue[i].contentEditable = "false";
+		const editIcon = e.currentTarget.getElementsByTagName("img")[0];
+		const delIcon = deleteCourseBtns[i].getElementsByTagName("img")[0];
+		if (clickChecks[i]) {
+			clickChecks[i] = false;
+			editIcon.src = EditIcon;
 			selectElem = termValue[i].getElementsByTagName("select")[0];
 			termValue[i].removeChild(selectElem);
 			termValue[i].textContent = selectElem.value;
+
+			delIcon.src = DeleteIcon;
+			deleteCourseBtns[i].addEventListener("click", deleteCourse);
 		} else {
-			icon.src = SaveIcon;
-			termValue[i].contentEditable = "true";
+			clickChecks[i] = true;
+			currentValue = {
+				term: termValue[i].textContent,
+				code: codeValue[i].textContent,
+				title: titleValue[i].textContent,
+				grade: gradeValue[i].textContent,
+			};
+
+			editIcon.src = SaveIcon;
 			termValue[i].focus();
 			termSelect = document.createElement("select");
 			termSelect.innerHTML = terms
@@ -252,6 +282,28 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				.join("\n");
 			termValue[i].textContent = "";
 			termValue[i].appendChild(termSelect);
+
+			delIcon.src = CancelIcon;
+			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+			deleteCourseBtns[i].addEventListener("click", (e) => {
+				termValue[i].textContent = currentValue[term];
+				codeValue[i].textContent = currentValue[code];
+				titleValue[i].textContent = currentValue[title];
+				gradeValue[i].textContent = currentValue[grade];
+
+				// editIcon.src = EditIcon;
+				// termValue[i].contentEditable = "false";
+				// selectElem = termValue[i].getElementsByTagName("select")[0];
+				// termValue[i].removeChild(selectElem);
+				// termValue[i].textContent = selectElem.value;
+
+				// deleteCourseBtns[i].addEventListener("click", (e) => {
+				// 	termValue[i].textContent = "Term";
+				// 	codeValue[i].textContent = "Course Code";
+				// 	titleValue[i].textContent = "Course Name";
+				// 	gradeValue[i].textContent = "Grade";
+				// });
+			});
 		}
 	});
 }
