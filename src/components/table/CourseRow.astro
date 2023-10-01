@@ -17,39 +17,39 @@ const {
 } = Astro.props;
 ---
 
-<tr class:list={[classes, "h-7"]}>
+<tr class:list={[classes, "flex w-full mb-4"]}>
   <td
-    class="num text-text text-left px-6 py-3"
+    class="num text-text p-4 basis-1/12"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {num}
   </td>
   <td
-    class="term text-text text-left px-6 py-3"
+    class="term text-text p-4 basis-1/4"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {term}
   </td>
   <td
-    class="code text-text text-left px-6 py-3"
+    class="code text-text p-4 basis-1/6"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {code}
   </td>
   <td
-    class="title text-text text-left px-6 py-3"
+    class="title text-text p-4 flex-1 text-center"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {title}
   </td>
   <td
-    class="grade text-text text-left px-6 py-3"
+    class="grade text-text p-4 basis-1/12"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     {grade}
   </td>
   <td
-    class="text-text text-left px-6 py-3"
+    class="text-text p-4 basis-[12%]"
     style="font: 500 20px 'Montserrat', sans-serif"
   >
     <slot />

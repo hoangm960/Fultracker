@@ -7,9 +7,9 @@ import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
+import DeleteIcon from "@assets/icons/delete.png";
 import SaveIcon from "@assets/icons/save.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
-import AddIcon from "@assets/icons/Add_white.svg";
 import CourseRow from "@components/table/CourseRow.astro";
 import { getFirestore } from "firebase-admin/firestore";
 
@@ -117,18 +117,31 @@ terms.pop();
 				<CourseTable height={470}>
 					{
 						[...Array(40).keys()].map((num) => (
-							<CourseRow classes="courseRow" num={num+1}>
-								<Button
-									classes="editCourse"
-									theme="neutral"
-									padding="p-1"
-								>
-									<img
-										class="h-8"
-										src={EditIcon}
-										alt="editCourse"
-									/>
-								</Button>
+							<CourseRow classes="courseRow" num={num + 1}>
+								<div class="flex flex-row gap-5">
+									<Button
+										classes="editCourse"
+										theme="neutral"
+										padding="p-1"
+									>
+										<img
+											class="h-8"
+											src={EditIcon}
+											alt="Edit Course"
+										/>
+									</Button>
+									<Button
+										classes="deleteCourse"
+										theme="neutral"
+										padding="p-1"
+									>
+										<img
+											class="h-8"
+											src={DeleteIcon}
+											alt="Delete Course"
+										/>
+									</Button>
+								</div>
 							</CourseRow>
 						))
 					}
@@ -237,9 +250,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 						}>${term.name}</option>`
 				)
 				.join("\n");
-				termValue[i].textContent = "";
-				termValue[i].appendChild(termSelect);
-			}
-		});
-	}
+			termValue[i].textContent = "";
+			termValue[i].appendChild(termSelect);
+		}
+	});
+}
 </script>

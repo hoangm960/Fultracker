@@ -2,27 +2,70 @@
 interface Props {
   height: number;
 }
-import HeaderCell from "./HeaderCell.astro";
 const { height } = Astro.props;
 ---
 
-<div
-  class="shadow overflow-y-scroll max-h-[630px] w-full rounded-xl border-text border-r-0 border-2"
+<!-- <div
+  class="shadow max-h-[630px] w-full rounded-xl border-text border-r-0 border-2"
   style=`height:${height}px`
->
-  <table class="table-auto w-full h-full self-stretch">
-    <thead class="bg-action self-stretch sticky top-0">
-      <tr>
-        <HeaderCell>No.</HeaderCell>
-        <HeaderCell>Term</HeaderCell>
-        <HeaderCell>Code</HeaderCell>
-        <HeaderCell>Title</HeaderCell>
-        <HeaderCell>Grade</HeaderCell>
-        <HeaderCell>Actions</HeaderCell>
+> -->
+  <table class="table-auto w-full h-full text-left">
+    <thead class="bg-action flex w-full rounded-xl">
+      <tr class="flex mb-4 w-full">
+        <th
+          scope="row"
+          class= "text-highlight p-4 w-1/12"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          No.
+        </th>
+ 
+        <th
+          scope="row"
+          class= "text-highlight p-4 w-1/4"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          Term
+        </th>
+        
+        <th
+          scope="row"
+          class= "text-highlight p-4 w-1/6"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          Code
+        </th>
+        
+        <th
+          scope="row"
+          class= "text-highlight p-4 basis-[29%] text-center"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          Title
+        </th>
+        
+        <th
+          scope="row"
+          class= "text-highlight p-4 w-1/12"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          Grade
+        </th>
+        
+        <th
+          scope="row"
+          class= "text-highlight p-4 w-[12%]"
+          style="font: 600 26px 'Montserrat', sans-serif"
+        >
+          Action
+        </th>
       </tr>
     </thead>
-    <tbody class="bg-background self-stretch">
+    <tbody
+      class="bg-background flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl"
+      style=`height:${height - 80 - 4}px`
+    >
       <slot />
     </tbody>
   </table>
-</div>
+<!-- </div> -->
