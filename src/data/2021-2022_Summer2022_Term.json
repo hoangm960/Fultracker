@@ -1,0 +1,280 @@
+{
+    "ARTS107": {
+        "name": "2D/3D Foundations",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTBQA3",
+        "category": [
+            "E1"
+        ]
+    },
+    "ARTS210": {
+        "name": "Digital Media Arts",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPT1QAN",
+        "category": [
+            "E1"
+        ]
+    },
+    "ARTS302": {
+        "name": "Documentary Filmmaking and Video Journalism",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs7KQAT",
+        "category": [
+            "E1"
+        ]
+    },
+    "CORE101": {
+        "name": "Global Humanities and Social Change",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+        "category": [
+            "CORE"
+        ]
+    },
+    "CORE102": {
+        "name": "Modern Vietnamese Culture and Society",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYUQA3",
+        "category": [
+            "CORE"
+        ]
+    },
+    "CORE105": {
+        "name": "Design and Systems Thinking",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+        "category": [
+            "CORE"
+        ]
+    },
+    "CS103": {
+        "name": "Programming for Data Science and Visualization",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTGQA3",
+        "category": [
+            "E4"
+        ]
+    },
+    "CS204": {
+        "name": "Introduction to Artificial Intelligence",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTLQA3",
+        "category": [
+            "E4"
+        ]
+    },
+    "CS206": {
+        "name": "Introduction to Cyber Security",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPdEQAV",
+        "category": [
+            "E4"
+        ]
+    },
+    "CS398": {
+        "name": "CS Independent Study/Independent Research",
+        "credit": 2,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6aQAD",
+        "category": [
+            "E4"
+        ]
+    },
+    "ECON209": {
+        "name": "Econometrics",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs74QAD",
+        "category": [
+            "E2"
+        ]
+    },
+    "EL101": {
+        "name": "Experiential Learning",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+        "category": [
+            "EL"
+        ]
+    },
+    "ENG204": {
+        "name": "Sensor, Measurement and Analysis",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZmQAN",
+        "category": [
+            "E3"
+        ]
+    },
+    "HIS298": {
+        "name": "HIS Independent Study/Independent Research",
+        "credit": 2,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYJmQAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "IS107": {
+        "name": "Sustainable development: Science and Industries ",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs72QAD",
+        "category": [
+            "E3"
+        ]
+    },
+    "IS207": {
+        "name": "AIgae",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTHQA3",
+        "category": [
+            "E3"
+        ]
+    },
+    "IS210": {
+        "name": "Introduction to Bioinformatics",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOcQAL",
+        "category": [
+            "E3"
+        ]
+    },
+    "LIT204": {
+        "name": "Identity, Community, and Memory in Vietnamese Diasporic Literature and Film",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdeQAB",
+        "category": [
+            "E1"
+        ]
+    },
+    "LIT206": {
+        "name": "Gender and War Studies: The U.S - Vietnam War",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdjQAB",
+        "category": [
+            "E1"
+        ]
+    },
+    "MATH104": {
+        "name": "Multivariable Calculus",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOmQAL",
+        "category": [
+            "E4"
+        ],
+        "pre-requisite": {
+            "course": [
+                [
+                    "MATH101"
+                ]
+            ]
+        }
+    },
+    "MATH105": {
+        "name": "Introduction to Statistics",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+        "category": [
+            "E4"
+        ]
+    },
+    "MATH205": {
+        "name": "Probability",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcsQAB",
+        "category": [
+            "E4"
+        ]
+    },
+    "PSY101": {
+        "name": "Introductory Psychology",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "PSY302": {
+        "name": "Counseling Psychology",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvO7QAL",
+        "category": [
+            "E2"
+        ]
+    },
+    "PSY303": {
+        "name": "Educational Psychology",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUnQAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "PSY304": {
+        "name": "Addictions across the Lifespan",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUsQAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "SOC205": {
+        "name": "Eco-Village, Eco-District, Eco-Life",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOrQAL",
+        "category": [
+            "SOC"
+        ]
+    },
+    "SOCI209": {
+        "name": "Exploring Identities in Asia",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUxQAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "SOCI302": {
+        "name": "The Anthropology of Entrepreneurship",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUyQAN",
+        "category": [
+            "E2"
+        ]
+    },
+    "VS301": {
+        "name": "Evolution of Vietnamese Society in the 20th century from a multidisciplinary per",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUzQAN",
+        "category": [
+            "E1",
+            "E2"
+        ]
+    }
+}

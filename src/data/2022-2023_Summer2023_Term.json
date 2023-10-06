@@ -1,0 +1,203 @@
+{
+    "CS204": {
+        "name": "Introduction to Artificial Intelligence",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTLQA3",
+        "category": [
+            "E4"
+        ]
+    },
+    "CS301": {
+        "name": "Software Engineering",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYoQAN",
+        "pre-requisite": {
+            "course": [
+                [
+                    "CS101"
+                ],
+                [
+                    "CS201"
+                ]
+            ]
+        },
+        "category": [
+            "E4"
+        ]
+    },
+    "CS311": {
+        "name": "Advanced Deep Learning",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWeiFQAT",
+        "pre-requisite": {
+            "course": [
+                [
+                    "CS209"
+                ]
+            ]
+        },
+        "category": [
+            "E4"
+        ]
+    },
+    "ECON102": {
+        "name": "Economic Methods",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWc9aQAD",
+        "category": [
+            "E2"
+        ]
+    },
+    "ECON307": {
+        "name": "Money and Banking",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcATQA1",
+        "pre-requisite": {
+            "course": [
+                [
+                    "ECON203"
+                ]
+            ]
+        },
+        "category": [
+            "E2"
+        ]
+    },
+    "EL101": {
+        "name": "Experiential Learning",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+        "category": [
+            "EL"
+        ]
+    },
+    "EL103": {
+        "name": "Venture Fellow Program",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXFMgQAP",
+        "category": [
+            "EL"
+        ]
+    },
+    "HIS310": {
+        "name": "Independent Research Seminar",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWdy9QAD",
+        "pre-requisite": {
+            "course": [
+                [
+                    "HIS211"
+                ]
+            ]
+        },
+        "category": [
+            "E2"
+        ]
+    },
+    "MATH105": {
+        "name": "Introduction to Statistics",
+        "credit": 4,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+        "category": [
+            "E4"
+        ]
+    },
+    "MATH308": {
+        "name": "Statistical Learning",
+        "credit": 4,
+        "level": 3,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWeieQAD",
+        "pre-requisite": {
+            "course": [
+                [
+                    "MATH101"
+                ],
+                [
+                    "MATH205"
+                ]
+            ]
+        },
+        "category": [
+            "E4"
+        ]
+    },
+    "MUSC102": {
+        "name": "Music Appreciation",
+        "credit": 2,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWe2LQAT",
+        "category": [
+            "MUSC"
+        ]
+    },
+    "PE101": {
+        "name": "[PE] Swimming 01",
+        "credit": 1,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBsQAP",
+        "category": [
+            "PE"
+        ]
+    },
+    "PE103": {
+        "name": "[PE] Hatha Yoga 01",
+        "credit": 1,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHTQA1",
+        "category": [
+            "PE"
+        ]
+    },
+    "PE104": {
+        "name": "[PE] Chess 01",
+        "credit": 1,
+        "level": 1,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHdQAL",
+        "category": [
+            "PE"
+        ]
+    },
+    "PE203": {
+        "name": "[PE] Hatha Yoga 02",
+        "credit": 1,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHYQA1",
+        "category": [
+            "PE"
+        ]
+    },
+    "SOCI217": {
+        "name": "The Anthropology of Social Movements",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcoyQAD",
+        "category": [
+            "E2"
+        ]
+    },
+    "SOCI218": {
+        "name": "Disability and Culture",
+        "credit": 4,
+        "level": 2,
+        "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcrnQAD",
+        "category": [
+            "E2"
+        ],
+        "pre-requisite": {
+            "course": [
+                [
+                    "SOCI102"
+                ]
+            ]
+        }
+    }
+}
