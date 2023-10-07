@@ -29,14 +29,8 @@ if (!user) {
 	return Astro.redirect("/signin");
 }
 
-const db = getFirestore(app);
-const termsRef = db.collection("term");
-const termsSnapshot = await termsRef.get();
-const terms = termsSnapshot.docs.map((doc) => ({
-	id: doc.id,
-	...doc.data(),
-}));
-terms.pop();
+import data from "@data/data.json";
+
 ---
 
 <DashboardLayout page="home">
@@ -210,7 +204,7 @@ terms.pop();
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, terms }}>
+<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data}}>
 var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editInfoBtns.length; i++) {
@@ -284,14 +278,13 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			editIcon.src = SaveIcon;
 			termValue[i].focus();
 			termSelect = document.createElement("select");
-			termOptions = terms
-				.map(
-					(term) =>
-						`<option ${termValue[i].textContent == term.name &&
-						"selected"
-						}>${term.name}</option>`
-				)
-				.join("\n");
+			termOptions = "";
+			Object.keys(data).forEach(term => {
+				termName = term.replaceAll("_", " ");
+				optionHTML = `<option ${termValue[i].textContent == termName && "selected"}>${termName}</option>`;
+				termOptions = termOptions + optionHTML + "\n";
+			});
+			console.log(termOptions);
 			termSelect.innerHTML = '<option value="Term" disabled selected hidden> Choose a major ...</option>\n' + termOptions
 			termValue[i].textContent = "";
 			termValue[i].appendChild(termSelect);
