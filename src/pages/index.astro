@@ -248,7 +248,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			editIcon.src = EditIcon;
 			termSelect = termValue[i].getElementsByTagName("select")[0];
 			termValue[i].removeChild(termSelect);
-			termValue[i].textContent = termSelect.value.split("_").slice(1, 3).join(" ");
+			termValue[i].textContent = termSelect.value
+				.split("_")
+				.slice(1, 3)
+				.join(" ");
 			codeSelect = codeValue[i].getElementsByTagName("select")[0];
 			codeValue[i].removeChild(codeSelect);
 			codeValue[i].textContent = codeSelect.value;
@@ -277,26 +280,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				deleteCourseBtns[i].addEventListener("click", deleteCourse);
 			}
 
-			editIcon.src = SaveIcon;
-			termValue[i].focus();
-			termSelect = document.createElement("select");
-			termOptions = "";
-			Object.keys(data).forEach((term) => {
-				termName = term.split("_").slice(1, 3).join(" ");
-				optionHTML = `<option ${termValue[i].textContent == termName && "selected"
-					} value=${term}>${termName}</option>`;
-				termOptions = termOptions + optionHTML + "\n";
-			});
-			termSelect.innerHTML =
-				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
-				termOptions;
-			termValue[i].textContent = "";
-			termValue[i].appendChild(termSelect);
-
-			termSelect.addEventListener("change", () => {
+			function getCodeSelect() {
 				codeOptions = "";
 				Object.keys(data[termSelect.value]).forEach((code) => {
-					optionHTML = `<option ${termValue[i].textContent == code && "selected"
+					optionHTML = `<option ${codeValue[i].textContent == code && "selected"
 						} value=${code}>${code}</option>`;
 					codeOptions = codeOptions + optionHTML + "\n";
 				});
@@ -306,16 +293,39 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					codeOptions;
 				codeValue[i].textContent = "";
 				codeValue[i].appendChild(codeSelect);
-				
-				codeSelect.addEventListener("change", () => {
-					titleValue[i].textContent = data[termSelect.value][codeSelect.value].name
-				});
-			});
 
-				delIcon.src = CancelIcon;
-				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-				deleteCourseBtns[i].addEventListener("click", cancelEdit);
+				codeSelect.addEventListener("change", () => {
+					titleValue[i].textContent =
+						data[termSelect.value][codeSelect.value].name;
+				});
 			}
-		});
+
+			editIcon.src = SaveIcon;
+			termValue[i].focus();
+			termOptions = "";
+			Object.keys(data).forEach((term) => {
+				termName = term.split("_").slice(1, 3).join(" ");
+				isTermSelected = termValue[i].textContent == termName;
+				optionHTML = `<option ${isTermSelected && "selected"
+					} value=${term}>${termName}</option>`;
+				termOptions = termOptions + optionHTML + "\n";
+				if (isTermSelected) {
+					getCodeSelect();
+				}
+			});
+			termSelect = document.createElement("select");
+			termSelect.innerHTML =
+				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
+				termOptions;
+			termValue[i].textContent = "";
+			termValue[i].appendChild(termSelect);
+
+			termSelect.addEventListener("change", () => getCodeSelect());
+
+			delIcon.src = CancelIcon;
+			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+			deleteCourseBtns[i].addEventListener("click", cancelEdit);
+		}
+	});
 	}
 </script>
