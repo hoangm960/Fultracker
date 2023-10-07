@@ -246,6 +246,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		if (clickChecks[i]) {
 			clickChecks[i] = false;
 			editIcon.src = EditIcon;
+			delIcon.src = DeleteIcon;
+			deleteCourseBtns[i].addEventListener("click", deleteCourse);
+
 			var termSelect = termValue[i].getElementsByTagName("select")[0];
 			termValue[i].removeChild(termSelect);
 			termValue[i].textContent =
@@ -253,15 +256,16 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					? termSelect.value
 					: termSelect.value.split("_").slice(1, 3).join(" ");
 			var codeSelect = codeValue[i].getElementsByTagName("select")[0];
-			codeValue[i].removeChild(codeSelect);
-			codeValue[i].textContent = codeSelect.value;
+			if (codeSelect) {
+				codeValue[i].removeChild(codeSelect);
+				codeValue[i].textContent = codeSelect.value;
+			}
 			var gradeSelect =
 				gradeValue[i].getElementsByTagName("select")[0];
-			gradeValue[i].removeChild(gradeSelect);
-			gradeValue[i].textContent = gradeSelect.value;
-
-			delIcon.src = DeleteIcon;
-			deleteCourseBtns[i].addEventListener("click", deleteCourse);
+			if (gradeSelect) {
+				gradeValue[i].removeChild(gradeSelect);
+				gradeValue[i].textContent = gradeSelect.value;
+			}
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
@@ -348,20 +352,20 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			termSelect = document.createElement("select");
 			termSelect.innerHTML =
 				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
-					termOptions;
-				termValue[i].textContent = "";
-				termValue[i].appendChild(termSelect);
-				if (haveSelected) {
-					getCodeSelect(data[termSelect.value]);
-					getGradeSelect();
-				}
+				termOptions;
+			termValue[i].textContent = "";
+			termValue[i].appendChild(termSelect);
+			if (haveSelected) {
+				getCodeSelect(data[termSelect.value]);
+				getGradeSelect();
+			}
 
-				termSelect.addEventListener("change", () =>
-					getCodeSelect(data[termSelect.value])
-				);
+			termSelect.addEventListener("change", () =>
+				getCodeSelect(data[termSelect.value])
+			);
 
-				delIcon.src = CancelIcon;
-				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+			delIcon.src = CancelIcon;
+			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
 				deleteCourseBtns[i].addEventListener("click", cancelEdit);
 			}
 		});
