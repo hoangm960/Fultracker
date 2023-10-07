@@ -246,15 +246,19 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		if (clickChecks[i]) {
 			clickChecks[i] = false;
 			editIcon.src = EditIcon;
-			termSelect = termValue[i].getElementsByTagName("select")[0];
+			var termSelect = termValue[i].getElementsByTagName("select")[0];
 			termValue[i].removeChild(termSelect);
-			termValue[i].textContent = termSelect.value
-				.split("_")
-				.slice(1, 3)
-				.join(" ");
-			codeSelect = codeValue[i].getElementsByTagName("select")[0];
+			termValue[i].textContent =
+				termSelect.value == "Term"
+					? termSelect.value
+					: termSelect.value.split("_").slice(1, 3).join(" ");
+			var codeSelect = codeValue[i].getElementsByTagName("select")[0];
 			codeValue[i].removeChild(codeSelect);
 			codeValue[i].textContent = codeSelect.value;
+			var gradeSelect =
+				gradeValue[i].getElementsByTagName("select")[0];
+			gradeValue[i].removeChild(gradeSelect);
+			gradeValue[i].textContent = gradeSelect.value;
 
 			delIcon.src = DeleteIcon;
 			deleteCourseBtns[i].addEventListener("click", deleteCourse);
@@ -280,9 +284,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				deleteCourseBtns[i].addEventListener("click", deleteCourse);
 			}
 
-			function getCodeSelect() {
+			function getCodeSelect(courses) {
 				codeOptions = "";
-				Object.keys(data[termSelect.value]).forEach((code) => {
+				Object.keys(courses).forEach((code) => {
 					optionHTML = `<option ${codeValue[i].textContent == code && "selected"
 						} value=${code}>${code}</option>`;
 					codeOptions = codeOptions + optionHTML + "\n";
@@ -296,13 +300,41 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
 				codeSelect.addEventListener("change", () => {
 					titleValue[i].textContent =
-						data[termSelect.value][codeSelect.value].name;
+						courses[codeSelect.value].name;
+					getGradeSelect();
 				});
+			}
+
+			function getGradeSelect() {
+				var grades = [
+					"A",
+					"A-",
+					"B+",
+					"B",
+					"B-",
+					"C+",
+					"C",
+					"C-",
+					"D+",
+					"D",
+					"F",
+				];
+				gradeOptions = "";
+				grades.forEach((grade) => {
+					optionHTML = `<option ${gradeValue[i].textContent == grade && "selected"
+						} value=${grade}>${grade}</option>`;
+					gradeOptions = gradeOptions + optionHTML + "\n";
+				});
+				var gradeSelect = document.createElement("select");
+				gradeSelect.innerHTML = gradeOptions;
+				gradeValue[i].textContent = "";
+				gradeValue[i].appendChild(gradeSelect);
 			}
 
 			editIcon.src = SaveIcon;
 			termValue[i].focus();
 			termOptions = "";
+			var haveSelected = false;
 			Object.keys(data).forEach((term) => {
 				termName = term.split("_").slice(1, 3).join(" ");
 				isTermSelected = termValue[i].textContent == termName;
@@ -310,22 +342,28 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					} value=${term}>${termName}</option>`;
 				termOptions = termOptions + optionHTML + "\n";
 				if (isTermSelected) {
-					getCodeSelect();
+					haveSelected = true;
 				}
 			});
 			termSelect = document.createElement("select");
 			termSelect.innerHTML =
 				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
-				termOptions;
-			termValue[i].textContent = "";
-			termValue[i].appendChild(termSelect);
+					termOptions;
+				termValue[i].textContent = "";
+				termValue[i].appendChild(termSelect);
+				if (haveSelected) {
+					getCodeSelect(data[termSelect.value]);
+					getGradeSelect();
+				}
 
-			termSelect.addEventListener("change", () => getCodeSelect());
+				termSelect.addEventListener("change", () =>
+					getCodeSelect(data[termSelect.value])
+				);
 
-			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-		}
-	});
+				delIcon.src = CancelIcon;
+				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+				deleteCourseBtns[i].addEventListener("click", cancelEdit);
+			}
+		});
 	}
 </script>
