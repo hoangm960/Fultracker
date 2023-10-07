@@ -30,7 +30,6 @@ if (!user) {
 }
 
 import data from "@data/data.json";
-
 ---
 
 <DashboardLayout page="home">
@@ -204,7 +203,7 @@ import data from "@data/data.json";
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data}}>
+<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data }}>
 var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
 for (let i = 0; i < editInfoBtns.length; i++) {
@@ -247,9 +246,12 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		if (clickChecks[i]) {
 			clickChecks[i] = false;
 			editIcon.src = EditIcon;
-			selectElem = termValue[i].getElementsByTagName("select")[0];
-			termValue[i].removeChild(selectElem);
-			termValue[i].textContent = selectElem.value;
+			termSelect = termValue[i].getElementsByTagName("select")[0];
+			termValue[i].removeChild(termSelect);
+			termValue[i].textContent = termSelect.value.replaceAll("_", " ");
+			codeSelect = codeValue[i].getElementsByTagName("select")[0];
+			codeValue[i].removeChild(codeSelect);
+			codeValue[i].textContent = codeSelect.value;
 
 			delIcon.src = DeleteIcon;
 			deleteCourseBtns[i].addEventListener("click", deleteCourse);
@@ -279,20 +281,41 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			termValue[i].focus();
 			termSelect = document.createElement("select");
 			termOptions = "";
-			Object.keys(data).forEach(term => {
+			Object.keys(data).forEach((term) => {
 				termName = term.replaceAll("_", " ");
-				optionHTML = `<option ${termValue[i].textContent == termName && "selected"}>${termName}</option>`;
+				optionHTML = `<option ${termValue[i].textContent == termName && "selected"
+					} value=${term}>${termName}</option>`;
 				termOptions = termOptions + optionHTML + "\n";
 			});
-			console.log(termOptions);
-			termSelect.innerHTML = '<option value="Term" disabled selected hidden> Choose a major ...</option>\n' + termOptions
+			termSelect.innerHTML =
+				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
+				termOptions;
 			termValue[i].textContent = "";
 			termValue[i].appendChild(termSelect);
 
-			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-		}
-	});
-}
+			termSelect.addEventListener("change", () => {
+				codeOptions = "";
+				Object.keys(data[termSelect.value]).forEach((code) => {
+					optionHTML = `<option ${termValue[i].textContent == code && "selected"
+						} value=${code}>${code}</option>`;
+					codeOptions = codeOptions + optionHTML + "\n";
+				});
+				codeSelect = document.createElement("select");
+				codeSelect.innerHTML =
+					'<option value="Course Code" disabled selected hidden> Choose a course code ...</option>\n' +
+					codeOptions;
+				codeValue[i].textContent = "";
+				codeValue[i].appendChild(codeSelect);
+				
+				codeSelect.addEventListener("change", () => {
+					titleValue[i].textContent = data[termSelect.value][codeSelect.value].name
+				});
+			});
+
+				delIcon.src = CancelIcon;
+				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+				deleteCourseBtns[i].addEventListener("click", cancelEdit);
+			}
+		});
+	}
 </script>
