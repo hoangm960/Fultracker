@@ -155,7 +155,12 @@ import data from "@data/data.json";
 						total={128}
 					/>
 					<InfoField title="Major Credits:" value="16" total={128} />
-					<InfoField title="Core Courses:" value="4" total={5} />
+					<InfoField
+						id="cores"
+						title="Core Courses:"
+						value="0"
+						total={5}
+					/>
 					<InfoField title="GPA:" value="2.5" total={4} />
 				</div>
 				<div
@@ -215,7 +220,7 @@ var editableValues = document.getElementsByClassName("editableValue");
 var editCourseBtns = document.getElementsByClassName("editCourse");
 var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
 var creditField = document.getElementById("credits");
-
+var coreField = document.getElementById("cores");
 
 var clickChecks = [];
 
@@ -273,7 +278,12 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
 			var selectedCourse = data[termSelect.value][codeSelect.value];
 
-			creditField.textContent = parseInt(creditField.textContent) + selectedCourse["credit"];
+			creditField.textContent =
+				parseInt(creditField.textContent) +
+				selectedCourse["credit"];
+			if (selectedCourse["category"].includes("CORE")) {
+				coreField.textContent = parseInt(coreField.textContent) + 1;
+			}
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
@@ -330,6 +340,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					"D+",
 					"D",
 					"F",
+					"P",
+					"NP",
 				];
 				gradeOptions = "";
 				grades.forEach((grade) => {
@@ -372,11 +384,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				getCodeSelect(data[termSelect.value])
 			);
 
-			delIcon.src = CancelIcon;
+				delIcon.src = CancelIcon;
 				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
 				deleteCourseBtns[i].addEventListener("click", cancelEdit);
 			}
 		});
 	}
-
 </script>
