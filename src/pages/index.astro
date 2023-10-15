@@ -149,8 +149,14 @@ import data from "@data/data.json";
 					class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
 				>
 					<InfoField
-						id="credits"
-						title="Overall Credits:"
+						id="earn-credits"
+						title="Earned Credits:"
+						value="0"
+						total={128}
+					/>
+					<InfoField
+						id="attempt-credits"
+						title="Attempted Credits:"
 						value="0"
 						total={128}
 					/>
@@ -161,7 +167,7 @@ import data from "@data/data.json";
 						value="0"
 						total={5}
 					/>
-					<InfoField title="GPA:" value="2.5" total={4} />
+					<InfoField id="gpa" title="GPA:" value="0" total={4} />
 				</div>
 				<div
 					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
@@ -219,10 +225,28 @@ var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
 var editCourseBtns = document.getElementsByClassName("editCourse");
 var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
-var creditField = document.getElementById("credits");
+var earnCreditField = document.getElementById("earn-credits");
+var attemptCreditField = document.getElementById("attempt-credits");
 var coreField = document.getElementById("cores");
+var gpaField = document.getElementById("gpa");
 
+var selectedCourses = [];
 var clickChecks = [];
+var grades = {
+	A: 4.0,
+	"A-": 3.7,
+	"B+": 3.3,
+	B: 3.0,
+	"B-": 2.7,
+	"C+": 2.3,
+	C: 2.0,
+	"C-": 1.7,
+	"D+": 1.3,
+	D: 1.0,
+	F: 0.0,
+	P: 0.0,
+	NP: 0.0,
+};
 
 for (let i = 0; i < editInfoBtns.length; i++) {
 	editInfoBtns[i].addEventListener("click", (e) => {
@@ -277,13 +301,35 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			}
 
 			var selectedCourse = data[termSelect.value][codeSelect.value];
+			selectedCourses.push([selectedCourse, gradeSelect.value]);
 
-			creditField.textContent =
-				parseInt(creditField.textContent) +
+			attemptCreditField.textContent =
+				parseInt(attemptCreditField.textContent) +
 				selectedCourse["credit"];
-			if (selectedCourse["category"].includes("CORE")) {
+			if (!["F", "NP"].includes(gradeSelect.value)) {
+				earnCreditField.textContent =
+					parseInt(earnCreditField.textContent) +
+					selectedCourse["credit"];
+			}
+			if (
+				selectedCourse["category"].includes("CORE") &&
+				!["F", "NP"].includes(gradeSelect.value)
+			) {
 				coreField.textContent = parseInt(coreField.textContent) + 1;
 			}
+
+			var sumGPA = 0;
+			selectedCourses.forEach((course) => {
+				var courseData = course[0];
+				var grade = course[1];
+				console.log(course);
+				if (!["P", "NP"].includes(grade)) {
+					sumGPA = sumGPA + courseData["credit"] * grades[grade];
+				}
+			});
+			gpaField.textContent = (
+				sumGPA / attemptCreditField.textContent
+			).toFixed(2);
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
@@ -328,23 +374,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			}
 
 			function getGradeSelect() {
-				var grades = [
-					"A",
-					"A-",
-					"B+",
-					"B",
-					"B-",
-					"C+",
-					"C",
-					"C-",
-					"D+",
-					"D",
-					"F",
-					"P",
-					"NP",
-				];
 				gradeOptions = "";
-				grades.forEach((grade) => {
+				Object.keys(grades).forEach((grade) => {
 					optionHTML = `<option ${gradeValue[i].textContent == grade && "selected"
 						} value=${grade}>${grade}</option>`;
 					gradeOptions = gradeOptions + optionHTML + "\n";
@@ -384,10 +415,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				getCodeSelect(data[termSelect.value])
 			);
 
-				delIcon.src = CancelIcon;
-				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-				deleteCourseBtns[i].addEventListener("click", cancelEdit);
-			}
+			delIcon.src = CancelIcon;
+			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+			deleteCourseBtns[i].addEventListener("click", cancelEdit);
+		}
 		});
 	}
 </script>
