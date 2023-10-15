@@ -10,6 +10,7 @@ interface Props extends HTMLAttributes<"div"> {
 }
 
 const {
+  id,
   title,
   value,
   total: total,
@@ -34,6 +35,7 @@ const {
   <div class="flex flex-row gap-0 items-center justify-start shrink-0 relative">
     <div
       class:list={[{editableValue : isEditable}, "text-action text-left relative"]}
+      id={id}
       style="font: var(--description, 500 16px 'Montserrat', sans-serif)"
     >
       {value}

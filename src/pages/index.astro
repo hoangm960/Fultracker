@@ -149,8 +149,9 @@ import data from "@data/data.json";
 					class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
 				>
 					<InfoField
+						id="credits"
 						title="Overall Credits:"
-						value="32"
+						value="0"
 						total={128}
 					/>
 					<InfoField title="Major Credits:" value="16" total={128} />
@@ -204,8 +205,20 @@ import data from "@data/data.json";
 </DashboardLayout>
 
 <script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data }}>
+var termValue = document.getElementsByClassName("term");
+var codeValue = document.getElementsByClassName("code");
+var titleValue = document.getElementsByClassName("title");
+var gradeValue = document.getElementsByClassName("grade");
+
 var editInfoBtns = document.getElementsByClassName("editInfo");
 var editableValues = document.getElementsByClassName("editableValue");
+var editCourseBtns = document.getElementsByClassName("editCourse");
+var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
+var creditField = document.getElementById("credits");
+
+
+var clickChecks = [];
+
 for (let i = 0; i < editInfoBtns.length; i++) {
 	editInfoBtns[i].addEventListener("click", (e) => {
 		const icon = e.target;
@@ -220,15 +233,6 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 	});
 }
 
-var termValue = document.getElementsByClassName("term");
-var codeValue = document.getElementsByClassName("code");
-var titleValue = document.getElementsByClassName("title");
-var gradeValue = document.getElementsByClassName("grade");
-
-var editCourseBtns = document.getElementsByClassName("editCourse");
-var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
-
-var clickChecks = [];
 for (let i = 0; i < editCourseBtns.length; i++) {
 	function deleteCourse(e) {
 		termValue[i].textContent = "Term";
@@ -266,6 +270,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				gradeValue[i].removeChild(gradeSelect);
 				gradeValue[i].textContent = gradeSelect.value;
 			}
+
+			var selectedCourse = data[termSelect.value][codeSelect.value];
+
+			creditField.textContent = parseInt(creditField.textContent) + selectedCourse["credit"];
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
@@ -365,9 +373,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			);
 
 			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
 				deleteCourseBtns[i].addEventListener("click", cancelEdit);
 			}
 		});
 	}
+
 </script>
