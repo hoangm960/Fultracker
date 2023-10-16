@@ -12,7 +12,6 @@ import SaveIcon from "@assets/icons/save.png";
 import CancelIcon from "@assets/icons/cancel.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
 import CourseRow from "@components/table/CourseRow.astro";
-import { getFirestore } from "firebase-admin/firestore";
 
 const auth = getAuth(app);
 
@@ -151,23 +150,16 @@ import data from "@data/data.json";
 					<InfoField
 						id="earn-credits"
 						title="Earned Credits:"
-						value="0"
 						total={128}
 					/>
 					<InfoField
 						id="attempt-credits"
 						title="Attempted Credits:"
-						value="0"
 						total={128}
 					/>
 					<InfoField title="Major Credits:" value="16" total={128} />
-					<InfoField
-						id="cores"
-						title="Core Courses:"
-						value="0"
-						total={5}
-					/>
-					<InfoField id="gpa" title="GPA:" value="0" total={4} />
+					<InfoField id="cores" title="Core Courses:" total={5} />
+					<InfoField id="gpa" title="GPA:" total={4} />
 				</div>
 				<div
 					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
@@ -175,25 +167,21 @@ import data from "@data/data.json";
 					<InfoField
 						id="E1"
 						title="E1 (Arts and Humanities):"
-						value="0"
 						total={2}
 					/>
 					<InfoField
 						id="E2"
 						title="E2 (Social Sciences):"
-						value="0"
 						total={2}
 					/>
 					<InfoField
 						id="E3"
 						title="E3 (Sciences and Engineering):"
-						value="0"
 						total={2}
 					/>
 					<InfoField
 						id="E4"
 						title="E4 (Mathematics and Computing):"
-						value="0"
 						total={2}
 					/>
 				</div>
@@ -279,6 +267,67 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		gradeValue[i].textContent = "Grade";
 	}
 
+	function updateFooter() {
+		attemptCreditField.textContent = selectedCourses
+			.map((course) => course["credit"])
+			.reduce((total, credit) => total + credit, 0);
+
+		earnCreditField.textContent = selectedCourses
+			.map((course) => {
+				if (!["F", "NP"].includes(course["grade"])) {
+					return course["credit"];
+				}
+			})
+			.reduce((total, credit) => total + credit, 0);
+
+		coreField.textContent = selectedCourses.reduce(
+			(total, course) =>
+				total +
+				(course["category"].includes("CORE") &&
+					!["F", "NP"].includes(course["grade"])),
+			0
+		);
+
+		gpaField.textContent = (
+			selectedCourses.reduce(
+				(total, course) =>
+					total +
+					(!["P", "NP"].includes(course["grade"])
+						? course["credit"] * grades[course["grade"]]
+						: 0),
+				0
+			) / attemptCreditField.textContent
+		).toFixed(2);
+
+		for (var [category, field] of Object.entries(categoryFields)) {
+			field.textContent = selectedCourses.reduce(
+				(total, course) =>
+					total + course["category"].includes(category),
+				0
+			);
+		}
+	}
+
+	function saveCourse() {
+		var termSelect = termValue[i].getElementsByTagName("select")[0];
+		termValue[i].removeChild(termSelect);
+		termValue[i].textContent =
+			termSelect.value == "Term"
+				? termSelect.value
+				: termSelect.value.split("_").slice(1, 3).join(" ");
+		var codeSelect = codeValue[i].getElementsByTagName("select")[0];
+		if (codeSelect) {
+			codeValue[i].removeChild(codeSelect);
+			codeValue[i].textContent = codeSelect.value;
+		}
+		var gradeSelect = gradeValue[i].getElementsByTagName("select")[0];
+		if (gradeSelect) {
+			gradeValue[i].removeChild(gradeSelect);
+			gradeValue[i].textContent = gradeSelect.value;
+		}
+		return termSelect, codeSelect, gradeSelect;
+	}
+
 	deleteCourseBtns[i].addEventListener("click", deleteCourse);
 
 	clickChecks.push(false);
@@ -291,59 +340,14 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			delIcon.src = DeleteIcon;
 			deleteCourseBtns[i].addEventListener("click", deleteCourse);
 
-			var termSelect = termValue[i].getElementsByTagName("select")[0];
-			termValue[i].removeChild(termSelect);
-			termValue[i].textContent =
-				termSelect.value == "Term"
-					? termSelect.value
-					: termSelect.value.split("_").slice(1, 3).join(" ");
-			var codeSelect = codeValue[i].getElementsByTagName("select")[0];
-			if (codeSelect) {
-				codeValue[i].removeChild(codeSelect);
-				codeValue[i].textContent = codeSelect.value;
-			}
-			var gradeSelect =
-				gradeValue[i].getElementsByTagName("select")[0];
-			if (gradeSelect) {
-				gradeValue[i].removeChild(gradeSelect);
-				gradeValue[i].textContent = gradeSelect.value;
-			}
+			termSelect, codeSelect, (gradeSelect = saveCourse());
 
 			var selectedCourseData =
 				data[termSelect.value][codeSelect.value];
-			selectedCourses.push([selectedCourseData, gradeSelect.value]);
+			selectedCourseData["grade"] = gradeSelect.value;
+			selectedCourses.push(selectedCourseData);
 			console.log(selectedCourseData);
-
-			attemptCreditField.textContent =
-				parseInt(attemptCreditField.textContent) +
-				selectedCourseData["credit"];
-			if (!["F", "NP"].includes(gradeSelect.value)) {
-				earnCreditField.textContent =
-					parseInt(earnCreditField.textContent) +
-					selectedCourseData["credit"];
-			}
-			if (
-				selectedCourseData["category"].includes("CORE") &&
-				!["F", "NP"].includes(gradeSelect.value)
-			) {
-				coreField.textContent = parseInt(coreField.textContent) + 1;
-			}
-
-			var sumGPA = 0;
-			selectedCourses.forEach((course) => {
-				var courseData = course[0];
-				var grade = course[1];
-				if (!["P", "NP"].includes(grade)) {
-					sumGPA = sumGPA + courseData["credit"] * grades[grade];
-				}
-			});
-			gpaField.textContent = (
-				sumGPA / attemptCreditField.textContent
-			).toFixed(2);
-			selectedCourseData["category"].forEach((category) => {
-				categoryFields[category].textContent =
-					parseInt(categoryFields[category].textContent) + 1;
-			});
+			updateFooter();
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
@@ -429,10 +433,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				getCodeSelect(data[termSelect.value])
 			);
 
-			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-		}
+				delIcon.src = CancelIcon;
+				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+				deleteCourseBtns[i].addEventListener("click", cancelEdit);
+			}
 		});
 	}
 </script>
