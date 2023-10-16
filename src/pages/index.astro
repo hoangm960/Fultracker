@@ -173,23 +173,27 @@ import data from "@data/data.json";
 					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
 				>
 					<InfoField
+						id="E1"
 						title="E1 (Arts and Humanities):"
 						value="0"
 						total={2}
 					/>
 					<InfoField
+						id="E2"
 						title="E2 (Social Sciences):"
-						value="1"
+						value="0"
 						total={2}
 					/>
 					<InfoField
+						id="E3"
 						title="E3 (Sciences and Engineering):"
-						value="3"
+						value="0"
 						total={2}
 					/>
 					<InfoField
+						id="E4"
 						title="E4 (Mathematics and Computing):"
-						value="3"
+						value="0"
 						total={2}
 					/>
 				</div>
@@ -229,6 +233,11 @@ var earnCreditField = document.getElementById("earn-credits");
 var attemptCreditField = document.getElementById("attempt-credits");
 var coreField = document.getElementById("cores");
 var gpaField = document.getElementById("gpa");
+var categoryFields = {};
+["E1", "E2", "E3", "E4"].map(
+	(category) =>
+		(categoryFields[category] = document.getElementById(category))
+);
 
 var selectedCourses = [];
 var clickChecks = [];
@@ -300,19 +309,21 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				gradeValue[i].textContent = gradeSelect.value;
 			}
 
-			var selectedCourse = data[termSelect.value][codeSelect.value];
-			selectedCourses.push([selectedCourse, gradeSelect.value]);
+			var selectedCourseData =
+				data[termSelect.value][codeSelect.value];
+			selectedCourses.push([selectedCourseData, gradeSelect.value]);
+			console.log(selectedCourseData);
 
 			attemptCreditField.textContent =
 				parseInt(attemptCreditField.textContent) +
-				selectedCourse["credit"];
+				selectedCourseData["credit"];
 			if (!["F", "NP"].includes(gradeSelect.value)) {
 				earnCreditField.textContent =
 					parseInt(earnCreditField.textContent) +
-					selectedCourse["credit"];
+					selectedCourseData["credit"];
 			}
 			if (
-				selectedCourse["category"].includes("CORE") &&
+				selectedCourseData["category"].includes("CORE") &&
 				!["F", "NP"].includes(gradeSelect.value)
 			) {
 				coreField.textContent = parseInt(coreField.textContent) + 1;
@@ -322,7 +333,6 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			selectedCourses.forEach((course) => {
 				var courseData = course[0];
 				var grade = course[1];
-				console.log(course);
 				if (!["P", "NP"].includes(grade)) {
 					sumGPA = sumGPA + courseData["credit"] * grades[grade];
 				}
@@ -330,6 +340,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			gpaField.textContent = (
 				sumGPA / attemptCreditField.textContent
 			).toFixed(2);
+			selectedCourseData["category"].forEach((category) => {
+				categoryFields[category].textContent =
+					parseInt(categoryFields[category].textContent) + 1;
+			});
 		} else {
 			clickChecks[i] = true;
 			currentValue = {
