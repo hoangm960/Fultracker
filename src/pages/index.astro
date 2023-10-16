@@ -260,13 +260,6 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 }
 
 for (let i = 0; i < editCourseBtns.length; i++) {
-	function deleteCourse(e) {
-		termValue[i].textContent = "Term";
-		codeValue[i].textContent = "Course Code";
-		titleValue[i].textContent = "Course Name";
-		gradeValue[i].textContent = "Grade";
-	}
-
 	function updateFooter() {
 		attemptCreditField.textContent = selectedCourses
 			.map((course) => course["credit"])
@@ -296,8 +289,10 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 						? course["credit"] * grades[course["grade"]]
 						: 0),
 				0
-			) / attemptCreditField.textContent
+			) / parseInt(attemptCreditField.textContent)
 		).toFixed(2);
+		gpaField.textContent =
+			gpaField.textContent == "NaN" ? 0 : gpaField.textContent;
 
 		for (var [category, field] of Object.entries(categoryFields)) {
 			field.textContent = selectedCourses.reduce(
@@ -306,6 +301,15 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				0
 			);
 		}
+	}
+
+	function deleteCourse(e) {
+		termValue[i].textContent = "Term";
+		codeValue[i].textContent = "Course Code";
+		titleValue[i].textContent = "Course Name";
+		gradeValue[i].textContent = "Grade";
+		selectedCourses.splice(i, 1);
+		updateFooter();
 	}
 
 	function saveCourse() {
@@ -433,9 +437,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				getCodeSelect(data[termSelect.value])
 			);
 
-				delIcon.src = CancelIcon;
-				deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-				deleteCourseBtns[i].addEventListener("click", cancelEdit);
+			delIcon.src = CancelIcon;
+			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
+			deleteCourseBtns[i].addEventListener("click", cancelEdit);
 			}
 		});
 	}
