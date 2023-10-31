@@ -5,30 +5,26 @@ import DashboardLayout from "@layouts/DashboardLayout.astro";
 import InfoField from "@components/InfoField.astro";
 import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
-
-import EditIcon from "@assets/icons/Edit.svg";
-import DeleteIcon from "@assets/icons/delete.png";
-import SaveIcon from "@assets/icons/save.png";
-import CancelIcon from "@assets/icons/cancel.png";
 import MajorDropdown from "@components/MajorDropdown.astro";
 import CourseRow from "@components/table/CourseRow.astro";
 
-const auth = getAuth(app);
+import EditIcon from "@assets/icons/Edit.svg";
+import DeleteIcon from "@assets/icons/delete.png";
 
-/* Check current session */
-const sessionCookie = Astro.cookies.get("session").value;
+// const auth = getAuth(app);
 
-if (!sessionCookie) {
-	return Astro.redirect("/signin");
-}
-const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-const user = await auth.getUser(decodedCookie.uid);
+// /* Check current session */
+// const sessionCookie = Astro.cookies.get("session").value;
 
-if (!user) {
-	return Astro.redirect("/signin");
-}
+// if (!sessionCookie) {
+// 	return Astro.redirect("/signin");
+// }
+// const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+// const user = await auth.getUser(decodedCookie.uid);
 
-import data from "@data/data.json";
+// if (!user) {
+// 	return Astro.redirect("/signin");
+// }
 ---
 
 <DashboardLayout page="home">
@@ -207,245 +203,5 @@ import data from "@data/data.json";
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data }}>
-var termValue = document.getElementsByClassName("term");
-var codeValue = document.getElementsByClassName("code");
-var titleValue = document.getElementsByClassName("title");
-var gradeValue = document.getElementsByClassName("grade");
-
-var editInfoBtns = document.getElementsByClassName("editInfo");
-var editableValues = document.getElementsByClassName("editableValue");
-var editCourseBtns = document.getElementsByClassName("editCourse");
-var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
-var earnCreditField = document.getElementById("earn-credits");
-var attemptCreditField = document.getElementById("attempt-credits");
-var coreField = document.getElementById("cores");
-var gpaField = document.getElementById("gpa");
-var categoryFields = {};
-["E1", "E2", "E3", "E4"].map(
-	(category) =>
-		(categoryFields[category] = document.getElementById(category))
-);
-
-var selectedCourses = [];
-var clickChecks = [];
-var grades = {
-	A: 4.0,
-	"A-": 3.7,
-	"B+": 3.3,
-	B: 3.0,
-	"B-": 2.7,
-	"C+": 2.3,
-	C: 2.0,
-	"C-": 1.7,
-	"D+": 1.3,
-	D: 1.0,
-	F: 0.0,
-	P: 0.0,
-	NP: 0.0,
-};
-
-for (let i = 0; i < editInfoBtns.length; i++) {
-	editInfoBtns[i].addEventListener("click", (e) => {
-		const icon = e.target;
-		if (editableValues[i].contentEditable == "true") {
-			icon.src = EditIcon;
-			editableValues[i].contentEditable = "false";
-		} else {
-			icon.src = SaveIcon;
-			editableValues[i].contentEditable = "true";
-			editableValues[i].focus();
-		}
-	});
-}
-
-for (let i = 0; i < editCourseBtns.length; i++) {
-	function updateFooter() {
-		attemptCreditField.textContent = selectedCourses
-			.map((course) => course["credit"])
-			.reduce((total, credit) => total + credit, 0);
-
-		earnCreditField.textContent = selectedCourses
-			.map((course) => {
-				if (!["F", "NP"].includes(course["grade"])) {
-					return course["credit"];
-				}
-			})
-			.reduce((total, credit) => total + credit, 0);
-
-		coreField.textContent = selectedCourses.reduce(
-			(total, course) =>
-				total +
-				(course["category"].includes("CORE") &&
-					!["F", "NP"].includes(course["grade"])),
-			0
-		);
-
-		gpaField.textContent = (
-			selectedCourses.reduce(
-				(total, course) =>
-					total +
-					(!["P", "NP"].includes(course["grade"])
-						? course["credit"] * grades[course["grade"]]
-						: 0),
-				0
-			) / parseInt(attemptCreditField.textContent)
-		).toFixed(2);
-		gpaField.textContent =
-			gpaField.textContent == "NaN" ? 0 : gpaField.textContent;
-
-		for (var [category, field] of Object.entries(categoryFields)) {
-			field.textContent = selectedCourses.reduce(
-				(total, course) =>
-					total + course["category"].includes(category),
-				0
-			);
-		}
-	}
-
-	function deleteCourse() {
-		termValue[i].textContent = "Term";
-		codeValue[i].textContent = "Course Code";
-		titleValue[i].textContent = "Course Name";
-		gradeValue[i].textContent = "Grade";
-		selectedCourses.splice(i, 1);
-		updateFooter();
-	}
-
-	function saveCourse() {
-		var termSelect = termValue[i].getElementsByTagName("select")[0];
-		termValue[i].removeChild(termSelect);
-		termValue[i].textContent =
-			termSelect.value == "Term"
-				? termSelect.value
-				: termSelect.value.split("_").slice(1, 3).join(" ");
-		var codeSelect = codeValue[i].getElementsByTagName("select")[0];
-		if (codeSelect) {
-			codeValue[i].removeChild(codeSelect);
-			codeValue[i].textContent = codeSelect.value;
-		}
-		var gradeSelect = gradeValue[i].getElementsByTagName("select")[0];
-		if (gradeSelect) {
-			gradeValue[i].removeChild(gradeSelect);
-			gradeValue[i].textContent = gradeSelect.value;
-		}
-		return [termSelect, codeSelect, gradeSelect];
-	}
-
-	deleteCourseBtns[i].addEventListener("click", deleteCourse);
-
-	clickChecks.push(false);
-	editCourseBtns[i].addEventListener("click", (e) => {
-		const editIcon = e.currentTarget.getElementsByTagName("img")[0];
-		const delIcon = deleteCourseBtns[i].getElementsByTagName("img")[0];
-		var haveSelected = false;
-		
-		if (clickChecks[i]) {
-			clickChecks[i] = false;
-			editIcon.src = EditIcon;
-			delIcon.src = DeleteIcon;
-			deleteCourseBtns[i].addEventListener("click", deleteCourse);
-
-			var [termSelect, codeSelect, gradeSelect] = saveCourse();
-
-			var selectedCourseData =
-				data[termSelect.value][codeSelect.value];
-			selectedCourseData["grade"] = gradeSelect.value;
-			if (haveSelected) {
-				selectedCourses[i] = selectedCourseData;
-			} else {
-				selectedCourses.push(selectedCourseData);
-			}
-			console.log(selectedCourseData);
-			updateFooter();
-		} else {
-			clickChecks[i] = true;
-			currentValue = {
-				term: termValue[i].textContent,
-				code: codeValue[i].textContent,
-				title: titleValue[i].textContent,
-				grade: gradeValue[i].textContent,
-			};
-
-			function cancelEdit(e) {
-				termValue[i].textContent = currentValue["term"];
-				codeValue[i].textContent = currentValue["code"];
-				titleValue[i].textContent = currentValue["title"];
-				gradeValue[i].textContent = currentValue["grade"];
-
-				clickChecks[i] = false;
-				editIcon.src = EditIcon;
-
-				delIcon.src = DeleteIcon;
-				deleteCourseBtns[i].addEventListener("click", deleteCourse);
-			}
-
-			function getCodeSelect(courses) {
-				codeOptions = "";
-				Object.keys(courses).forEach((code) => {
-					optionHTML = `<option ${codeValue[i].textContent == code && "selected"
-						} value=${code}>${code}</option>`;
-					codeOptions = codeOptions + optionHTML + "\n";
-				});
-				codeSelect = document.createElement("select");
-				codeSelect.innerHTML =
-					'<option value="Course Code" disabled selected hidden> Choose a course code ...</option>\n' +
-					codeOptions;
-				codeValue[i].textContent = "";
-				codeValue[i].appendChild(codeSelect);
-
-				codeSelect.addEventListener("change", () => {
-					titleValue[i].textContent =
-						courses[codeSelect.value].name;
-					getGradeSelect();
-				});
-			}
-
-			function getGradeSelect() {
-				gradeOptions = "";
-				Object.keys(grades).forEach((grade) => {
-					optionHTML = `<option ${gradeValue[i].textContent == grade && "selected"
-						} value=${grade}>${grade}</option>`;
-					gradeOptions = gradeOptions + optionHTML + "\n";
-				});
-				var gradeSelect = document.createElement("select");
-				gradeSelect.innerHTML = gradeOptions;
-				gradeValue[i].textContent = "";
-				gradeValue[i].appendChild(gradeSelect);
-			}
-
-			editIcon.src = SaveIcon;
-			termValue[i].focus();
-			termOptions = "";
-			Object.keys(data).forEach((term) => {
-				termName = term.split("_").slice(1, 3).join(" ");
-				isTermSelected = termValue[i].textContent == termName;
-				optionHTML = `<option ${isTermSelected && "selected"
-					} value=${term}>${termName}</option>`;
-				termOptions = termOptions + optionHTML + "\n";
-				if (isTermSelected) {
-					haveSelected = true;
-				}
-			});
-			var termSelect = document.createElement("select");
-			termSelect.innerHTML =
-				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
-				termOptions;
-			termValue[i].textContent = "";
-			termValue[i].appendChild(termSelect);
-			if (haveSelected) {
-				getCodeSelect(data[termSelect.value]);
-				getGradeSelect();
-			}
-
-			termSelect.addEventListener("change", () =>
-				getCodeSelect(data[termSelect.value])
-			);
-
-			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-		}
-	});
-	}
-</script>
+<script src="../scripts/editInfo.ts"></script>
+<script src="../scripts/editCourse.ts"></script>
