@@ -24,7 +24,6 @@ var categoryFields = {};
 );
 
 var selectedCourses = [];
-var clickChecks = [];
 const GRADES = {
 	A: 4.0,
 	"A-": 3.7,
@@ -40,51 +39,51 @@ const GRADES = {
 	P: 0.0,
 	NP: 0.0,
 };
+function updateFooter() {
+	attemptCreditField.textContent = selectedCourses
+		.map((course) => course["credit"])
+		.reduce((total, credit) => total + credit, 0);
 
-for (let i = 0; i < editCourseBtns.length; i++) {
-	function updateFooter() {
-		attemptCreditField.textContent = selectedCourses
-			.map((course) => course["credit"])
-			.reduce((total, credit) => total + credit, 0);
+	earnCreditField.textContent = selectedCourses
+		.map((course) => {
+			if (!["F", "NP"].includes(course["grade"])) {
+				return course["credit"];
+			}
+		})
+		.reduce((total, credit) => total + credit, 0);
 
-		earnCreditField.textContent = selectedCourses
-			.map((course) => {
-				if (!["F", "NP"].includes(course["grade"])) {
-					return course["credit"];
-				}
-			})
-			.reduce((total, credit) => total + credit, 0);
+	coreField.textContent = selectedCourses.reduce(
+		(total, course) =>
+			total +
+			(course["category"].includes("CORE") &&
+				!["F", "NP"].includes(course["grade"])),
+		0
+	);
 
-		coreField.textContent = selectedCourses.reduce(
+	gpaField.textContent = (
+		selectedCourses.reduce(
 			(total, course) =>
 				total +
-				(course["category"].includes("CORE") &&
-					!["F", "NP"].includes(course["grade"])),
+				(!["P", "NP"].includes(course["grade"])
+					? course["credit"] * GRADES[course["grade"]]
+					: 0),
+			0
+		) / parseInt(attemptCreditField.textContent)
+	).toFixed(2);
+	gpaField.textContent =
+		gpaField.textContent == "NaN" ? "0" : gpaField.textContent;
+
+	for (let [category, field] of Object.entries(categoryFields)) {
+		(field as HTMLElement).textContent = selectedCourses.reduce(
+			(total, course) =>
+				total + course["category"].includes(category),
 			0
 		);
-
-		gpaField.textContent = (
-			selectedCourses.reduce(
-				(total, course) =>
-					total +
-					(!["P", "NP"].includes(course["grade"])
-						? course["credit"] * GRADES[course["grade"]]
-						: 0),
-				0
-			) / parseInt(attemptCreditField.textContent)
-		).toFixed(2);
-		gpaField.textContent =
-			gpaField.textContent == "NaN" ? "0" : gpaField.textContent;
-
-		for (let [category, field] of Object.entries(categoryFields)) {
-			(field as HTMLElement).textContent = selectedCourses.reduce(
-				(total, course) =>
-					total + course["category"].includes(category),
-				0
-			);
-		}
 	}
+}
 
+
+for (let i = 0; i < editCourseBtns.length; i++) {
 	function deleteCourse() {
 		termValue[i].textContent = "Term";
 		codeValue[i].textContent = "Course Code";
@@ -93,14 +92,14 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		selectedCourses.splice(i, 1);
 		updateFooter();
 	}
-
+	
 	function saveCourse() {
 		let termSelect = termValue[i].getElementsByTagName("select")[0];
 		termValue[i].removeChild(termSelect);
 		termValue[i].textContent =
-			termSelect.value == "Term"
-				? termSelect.value
-				: termSelect.value.split("_").slice(1, 3).join(" ");
+		termSelect.value == "Term"
+		? termSelect.value
+		: termSelect.value.split("_").slice(1, 3).join(" ");
 		let codeSelect = codeValue[i].getElementsByTagName("select")[0];
 		if (codeSelect) {
 			codeValue[i].removeChild(codeSelect);
@@ -113,17 +112,16 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		}
 		return [termSelect, codeSelect, gradeSelect];
 	}
-
+	
 	deleteCourseBtns[i].addEventListener("click", deleteCourse);
 
-	clickChecks.push(false);
 	editCourseBtns[i].addEventListener("click", (e) => {
 		const editIcon = editCourseBtns[i].getElementsByTagName("img")[0];
 		const delIcon = deleteCourseBtns[i].getElementsByTagName("img")[0];
 		let haveSelected = false;
 
-		if (clickChecks[i]) {
-			clickChecks[i] = false;
+		if (editCourseBtns[i].classList.contains("edit")) {
+			editCourseBtns[i].classList.remove("edit");
 			editIcon.src = EditIcon;
 			delIcon.src = DeleteIcon;
 			deleteCourseBtns[i].addEventListener("click", deleteCourse);
@@ -141,7 +139,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			console.log(selectedCourseData);
 			updateFooter();
 		} else {
-			clickChecks[i] = true;
+			editCourseBtns[i].classList.add("edit");
 			let currentValue = {
 				term: termValue[i].textContent,
 				code: codeValue[i].textContent,
@@ -149,15 +147,14 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				grade: gradeValue[i].textContent,
 			};
 
-			function cancelEdit(e) {
+			function cancelEdit() {
 				termValue[i].textContent = currentValue["term"];
 				codeValue[i].textContent = currentValue["code"];
 				titleValue[i].textContent = currentValue["title"];
 				gradeValue[i].textContent = currentValue["grade"];
 
-				clickChecks[i] = false;
+				editCourseBtns[i].classList.remove("edit");
 				editIcon.src = EditIcon;
-
 				delIcon.src = DeleteIcon;
 				deleteCourseBtns[i].addEventListener("click", deleteCourse);
 			}
@@ -197,7 +194,9 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 			}
 
 			editIcon.src = SaveIcon;
+			delIcon.src = CancelIcon;
 			(termValue[i] as HTMLElement).focus();
+
 			let termOptions = "";
 			Object.keys(courseData).forEach((term) => {
 				let termName = term.split("_").slice(1, 3).join(" ");
@@ -209,12 +208,14 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					haveSelected = true;
 				}
 			});
+			
 			let termSelect = document.createElement("select");
 			termSelect.innerHTML =
 				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
 				termOptions;
 			termValue[i].textContent = "";
 			termValue[i].appendChild(termSelect);
+
 			if (haveSelected) {
 				getCodeSelect(courseData[termSelect.value]);
 				getGradeSelect();
@@ -224,9 +225,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				getCodeSelect(courseData[termSelect.value])
 			);
 
-			delIcon.src = CancelIcon;
 			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
 			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-			}
-		});
-	}
+		}
+	});
+}
