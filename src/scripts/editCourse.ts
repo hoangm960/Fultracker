@@ -92,14 +92,14 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		selectedCourses.splice(i, 1);
 		updateFooter();
 	}
-	
+
 	function saveCourse() {
 		let termSelect = termValue[i].getElementsByTagName("select")[0];
 		termValue[i].removeChild(termSelect);
 		termValue[i].textContent =
-		termSelect.value == "Term"
-		? termSelect.value
-		: termSelect.value.split("_").slice(1, 3).join(" ");
+			termSelect.value == "Term"
+				? termSelect.value
+				: termSelect.value.split("_").slice(1, 3).join(" ");
 		let codeSelect = codeValue[i].getElementsByTagName("select")[0];
 		if (codeSelect) {
 			codeValue[i].removeChild(codeSelect);
@@ -112,7 +112,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 		}
 		return [termSelect, codeSelect, gradeSelect];
 	}
-	
+
 	deleteCourseBtns[i].addEventListener("click", deleteCourse);
 
 	editCourseBtns[i].addEventListener("click", (e) => {
@@ -208,7 +208,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 					haveSelected = true;
 				}
 			});
-			
+
 			let termSelect = document.createElement("select");
 			termSelect.innerHTML =
 				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
