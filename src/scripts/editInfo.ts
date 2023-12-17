@@ -9,10 +9,10 @@ for (let i = 0; i < editInfoBtns.length; i++) {
 		let editableVal = editableValues[i] as HTMLElement;
 		let icon = editInfoBtns[i].getElementsByTagName("img")[0];
 		if (editableVal.contentEditable == "true") {
-			icon.src = EditIcon;
+			icon.src = EditIcon.src;
 			editableVal.contentEditable = "false";
 		} else {
-			icon.src = SaveIcon;
+			icon.src = SaveIcon.src;
 			editableVal.contentEditable = "true";
 			editableVal.focus();
 		}

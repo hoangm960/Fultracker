@@ -8,5 +8,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   output: 'server',
   adapter: netlify(),
-  integrations: [react(), tailwind()]
+  integrations: [react(), tailwind()],
+  prefetch: true
 });

@@ -122,8 +122,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
 		if (editCourseBtns[i].classList.contains("edit")) {
 			editCourseBtns[i].classList.remove("edit");
-			editIcon.src = EditIcon;
-			delIcon.src = DeleteIcon;
+			editIcon.src = EditIcon.src;
+			delIcon.src = DeleteIcon.src;
 			deleteCourseBtns[i].addEventListener("click", deleteCourse);
 
 			let [termSelect, codeSelect, gradeSelect] = saveCourse();
@@ -154,8 +154,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				gradeValue[i].textContent = currentValue["grade"];
 
 				editCourseBtns[i].classList.remove("edit");
-				editIcon.src = EditIcon;
-				delIcon.src = DeleteIcon;
+				editIcon.src = EditIcon.src;
+				delIcon.src = DeleteIcon.src;
 				deleteCourseBtns[i].addEventListener("click", deleteCourse);
 			}
 
@@ -193,8 +193,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 				gradeValue[i].appendChild(gradeSelect);
 			}
 
-			editIcon.src = SaveIcon;
-			delIcon.src = CancelIcon;
+			editIcon.src = SaveIcon.src;
+			delIcon.src = CancelIcon.src;
 			(termValue[i] as HTMLElement).focus();
 
 			let termOptions = "";
