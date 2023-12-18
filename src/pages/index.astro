@@ -10,6 +10,7 @@ import CourseRow from "@components/table/CourseRow.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
+import Flow from "@components/flow_chart/Flow";
 
 // const auth = getAuth(app);
 
@@ -107,7 +108,7 @@ import DeleteIcon from "@assets/icons/delete.png";
 						</Button>
 					</InfoField>
 				</div>
-				<CourseTable height={386}>
+				<CourseTable height={350}>
 					{
 						[...Array(40).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -200,12 +201,14 @@ import DeleteIcon from "@assets/icons/delete.png";
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+
+			<div class="w-full h-full">
+				<Flow client:load></Flow>
+			</div>
 		</side>
 	</div>
 </DashboardLayout>
 
 <script src="../scripts/editInfo.ts"></script>
 <script src="../scripts/editCourse.ts"></script>
+@components/flow_chart/Flow
