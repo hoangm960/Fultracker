@@ -4,6 +4,7 @@ import SaveIcon from "@assets/icons/save.png";
 import CancelIcon from "@assets/icons/cancel.png";
 
 import courseData from "@data/course_data.json";
+import { updateFooter } from "./updateFooter";
 
 var termValue = document.getElementsByClassName("term");
 var codeValue = document.getElementsByClassName("code");
@@ -46,6 +47,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
         if (selectedCourses[i]) {
             delete selectedCourses[i]
         }
+        updateFooter()
     }
 
     function createSelect(optionList: Array<string>, defaultVal?: string, infoText?: string, optionDisplayFunc?: Function, onChange?: Function) {        
@@ -79,7 +81,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
         let gradeSelect = gradeValue[i].getElementsByTagName("select")[0] as HTMLSelectElement
 
         selectedCourses[i] = { "term": termSelect.value, "code": codeSelect.value, "grade": gradeSelect.value }
-        localStorage["selectedCourses"] = JSON.stringify(selectedCourses)
+        localStorage["selectedCourses"] = JSON.stringify(Object.values(selectedCourses))
 
         termValue[i].removeChild(termSelect)
         termValue[i].textContent = termSelect.value.split("_").slice(1, 3).join(" ")
@@ -119,6 +121,8 @@ for (let i = 0; i < editCourseBtns.length; i++) {
             delIcon.src = DeleteIcon.src
             
             saveCourse()
+            updateFooter()
+
             deleteCourseBtns[i].removeEventListener("click", cancelEdit);
             deleteCourseBtns[i].addEventListener("click", deleteCourse);
         } else {
