@@ -46,6 +46,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
         if (selectedCourses[i]) {
             delete selectedCourses[i]
+            localStorage["selectedCourses"] = JSON.stringify(Object.values(selectedCourses))
         }
         updateFooter()
     }
