@@ -2,7 +2,7 @@
 import type { HTMLAttributes } from "astro/types";
 interface Props extends HTMLAttributes<"div"> {
   title: string;
-  value?: string;
+  value: string;
   total?: number;
   isEditable?: boolean;
   hasProgressBar?: boolean;
@@ -12,7 +12,7 @@ interface Props extends HTMLAttributes<"div"> {
 const {
   id,
   title,
-  value = "0",
+  value,
   total: total,
   isEditable = false,
   hasProgressBar = false,
