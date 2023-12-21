@@ -1,6 +1,4 @@
 ---
-import { app } from "@lib/firebase/server";
-import { getAuth } from "firebase-admin/auth";
 import DashboardLayout from "@layouts/DashboardLayout.astro";
 import InfoField from "@components/InfoField.astro";
 import CourseTable from "@components/table/CourseTable.astro";
@@ -12,20 +10,6 @@ import Flow from "@components/flow_chart/Flow";
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
 
-// const auth = getAuth(app);
-
-// /* Check current session */
-// const sessionCookie = Astro.cookies.get("session").value;
-
-// if (!sessionCookie) {
-// 	return Astro.redirect("/signin");
-// }
-// const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-// const user = await auth.getUser(decodedCookie.uid);
-
-// if (!user) {
-// 	return Astro.redirect("/signin");
-// }
 ---
 
 <DashboardLayout page="home">
