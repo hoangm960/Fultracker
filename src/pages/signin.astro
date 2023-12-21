@@ -1,0 +1,215 @@
+---
+import { app } from "@lib/firebase/server";
+import { getAuth } from "firebase-admin/auth";
+import AuthLayout from "@layouts/AuthLayout.astro";
+import InputField from "@components/InputField.astro";
+
+import arrowIcon from "@assets/icons/Arrow.svg";
+import googleIcon from "@assets/icons/Google.svg";
+import githubIcon from "@assets/icons/Github.svg";
+import Button from "@components/Button.astro";
+
+/* Check if the user is authenticated */
+const auth = getAuth(app);
+const sessionCookie = Astro.cookies.get("session").value;
+if (sessionCookie) {
+	const decodedCookie = await auth.verifySessionCookie(sessionCookie);
+	if (decodedCookie) {
+		return Astro.redirect("/");
+	}
+}
+---
+
+<AuthLayout>
+	<div
+		class="flex flex-col items-center justify-start shrink-0 w-[1003px] mb-4"
+	>
+		<div
+			class="top-12 text-text text-center relative self-stretch"
+			style="font: 900 90px 'Montserrat', sans-serif"
+		>
+			Login
+		</div>
+
+		<form
+			class="bg-highlight rounded-[100px] pt-20 pr-10 pb-[50px] pl-10 flex flex-col gap-20 items-center justify-center self-stretch shrink-0"
+			style="box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.2);"
+			action="/api/auth/signin"
+			method="post"
+			autocomplete="off"
+		>
+			<div
+				class="flex flex-col gap-[25px] items-center justify-center self-stretch shrink-0 relative"
+			>
+				<InputField name="Email" type="email" id="email" />
+				<InputField name="Password" type="password" id="password" />
+			</div>
+
+			<div
+				class="flex flex-row items-center justify-between self-stretch shrink-0 relative"
+			>
+				<div
+					class="pt-0 pr-5 pb-0 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 w-[469px] relative"
+				>
+					<div
+						class="text-text text-left relative flex-1"
+						style="font: 500 20px 'Montserrat', sans-serif"
+					>
+						Don't have account?
+					</div>
+
+					<a
+						class="text-action text-left relative flex-1"
+						style="font: 500 20px 'Montserrat', sans-serif; text-decoration: underline;"
+						id="switch-title"
+						href="/register"
+					>
+						Create new!
+					</a>
+				</div>
+
+				<div
+					class="pt-0 pr-5 pb-0 pl-5 flex flex-row gap-2.5 items-center justify-start shrink-0 w-[423px] relative"
+				>
+					<div
+						class="text-text text-left relative flex-1"
+						style="font: 500 20px 'Montserrat', sans-serif"
+					>
+						Forgot password?
+					</div>
+
+					<!-- TODO: add reset function -->
+					<a
+						class="text-action text-left relative flex-1"
+						style="font: 500 20px 'Montserrat', sans-serif; text-decoration: underline;"
+						href=""
+					>
+						Reset password!
+					</a>
+				</div>
+			</div>
+
+			<Button id="signin" type="submit" isfilled>
+				<span class="text-4xl font-bold">Let me INNN!!!</span>
+				<img src={arrowIcon} alt="arrow" />
+			</Button>
+
+			<div
+				class="flex flex-col gap-[50px] items-center justify-center self-stretch shrink-0 relative"
+			>
+				<div
+					class="bg-text rounded-[5px] pt-0 pr-[432px] pb-0 pl-[432px] flex flex-col gap-2.5 items-center justify-center self-stretch shrink-0 h-[7px] relative"
+				>
+					<div
+						class="bg-highlight pt-0 pr-[15px] pb-0 pl-[15px] flex flex-col gap-2.5 items-center justify-center self-stretch shrink-0 relative"
+					>
+						<div
+							class="text-action text-left relative"
+							style="font: 700 30px 'Montserrat', sans-serif"
+						>
+							or
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="pt-0 pr-[50px] pb-0 pl-[50px] flex flex-row items-center justify-between self-stretch shrink-0 relative"
+				>
+					<Button id="google" theme="neutral" isfilled>
+						<img src={googleIcon} alt="google" />
+						<span class="font-semibold text-2xl">Sign in with Google</span>
+					</Button>
+					<Button id="github" theme="neutral" isfilled>
+						<img src={githubIcon} alt="google" />
+						<span class="font-semibold text-2xl">Sign in with Github</span>
+					</Button>
+				</div>
+			</div>
+		</form>
+	</div>
+</AuthLayout>
+
+<script>
+	import {
+		getAuth,
+		inMemoryPersistence,
+		signInWithEmailAndPassword,
+		GoogleAuthProvider,
+		signInWithPopup,
+		GithubAuthProvider,
+	} from "firebase/auth";
+	import { app } from "@lib/firebase/client";
+
+	const auth = getAuth(app);
+	auth.setPersistence(inMemoryPersistence);
+
+	const form = document.querySelector("form") as HTMLFormElement;
+	form.addEventListener("submit", async (e) => {
+		e.preventDefault();
+		const formData = new FormData(form);
+		const email = formData.get("email")?.toString();
+		const password = formData.get("password")?.toString();
+
+		if (!email || !password) {
+			return;
+		}
+		const userCredential = await signInWithEmailAndPassword(
+			auth,
+			email,
+			password
+		);
+		const idToken = await userCredential.user.getIdToken();
+		const response = await fetch("/api/auth/signin", {
+			headers: {
+				Authorization: `Bearer ${idToken}`,
+			},
+		});
+
+		if (response.redirected) {
+			window.location.assign(response.url);
+		}
+	});
+
+	const googleSignin = document.querySelector("#google") as HTMLButtonElement;
+	googleSignin.addEventListener("click", async () => {
+		const provider = new GoogleAuthProvider();
+		const userCredential = await signInWithPopup(auth, provider);
+		const idToken = await userCredential.user.getIdToken();
+		const res = await fetch("/api/auth/signin", {
+			headers: {
+				Authorization: `Bearer ${idToken}`,
+			},
+		});
+
+		if (!res.ok) {
+			const data = await res.json();
+			console.log(data);
+		}
+
+		if (res.redirected) {
+			window.location.assign(res.url);
+		}
+	});
+
+	const githubSignin = document.querySelector("#github") as HTMLButtonElement;
+	githubSignin.addEventListener("click", async () => {
+		const provider = new GithubAuthProvider();
+		const userCredential = await signInWithPopup(auth, provider);
+		const idToken = await userCredential.user.getIdToken();
+		console.log(idToken);
+		const res = await fetch("/api/auth/signin", {
+			headers: {
+				Authorization: `Bearer ${idToken}`,
+			},
+		});
+
+		if (!res.ok) {
+			const data = await res.json();
+			console.log(data);
+		}
+
+		if (res.redirected) {
+			window.location.assign(res.url);
+		}
+	});
+</script>

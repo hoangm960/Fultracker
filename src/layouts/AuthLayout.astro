@@ -1,0 +1,37 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+
+import backgroundIcon1 from "@assets/icons/backgroundIcon1.png";
+import backgroundIcon2 from "@assets/icons/backgroundIcon2.png";
+import schoolLogo from "@assets/images/SchoolLogo.png";
+---
+
+<MainLayout>
+    <div
+        class="bg-background flex flex-col items-center justify-between overflow-hidden"
+    >
+        <div
+            class="absolute top-0 left-0 text-action text-left"
+            style="font: 900 70px/100% 'Montserrat', sans-serif"
+        >
+            Fultracker
+        </div>
+
+        <img
+            class="absolute top-0 right-0 shrink-0 w-[372px] h-[269px]"
+            src={backgroundIcon1}
+        />
+
+        <slot />
+
+        <img
+            class="absolute bottom-0 left-0 shrink-0 w-[321px] h-[219px]"
+            src={backgroundIcon2}
+        />
+
+        <img
+            class="absolute bottom-0 right-0 shrink-0 w-[201px] h-[57px]"
+            src={schoolLogo}
+        />
+    </div>
+</MainLayout>
