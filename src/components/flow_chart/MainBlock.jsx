@@ -15,21 +15,21 @@ function MainBlock({ data }) {
         />
 
       <Handle
-        id="course"
+        id="courseRight"
         type="source"
         position={Position.Right}
         isConnectable={false}
       />
 
       <Handle
-        id="course"
+        id="courseLeft"
         type="source"
         position={Position.Left}
         isConnectable={false}
       />
 
       <Handle
-        id="course"
+        id="main"
         type="target"
         position={Position.Bottom}
         isConnectable={false}

@@ -1,73 +1,76 @@
 import ReactFlow from 'reactflow';
 import MainBlock from './MainBlock';
+import CourseBlock from './CourseBlock';
 import 'reactflow/dist/style.css';
 
 import majorData from "@data/major.json"
 
 function getNodesAndEdges(flowData) {
-  let nodes = [
-    {
-      id: flowData[0]['id'],
-      type: 'mainBlock',
-      position: { x: 0, y: 0 },
-      data: flowData[0]
-    }
-  ];
-  
-  let edges = [];
-  
-  for (let i = 1; i < flowData.length; i++) {
-    const previousElement = flowData[i - 1];
-    const currentElement = flowData[i];
-    let nodeData = {
-      id: currentElement['id'],
+  let nodes = [];
+  for (const [index, [id, node]] of Object.entries(Object.entries(flowData["nodes"]))) {
+    nodes.push({
+      id: id,
       type: 'mainBlock',
       targetPosition: 'bottom',
-      position: { x: 0, y: -(80 * i) },
-      data: currentElement
-    };
-    let edgeData = {
-      id: `edge-${i}`,
-      source: previousElement['id'],
-      target: currentElement['id'],
-      sourceHandle: "main"
-    };
-    if (Array.isArray(currentElement)) {
-      for (let j = 0; j < currentElement.length; j++) {
-        const element = currentElement[j];
-        nodeData = {
-          id: element['id'],
-          type: 'mainBlock',
+      position: { x: 0, y: -(80 * index) },
+      data: node
+    });
+  }
+
+  let edges = [];
+  for (const [i, [id, flow]] of Object.entries(Object.entries(flowData["flows"]))) {
+    for (const [j, nextNodeID] of Object.entries(flow)) {
+      edges.push({
+        id: `${id}-${nextNodeID}`,
+        source: id,
+        target: nextNodeID,
+        sourceHandle: "main"
+      });
+      nodes[i * 1 + j * 1 + 1]["position"]["x"] = 200*(j*1 + 0.5 - flow.length/2)
+      nodes[i * 1 + j * 1 + 1]["position"]["y"] = nodes[i * 1]["position"]["y"] - 80;
+    }
+  }
+
+  for (const [i, [nodeID, node]] of Object.entries(Object.entries(flowData["nodes"]))) {
+    if (node["type"] == "course") {
+      const courses = node["courses"];
+      for (let j = 0; j < courses.length; j++) {
+        const courseID = courses[j];
+        const nodeData = {
+          id: courseID,
+          type: 'courseBlock',
           targetPosition: 'bottom',
-          position: { x: 200*(j + 1 - currentElement.length / 2), y: -(80 * i) },
-          data: element
+          position: {
+            x: i % 2 === 0 ? 250 : -150,
+            y: 60*(j + 0.5 - courses.length/2) + nodes[i * 1]["position"]["y"]
+          },
+          data: {
+            course: courseID,
+            position: i % 2 === 0 ? "left" : "right"
+          }
         };
-        edgeData = {
-          id: `edge-${i}-${j+1}`,
-          source: previousElement['id'],
-          target: element['id'],
-          sourceHandle: "main"
+        const edgeData = {
+          id: `${nodeID}-${courseID}`,
+          source: nodeID,
+          target: courseID,
+          sourceHandle: i % 2 === 0 ? "courseRight" : "courseLeft"
         };
-        
+
         nodes.push(nodeData);
         edges.push(edgeData);
       };
-    } else{ 
-      nodes.push(nodeData);
-      edges.push(edgeData);
     }
   }
-  
+
+
   return [nodes, edges];
 }
 
 const proOptions = { hideAttribution: true };
+const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 
-const flowData = majorData["MATH"]["requirements"]["major"]["flow"];
-console.log(getNodesAndEdges(flowData));
+const flowData = majorData["MATH"]["requirements"]["major"];
 let [nodes, edges] = getNodesAndEdges(flowData);
-
-const nodeTypes = { mainBlock: MainBlock };
 
 function Flow() {
   return (

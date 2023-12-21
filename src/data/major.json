@@ -2,9 +2,8 @@
     "MATH": {
         "requirements": {
             "major": {
-                "flow": [
-                    {
-                        "id": "foundation",
+                "nodes": {
+                    "foundation": {
                         "courses": [
                             "MATH103",
                             "MATH101",
@@ -15,8 +14,7 @@
                         "quantity": 4,
                         "type": "course"
                     },
-                    {
-                        "id": "writing",
+                    "writing": {
                         "courses": [
                             "MATH102"
                         ],
@@ -24,29 +22,25 @@
                         "quantity": 1,
                         "type": "course"
                     },
-                    {
-                        "id": "intermediate",
+                    "intermediate": {
                         "name": "Intermediate Courses",
                         "level": 2,
                         "quantity": 2,
                         "type": "major"
                     },
-                    {
-                        "id": "pure",
+                    "pure": {
                         "courses": [],
                         "name": "Pure Mathematics",
                         "quantity": 1,
                         "type": "courses"
                     },
-                    {
-                        "id": "advanced1",
+                    "advanced1": {
                         "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 2,
                         "type": "major"
                     },
-                    {
-                        "id": "elective",
+                    "elective": {
                         "name": "Elective Applied Courses",
                         "quantity": 2,
                         "at-least": {
@@ -55,30 +49,34 @@
                         },
                         "type": "major"
                     },
-                    {
-                        "id": "seminar",
-                        "name": "Math Research Seminar",
+                    "seminar": {
+                        "name": "Research Seminar",
                         "level": 3,
                         "quantity": 2,
                         "type": "major"
                     },
-                    [
-                        {
-                            "id": "capstone",
-                            "name": "Capstone I & II",
-                            "level": 5,
-                            "quantity": 2,
-                            "type": "major"
-                        },
-                        {
-                            "id": "advanced2",
-                            "name": "Advanced Courses",
-                            "level": 4,
-                            "quantity": 2,
-                            "type": "major"
-                        }
-                    ]
-                ]
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 5,
+                        "quantity": 2,
+                        "type": "major"
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "level": 4,
+                        "quantity": 2,
+                        "type": "major"
+                    }
+                },
+                "flows": {
+                    "foundation": ["writing"],
+                    "writing":["intermediate"],
+                    "intermediate": ["pure"],
+                    "pure": ["advanced"],
+                    "advanced1": ["elective"],
+                    "elective": ["seminar"],
+                    "seminar": ["capstones", "advanced2"]
+                }
             },
             "minor": {
                 "advanced": {
