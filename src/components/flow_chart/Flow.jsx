@@ -26,7 +26,7 @@ function getNodesAndEdges(flowData) {
         target: nextNodeID,
         sourceHandle: "main"
       });
-      nodes[i * 1 + j * 1 + 1]["position"]["x"] = 200*(j*1 + 0.5 - flow.length/2)
+      nodes[i * 1 + j * 1 + 1]["position"]["x"] = 200 * (j * 1 + 0.5 - flow.length / 2)
       nodes[i * 1 + j * 1 + 1]["position"]["y"] = nodes[i * 1]["position"]["y"] - 80;
     }
   }
@@ -42,7 +42,7 @@ function getNodesAndEdges(flowData) {
           targetPosition: 'bottom',
           position: {
             x: i % 2 === 0 ? 250 : -150,
-            y: 60*(j + 0.5 - courses.length/2) + nodes[i * 1]["position"]["y"]
+            y: 60 * (j + 0.5 - courses.length / 2) + nodes[i * 1]["position"]["y"]
           },
           data: {
             course: courseID,
@@ -70,9 +70,12 @@ function getNodesAndEdges(flowData) {
 function Flow(props) {
   const proOptions = { hideAttribution: true };
   const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
-  
-  const flowData = majorData[props.major]["requirements"]["major"];
-  let [nodes, edges] = getNodesAndEdges(flowData);
+
+  let [nodes, edges] = [[], []]
+  if (props.major != "") {
+    const flowData = majorData[props.major]["requirements"]["major"];
+    [nodes, edges] = getNodesAndEdges(flowData);
+  }
 
   return (
     <ReactFlow
