@@ -66,13 +66,14 @@ function getNodesAndEdges(flowData) {
   return [nodes, edges];
 }
 
-const proOptions = { hideAttribution: true };
-const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 
-const flowData = majorData["MATH"]["requirements"]["major"];
-let [nodes, edges] = getNodesAndEdges(flowData);
+function Flow(props) {
+  const proOptions = { hideAttribution: true };
+  const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
+  
+  const flowData = majorData[props.major]["requirements"]["major"];
+  let [nodes, edges] = getNodesAndEdges(flowData);
 
-function Flow() {
   return (
     <ReactFlow
       nodes={nodes}
