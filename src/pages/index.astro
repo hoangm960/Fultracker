@@ -1,35 +1,15 @@
 ---
-import { app } from "@lib/firebase/server";
-import { getAuth } from "firebase-admin/auth";
 import DashboardLayout from "@layouts/DashboardLayout.astro";
 import InfoField from "@components/InfoField.astro";
 import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
+import MajorDropdown from "@components/MajorDropdown.astro";
+import CourseRow from "@components/table/CourseRow.astro";
+import Flow from "@components/flow_chart/Flow";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
-import SaveIcon from "@assets/icons/save.png";
-import CancelIcon from "@assets/icons/cancel.png";
-import MajorDropdown from "@components/MajorDropdown.astro";
-import CourseRow from "@components/table/CourseRow.astro";
-import { getFirestore } from "firebase-admin/firestore";
 
-const auth = getAuth(app);
-
-/* Check current session */
-const sessionCookie = Astro.cookies.get("session").value;
-
-if (!sessionCookie) {
-	return Astro.redirect("/signin");
-}
-const decodedCookie = await auth.verifySessionCookie(sessionCookie);
-const user = await auth.getUser(decodedCookie.uid);
-
-if (!user) {
-	return Astro.redirect("/signin");
-}
-
-import data from "@data/data.json";
 ---
 
 <DashboardLayout page="home">
@@ -51,7 +31,11 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 					<InfoField title="Student ID:" value="xxxxxx" isEditable>
@@ -60,7 +44,11 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 					<InfoField title="DOB:" value="xx/xx/xxxx" isEditable>
@@ -69,7 +57,11 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 					<InfoField title="Major:" value="Major Name" isEditable>
@@ -78,7 +70,11 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 					<InfoField
@@ -91,7 +87,11 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 					<InfoField
@@ -104,11 +104,15 @@ import data from "@data/data.json";
 							theme="neutral"
 							padding="p-1"
 						>
-							<img class="h-8" src={EditIcon} alt="editInfo" />
+							<img
+								class="h-8"
+								src={EditIcon.src}
+								alt="editInfo"
+							/>
 						</Button>
 					</InfoField>
 				</div>
-				<CourseTable height={386}>
+				<CourseTable height={350}>
 					{
 						[...Array(40).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -120,7 +124,7 @@ import data from "@data/data.json";
 									>
 										<img
 											class="h-8"
-											src={EditIcon}
+											src={EditIcon.src}
 											alt="Edit Course"
 										/>
 									</Button>
@@ -131,7 +135,7 @@ import data from "@data/data.json";
 									>
 										<img
 											class="h-8"
-											src={DeleteIcon}
+											src={DeleteIcon.src}
 											alt="Delete Course"
 										/>
 									</Button>
@@ -151,45 +155,39 @@ import data from "@data/data.json";
 					<InfoField
 						id="earn-credits"
 						title="Earned Credits:"
-						value="0"
 						total={128}
 					/>
 					<InfoField
 						id="attempt-credits"
 						title="Attempted Credits:"
-						value="0"
 						total={128}
 					/>
-					<InfoField title="Major Credits:" value="16" total={128} />
-					<InfoField
-						id="cores"
-						title="Core Courses:"
-						value="0"
-						total={5}
-					/>
-					<InfoField id="gpa" title="GPA:" value="0" total={4} />
+					<!-- TODO: calculate major credits -->
+					<!-- <InfoField title="Major Credits:" value="16" total={128} /> -->
+					<InfoField id="cores" title="Core Courses:" total={5} />
+					<InfoField id="gpa" title="GPA:" total={4} />
 				</div>
 				<div
 					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
 				>
 					<InfoField
+						id="E1"
 						title="E1 (Arts and Humanities):"
-						value="0"
 						total={2}
 					/>
 					<InfoField
+						id="E2"
 						title="E2 (Social Sciences):"
-						value="1"
 						total={2}
 					/>
 					<InfoField
+						id="E3"
 						title="E3 (Sciences and Engineering):"
-						value="3"
 						total={2}
 					/>
 					<InfoField
+						id="E4"
 						title="E4 (Mathematics and Computing):"
-						value="3"
 						total={2}
 					/>
 				</div>
@@ -208,217 +206,14 @@ import data from "@data/data.json";
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+
+			<div id="flow-box" class="h-full w-full">
+				<Flow client:load major="" />
+			</div>
 		</side>
 	</div>
 </DashboardLayout>
 
-<script define:vars={{ EditIcon, SaveIcon, CancelIcon, DeleteIcon, data }}>
-var termValue = document.getElementsByClassName("term");
-var codeValue = document.getElementsByClassName("code");
-var titleValue = document.getElementsByClassName("title");
-var gradeValue = document.getElementsByClassName("grade");
-
-var editInfoBtns = document.getElementsByClassName("editInfo");
-var editableValues = document.getElementsByClassName("editableValue");
-var editCourseBtns = document.getElementsByClassName("editCourse");
-var deleteCourseBtns = document.getElementsByClassName("deleteCourse");
-var earnCreditField = document.getElementById("earn-credits");
-var attemptCreditField = document.getElementById("attempt-credits");
-var coreField = document.getElementById("cores");
-var gpaField = document.getElementById("gpa");
-
-var selectedCourses = [];
-var clickChecks = [];
-var grades = {
-	A: 4.0,
-	"A-": 3.7,
-	"B+": 3.3,
-	B: 3.0,
-	"B-": 2.7,
-	"C+": 2.3,
-	C: 2.0,
-	"C-": 1.7,
-	"D+": 1.3,
-	D: 1.0,
-	F: 0.0,
-	P: 0.0,
-	NP: 0.0,
-};
-
-for (let i = 0; i < editInfoBtns.length; i++) {
-	editInfoBtns[i].addEventListener("click", (e) => {
-		const icon = e.target;
-		if (editableValues[i].contentEditable == "true") {
-			icon.src = EditIcon;
-			editableValues[i].contentEditable = "false";
-		} else {
-			icon.src = SaveIcon;
-			editableValues[i].contentEditable = "true";
-			editableValues[i].focus();
-		}
-	});
-}
-
-for (let i = 0; i < editCourseBtns.length; i++) {
-	function deleteCourse(e) {
-		termValue[i].textContent = "Term";
-		codeValue[i].textContent = "Course Code";
-		titleValue[i].textContent = "Course Name";
-		gradeValue[i].textContent = "Grade";
-	}
-
-	deleteCourseBtns[i].addEventListener("click", deleteCourse);
-
-	clickChecks.push(false);
-	editCourseBtns[i].addEventListener("click", (e) => {
-		const editIcon = e.currentTarget.getElementsByTagName("img")[0];
-		const delIcon = deleteCourseBtns[i].getElementsByTagName("img")[0];
-		if (clickChecks[i]) {
-			clickChecks[i] = false;
-			editIcon.src = EditIcon;
-			delIcon.src = DeleteIcon;
-			deleteCourseBtns[i].addEventListener("click", deleteCourse);
-
-			var termSelect = termValue[i].getElementsByTagName("select")[0];
-			termValue[i].removeChild(termSelect);
-			termValue[i].textContent =
-				termSelect.value == "Term"
-					? termSelect.value
-					: termSelect.value.split("_").slice(1, 3).join(" ");
-			var codeSelect = codeValue[i].getElementsByTagName("select")[0];
-			if (codeSelect) {
-				codeValue[i].removeChild(codeSelect);
-				codeValue[i].textContent = codeSelect.value;
-			}
-			var gradeSelect =
-				gradeValue[i].getElementsByTagName("select")[0];
-			if (gradeSelect) {
-				gradeValue[i].removeChild(gradeSelect);
-				gradeValue[i].textContent = gradeSelect.value;
-			}
-
-			var selectedCourse = data[termSelect.value][codeSelect.value];
-			selectedCourses.push([selectedCourse, gradeSelect.value]);
-
-			attemptCreditField.textContent =
-				parseInt(attemptCreditField.textContent) +
-				selectedCourse["credit"];
-			if (!["F", "NP"].includes(gradeSelect.value)) {
-				earnCreditField.textContent =
-					parseInt(earnCreditField.textContent) +
-					selectedCourse["credit"];
-			}
-			if (
-				selectedCourse["category"].includes("CORE") &&
-				!["F", "NP"].includes(gradeSelect.value)
-			) {
-				coreField.textContent = parseInt(coreField.textContent) + 1;
-			}
-
-			var sumGPA = 0;
-			selectedCourses.forEach((course) => {
-				var courseData = course[0];
-				var grade = course[1];
-				console.log(course);
-				if (!["P", "NP"].includes(grade)) {
-					sumGPA = sumGPA + courseData["credit"] * grades[grade];
-				}
-			});
-			gpaField.textContent = (
-				sumGPA / attemptCreditField.textContent
-			).toFixed(2);
-		} else {
-			clickChecks[i] = true;
-			currentValue = {
-				term: termValue[i].textContent,
-				code: codeValue[i].textContent,
-				title: titleValue[i].textContent,
-				grade: gradeValue[i].textContent,
-			};
-
-			function cancelEdit(e) {
-				termValue[i].textContent = currentValue["term"];
-				codeValue[i].textContent = currentValue["code"];
-				titleValue[i].textContent = currentValue["title"];
-				gradeValue[i].textContent = currentValue["grade"];
-
-				clickChecks[i] = false;
-				editIcon.src = EditIcon;
-
-				delIcon.src = DeleteIcon;
-				deleteCourseBtns[i].addEventListener("click", deleteCourse);
-			}
-
-			function getCodeSelect(courses) {
-				codeOptions = "";
-				Object.keys(courses).forEach((code) => {
-					optionHTML = `<option ${codeValue[i].textContent == code && "selected"
-						} value=${code}>${code}</option>`;
-					codeOptions = codeOptions + optionHTML + "\n";
-				});
-				codeSelect = document.createElement("select");
-				codeSelect.innerHTML =
-					'<option value="Course Code" disabled selected hidden> Choose a course code ...</option>\n' +
-					codeOptions;
-				codeValue[i].textContent = "";
-				codeValue[i].appendChild(codeSelect);
-
-				codeSelect.addEventListener("change", () => {
-					titleValue[i].textContent =
-						courses[codeSelect.value].name;
-					getGradeSelect();
-				});
-			}
-
-			function getGradeSelect() {
-				gradeOptions = "";
-				Object.keys(grades).forEach((grade) => {
-					optionHTML = `<option ${gradeValue[i].textContent == grade && "selected"
-						} value=${grade}>${grade}</option>`;
-					gradeOptions = gradeOptions + optionHTML + "\n";
-				});
-				var gradeSelect = document.createElement("select");
-				gradeSelect.innerHTML = gradeOptions;
-				gradeValue[i].textContent = "";
-				gradeValue[i].appendChild(gradeSelect);
-			}
-
-			editIcon.src = SaveIcon;
-			termValue[i].focus();
-			termOptions = "";
-			var haveSelected = false;
-			Object.keys(data).forEach((term) => {
-				termName = term.split("_").slice(1, 3).join(" ");
-				isTermSelected = termValue[i].textContent == termName;
-				optionHTML = `<option ${isTermSelected && "selected"
-					} value=${term}>${termName}</option>`;
-				termOptions = termOptions + optionHTML + "\n";
-				if (isTermSelected) {
-					haveSelected = true;
-				}
-			});
-			termSelect = document.createElement("select");
-			termSelect.innerHTML =
-				'<option value="Term" disabled selected hidden> Choose a major ...</option>\n' +
-				termOptions;
-			termValue[i].textContent = "";
-			termValue[i].appendChild(termSelect);
-			if (haveSelected) {
-				getCodeSelect(data[termSelect.value]);
-				getGradeSelect();
-			}
-
-			termSelect.addEventListener("change", () =>
-				getCodeSelect(data[termSelect.value])
-			);
-
-			delIcon.src = CancelIcon;
-			deleteCourseBtns[i].removeEventListener("click", deleteCourse);
-			deleteCourseBtns[i].addEventListener("click", cancelEdit);
-		}
-		});
-	}
-</script>
+<script src="../scripts/editInfo.ts"></script>
+<script src="../scripts/editCourse.ts"></script>
+<script src="../scripts/updateFlowChart.ts"></script>

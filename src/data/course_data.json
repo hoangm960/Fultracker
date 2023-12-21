@@ -1,0 +1,6330 @@
+{
+    "2021-2022_Fall_2021_Term": {
+        "ARTS101": {
+            "name": "Introduction to Visual Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTeHQAV",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS104": {
+            "name": "Introduction to Video and Film Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS298": {
+            "name": "Independent Study",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001QJKm7QAH",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS301": {
+            "name": "Contemporary Asian Artists",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6UQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE101": {
+            "name": "Global Humanities and Social Change",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS101": {
+            "name": "Computer Science I: Introduction to Programming",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaLQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS203": {
+            "name": "Computer Organization",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcdQAB",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS205": {
+            "name": "Computational Social Media",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha29QAB",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS301": {
+            "name": "Software Engineering",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYoQAN",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS304": {
+            "name": "Database Systems",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PjbhGQAR",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON101": {
+            "name": "Principles of Economics 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChUsMQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON103": {
+            "name": "Principles of Economics 2",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChThFQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON304": {
+            "name": "Public Finance",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6fQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS104": {
+            "name": "Modern East Asia",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6VQAT",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS105": {
+            "name": "Global History Lab: History of the World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTheQAF",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS202": {
+            "name": "Issues in Global Health: Lessons from the Covid-19 Pandemic",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvKFQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS203": {
+            "name": "History of International Relations Thought",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChThPQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS298": {
+            "name": "HIS Independent Study/Independent Research",
+            "credit": 2,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYJmQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS305": {
+            "name": "Europe on Trial: Law, Politics, and Society since Nuremberg",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6SQAT",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS101": {
+            "name": "Introductory Biology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdmQAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS105": {
+            "name": "Matter",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha36QAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS301": {
+            "name": "Computational Chemistry and ChemInformatics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6RQAT",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT301": {
+            "name": "Comedy, Ancient and Modern",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6TQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH103": {
+            "name": "Linear Algebra",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZhQAN",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "PSY101": {
+            "name": "Introductory Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY205": {
+            "name": "Abnormal Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdnQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY301": {
+            "name": "Applied Social Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6WQAT",
+            "category": [
+                "E2"
+            ]
+        },
+        "SEM301": {
+            "name": "Fall Seminar",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYNjQAN",
+            "category": [
+                "SEM"
+            ]
+        },
+        "SOCI102": {
+            "name": "Social Inquiry and the Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6eQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI104": {
+            "name": "Humility",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6XQAT",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI109": {
+            "name": "Ethnographic Research Methods",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6cQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI201": {
+            "name": "Foundations of Political Economy",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6dQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI202": {
+            "name": "Digital Anthropology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdXQAR",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "SOCI301": {
+            "name": "Women and Politics in Asia",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6bQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS106": {
+            "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6iQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS203": {
+            "name": "The Challenge of Change: Civil Society and Social Movements in Vietnam ",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6lQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS205": {
+            "name": "Theory & Method in Vietnam Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6oQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS207": {
+            "name": "Digital Creative Writing: Lessons from Vietnamese and Non-Vietnamese Writers",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvVBQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "VS209": {
+            "name": "Ethics in Practice: Philosophical Buddhist Ethics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6nQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2021-2022_Spring_2022_Term": {
+        "ARTS103": {
+            "name": "Introduction to Photography History and Theory",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaQQAV",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS106": {
+            "name": "Dance and Performance Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6jQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS204": {
+            "name": "Narrative",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6tQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS207": {
+            "name": "Visualizing Vietnam",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6xQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE101": {
+            "name": "Global Humanities and Social Change",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE102": {
+            "name": "Modern Vietnamese Culture and Society",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYUQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS101": {
+            "name": "Computer Science I: Introduction to Programming",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaLQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS201": {
+            "name": "Computer Science II",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8WQAX",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS207": {
+            "name": "Object-Oriented Analysis and Design",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001REyVcQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS308": {
+            "name": "Programming Languages",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OuLinQAF",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS398": {
+            "name": "CS Independent Study/Independent Research",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6aQAD",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON201": {
+            "name": "Microeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd7QAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON203": {
+            "name": "Macroeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd8QAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON208": {
+            "name": "Introduction to Venture Investing & Impact Investing",
+            "credit": 2,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvK5QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": [
+                "EL"
+            ]
+        },
+        "ENG206": {
+            "name": "Computer Modeling and Simulation",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChVbsQAF",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG398": {
+            "name": "ENG Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RRETsQAP",
+            "category": [
+                "E3"
+            ]
+        },
+        "EXNP305": {
+            "name": "Outbound Exchange Economics 1",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ST3dOQAT",
+            "category": [
+                "EXNP"
+            ]
+        },
+        "HIS101": {
+            "name": "Fulbright History Lab & History Dialogues Project",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdhQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS201": {
+            "name": "US in the World",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvLzQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS206": {
+            "name": "Economy and Ecology in Chinese History",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6qQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS302": {
+            "name": "Researching and Writing Vietnamese Diplomatic History",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6rQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS303": {
+            "name": "America\u2019s Nuclear Age: The United States, Nuclear Weapons and",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvM9QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS203": {
+            "name": "Principles of Neuroscience",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcpQAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS206": {
+            "name": "Physics for Light-based Technology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvMTQA1",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS209": {
+            "name": "Materials that shape our world",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha95QAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS307": {
+            "name": "Advanced Analytical Techniques",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RExLQQA1",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT101": {
+            "name": "Foundations in Literary Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZIQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT302": {
+            "name": "Research Seminar: The Literature of Invisibility",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6yQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT398": {
+            "name": "LIT Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RHv8rQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH101": {
+            "name": "Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvMYQA1",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH202": {
+            "name": "Discrete Mathematics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZSQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "PSY202": {
+            "name": "Developmental Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xczQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY207": {
+            "name": "Organizational Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RExMTQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "SEM302": {
+            "name": "Spring Seminar",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYPpQAN",
+            "category": [
+                "SEM"
+            ]
+        },
+        "SOCI105": {
+            "name": "Research Methods & Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdcQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI204": {
+            "name": "Youth and Society in Asia",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6vQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI206": {
+            "name": "Augustus in Saigon? Reviewing and Reframing Classicized Urban Space in Vietnam",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6zQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI210": {
+            "name": "Rethinking New Womanhood",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RExNHQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI305": {
+            "name": "Language, Culture and Thought",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdgQAB",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "SOCI307": {
+            "name": "Global Political Economy",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6wQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS104": {
+            "name": "Introduction to Comparative Politics: Bringing in Vietnam",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6mQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS106b": {
+            "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 2",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs71QAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS108": {
+            "name": "Documentary Films from Vietnam: History, Theory, and Practice",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs70QAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS202": {
+            "name": "Vietnamese Cinema from Its Beginning to Present: Tendencies, Operating Mechanism",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6kQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2021-2022_Summer_2022_Term": {
+        "ARTS107": {
+            "name": "2D/3D Foundations",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTBQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS210": {
+            "name": "Digital Media Arts",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPT1QAN",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS302": {
+            "name": "Documentary Filmmaking and Video Journalism",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs7KQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE101": {
+            "name": "Global Humanities and Social Change",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE102": {
+            "name": "Modern Vietnamese Culture and Society",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYUQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS103": {
+            "name": "Programming for Data Science and Visualization",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTGQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS204": {
+            "name": "Introduction to Artificial Intelligence",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTLQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS206": {
+            "name": "Introduction to Cyber Security",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPdEQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS398": {
+            "name": "CS Independent Study/Independent Research",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6aQAD",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON209": {
+            "name": "Econometrics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs74QAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": [
+                "EL"
+            ]
+        },
+        "ENG204": {
+            "name": "Sensor, Measurement and Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZmQAN",
+            "category": [
+                "E3"
+            ]
+        },
+        "HIS298": {
+            "name": "HIS Independent Study/Independent Research",
+            "credit": 2,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYJmQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS107": {
+            "name": "Sustainable development: Science and Industries ",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs72QAD",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS207": {
+            "name": "AIgae",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTHQA3",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS210": {
+            "name": "Introduction to Bioinformatics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOcQAL",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT204": {
+            "name": "Identity, Community, and Memory in Vietnamese Diasporic Literature and Film",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdeQAB",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT206": {
+            "name": "Gender and War Studies: The U.S - Vietnam War",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdjQAB",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH104": {
+            "name": "Multivariable Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOmQAL",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH205": {
+            "name": "Probability",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcsQAB",
+            "category": [
+                "E4"
+            ]
+        },
+        "PSY101": {
+            "name": "Introductory Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY302": {
+            "name": "Counseling Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvO7QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY303": {
+            "name": "Educational Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUnQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY304": {
+            "name": "Addictions across the Lifespan",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUsQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOC205": {
+            "name": "Eco-Village, Eco-District, Eco-Life",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOrQAL",
+            "category": [
+                "SOC"
+            ]
+        },
+        "SOCI209": {
+            "name": "Exploring Identities in Asia",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUxQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI302": {
+            "name": "The Anthropology of Entrepreneurship",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUyQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS301": {
+            "name": "Evolution of Vietnamese Society in the 20th century from a multidisciplinary per",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPUzQAN",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2022-2023_Fall_2022_Term": {
+        "ARTS101": {
+            "name": "Introduction to Visual Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTeHQAV",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS102": {
+            "name": "Introduction to Art History and Theory",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChUhbQAF",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS104": {
+            "name": "Introduction to Video and Film Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS107": {
+            "name": "2D/3D Foundations",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTBQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS206": {
+            "name": "Principles of Acting",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8J6QAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            }
+        },
+        "ARTS211": {
+            "name": "Alien, Uncanny, Strange in E. Asian Cinema",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JLQA1",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ],
+                    [
+                        "ARTS105"
+                    ]
+                ]
+            }
+        },
+        "ARTS303": {
+            "name": "Sound Art",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JQQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "ARTS",
+                        "quantity": 2,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS398": {
+            "name": "ARTS Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JdQAL",
+            "category": "Independent Study"
+        },
+        "ARTS401": {
+            "name": "ARTS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIGQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE101": {
+            "name": "Global Humanities and Social Change",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS101": {
+            "name": "Computer Science I: Introduction to Programming",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaLQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS102": {
+            "name": "Algorithm",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8PmQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS203": {
+            "name": "Computer Organization",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcdQAB",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            }
+        },
+        "CS208": {
+            "name": "Machine Learning for Data Science",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8Q1QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS103"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS306": {
+            "name": "Network and Computer Security ",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8OqQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS307": {
+            "name": "Introduction to Machine Learning",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8PrQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ],
+                    [
+                        "CS201"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS309": {
+            "name": "Advanced Programming Techniques",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8Q6QAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS401": {
+            "name": "CS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIaQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON101": {
+            "name": "Principles of Economics 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChUsMQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON103": {
+            "name": "Principles of Economics 2",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChThFQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON209": {
+            "name": "Econometrics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs74QAD",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH105"
+                    ]
+                ]
+            }
+        },
+        "ECON210": {
+            "name": "Giving and Effectiveness",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8TFQA1",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "ECONOMICS",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON302": {
+            "name": "Economics of Inequality",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JnQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON103"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON305": {
+            "name": "Behavioural and Experimental Economics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd9QAB",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101",
+                        "SOCI105"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON398": {
+            "name": "ECON Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYIyQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON401": {
+            "name": "ECON Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIQQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": "Experiential Learning (EL)"
+        },
+        "ENG102": {
+            "name": "Engineering Exploration: Sink or Swim",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JsQAL",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG201": {
+            "name": "Product Development",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8K7QAL",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG202": {
+            "name": "Intelligent Robot Studio: From Theory to Practice",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8KCQA1",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG204": {
+            "name": "Sensor, Measurement and Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZmQAN",
+            "category": [
+                "E3"
+            ]
+        },
+        "HIS105": {
+            "name": "Global History Lab: History of the World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTheQAF",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS108": {
+            "name": "US in the World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdqQAB",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS208": {
+            "name": "The Global Vietnam War I",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L2QAL",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "HIS101",
+                        "HIS105"
+                    ]
+                ]
+            }
+        },
+        "HIS301": {
+            "name": "History of International Communism",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8UXQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS304": {
+            "name": "Asian Borderlands",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L7QAL",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 1
+                    },
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS306": {
+            "name": "Race and Empire",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8KoQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1",
+                        "LEAST1",
+                        "COMP1"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS401": {
+            "name": "HIS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIfQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS101": {
+            "name": "Introductory Biology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdmQAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS103": {
+            "name": "Environmental Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LKQA1",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS205": {
+            "name": "Organic Chemistry",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdtQAB",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS105"
+                    ]
+                ]
+            }
+        },
+        "IS398": {
+            "name": "Integrated Science: Independent Study",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Sa0Y5QAJ",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS401": {
+            "name": "IS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIkQAL",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT101": {
+            "name": "Foundations in Literary Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZIQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT209": {
+            "name": "Critical Methods in Literary Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdiQAB",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT303": {
+            "name": "Film, Fiction, and the Making of Modern Vietnams",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LPQA1",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "LITERARY STUDIES",
+                        "quantity": 1,
+                        "level": 0
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT305": {
+            "name": "Pacific Voyages in Literature & Film",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ST3gkQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ANY200"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "LIT",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT401": {
+            "name": "LIT Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Sq6qiQAB",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH101": {
+            "name": "Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvMYQA1",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH102": {
+            "name": "Ideas of Math",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ST3aVQAT",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH103": {
+            "name": "Linear Algebra",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZhQAN",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH305": {
+            "name": "Stochastic Calculus",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8PcQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH205"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "PSY101": {
+            "name": "Introductory Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY203": {
+            "name": "Social Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LeQAL",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY204": {
+            "name": "Personality Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LjQAL",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            }
+        },
+        "PSY205": {
+            "name": "Abnormal Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdnQAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY207": {
+            "name": "Organizational Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RExMTQA1",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY302": {
+            "name": "Counseling Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvO7QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY401": {
+            "name": "PSY Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIpQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SEM301": {
+            "name": "Fall Seminar",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYNjQAN",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "FOR3"
+                    ]
+                ]
+            },
+            "category": [
+                "SEM"
+            ]
+        },
+        "SOCI102": {
+            "name": "Social Inquiry and the Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6eQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI105": {
+            "name": "Research Methods & Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdcQAB",
+            "category": [
+                "E2",
+                "E3",
+                "E4"
+            ]
+        },
+        "SOCI109": {
+            "name": "Ethnographic Research Methods",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6cQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI211": {
+            "name": "Introduction to Science and Technology Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L8QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI212": {
+            "name": "South Korea: Society and Culture",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LLQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI213": {
+            "name": "Women and Politics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8PhQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI401": {
+            "name": "SS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIuQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS106": {
+            "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6iQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS114": {
+            "name": "Introduction to Champa and Khmer History",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LoQAL",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS116": {
+            "name": "Digital Humanities in Vietnam Studies Contexts I",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LpQAL",
+            "category": [
+                "E1",
+                "E2",
+                "E4"
+            ]
+        },
+        "VS203": {
+            "name": "The Challenge of Change: Civil Society and Social Movements in Vietnam ",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6lQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS204": {
+            "name": "The Legacy of the War in Retrospect I",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8KDQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS210": {
+            "name": "What Movies Show and Don't Show: Film Adaptations in Asian Contexts",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JtQAL",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "VS205"
+                    ]
+                ]
+            }
+        },
+        "VS214": {
+            "name": "Developing Vietnam",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LyQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS215": {
+            "name": "Contending Theories of International Relations: A Comprehensive View of Vietnam",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L9QAL",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ANY100"
+                    ]
+                ]
+            }
+        },
+        "VS303": {
+            "name": "Sources for Vietnamese and Southeast Asian History",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L3QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "VS205"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS401": {
+            "name": "VS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIlQAL",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2022-2023_Spring_2023_Term": {
+        "ARTS101": {
+            "name": "Introduction to Visual Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTeHQAV",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS104": {
+            "name": "Introduction to Video and Film Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS105": {
+            "name": "Introduction to Film History and Theory",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTc4QAF",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            }
+        },
+        "ARTS106": {
+            "name": "Dance and Performance Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6jQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS107": {
+            "name": "2D/3D Foundations",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTBQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS212": {
+            "name": "Interdisciplinary Drawing",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZHQA5",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ],
+                    [
+                        "ARTS107"
+                    ]
+                ]
+            }
+        },
+        "ARTS213": {
+            "name": "Dance Creation to Performance",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZMQA5",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS106"
+                    ]
+                ]
+            }
+        },
+        "ARTS304": {
+            "name": "Gender and Sexuality in East Asian Film and Fiction",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZRQA5",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS305": {
+            "name": "Curating in Context",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZWQA5",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ART101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "ARTS",
+                        "quantity": 2,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS398": {
+            "name": "ARTS Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JdQAL",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS401": {
+            "name": "ARTS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIGQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS402": {
+            "name": "ARTS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyILQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE102": {
+            "name": "Modern Vietnamese Culture and Society",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYUQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS201": {
+            "name": "Computer Science II",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8WQAX",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            }
+        },
+        "CS205": {
+            "name": "Computational Social Media",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha29QAB",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101",
+                        "MATH105"
+                    ]
+                ]
+            }
+        },
+        "CS207": {
+            "name": "Object-Oriented Analysis and Design",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001REyVcQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS209": {
+            "name": "Deep Learning for Artificial Intelligence",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZNQA5",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ],
+                    [
+                        "CS208"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS301": {
+            "name": "Software Engineering",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYoQAN",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ],
+                    [
+                        "CS201"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS302": {
+            "name": "Theory of Computing",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xciQAB",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS310": {
+            "name": "Web Development and Human Computer Interaction ",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVSC3QAP",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS401": {
+            "name": "CS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIaQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS402": {
+            "name": "CS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgYQAX",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON101": {
+            "name": "Principles of Economics 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChUsMQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON103": {
+            "name": "Principles of Economics 2",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChThFQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON201": {
+            "name": "Microeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd7QAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ]
+                ]
+            }
+        },
+        "ECON203": {
+            "name": "Macroeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd8QAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON103"
+                    ]
+                ]
+            }
+        },
+        "ECON205": {
+            "name": "Digital Marketing",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVPcOQAX",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ],
+                    [
+                        "ECON103"
+                    ]
+                ]
+            }
+        },
+        "ECON210": {
+            "name": "Giving and Effectiveness",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8TFQA1",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "ECONOMICS",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON303": {
+            "name": "Economics of Education",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZbQAP",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON306": {
+            "name": "Economic Development and Globalization",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZgQAP",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON201"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON398": {
+            "name": "ECON Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYIyQAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON402": {
+            "name": "ECON Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgdQAH",
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": [
+                "EL"
+            ]
+        },
+        "ENG207": {
+            "name": "Mechanical Design",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZvQAP",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG208": {
+            "name": "Electronic Devices and Circuits",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa0QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG209": {
+            "name": "Signals, Systems and Control",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa1QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG301": {
+            "name": "Computer Vision",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa5QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG398": {
+            "name": "ENG Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RRETsQAP",
+            "category": [
+                "E3"
+            ]
+        },
+        "HIS102": {
+            "name": "Atlantic World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaAQAX",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS104": {
+            "name": "Modern East Asia",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6VQAT",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS209": {
+            "name": "The Global Vietnam War II",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaFQAX",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            }
+        },
+        "HIS210": {
+            "name": "History of Capitalism and the Corporation",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaKQAX",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS211": {
+            "name": "Fulbright History Lab",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVPfJQAX",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS307": {
+            "name": "History of the Republic of Vietnam",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaUQAX",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS402": {
+            "name": "HIS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgZQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS106": {
+            "name": "Physics of Smart Devices",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaZQAX",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS107": {
+            "name": "Sustainable development: Science and Industries ",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs72QAD",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS210": {
+            "name": "Introduction to Bioinformatics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOcQAL",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "EITHER INTEGRATED",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            }
+        },
+        "IS212": {
+            "name": "Cell Biology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaeQAH",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ]
+                ]
+            }
+        },
+        "IS302": {
+            "name": "Integrated Sciences Advanced Seminar",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOajQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101",
+                        "IS105"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS303": {
+            "name": "Advanced Organic Chemistry",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaoQAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS304": {
+            "name": "Medical Biochemistry",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOatQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS401": {
+            "name": "IS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIkQAL",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS402": {
+            "name": "IS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgiQAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT205": {
+            "name": "American Short Story",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZwQAP",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT101",
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT307": {
+            "name": "Transatlantic Fashions",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOayQAH",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT308": {
+            "name": "American Drama since 1900",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaBQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LIT101"
+                    ],
+                    [
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT309": {
+            "name": "Consumption, Modernity and Global Queer Identities",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaVQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT398": {
+            "name": "LIT Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RHv8rQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT402": {
+            "name": "LIT Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgnQAH",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH104": {
+            "name": "Multivariable Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOmQAL",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH201": {
+            "name": "Differential Equations",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaLQAX",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH202": {
+            "name": "Discrete Mathematics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZSQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH205": {
+            "name": "Probability",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcsQAB",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH306": {
+            "name": "Financial Mathematics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb3QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH307": {
+            "name": "Real Analysis",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb8QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH398": {
+            "name": "MATH Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWjgTQAT",
+            "category": [
+                "E4"
+            ]
+        },
+        "OSY208": {
+            "name": "The Psychology of Sex & Gender",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObDQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            },
+            "category": [
+                "OSY"
+            ]
+        },
+        "PC101": {
+            "name": "Philosophy of Marxism and Leninism - Tri\u1ebft h\u1ecdc M\u00e1c-L\u00eanin",
+            "credit": 3,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBTQA5",
+            "category": [
+                "PC"
+            ]
+        },
+        "PC102": {
+            "name": "Scientific Socialism - Ch\u1ee7 ngh\u0129a x\u00e3 h\u1ed9i khoa h\u1ecdc",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBYQA5",
+            "category": [
+                "PC"
+            ]
+        },
+        "PC103": {
+            "name": "Political Economics of Marxism and Leninism - Kinh t\u1ebf ch\u00ednh tr\u1ecb M\u00e1c-L\u00eanin",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBdQAP",
+            "category": [
+                "PC"
+            ]
+        },
+        "PC104": {
+            "name": "Ho Chi Minh's Ideology - T\u01b0 t\u01b0\u1edfng H\u1ed3 Ch\u00ed Minh",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBiQAP",
+            "category": [
+                "PC"
+            ]
+        },
+        "PC105": {
+            "name": "History of Vietnamese Communist Party- L\u1ecbch s\u1eed \u0110\u1ea3ng C\u1ed9ng s\u1ea3n Vi\u1ec7t Nam",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBnQAP",
+            "category": [
+                "PC"
+            ]
+        },
+        "PE101": {
+            "name": "[PE] Swimming 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBsQAP",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE102": {
+            "name": "[PE] Badminton 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkDEQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE103": {
+            "name": "[PE] Hatha Yoga 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHTQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE104": {
+            "name": "[PE] Chess 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHdQAL",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE201": {
+            "name": "[PE] Swimming 02",
+            "credit": 1,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHOQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE202": {
+            "name": "[PE] Badminton 02",
+            "credit": 1,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHPQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE203": {
+            "name": "[PE] Hatha Yoga 02",
+            "credit": 1,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHYQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE204": {
+            "name": "[PE] Chess 02",
+            "credit": 1,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHiQAL",
+            "category": [
+                "PE"
+            ]
+        },
+        "PSY101": {
+            "name": "Introductory Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY202": {
+            "name": "Developmental Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xczQAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY206": {
+            "name": "Community Development",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOapQAH",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "EITHER",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY301": {
+            "name": "Applied Social Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6WQAT",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "PSYCHOLOGY",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY305": {
+            "name": "Cross Cultural Leadership & Management",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObIQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY307": {
+            "name": "Cognitive Behavioural Therapy",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb4QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY398": {
+            "name": "PSY Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWDnZQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY401": {
+            "name": "PSY Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIpQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY402": {
+            "name": "PSY Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgxQAH",
+            "category": [
+                "E2"
+            ]
+        },
+        "SEM302": {
+            "name": "Spring Seminar",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PiYPpQAN",
+            "category": [
+                "SEM"
+            ]
+        },
+        "SOCI102": {
+            "name": "Social Inquiry and the Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6eQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI105": {
+            "name": "Research Methods & Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdcQAB",
+            "category": [
+                "E2",
+                "E3",
+                "E4"
+            ]
+        },
+        "SOCI214": {
+            "name": "Introduction to Political Science",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObJQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI215": {
+            "name": "Theories of Culture",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaqQAH",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI216": {
+            "name": "Ethics and Moral Philosophy",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObNQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI303": {
+            "name": "Ethnographic Film: History, Theory, and Practice",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb9QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS104"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "EITHER ARTS",
+                        "quantity": 9,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI308": {
+            "name": "Technology, Innovation and Military Conflict",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObKQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "SOCI211"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI309": {
+            "name": "The Anthropology of Sex",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa6QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "SOCI102"
+                    ],
+                    [
+                        "ANY200"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI310": {
+            "name": "The Anthropology of Law",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObSQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI398": {
+            "name": "Independent Study/Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVuoSQAT",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI402": {
+            "name": "SS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUh7QAH",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS103": {
+            "name": "How to Become a Writer: Lessons from Vietnamese and Non-Vietnamese Writers",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgqQAF",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS104": {
+            "name": "Introduction to Comparative Politics: Bringing in Vietnam",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6mQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS112": {
+            "name": "Analysis of Vietnamese identities through contemporary Vietnam cinema",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOeqQAH",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS205": {
+            "name": "Theory & Method in Vietnam Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6oQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS216": {
+            "name": "Applied Digital Humanities for Vietnam Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOakQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "VS116"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2",
+                "E4"
+            ]
+        },
+        "VS218": {
+            "name": "How to Share Your Stories on the Silver Screen: Film Production in Contemporary",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVSEnQAP",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS304": {
+            "name": "The Legacy of the War in Retrospect II",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOevQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS401": {
+            "name": "VS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIlQAL",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS402": {
+            "name": "VS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUhHQAX",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2022-2023_Summer_2023_Term": {
+        "CS204": {
+            "name": "Introduction to Artificial Intelligence",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTLQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS301": {
+            "name": "Software Engineering",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYoQAN",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ],
+                    [
+                        "CS201"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS311": {
+            "name": "Advanced Deep Learning",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWeiFQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS209"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON102": {
+            "name": "Economic Methods",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWc9aQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON307": {
+            "name": "Money and Banking",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcATQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON203"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": [
+                "EL"
+            ]
+        },
+        "EL103": {
+            "name": "Venture Fellow Program",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXFMgQAP",
+            "category": [
+                "EL"
+            ]
+        },
+        "HIS310": {
+            "name": "Independent Research Seminar",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWdy9QAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "HIS211"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH308": {
+            "name": "Statistical Learning",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWeieQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ],
+                    [
+                        "MATH205"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MUSC102": {
+            "name": "Music Appreciation",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWe2LQAT",
+            "category": [
+                "MUSC"
+            ]
+        },
+        "PE101": {
+            "name": "[PE] Swimming 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVYBsQAP",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE103": {
+            "name": "[PE] Hatha Yoga 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHTQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE104": {
+            "name": "[PE] Chess 01",
+            "credit": 1,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHdQAL",
+            "category": [
+                "PE"
+            ]
+        },
+        "PE203": {
+            "name": "[PE] Hatha Yoga 02",
+            "credit": 1,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWkHYQA1",
+            "category": [
+                "PE"
+            ]
+        },
+        "SOCI217": {
+            "name": "The Anthropology of Social Movements",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcoyQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI218": {
+            "name": "Disability and Culture",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcrnQAD",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "SOCI102"
+                    ]
+                ]
+            }
+        }
+    },
+    "2023-2024_Fall_2023_Term": {
+        "ARTS101": {
+            "name": "Introduction to Visual Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTeHQAV",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "ARTS103": {
+            "name": "Introduction to Photography History and Theory",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaQQAV",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            }
+        },
+        "ARTS104": {
+            "name": "Introduction to Video and Film Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS108": {
+            "name": "Introduction to Theater and Performance",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeABQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS112": {
+            "name": "Basic Drawing",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeALQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS204": {
+            "name": "Narrative",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6tQAD",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ],
+                    [
+                        "ARTS104"
+                    ]
+                ]
+            }
+        },
+        "ARTS210": {
+            "name": "Digital Media Arts",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPT1QAN",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            }
+        },
+        "ARTS298": {
+            "name": "Independent Study",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001QJKm7QAH",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS301": {
+            "name": "Contemporary Asian Artists",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6UQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "ARTS",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS307": {
+            "name": "Animation and Graphic Media in East Asia",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeAaQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101",
+                        "LIT101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "ARTS",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS401": {
+            "name": "ARTS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIGQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE101": {
+            "name": "Global Humanities and Social Change",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChQbSQAV",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS101": {
+            "name": "Computer Science I: Introduction to Programming",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSaLQAV",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS103": {
+            "name": "Programming for Data Science and Visualization",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTGQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS104": {
+            "name": "Introduction to Computer Science",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXesdQAD",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS203": {
+            "name": "Computer Organization",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcdQAB",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "CS207": {
+            "name": "Object-Oriented Analysis and Design",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001REyVcQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS210": {
+            "name": "Introduction to Computer Networks",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeseQAD",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS201"
+                    ]
+                ]
+            }
+        },
+        "CS302": {
+            "name": "Theory of Computing",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xciQAB",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS201"
+                    ],
+                    [
+                        "MATH202"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS304": {
+            "name": "Database Systems",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001PjbhGQAR",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "CS309": {
+            "name": "Advanced Programming Techniques",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8Q6QAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS398": {
+            "name": "CS Independent Study/Independent Research",
+            "credit": 2,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6aQAD",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS401": {
+            "name": "CS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIaQAL",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS402": {
+            "name": "CS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgYQAX",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON101": {
+            "name": "Principles of Economics 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChUsMQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON102": {
+            "name": "Economic Methods",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWc9aQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON103": {
+            "name": "Principles of Economics 2",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChThFQAV",
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON205": {
+            "name": "Digital Marketing",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVPcOQAX",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ],
+                    [
+                        "ECON103"
+                    ]
+                ]
+            }
+        },
+        "ECON209": {
+            "name": "Econometrics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs74QAD",
+            "category": [
+                "E2",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH105",
+                        "ECON102"
+                    ]
+                ]
+            }
+        },
+        "ECON305": {
+            "name": "Behavioural and Experimental Economics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd9QAB",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101",
+                        "MATH105"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON311": {
+            "name": "Market Design",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeACQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON201"
+                    ],
+                    [
+                        "ECON102",
+                        "MATH105"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON401": {
+            "name": "ECON Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIQQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "EL101": {
+            "name": "Experiential Learning",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8kQAH",
+            "category": [
+                "EL"
+            ]
+        },
+        "ENG102": {
+            "name": "Engineering Exploration: Sink or Swim",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8JsQAL",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG201": {
+            "name": "Product Development",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8K7QAL",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG202": {
+            "name": "Intelligent Robot Studio: From Theory to Practice",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8KCQA1",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG210": {
+            "name": "Fundamental of Data Communications",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeAzQAL",
+            "category": [
+                "E3",
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE105"
+                    ]
+                ]
+            }
+        },
+        "ENG308": {
+            "name": "Real-time Embedded DSP Laboratory",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeAbQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG398": {
+            "name": "ENG Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RRETsQAP",
+            "category": [
+                "E3"
+            ]
+        },
+        "HIS103": {
+            "name": "Modern Southeast Asia: From Empire to Independence",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8eQAH",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS150": {
+            "name": "Exploring the Past",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeB4QAL",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS212": {
+            "name": "History of Religion and Human Rights",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeB9QAL",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "HIS213": {
+            "name": "Pirates, Prisoners, and Prostitutes: An Outcast History of French Indochina",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXf4uQAD",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ]
+                ]
+            }
+        },
+        "HIS302": {
+            "name": "Researching and Writing Vietnamese Diplomatic History",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6rQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS308": {
+            "name": "Historical Game Lab: Rivers and Exploration",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBEQA1",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            }
+        },
+        "HIS401": {
+            "name": "HIS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIfQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS105": {
+            "name": "Matter",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha36QAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS211": {
+            "name": "Organismal Diversity and Evolution",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBTQA1",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE104"
+                    ],
+                    [
+                        "IS101"
+                    ]
+                ]
+            }
+        },
+        "IS213": {
+            "name": "Climate and Water: The physical science basis and key processes",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBJQA1",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE104"
+                    ],
+                    [
+                        "CORE103"
+                    ]
+                ]
+            }
+        },
+        "IS305": {
+            "name": "Environmental Microbiology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBOQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE104"
+                    ],
+                    [
+                        "CORE103"
+                    ],
+                    [
+                        "IS103",
+                        "IS101",
+                        "IS105"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS306": {
+            "name": "Human Physiology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeB5QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ],
+                    [
+                        "IS212"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS401": {
+            "name": "IS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIkQAL",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS402": {
+            "name": "IS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgiQAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT102": {
+            "name": "Introduction to Literary Studies: The Gothic, Grotesque, and Uncanny",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXf6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT207": {
+            "name": "Global Environmental Literature",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeC7QAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT101",
+                        "LIT103"
+                    ]
+                ]
+            }
+        },
+        "LIT208": {
+            "name": "Modern American Literature",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBUQA1",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LIT101"
+                    ]
+                ]
+            }
+        },
+        "LIT298": {
+            "name": "Independent Study/Directed Readings",
+            "credit": 2,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RY3YFQA1",
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT310": {
+            "name": "Literary Translation",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeCDQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT101"
+                    ],
+                    [
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT311": {
+            "name": "Contemporary Women Writers from the Southeast Asian Diaspora",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXfTsQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LIT101",
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "LIT401": {
+            "name": "LIT Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Sq6qiQAB",
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH101": {
+            "name": "Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvMYQA1",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH102": {
+            "name": "Ideas of Math",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ST3aVQAT",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH103": {
+            "name": "Linear Algebra",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZhQAN",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH105": {
+            "name": "Introduction to Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTgMQAV",
+            "category": [
+                "E2",
+                "E4"
+            ]
+        },
+        "MATH205": {
+            "name": "Probability",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xcsQAB",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH298": {
+            "name": "Independent Study",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RY3YKQA1",
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH301": {
+            "name": "Optimization",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXe9cQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ],
+                    [
+                        "MATH103"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH401": {
+            "name": "MATH Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXzrFQAT",
+            "category": [
+                "E4"
+            ]
+        },
+        "MUSC102": {
+            "name": "Music Appreciation",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWe2LQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "MUSC103": {
+            "name": "University Choir",
+            "credit": 2,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXfOxQAL",
+            "category": [
+                "MUSC"
+            ]
+        },
+        "MUSC201": {
+            "name": "History of Modern Popular Music",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXfP7QAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "PSY101": {
+            "name": "Introductory Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY202": {
+            "name": "Developmental Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xczQAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            }
+        },
+        "PSY204": {
+            "name": "Personality Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LjQAL",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            }
+        },
+        "PSY205": {
+            "name": "Abnormal Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdnQAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            }
+        },
+        "PSY207": {
+            "name": "Organizational Psychology",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RExMTQA1",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ]
+                ]
+            }
+        },
+        "PSY209": {
+            "name": "The Art & Science of Wellbeing",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeCgQAL",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY308": {
+            "name": "Person-centered Counseling",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXf4pQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ],
+                    [
+                        "PSY302"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY398": {
+            "name": "PSY Independent Study/Independent Research",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWDnZQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY401": {
+            "name": "PSY Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIpQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY402": {
+            "name": "PSY Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUgxQAH",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI102": {
+            "name": "Social Inquiry and the Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6eQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI105": {
+            "name": "Research Methods & Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdcQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI109": {
+            "name": "Ethnographic Research Methods",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6cQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI211": {
+            "name": "Introduction to Science and Technology Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8L8QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI219": {
+            "name": "Love and Sex",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeD0QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI313": {
+            "name": "Law and Society in Contemporary Vietnam",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeChQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI401": {
+            "name": "SS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIuQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "VS106": {
+            "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese 1",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6iQAD",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS208": {
+            "name": "Chinese Foreign Policy Making: Vietnam, U.S. and Beyond",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeDKQA1",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "ECONOMICS",
+                        "quantity": 1,
+                        "level": 1
+                    },
+                    {
+                        "name": "HISTORY",
+                        "quantity": 1,
+                        "level": 1
+                    },
+                    {
+                        "name": "SOCIAL STUDIES",
+                        "quantity": 1,
+                        "level": 1
+                    },
+                    {
+                        "name": "VIETNAM STUDIES",
+                        "quantity": 1,
+                        "level": 1
+                    }
+                ]
+            }
+        },
+        "VS213": {
+            "name": "Gender & Media Studies in Vietnam: A quantitative approach",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeBAQA1",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102",
+                        "CORE103"
+                    ]
+                ]
+            }
+        },
+        "VS214": {
+            "name": "Developing Vietnam",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LyQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS305": {
+            "name": "Capstone Proposal Workshop",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXf7lQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS306": {
+            "name": "Vietnamese migration",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXeC8QAL",
+            "pre-requisite": {
+                "major": [
+                    {
+                        "name": "VIETNAM STUDIES",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS401": {
+            "name": "VS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIlQAL",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS402": {
+            "name": "VS Capstone II",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVUhHQAX",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        }
+    },
+    "2023-2024_Spring_2024_Term":{
+        "ARTS101": {
+            "name": "Introduction to Visual Studies",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTeHQAV",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "ARTS104": {
+            "name": "Introduction to Video and Film Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6YQAT",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS106": {
+            "name": "Dance and Performance Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6jQAD",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS107": {
+            "name": "2D/3D Foundations",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTBQA3",
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS203": {
+            "name": "Global Modern Art",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdWQAR",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            }
+        },
+        "ARTS209": {
+            "name": "Issues in Contemporary Photography",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs73QAD",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ART101"
+                    ],
+                    [
+                        "ART103"
+                    ],
+                    [
+                        "SOCI102"
+                    ]
+                ]
+            }
+        },
+        "ARTS214": {
+            "name": "Memories, Screens, and Theaters in Contemporary Chinese-Language Cinema",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlpsQAD",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ],
+                    [
+                        "ARTS105"
+                    ]
+                ]
+            }
+        },
+        "ARTS302": {
+            "name": "Documentary Filmmaking",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs7KQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ],
+                    [
+                        "ARTS104"
+                    ],
+                    [
+                        "ARTS204"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS312": {
+            "name": "Advanced Topics in Painting",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlpxQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ARTS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "ARTS397": {
+            "name": "Global Modernisms",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a05IS000000BKlAYAW",
+            "category": [
+                "E1"
+            ]
+        },
+        "CORE102": {
+            "name": "Modern Vietnamese Culture and Society",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYUQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE103": {
+            "name": "Quantitative Reasoning for a Digital Age",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSXqQAN",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE104": {
+            "name": "Scientific Inquiry",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8KQAX",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CORE105": {
+            "name": "Design and Systems Thinking",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSYFQA3",
+            "category": [
+                "CORE"
+            ]
+        },
+        "CS201": {
+            "name": "Computer Science II",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001AIW8WQAX",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101"
+                    ]
+                ]
+            }
+        },
+        "CS204": {
+            "name": "Introduction to Artificial Intelligence",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RqPTLQA3",
+            "category": [
+                "E4"
+            ]
+        },
+        "CS205": {
+            "name": "Computational Social Media",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha29QAB",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS101",
+                        "MATH105"
+                    ]
+                ]
+            }
+        },
+        "CS208": {
+            "name": "Machine Learning for Data Science",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8Q1QAL",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CS103"
+                    ]
+                ]
+            }
+        },
+        "CS312": {
+            "name": "Natural Language Processing",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a05IS000000BKmSYAW",
+            "category": [
+                "E4"
+            ]
+        },
+        "ECON201": {
+            "name": "Microeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd7QAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ]
+                ]
+            }
+        },
+        "ECON203": {
+            "name": "Macroeconomics Analysis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xd8QAB",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON103"
+                    ],
+                    [
+                        "ECON102",
+                        "MATH105"
+                    ]
+                ]
+            }
+        },
+        "ECON211": {
+            "name": "Game Theory",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlq2QAD",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ]
+                ]
+            }
+        },
+        "ECON212": {
+            "name": "Cost-Benefit Analysis & Project Evaluation",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlqHQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON101"
+                    ],
+                    [
+                        "ECON102",
+                        "MATH105"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON307": {
+            "name": "Money and Banking",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcATQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON102",
+                        "MATH105"
+                    ],
+                    [
+                        "ECON203"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ECON309": {
+            "name": "The Economics of Corruption",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlq3QAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ECON201"
+                    ],
+                    [
+                        "ECON209"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "ENG104": {
+            "name": "Sensor, Measurement and Analysis",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZmQAN",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG207": {
+            "name": "Mechanical Design",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOZvQAP",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG208": {
+            "name": "Electronic Devices and Circuits",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa0QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG209": {
+            "name": "Signals, Systems and Control",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa1QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG301": {
+            "name": "Computer Vision",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOa5QAH",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG309": {
+            "name": "Industrial Design",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlq4QAD",
+            "category": [
+                "E3"
+            ]
+        },
+        "ENG310": {
+            "name": "Performance Evaluation In Built Environment",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlqWQAT",
+            "category": [
+                "E3"
+            ]
+        },
+        "HIS104": {
+            "name": "Modern East Asia",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6VQAT",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS105": {
+            "name": "Global History Lab: History of the World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChTheQAF",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS108": {
+            "name": "US in the World",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdqQAB",
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "HIS200": {
+            "name": "Hands-On History",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlqgQAD",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "ANY100"
+                    ]
+                ]
+            }
+        },
+        "HIS214": {
+            "name": "The Global Vietnam War",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlqvQAD",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "HIS215": {
+            "name": "Atlantic Revolution: Society, Theory and Praxis",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a05IS000000BNJVYA4",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "CORE102"
+                    ]
+                ]
+            }
+        },
+        "HIS305": {
+            "name": "Europe on Trial: Law, Politics, and Society since Nuremberg",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6SQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS309": {
+            "name": "Cults and Conspiracies, Renaissance to Present",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlr5QAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST1"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "HIS401": {
+            "name": "HIS Capstone I",
+            "credit": 4,
+            "level": 4,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001STyIfQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "IS101": {
+            "name": "Introductory Biology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdmQAB",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS103": {
+            "name": "Environmental Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001SS8LKQA1",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS106": {
+            "name": "Physics of Smart Devices",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaZQAX",
+            "category": [
+                "E3"
+            ]
+        },
+        "IS209": {
+            "name": "Materials that make our world",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001Pha95QAB",
+            "category": [
+                "E3"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE104"
+                    ]
+                ]
+            }
+        },
+        "IS214": {
+            "name": "General Chemistry Laboratory",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYlrFQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS105"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS302": {
+            "name": "Integrated Sciences Advanced Seminar",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOajQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101",
+                        "IS105"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS308": {
+            "name": "Human Genetics and Genomics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmVgQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "IS309": {
+            "name": "Immunology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmVqQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "IS101"
+                    ]
+                ]
+            },
+            "category": [
+                "E3"
+            ]
+        },
+        "LIT104": {
+            "name": "Introduction to Literature: What does it mean to be human?",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmWeQAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ]
+                ]
+            }
+        },
+        "LIT201": {
+            "name": "Critical Methods in Literary Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdiQAB",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT1"
+                    ]
+                ]
+            }
+        },
+        "LIT210": {
+            "name": "Queer Theory: Then and Now",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmW0QAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101",
+                        "LIT1",
+                        "SOCI102"
+                    ]
+                ]
+            }
+        },
+        "LIT211": {
+            "name": "Gods, Heroes, and Beasts: Epic Narratives from Medieval to Early Modern",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmVvQAL",
+            "category": [
+                "E1"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "LIT1"
+                    ]
+                ]
+            }
+        },
+        "LIT312": {
+            "name": "Contemporary Poetry",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmWZQA1",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LIT1",
+                        "LIT103"
+                    ]
+                ]
+            },
+            "category": [
+                "E1"
+            ]
+        },
+        "MATH104": {
+            "name": "Multivariable Calculus",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvOmQAL",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH201": {
+            "name": "Differential Equations",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaLQAX",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            }
+        },
+        "MATH202": {
+            "name": "Discrete Mathematics",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZSQA3",
+            "category": [
+                "E4"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101",
+                        "MATH102",
+                        "MATH103",
+                        "MATH104",
+                        "MATH105"
+                    ]
+                ]
+            }
+        },
+        "MATH306": {
+            "name": "Financial Mathematics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb3QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH205"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH307": {
+            "name": "Real Analysis",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb8QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH101"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH310": {
+            "name": "Mathematical Statistics",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmWtQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "MATH205"
+                    ],
+                    [
+                        "MATH104"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MATH311": {
+            "name": "Mathematics Research Seminar",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmWyQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "TAKEN1"
+                    ]
+                ]
+            },
+            "category": [
+                "E4"
+            ]
+        },
+        "MUSC104": {
+            "name": "Introduction to Music Production",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmWaQAL",
+            "category": [
+                "E1"
+            ]
+        },
+        "PSY101": {
+            "name": "Introduction to Psychology",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001ChSZ9QAN",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY210": {
+            "name": "Health and Mental Health Policy",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmXSQA1",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ]
+            }
+        },
+        "PSY301": {
+            "name": "Applied Social Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6WQAT",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ]
+                ],
+                "major": [
+                    {
+                        "name": "PSYCHOLOGY",
+                        "quantity": 1,
+                        "level": 2
+                    }
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY302": {
+            "name": "Counseling Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAvO7QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY204"
+                    ],
+                    [
+                        "PSY205"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY305": {
+            "name": "Cross Cultural Leadership & Management",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObIQAX",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "PSY207"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY307": {
+            "name": "Cognitive Behavioural Therapy",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOb4QAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "PSY204"
+                    ],
+                    [
+                        "PSY202"
+                    ],
+                    [
+                        "PSY205"
+                    ],
+                    [
+                        "PSY302"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY308": {
+            "name": "Person-centered Counseling",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RXf4pQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "PSY101"
+                    ],
+                    [
+                        "SOCI105"
+                    ],
+                    [
+                        "PSY302"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY309": {
+            "name": "Health Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmXcQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "PSY310": {
+            "name": "Environmental Psychology",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmX9QAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "CORE104"
+                    ],
+                    [
+                        "PSY101"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI102": {
+            "name": "Social Inquiry and the Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6eQAD",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI105": {
+            "name": "Research Methods & Statistics",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdcQAB",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI110": {
+            "name": "Case Study Research in Social Sciences",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmXTQA1",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI216": {
+            "name": "Ethics and Moral Philosophy",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVObNQAX",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI218": {
+            "name": "Disability and Culture",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RWcrnQAD",
+            "category": [
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "SOCI102"
+                    ]
+                ]
+            }
+        },
+        "SOCI305": {
+            "name": "Language, Culture and Thought",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdgQAB",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "FOR\n3"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI311": {
+            "name": "Advanced Quantitative Research Methods",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmYhQAL",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "SOCI105",
+                        "MATH105",
+                        "ECON209"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI312": {
+            "name": "Cultural Heritage & Vietnamese Identity",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmYwQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI314": {
+            "name": "Governance of Technologies",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmYsQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI315": {
+            "name": "Mass Media Effects",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmZ6QAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI316": {
+            "name": "Museum Encounters: Exploring Vietnamese Identity",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmYrQAL",
+            "category": [
+                "E2"
+            ]
+        },
+        "SOCI397": {
+            "name": "AI and Education at Fulbright",
+            "credit": 4,
+            "level": 3,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a05IS000000BKl5YAG",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "LEAST3"
+                    ]
+                ]
+            },
+            "category": [
+                "E2"
+            ]
+        },
+        "VS110": {
+            "name": "Going Hand in Hand: Politics and Economic Development in Contemporary Vietnam",
+            "credit": 4,
+            "level": 1,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001E9xdfQAB",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            }
+        },
+        "VS205": {
+            "name": "Theory & Method in Vietnam Studies",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001OAs6oQAD",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS206": {
+            "name": "Cultural and Intellectual Foundation of Vietnamese Literary Chinese II",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RVOaaQAH",
+            "pre-requisite": {
+                "course": [
+                    [
+                        "VS106"
+                    ],
+                    [
+                        "CHINESE1"
+                    ]
+                ]
+            },
+            "category": [
+                "E1",
+                "E2"
+            ]
+        },
+        "VS211": {
+            "name": "Secular Mindfulness: From Wartime Vietnam to the World, and Back to Postwar Dev",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmZBQA1",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE102"
+                    ]
+                ]
+            }
+        },
+        "VS217": {
+            "name": "East Asian Diplomacy",
+            "credit": 4,
+            "level": 2,
+            "link": "https://onestop.fulbright.edu.vn/s/detail/a056F00001RYmYtQAL",
+            "category": [
+                "E1",
+                "E2"
+            ],
+            "pre-requisite": {
+                "course": [
+                    [
+                        "CORE101"
+                    ],
+                    [
+                        "CORE102"
+                    ]
+                ]
+            }
+        }
+    }
+}
