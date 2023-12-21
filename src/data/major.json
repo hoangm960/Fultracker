@@ -1,0 +1,130 @@
+{
+    "MATH": {
+        "requirements": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "courses": [
+                            "MATH103",
+                            "MATH101",
+                            "MATH105",
+                            "MATH104"
+                        ],
+                        "name": "Foundation Courses",
+                        "quantity": 4,
+                        "type": "course"
+                    },
+                    "writing": {
+                        "courses": [
+                            "MATH102"
+                        ],
+                        "name": "Mathematical Writing",
+                        "quantity": 1,
+                        "type": "course"
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2,
+                        "type": "major"
+                    },
+                    "pure": {
+                        "courses": [],
+                        "name": "Pure Mathematics",
+                        "quantity": 1,
+                        "type": "courses"
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2,
+                        "type": "major"
+                    },
+                    "elective": {
+                        "name": "Elective Applied Courses",
+                        "quantity": 2,
+                        "at-least": {
+                            "level": 3,
+                            "quantity": 1
+                        },
+                        "type": "major"
+                    },
+                    "seminar": {
+                        "name": "Research Seminar",
+                        "level": 3,
+                        "quantity": 2,
+                        "type": "major"
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 5,
+                        "quantity": 2,
+                        "type": "major"
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "level": 4,
+                        "quantity": 2,
+                        "type": "major"
+                    }
+                },
+                "flows": {
+                    "foundation": ["writing"],
+                    "writing":["intermediate"],
+                    "intermediate": ["pure"],
+                    "pure": ["advanced"],
+                    "advanced1": ["elective"],
+                    "elective": ["seminar"],
+                    "seminar": ["capstones", "advanced2"]
+                }
+            },
+            "minor": {
+                "advanced": {
+                    "name": "Advanced courses",
+                    "level": 4,
+                    "quantity": 1
+                },
+                "intermediate": {
+                    "name": "Intermediate courses",
+                    "level": 2,
+                    "quantity": 2
+                },
+                "other": {
+                    "name": "Other Applied Mathematics courses",
+                    "quantity": 3
+                }
+            }
+        },
+        "declair": [
+            {
+                "foundation": {
+                    "courses": [
+                        "MATH103",
+                        "MATH101",
+                        "MATH105",
+                        "MATH104"
+                    ],
+                    "name": "Foundation Courses",
+                    "quantity": 2
+                }
+            },
+            {
+                "foundation": {
+                    "courses": [
+                        "MATH103",
+                        "MATH101",
+                        "MATH105",
+                        "MATH104"
+                    ],
+                    "name": "Foundation Courses",
+                    "quantity": 1
+                },
+                "intermediate": {
+                    "name": "Intermediate Courses",
+                    "level": 2,
+                    "quantity": 1
+                }
+            }
+        ]
+    }
+}
