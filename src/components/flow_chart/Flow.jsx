@@ -18,7 +18,7 @@ function getNodesAndEdges(flowData) {
   }
 
   let edges = [];
-  for (const [i, [id, flow]] of Object.entries(Object.entries(flowData["flows"]))) {
+  for (const [i, [id, flow]] of Object.entries(Object.entries(flowData["flows"]["main"]))) {
     for (const [j, nextNodeID] of Object.entries(flow)) {
       edges.push({
         id: `${id}-${nextNodeID}`,
@@ -31,35 +31,34 @@ function getNodesAndEdges(flowData) {
     }
   }
 
-  for (const [i, [nodeID, node]] of Object.entries(Object.entries(flowData["nodes"]))) {
-    if (node["type"] == "course") {
-      const courses = node["courses"];
-      for (let j = 0; j < courses.length; j++) {
-        const courseID = courses[j];
-        const nodeData = {
-          id: courseID,
-          type: 'courseBlock',
-          targetPosition: 'bottom',
-          position: {
-            x: i % 2 === 0 ? 250 : -150,
-            y: 60 * (j + 0.5 - courses.length / 2) + nodes[i * 1]["position"]["y"]
-          },
-          data: {
-            course: courseID,
-            position: i % 2 === 0 ? "left" : "right"
-          }
-        };
-        const edgeData = {
-          id: `${nodeID}-${courseID}`,
-          source: nodeID,
-          target: courseID,
-          sourceHandle: i % 2 === 0 ? "courseRight" : "courseLeft"
-        };
-
-        nodes.push(nodeData);
-        edges.push(edgeData);
+  for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
+    const courses = node["courses"];
+    const nodeIdx = nodes.findIndex(node => node["id"] == nodeID)
+    for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
+      const courseID = courses[courseIdx];
+      console.log(courseID);
+      const nodeData = {
+        id: courseID,
+        type: 'courseBlock',
+        position: {
+          x: nodeIdx % 2 === 0 ? 200 : -150,
+          y: 60 * (courseIdx + 0.5 - courses.length / 2) + nodes[nodeIdx]["position"]["y"]
+        },
+        data: {
+          course: courseID,
+          position: nodeIdx % 2 === 0 ? "left" : "right"
+        }
       };
-    }
+      const edgeData = {
+        id: `${nodeID}-${courseID}`,
+        source: nodeID,
+        target: courseID,
+        sourceHandle: nodeIdx % 2 === 0 ? "courseRight" : "courseLeft"
+      };
+
+      nodes.push(nodeData);
+      edges.push(edgeData);
+    };
   }
 
 
