@@ -1,6 +1,33 @@
 {
     "MATH": {
-        "requirements": {
+        "declair": {
+            "all": {
+                "foundation1": {
+                    "name": "Foundation Courses",
+                    "level": 1,
+                    "quantity": 1
+                },
+                "foundation2": {
+                    "name": "Foundation Courses",
+                    "level": 1,
+                    "quantity": 1
+                },
+                "intermediate": {
+                    "name": "Intermediate Courses",
+                    "level": 2,
+                    "quantity": 1
+                }
+            },
+            "flows": {
+                "major": {
+                    "foundation1": [
+                        "foundation2",
+                        "intermediate"
+                    ]
+                }
+            }
+        },
+        "flow-chart": {
             "major": {
                 "nodes": {
                     "foundation": {
@@ -94,56 +121,64 @@
                 }
             },
             "minor": {
-                "advanced": {
-                    "name": "Advanced courses",
-                    "level": 3,
-                    "quantity": 1
+                "nodes": {
+                    "intermediate": {
+                        "name": "Intermediate courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced courses",
+                        "level": 3,
+                        "quantity": 1
+                    },
+                    "all": {
+                        "name": "Other Applied Mathematics courses",
+                        "quantity": 3
+                    }
                 },
-                "intermediate": {
-                    "name": "Intermediate courses",
-                    "level": 2,
-                    "quantity": 2
+                "flows": {
+                    "major": {
+                        "intermediate": [
+                            "advanced"
+                        ],
+                        "advanced": [
+                            "all"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "ARTS": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "level": 1,
+                        "quantity": 2
+                    }
                 },
-                "other": {
-                    "name": "Other Applied Mathematics courses",
-                    "quantity": 3
+                "flows": {
+                    "major": {
+                        "intro": [
+                            "foundation"
+                        ]
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "all": {
+                        "quantity": 1
+                    }
                 }
             }
         },
-        "declair": [
-            {
-                "foundation": {
-                    "courses": [
-                        "MATH103",
-                        "MATH101",
-                        "MATH105",
-                        "MATH104"
-                    ],
-                    "name": "Foundation Courses",
-                    "quantity": 2
-                }
-            },
-            {
-                "foundation": {
-                    "courses": [
-                        "MATH103",
-                        "MATH101",
-                        "MATH105",
-                        "MATH104"
-                    ],
-                    "name": "Foundation Courses",
-                    "quantity": 1
-                },
-                "intermediate": {
-                    "name": "Intermediate Courses",
-                    "level": 2,
-                    "quantity": 1
-                }
-            }
-        ]
-    },
-    "ARTS": {
-        "requirements": {
+        "flow-chart": {
             "major": {
                 "nodes": {
                     "intro": {
@@ -210,40 +245,55 @@
                     }
                 },
                 "minor": {
-                    "intro": {
-                        "name": "Introduction to Visual Studies",
-                        "quantity": 1
+                    "nodes": {
+                        "intro": {
+                            "name": "Introduction to Visual Studies",
+                            "quantity": 1
+                        },
+                        "foundation": {
+                            "name": "Foundation Courses",
+                            "level": 1,
+                            "quantity": 2
+                        },
+                        "intermediate": {
+                            "name": "Intermediate courses",
+                            "level": 2,
+                            "quantity": 2
+                        },
+                        "advanced": {
+                            "name": "Advanced courses",
+                            "level": 3,
+                            "quantity": 3
+                        }
                     },
-                    "foundation": {
-                        "name": "Foundation Courses",
-                        "level": 1,
-                        "quantity": 2
-                    },
-                    "intermediate": {
-                        "name": "Intermediate courses",
-                        "level": 2,
-                        "quantity": 2
-                    },
-                    "advanced": {
-                        "name": "Advanced courses",
-                        "level": 3,
-                        "quantity": 3
-                    }
-                }
-            },
-            "declair": {
-                "major": {
-                    "intro": {
-                        "quantity": 1
-                    },
-                    "foundation": {
-                        "level": 1,
-                        "quantity": 2
-                    }
-                },
-                "minor": {
-                    "other": {
-                        
+                    "flows": {
+                        "main": {
+                            "intro": [
+                                "foundation"
+                            ],
+                            "foundation": [
+                                "intermediate"
+                            ],
+                            "intermediate": [
+                                "advanced"
+                            ]
+                        },
+                        "course": {
+                            "intro": {
+                                "courses": [
+                                    "ARTS101"
+                                ],
+                                "quantity": 1
+                            },
+                            "foundation": {
+                                "courses": [
+                                    "ARTS102",
+                                    "ARTS105",
+                                    "ARTS103"
+                                ],
+                                "quantity": 1
+                            }
+                        }
                     }
                 }
             }
