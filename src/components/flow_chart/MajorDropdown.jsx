@@ -1,0 +1,24 @@
+function MajorDropdown({updateFlow}) {
+  return (
+    <select
+      className="bg-background rounded-lg border-solid border-text border pt-[15px] pr-2.5 pb-5 pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden text-text text-3xl text-center font-bold"
+      name="major"
+      id="major"
+      onChange={() => updateFlow()}
+    >
+      <option value="" defaultChecked hidden> Choose a major ...</option>
+      <option value="cs">Computer Science</option>
+      <option value="math">Mathematics</option>
+      <option value="psy">Psychology</option>
+      <option value="vs">Vietnam Studies</option>
+      <option value="eng">Engineering</option>
+      <option value="is">Itegrated Science</option>
+      <option value="arts">Arts</option>
+      <option value="econ">Economics</option>
+      <option value="his">History</option>
+      <option value="lit">Literature</option>
+      <option value="ss">Social Science</option>
+    </select>
+  );
+}
+export default MajorDropdown;
