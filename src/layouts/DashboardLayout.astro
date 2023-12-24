@@ -35,7 +35,7 @@ terms.pop();
     <div
       class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0"
     >
-      <a href="/">
+      <a href="/about">
         <Button theme="neutral" isfilled padding="py-2 pl-2 pr-8">
           <img class="h-16" src={LogoIcon.src} alt="logo" />
           <span class="text-2xl font-black">Fultracker</span>
@@ -81,11 +81,11 @@ terms.pop();
         </a>
       </nav>
 
-      <form action="/api/auth/signout">
+      <!-- <form action="/api/auth/signout">
         <Button id="exit" type="submit" theme="destructive" isfilled padding="p-4">
           <img class="h-6" src={ExitIcon.src} alt="exit">
         </Button>
-      </form>
+      </form> -->
     </div>
     <slot />
   </div>

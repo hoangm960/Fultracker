@@ -1,122 +1,15 @@
 {
     "MATH": {
-        "requirements": {
-            "major": {
-                "nodes": {
-                    "foundation": {
-                        "courses": [
-                            "MATH103",
-                            "MATH101",
-                            "MATH105",
-                            "MATH104"
-                        ],
-                        "name": "Foundation Courses",
-                        "quantity": 4,
-                        "type": "course"
-                    },
-                    "writing": {
-                        "courses": [
-                            "MATH102"
-                        ],
-                        "name": "Mathematical Writing",
-                        "quantity": 1,
-                        "type": "course"
-                    },
-                    "intermediate": {
-                        "name": "Intermediate Courses",
-                        "level": 2,
-                        "quantity": 2,
-                        "type": "major"
-                    },
-                    "pure": {
-                        "courses": [],
-                        "name": "Pure Mathematics",
-                        "quantity": 1,
-                        "type": "courses"
-                    },
-                    "advanced1": {
-                        "name": "Advanced Courses",
-                        "level": 3,
-                        "quantity": 2,
-                        "type": "major"
-                    },
-                    "elective": {
-                        "name": "Elective Applied Courses",
-                        "quantity": 2,
-                        "at-least": {
-                            "level": 3,
-                            "quantity": 1
-                        },
-                        "type": "major"
-                    },
-                    "seminar": {
-                        "name": "Research Seminar",
-                        "level": 3,
-                        "quantity": 2,
-                        "type": "major"
-                    },
-                    "capstones": {
-                        "name": "Capstone I & II",
-                        "level": 5,
-                        "quantity": 2,
-                        "type": "major"
-                    },
-                    "advanced2": {
-                        "name": "Advanced Courses",
-                        "level": 4,
-                        "quantity": 2,
-                        "type": "major"
-                    }
-                },
-                "flows": {
-                    "foundation": ["writing"],
-                    "writing":["intermediate"],
-                    "intermediate": ["pure"],
-                    "pure": ["advanced"],
-                    "advanced1": ["elective"],
-                    "elective": ["seminar"],
-                    "seminar": ["capstones", "advanced2"]
-                }
-            },
-            "minor": {
-                "advanced": {
-                    "name": "Advanced courses",
-                    "level": 4,
+        "declair": {
+            "all": {
+                "foundation1": {
+                    "name": "Foundation Courses",
+                    "level": 1,
                     "quantity": 1
                 },
-                "intermediate": {
-                    "name": "Intermediate courses",
-                    "level": 2,
-                    "quantity": 2
-                },
-                "other": {
-                    "name": "Other Applied Mathematics courses",
-                    "quantity": 3
-                }
-            }
-        },
-        "declair": [
-            {
-                "foundation": {
-                    "courses": [
-                        "MATH103",
-                        "MATH101",
-                        "MATH105",
-                        "MATH104"
-                    ],
+                "foundation2": {
                     "name": "Foundation Courses",
-                    "quantity": 2
-                }
-            },
-            {
-                "foundation": {
-                    "courses": [
-                        "MATH103",
-                        "MATH101",
-                        "MATH105",
-                        "MATH104"
-                    ],
-                    "name": "Foundation Courses",
+                    "level": 1,
                     "quantity": 1
                 },
                 "intermediate": {
@@ -124,7 +17,286 @@
                     "level": 2,
                     "quantity": 1
                 }
+            },
+            "flows": {
+                "major": {
+                    "foundation1": [
+                        "foundation2",
+                        "intermediate"
+                    ]
+                }
             }
-        ]
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 4
+                    },
+                    "writing": {
+                        "name": "Mathematical Writing",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "pure": {
+                        "name": "Pure Mathematics",
+                        "quantity": 1
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "elective": {
+                        "name": "Elective Applied Courses",
+                        "quantity": 2,
+                        "at-least": {
+                            "level": 3,
+                            "quantity": 1
+                        }
+                    },
+                    "seminar": {
+                        "name": "Research Seminar",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "writing"
+                        ],
+                        "writing": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "pure"
+                        ],
+                        "pure": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "elective"
+                        ],
+                        "elective": [
+                            "seminar"
+                        ],
+                        "seminar": [
+                            "capstones",
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "MATH103",
+                                "MATH101",
+                                "MATH105",
+                                "MATH104"
+                            ],
+                            "quantity": 4
+                        },
+                        "writing": {
+                            "courses": [
+                                "MATH102"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 1
+                    },
+                    "all": {
+                        "name": "Other Applied Mathematics Courses",
+                        "quantity": 3
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intermediate": [
+                            "advanced"
+                        ],
+                        "advanced": [
+                            "all"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "ARTS": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "level": 1,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "major": {
+                        "intro": [
+                            "foundation"
+                        ]
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "all": {
+                        "quantity": 1
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Visual Studies",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 3
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 3
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 3
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "capstones",
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "ARTS101"
+                            ],
+                            "quantity": 1
+                        },
+                        "foundation": {
+                            "courses": [
+                                "ARTS102",
+                                "ARTS105",
+                                "ARTS103"
+                            ],
+                            "quantity": 2
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Visual Studies",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 3
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "ARTS101"
+                            ],
+                            "quantity": 1
+                        },
+                        "foundation": {
+                            "courses": [
+                                "ARTS102",
+                                "ARTS105",
+                                "ARTS103"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
