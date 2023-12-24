@@ -123,22 +123,22 @@
             "minor": {
                 "nodes": {
                     "intermediate": {
-                        "name": "Intermediate courses",
+                        "name": "Intermediate Courses",
                         "level": 2,
                         "quantity": 2
                     },
                     "advanced": {
-                        "name": "Advanced courses",
+                        "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 1
                     },
                     "all": {
-                        "name": "Other Applied Mathematics courses",
+                        "name": "Other Applied Mathematics Courses",
                         "quantity": 3
                     }
                 },
                 "flows": {
-                    "major": {
+                    "main": {
                         "intermediate": [
                             "advanced"
                         ],
@@ -243,56 +243,56 @@
                             "quantity": 2
                         }
                     }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Visual Studies",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 3
+                    }
                 },
-                "minor": {
-                    "nodes": {
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
                         "intro": {
-                            "name": "Introduction to Visual Studies",
+                            "courses": [
+                                "ARTS101"
+                            ],
                             "quantity": 1
                         },
                         "foundation": {
-                            "name": "Foundation Courses",
-                            "level": 1,
-                            "quantity": 2
-                        },
-                        "intermediate": {
-                            "name": "Intermediate courses",
-                            "level": 2,
-                            "quantity": 2
-                        },
-                        "advanced": {
-                            "name": "Advanced courses",
-                            "level": 3,
-                            "quantity": 3
-                        }
-                    },
-                    "flows": {
-                        "main": {
-                            "intro": [
-                                "foundation"
+                            "courses": [
+                                "ARTS102",
+                                "ARTS105",
+                                "ARTS103"
                             ],
-                            "foundation": [
-                                "intermediate"
-                            ],
-                            "intermediate": [
-                                "advanced"
-                            ]
-                        },
-                        "course": {
-                            "intro": {
-                                "courses": [
-                                    "ARTS101"
-                                ],
-                                "quantity": 1
-                            },
-                            "foundation": {
-                                "courses": [
-                                    "ARTS102",
-                                    "ARTS105",
-                                    "ARTS103"
-                                ],
-                                "quantity": 1
-                            }
+                            "quantity": 1
                         }
                     }
                 }

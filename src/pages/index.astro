@@ -5,11 +5,11 @@ import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
 import MajorDropdown from "@components/MajorDropdown.astro";
 import CourseRow from "@components/table/CourseRow.astro";
+import FlowRadio from "@components/FlowRadio.astro";
 import Flow from "@components/flow_chart/Flow";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
-
 ---
 
 <DashboardLayout page="home">
@@ -112,7 +112,7 @@ import DeleteIcon from "@assets/icons/delete.png";
 						</Button>
 					</InfoField>
 				</div>
-				<CourseTable height={350}>
+				<CourseTable height={370}>
 					{
 						[...Array(40).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -199,14 +199,15 @@ import DeleteIcon from "@assets/icons/delete.png";
 			style="overflow-y: auto"
 		>
 			<MajorDropdown />
-			<div class="text-text text-left relative font-bold text-2xl">
+			<!-- <div class="text-text text-left relative font-bold text-2xl">
 				Requirements:
 			</div>
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
+			<InfoField title="Title:" value="Value" total={8} hasProgressBar /> -->
 
+			<FlowRadio />
 			<div id="flow-box" class="h-full w-full">
 				<Flow client:load major="" />
 			</div>

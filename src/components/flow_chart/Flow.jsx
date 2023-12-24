@@ -1,9 +1,12 @@
-import ReactFlow from 'reactflow';
+import ReactFlow, { Background, Controls } from 'reactflow';
 import MainBlock from './MainBlock';
 import CourseBlock from './CourseBlock';
 import 'reactflow/dist/style.css';
 
 import majorData from "@data/major.json"
+
+const proOptions = { hideAttribution: true };
+const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 
 function getNodesAndEdges(flowData) {
   let nodes = [];
@@ -26,65 +29,64 @@ function getNodesAndEdges(flowData) {
         target: nextNodeID,
         sourceHandle: "main"
       });
-      nodes[i * 1 + j * 1 + 1]["position"]["x"] = 200 * (j * 1 + 0.5 - flow.length / 2)
+      nodes[i * 1 + j * 1 + 1]["position"]["x"] = 300 * (j * 1 + 0.5 - flow.length / 2)
       nodes[i * 1 + j * 1 + 1]["position"]["y"] = nodes[i * 1]["position"]["y"] - 80;
     }
   }
 
-  for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
-    const courses = node["courses"];
-    const nodeIdx = nodes.findIndex(node => node["id"] == nodeID)
-    for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
-      const courseID = courses[courseIdx];
-      console.log(courseID);
-      const nodeData = {
-        id: courseID,
-        type: 'courseBlock',
-        position: {
-          x: nodeIdx % 2 === 0 ? 200 : -150,
-          y: 60 * (courseIdx + 0.5 - courses.length / 2) + nodes[nodeIdx]["position"]["y"]
-        },
-        data: {
-          course: courseID,
-          position: nodeIdx % 2 === 0 ? "left" : "right"
-        }
-      };
-      const edgeData = {
-        id: `${nodeID}-${courseID}`,
-        source: nodeID,
-        target: courseID,
-        sourceHandle: nodeIdx % 2 === 0 ? "courseRight" : "courseLeft"
-      };
+  if (flowData["flows"]["course"]) {
+    for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
+      const courses = node["courses"];
+      const nodeIdx = nodes.findIndex(node => node["id"] == nodeID)
+      for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
+        const courseID = courses[courseIdx];
+        const nodeData = {
+          id: courseID,
+          type: 'courseBlock',
+          position: {
+            x: nodeIdx % 2 === 0 ? 300 : -150,
+            y: 60 * (courseIdx + 0.5 - courses.length / 2) + nodes[nodeIdx]["position"]["y"]
+          },
+          data: {
+            course: courseID,
+            position: nodeIdx % 2 === 0 ? "left" : "right"
+          }
+        };
+        const edgeData = {
+          id: `${nodeID}-${courseID}`,
+          source: nodeID,
+          target: courseID,
+          sourceHandle: nodeIdx % 2 === 0 ? "courseRight" : "courseLeft"
+        };
 
-      nodes.push(nodeData);
-      edges.push(edgeData);
-    };
+        nodes.push(nodeData);
+        edges.push(edgeData);
+      };
+    }
   }
-
 
   return [nodes, edges];
 }
 
 
 function Flow(props) {
-  const proOptions = { hideAttribution: true };
-  const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
-
   let [nodes, edges] = [[], []]
   if (props.major != "") {
-    const flowData = majorData[props.major]["requirements"]["major"];
+    const flowData = majorData[props.major]["flow-chart"][props.flow];
     [nodes, edges] = getNodesAndEdges(flowData);
+    return (
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        fitView
+        proOptions={proOptions}
+      >
+        <Background />
+        <Controls />
+      </ReactFlow>
+    );
   }
-
-  return (
-    <ReactFlow
-      nodes={nodes}
-      edges={edges}
-      nodeTypes={nodeTypes}
-      fitView
-      proOptions={proOptions}
-    />
-  );
 }
 
 export default Flow;

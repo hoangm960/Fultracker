@@ -2,7 +2,7 @@ import { Handle, Position } from 'reactflow';
 
 function MainBlock({ data }) {
   return (
-    <div className="h-12 w-36 border-[1px] border-black border-solid rounded-md p-1 bg-white text-center">
+    <div className="h-fit w-56 border-[1px] border-black border-solid rounded-md p-1 bg-white text-center">
       <p>
         {data["name"]}
       </p>
