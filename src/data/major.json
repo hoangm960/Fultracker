@@ -52,7 +52,7 @@
                         "level": 3,
                         "quantity": 2
                     },
-                    "elective": {
+                    "elective1": {
                         "name": "Elective Applied Courses",
                         "quantity": 2,
                         "at-least": {
@@ -74,6 +74,16 @@
                         "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 2
+                    },
+                    "advanced3": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 1
+                    },
+                    "elective2": {
+                        "name": "Elective Applied Courses",
+                        "level": 3,
+                        "quantity": 1
                     }
                 },
                 "flows": {
@@ -91,14 +101,18 @@
                             "advanced1"
                         ],
                         "advanced1": [
-                            "elective"
+                            "elective1"
                         ],
-                        "elective": [
+                        "elective1": [
                             "seminar"
                         ],
                         "seminar": [
                             "capstones",
-                            "advanced2"
+                            "advanced2",
+                            "advanced3"
+                        ],
+                        "advanced3": [
+                            "elective2"
                         ]
                     },
                     "course": {
