@@ -1,29 +1,58 @@
 {
     "MATH": {
         "declair": {
-            "all": {
-                "foundation1": {
-                    "name": "Foundation Courses",
-                    "level": 1,
-                    "quantity": 1
+            "major": {
+                "nodes": {
+                    "foundation1": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "foundation2": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 1
+                    }
                 },
-                "foundation2": {
-                    "name": "Foundation Courses",
-                    "level": 1,
-                    "quantity": 1
-                },
-                "intermediate": {
-                    "name": "Intermediate Courses",
-                    "level": 2,
-                    "quantity": 1
+                "flows": {
+                    "main": {
+                        "foundation1": [
+                            "foundation2",
+                            "intermediate"
+                        ]
+                    }
                 }
             },
-            "flows": {
-                "major": {
-                    "foundation1": [
-                        "foundation2",
-                        "intermediate"
-                    ]
+            "minor": {
+                "nodes": {
+                    "foundation1": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "foundation2": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "major": {
+                        "foundation1": [
+                            "foundation2",
+                            "intermediate"
+                        ]
+                    }
                 }
             }
         },
@@ -169,15 +198,17 @@
             "major": {
                 "nodes": {
                     "intro": {
+                        "name": "Introduction to Visual Studies",
                         "quantity": 1
                     },
                     "foundation": {
+                        "name": "Foundation Courses",
                         "level": 1,
-                        "quantity": 2
+                        "quantity": 3
                     }
                 },
                 "flows": {
-                    "major": {
+                    "main": {
                         "intro": [
                             "foundation"
                         ]
@@ -187,6 +218,7 @@
             "minor": {
                 "nodes": {
                     "all": {
+                        "name": "Arts and Media course",
                         "quantity": 1
                     }
                 }
