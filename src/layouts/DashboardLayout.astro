@@ -3,10 +3,8 @@ import MainLayout from "./MainLayout.astro";
 import LogoIcon from "@assets/icons/backgroundIcon1.png";
 import HomeIcon from "@assets/icons/Home.svg";
 import SettingsIcon from "@assets/icons/Gear.svg";
-import ExitIcon from "@assets/icons/Exit.svg";
-import { app } from "@lib/firebase/server";
-import { getFirestore } from "firebase-admin/firestore";
 import Button from "@components/Button.astro";
+import courseData from "@data/course_data.json";
 
 const { page } = Astro.props;
 var btnStyles: { [key: string]: "action" | "neutral" } = {
@@ -15,19 +13,8 @@ var btnStyles: { [key: string]: "action" | "neutral" } = {
 };
 btnStyles[page] = "action";
 
-interface Term {
-  id: string;
-  name: string;
-}
-
-const db = getFirestore(app);
-const termsRef = db.collection("term");
-const termsSnapshot = await termsRef.get();
-var terms = termsSnapshot.docs.map((doc) => ({
-  id: doc.id,
-  ...doc.data(),
-})) as Term[];
-terms.pop();
+const terms = Object.keys(courseData);
+const lastestTerm = terms[terms.length - 1].split("_").toSpliced(3, 1).join(" ");
 ---
 
 <MainLayout>
@@ -60,7 +47,7 @@ terms.pop();
           "
         >
           <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
-            {terms[terms.length - 1]["name"]}
+            {lastestTerm}
           </a>
         </div>
       </div>
@@ -80,12 +67,6 @@ terms.pop();
           </Button>
         </a>
       </nav>
-
-      <!-- <form action="/api/auth/signout">
-        <Button id="exit" type="submit" theme="destructive" isfilled padding="p-4">
-          <img class="h-6" src={ExitIcon.src} alt="exit">
-        </Button>
-      </form> -->
     </div>
     <slot />
   </div>

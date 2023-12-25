@@ -29,7 +29,7 @@ function getNodesAndEdges(flowData) {
                 sourceHandle: "main"
             });
             nodes[i * 1 + j * 1 + 1]["position"]["x"] = 300 * (j * 1 + 0.5 - flow.length / 2)
-            nodes[i * 1 + j * 1 + 1]["position"]["y"] = nodes[i * 1]["position"]["y"] - 80;
+            nodes[i * 1 + j * 1 + 1]["position"]["y"] = nodes[i * 1]["position"]["y"] - 100;
         }
     }
 

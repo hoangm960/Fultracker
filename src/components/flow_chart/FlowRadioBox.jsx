@@ -1,8 +1,8 @@
 function FlowRadioBox({updateFlow}) {
     return (
-        <div id="radio-box" className="w-full flex items-center justify-center gap-1" onChange={updateFlow}>
+        <div id="radio-box" className="flex flex-col items-center justify-center gap-1" onChange={updateFlow}>
             <div
-                className="flex items-center px-4 bg-background border border-text rounded"
+                className="flex items-center px-4 h-10 bg-action border-2 border-text rounded"
             >
                 <input
                     defaultChecked
@@ -14,11 +14,11 @@ function FlowRadioBox({updateFlow}) {
                 />
                 <label
                     htmlFor="major"
-                    className="w-full py-4 ms-2 text-sm font-medium text-text">Major</label
+                    className="w-full py-4 ms-2 text-sm font-semibold text-highlight">Major</label
                 >
             </div>
             <div
-                className="flex items-center px-4 bg-background border border-text rounded"
+                className="flex items-center px-4 h-10 bg-action border-2 border-text rounded"
             >
                 <input
                     id="minor"
@@ -29,7 +29,7 @@ function FlowRadioBox({updateFlow}) {
                 />
                 <label
                     htmlFor="minor"
-                    className="w-full py-4 ms-2 text-sm font-medium text-text">Minor</label
+                    className="w-full py-4 ms-2 text-sm font-semibold text-highlight">Minor</label
                 >
             </div>
         </div>

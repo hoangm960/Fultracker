@@ -2,9 +2,12 @@ import { Handle, Position } from 'reactflow';
 
 function MainBlock({ data }) {
   return (
-    <div className="h-fit w-56 border-[1px] border-black border-solid rounded-md p-1 bg-white text-center">
-      <p>
+    <div className="h-fit w-60 border-[1px] border-black border-solid rounded-md p-1 bg-background text-text text-center">
+      <p className="text-lg font-semibold">
         {data["name"]}
+      </p>
+      <p className="text-sm italic">
+        ({data["quantity"]} required)
       </p>
 
       <Handle
