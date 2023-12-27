@@ -344,5 +344,181 @@
                 }
             }
         }
+    },
+    "CS": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 3
+                    }
+                },
+                "flows": {
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "CS101",
+                                "CS201",
+                                "MATH202"
+                            ],
+                            "quantity": 3
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "all": {
+                        "name": "Computer Science course",
+                        "quantity": 1
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 4
+                    },
+                    "math": {
+                        "name": "Mathematics Foundation Courses"
+                    },
+                    "soft": {
+                        "name": "Software Foundation Courses"
+                    },
+                    "hard": {
+                        "name": "Hardware/System Foundation Courses"
+                    },
+                    "responsibility": {
+                        "name": "Professional responsibility in CS"
+                    },
+                    "major1": {
+                        "name": "Major Courses",
+                        "quantity": 4
+                    },
+                    "concentration1": {
+                        "name": "Concentration Courses",
+                        "level": 3,
+                        "quantity": 4
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "major2-concentration2": {
+                        "name": "Major/Concentration Courses",
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "major1"
+                        ],
+                        "major1": [
+                            "concentration1"
+                        ],
+                        "concentration1": [
+                            "capstones",
+                            "major2-concentration2"
+                        ]
+                    },
+                    "sub-flows": {
+                        "foundation": [
+                            "math",
+                            "soft",
+                            "hard",
+                            "responsibility"
+                        ]
+                    },
+                    "course": {
+                        "math": {
+                            "courses": [
+                                "MATH202"
+                            ],
+                            "quantity": 1
+                        },
+                        "soft": {
+                            "courses": [
+                                "CS101",
+                                "CS201"
+                            ],
+                            "quantity": 2
+                        },
+                        "major1": {
+                            "courses": [
+                                "CS304",
+                                "CS207",
+                                "CS204",
+                                "CS301",
+                                "CS308"
+                            ],
+                            "quantity": 4
+                        },
+                        "concentration1": {
+                            "courses": [
+                                "CS208",
+                                "CS205",
+                                "CS301"
+                            ],
+                            "quantity": 4
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 4
+                    },
+                    "algorithm": {
+                        "name": "Algorithm Design and Analysis",
+                        "quantity": 1
+                    },
+                    "major": {
+                        "name": "Major Course",
+                        "quantity": 1
+                    },
+                    "concentration": {
+                        "name": "Concentration Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "algorithm"
+                        ],
+                        "algorithm": [
+                            "major"
+                        ],
+                        "major": [
+                            "concentration"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "CS101",
+                                "CS201",
+                                "MATH202"
+                            ],
+                            "quantity": 3
+                        },
+                        "algorithm": {
+                            "courses": [
+                                "CS102"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
