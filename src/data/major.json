@@ -520,5 +520,219 @@
                 }
             }
         }
+    },
+    "ECON": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "method": {
+                        "name": "Methodology Course",
+                        "quantity": 1
+                    },
+                    "analysis": {
+                        "name": "Analysis Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "method"
+                        ],
+                        "method": [
+                            "analysis"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "ECON101",
+                                "ECON103"
+                            ],
+                            "quantity": 2
+                        },
+                        "method": {
+                            "courses": [
+                                "ECON102",
+                                "ECON209"
+                            ],
+                            "quantity": 1
+                        },
+                        "analysis": {
+                            "courses": [
+                                "ECON201",
+                                "ECON203"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 1
+                    },
+                    "analysis": {
+                        "name": "Analysis Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "analysis"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "ECON101",
+                                "ECON103"
+                            ],
+                            "quantity": 1
+                        },
+                        "analysis": {
+                            "courses": [
+                                "ECON201",
+                                "ECON203"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 2
+                    },
+                    "method": {
+                        "name": "Methodology Course",
+                        "quantity": 2
+                    },
+                    "analysis": {
+                        "name": "Analysis Course",
+                        "quantity": 2
+                    },
+                    "intermediate-advanced1": {
+                        "name": "Intermediate & Advanced Courses",
+                        "quantity": 4,
+                        "at-least": {
+                            "level": 3,
+                            "quantity": 2
+                        }
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "method"
+                        ],
+                        "method": [
+                            "analysis"
+                        ],
+                        "analysis": [
+                            "intermediate-advanced1"
+                        ],
+                        "intermediate-advanced1": [
+                            "capstones",
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "ECON101",
+                                "ECON103"
+                            ],
+                            "quantity": 2
+                        },
+                        "method": {
+                            "courses": [
+                                "ECON102",
+                                "ECON209"
+                            ],
+                            "quantity": 2
+                        },
+                        "analysis": {
+                            "courses": [
+                                "ECON201",
+                                "ECON203"
+                            ],
+                            "quantity": 2
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 1
+                    },
+                    "analysis": {
+                        "name": "Analysis Course",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "analysis"
+                        ],
+                        "analysis": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "ECON101",
+                                "ECON103"
+                            ],
+                            "quantity": 1
+                        },
+                        "analysis": {
+                            "courses": [
+                                "ECON201",
+                                "ECON203"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
