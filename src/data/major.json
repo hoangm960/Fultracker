@@ -734,5 +734,203 @@
                 }
             }
         }
+    },
+    "ENG": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "core": {
+                        "name": "Design & Systems Thinking",
+                        "quantity": 1
+                    },
+                    "math": {
+                        "name": "Mathematics",
+                        "quantity": 1
+                    },
+                    "science": {
+                        "name": "Basic Science",
+                        "quantity": 1
+                    },
+                    "all": {
+                        "name": "Engineering Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "core": [
+                            "math"
+                        ],
+                        "math": [
+                            "all"
+                        ],
+                        "science": [
+                            "all"
+                        ]
+                    },
+                    "course": {
+                        "core": {
+                            "courses": [
+                                "CORE105"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "core": {
+                        "name": "Design & Systems Thinking",
+                        "quantity": 1
+                    },
+                    "all": {
+                        "name": "Engineering Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "core": [
+                            "all"
+                        ]
+                    },
+                    "course": {
+                        "core": {
+                            "courses": [
+                                "CORE105"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "programming": {
+                        "name": "Programming Course",
+                        "quantity": 1
+                    },
+                    "math-science": {
+                        "name": "Mathematics/Basic Science",
+                        "quantity": 6
+                    },
+                    "math": {
+                        "name": "Mathematics",
+                        "quantity": 3
+                    },
+                    "science": {
+                        "name": "Basic Science",
+                        "quantity": 0
+                    },
+                    "foundation-intermediate": {
+                        "name": "Foundation/Intermediate Courses",
+                        "quantity": 6
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 0,
+                        "level": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "quantity": 0,
+                        "level": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "quantity": 3,
+                        "level": 3
+                    },
+                    "dev": {
+                        "name": "Scholar Development",
+                        "quantity": 1
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "quantity": 2
+                    },
+                    "all": {
+                        "name": "Any Engineering Courses",
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "programming": [
+                            "math",
+                            "science"
+                        ],
+                        "math": [
+                            "foundation",
+                            " intermediate"
+                        ],
+                        "foundation": [
+                            "advanced"
+                        ],
+                        "dev": [
+                            "capstones",
+                            "all"
+                        ]
+                    },
+                    "sub-flows": {
+                        "math-science": [
+                            "math",
+                            "science"
+                        ],
+                        "foundation-intermediate": [
+                            "foundation",
+                            "intermediate"
+                        ]
+                    },
+                    "course": {
+                        "programming": {
+                            "courses": [
+                                "CS101",
+                                "CS201"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intermediate-advanced": {
+                        "name": "Intermediate/Advanced Courses",
+                        "quantity": 3
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 0
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 0
+                    },
+                    "all": {
+                        "name": "Engineering courses",
+                        "quantity": 6
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intermediate-advanced": [
+                            "all"
+                        ]
+                    },
+                    "sub-flows": {
+                        "intermediate-advanced": [
+                            "intermediate",
+                            "advanced"
+                        ]
+                    }
+                }
+            }
+        }
     }
 }
