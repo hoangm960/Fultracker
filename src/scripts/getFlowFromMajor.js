@@ -1,14 +1,12 @@
 export default function getNodesAndEdges(flowData) {
     let nodes = [];
-    for (const [index, id] of Object.entries(
-        Object.keys(flowData["flows"]["main"])
-    )) {
+    for (const nodeID of Object.keys(flowData["nodes"])) {
         nodes.push({
-            id: id,
+            id: nodeID,
             type: "mainBlock",
             targetPosition: "bottom",
-            position: { x: 0, y: -(80 * index) },
-            data: flowData["nodes"][id],
+            position: { x: 0, y: 0 },
+            data: flowData["nodes"][nodeID],
         });
     }
 
@@ -29,17 +27,7 @@ export default function getNodesAndEdges(flowData) {
                     y: nodes.find((node) => node.id === id)["position"]["y"] - 100
                 };
                 const nextNode = nodes.find((node) => node.id === nextNodeID);
-                if (nextNode) {
-                    nextNode["position"] = nextNodePos;
-                } else {
-                    nodes.push({
-                        id: nextNodeID,
-                        type: "mainBlock",
-                        targetPosition: "bottom",
-                        position: nextNodePos,
-                        data: flowData["nodes"][nextNodeID],
-                    });
-                }
+                nextNode["position"] = nextNodePos;
             }
         }
     }
@@ -72,7 +60,7 @@ export default function getNodesAndEdges(flowData) {
                 //         data: flowData["nodes"][nextNodeID],
                 //     });
                 // }
-                
+
                 const nodeData = {
                     id: nextNodeID,
                     type: "courseBlock",
