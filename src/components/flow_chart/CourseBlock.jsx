@@ -1,6 +1,6 @@
 import { Handle, Position } from 'reactflow';
 
-function CourseBlock({ data }) {
+export default memo(({ data }) => {
   return (
     <div className="h-12 border-[1px] border-black border-solid rounded-md p-1 bg-highlight text-text">
       <p className="text-lg font-semibold">
@@ -22,6 +22,4 @@ function CourseBlock({ data }) {
       />
     </div>
   );
-}
-
-export default CourseBlock;
+});
