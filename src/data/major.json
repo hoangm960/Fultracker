@@ -64,7 +64,7 @@
                         "quantity": 4
                     },
                     "writing": {
-                        "name": "Mathematical Writing",
+                        "name": "Mathematical Writing Course",
                         "quantity": 1
                     },
                     "intermediate": {
@@ -83,11 +83,12 @@
                     },
                     "elective1": {
                         "name": "Elective Applied Courses",
-                        "quantity": 2,
-                        "at-least": {
-                            "level": 3,
-                            "quantity": 1
-                        }
+                        "quantity": 2
+                    },
+                    "intermediate-elective": {
+                        "name": "Intermediate Elective Courses",
+                        "level": 2,
+                        "quantity": 1
                     },
                     "seminar": {
                         "name": "Research Seminar",
@@ -96,23 +97,21 @@
                     },
                     "capstones": {
                         "name": "Capstone I & II",
-                        "level": 3,
+                        "level": 4,
+                        "quantity": 2
+                    },
+                    "advanced2-elective2": {
+                        "name": "Advanced/Elective Applied Courses",
                         "quantity": 2
                     },
                     "advanced2": {
-                        "name": "Advanced Courses",
-                        "level": 3,
-                        "quantity": 2
-                    },
-                    "advanced3": {
                         "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 1
                     },
                     "elective2": {
                         "name": "Elective Applied Courses",
-                        "level": 3,
-                        "quantity": 1
+                        "level": 3
                     }
                 },
                 "flows": {
@@ -137,10 +136,15 @@
                         ],
                         "seminar": [
                             "capstones",
-                            "advanced2",
-                            "advanced3"
+                            "advanced2-elective2"
+                        ]
+                    },
+                    "sub-flows": {
+                        "elective1": [
+                            "intermediate-elective"
                         ],
-                        "advanced3": [
+                        "advanced2-elective2": [
+                            "advanced2",
                             "elective2"
                         ]
                     },
@@ -159,6 +163,12 @@
                                 "MATH102"
                             ],
                             "quantity": 1
+                        },
+                        "pure": {
+                            "courses": [
+                                "MATH307"
+                            ],
+                            "quantity": 1
                         }
                     }
                 }
@@ -175,7 +185,7 @@
                         "level": 3,
                         "quantity": 1
                     },
-                    "all": {
+                    "any": {
                         "name": "Other Applied Mathematics Courses",
                         "quantity": 3
                     }
@@ -186,7 +196,7 @@
                             "advanced"
                         ],
                         "advanced": [
-                            "all"
+                            "any"
                         ]
                     }
                 }
@@ -204,7 +214,7 @@
                     "foundation": {
                         "name": "Foundation Courses",
                         "level": 1,
-                        "quantity": 3
+                        "quantity": 2
                     }
                 },
                 "flows": {
@@ -217,7 +227,7 @@
             },
             "minor": {
                 "nodes": {
-                    "all": {
+                    "any": {
                         "name": "Arts and Media course",
                         "quantity": 1
                     }
@@ -246,15 +256,24 @@
                         "level": 3,
                         "quantity": 3
                     },
-                    "capstones": {
-                        "name": "Capstone I & II",
-                        "level": 3,
-                        "quantity": 2
+                    "capstone1": {
+                        "name": "Capstone I",
+                        "level": 4,
+                        "quantity": 1
+                    },
+                    "capstone2": {
+                        "name": "Capstone II",
+                        "level": 4,
+                        "quantity": 1
                     },
                     "advanced2": {
                         "name": "Advanced Courses",
+                        "quantity": 1
+                    },
+                    "advanced3": {
+                        "name": "Advanced Courses",
                         "level": 3,
-                        "quantity": 2
+                        "quantity": 1
                     }
                 },
                 "flows": {
@@ -269,8 +288,14 @@
                             "advanced1"
                         ],
                         "advanced1": [
-                            "capstones",
+                            "capstone1",
                             "advanced2"
+                        ],
+                        "capstone1": [
+                            "capstone2"
+                        ],
+                        "advanced2": [
+                            "advanced3"
                         ]
                     },
                     "course": {
@@ -310,7 +335,7 @@
                     "advanced": {
                         "name": "Advanced Courses",
                         "level": 3,
-                        "quantity": 3
+                        "quantity": 1
                     }
                 },
                 "flows": {
@@ -349,29 +374,9 @@
         "declair": {
             "major": {
                 "nodes": {
-                    "foundation": {
-                        "name": "Foundation Courses",
-                        "quantity": 3
-                    }
-                },
-                "flows": {
-                    "course": {
-                        "foundation": {
-                            "courses": [
-                                "CS101",
-                                "CS201",
-                                "MATH202"
-                            ],
-                            "quantity": 3
-                        }
-                    }
-                }
-            },
-            "minor": {
-                "nodes": {
-                    "all": {
-                        "name": "Computer Science course",
-                        "quantity": 1
+                    "any": {
+                        "name": "Computer Science Courses",
+                        "quantity": 2
                     }
                 }
             }
@@ -379,142 +384,148 @@
         "flow-chart": {
             "major": {
                 "nodes": {
+                    "intro": {
+                        "name": "Introduction to Computer Science",
+                        "quantity": 0
+                    },
                     "foundation": {
                         "name": "Foundation Courses",
-                        "quantity": 4
+                        "level": 1,
+                        "quantity": 5
                     },
-                    "math": {
-                        "name": "Mathematics Foundation Courses"
+                    "intermediate1": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 3
                     },
-                    "soft": {
-                        "name": "Software Foundation Courses"
-                    },
-                    "hard": {
-                        "name": "Hardware/System Foundation Courses"
-                    },
-                    "responsibility": {
-                        "name": "Professional responsibility in CS"
-                    },
-                    "major1": {
-                        "name": "Major Courses",
-                        "quantity": 4
-                    },
-                    "concentration1": {
-                        "name": "Concentration Courses",
+                    "advanced1": {
+                        "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 4
                     },
                     "capstones": {
                         "name": "Capstone I & II",
-                        "level": 3,
+                        "level": 4,
                         "quantity": 2
                     },
-                    "major2-concentration2": {
-                        "name": "Major/Concentration Courses",
+                    "intermediate2-advanced2": {
+                        "name": "Intermediate/Advanced Courses",
                         "quantity": 2
+                    },
+                    "intermediate2": {
+                        "name": "Intermediate Courses"
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses"
                     }
                 },
                 "flows": {
                     "main": {
+                        "intro": [
+                            "foundation"
+                        ],
                         "foundation": [
-                            "major1"
+                            "intermediate1"
                         ],
-                        "major1": [
-                            "concentration1"
+                        "intermediate1": [
+                            "advanced1"
                         ],
-                        "concentration1": [
+                        "advanced1": [
                             "capstones",
-                            "major2-concentration2"
+                            "intermediate2-advanced2"
                         ]
                     },
                     "sub-flows": {
-                        "foundation": [
-                            "math",
-                            "soft",
-                            "hard",
-                            "responsibility"
+                        "intermediate2-advanced2": [
+                            "intermediate2",
+                            "advanced2"
                         ]
                     },
                     "course": {
-                        "math": {
+                        "intro": {
                             "courses": [
-                                "MATH202"
+                                "CS104"
                             ],
-                            "quantity": 1
-                        },
-                        "soft": {
-                            "courses": [
-                                "CS101",
-                                "CS201"
-                            ],
-                            "quantity": 2
-                        },
-                        "major1": {
-                            "courses": [
-                                "CS304",
-                                "CS207",
-                                "CS204",
-                                "CS301",
-                                "CS308"
-                            ],
-                            "quantity": 4
-                        },
-                        "concentration1": {
-                            "courses": [
-                                "CS208",
-                                "CS205",
-                                "CS301"
-                            ],
-                            "quantity": 4
+                            "quantity": 0
                         }
                     }
                 }
             },
             "minor": {
                 "nodes": {
-                    "foundation": {
-                        "name": "Foundation Courses",
-                        "quantity": 4
-                    },
-                    "algorithm": {
-                        "name": "Algorithm Design and Analysis",
+                    "math": {
+                        "name": "Mathematics for  CS",
                         "quantity": 1
                     },
-                    "major": {
-                        "name": "Major Course",
+                    "foundation": {
+                        "name": "Foundation Course",
+                        "quantity": 1
+                    },
+                    "cs2": {
+                        "name": "Computer Science II: Data Structures & Algorithms",
                         "quantity": 1
                     },
                     "concentration": {
                         "name": "Concentration Course",
                         "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 1
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 3
                     }
                 },
                 "flows": {
                     "main": {
+                        "math": [
+                            "foundation"
+                        ],
                         "foundation": [
-                            "algorithm"
+                            "cs2"
                         ],
-                        "algorithm": [
-                            "major"
-                        ],
-                        "major": [
+                        "cs2": [
                             "concentration"
+                        ],
+                        "concentration": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
                         ]
                     },
                     "course": {
+                        "math": {
+                            "courses": [
+                                "MATH202",
+                                "MATH205"
+                            ],
+                            "quantity": 1
+                        },
                         "foundation": {
                             "courses": [
                                 "CS101",
-                                "CS201",
-                                "MATH202"
-                            ],
-                            "quantity": 3
-                        },
-                        "algorithm": {
-                            "courses": [
-                                "CS102"
+                                "CS103",
+                                "CS104"
                             ],
                             "quantity": 1
+                        },
+                        "cs2": {
+                            "courses": [
+                                "CS201"
+                            ],
+                            "quantity": 1
+                        },
+                        "concentration": {
+                            "courses": [
+                                "CS203",
+                                "CS102",
+                                "CS302"
+                            ]
                         }
                     }
                 }
@@ -625,19 +636,24 @@
                         "quantity": 2
                     },
                     "intermediate-advanced1": {
-                        "name": "Intermediate & Advanced Courses",
-                        "quantity": 4,
-                        "at-least": {
-                            "level": 3,
-                            "quantity": 2
-                        }
+                        "name": "Intermediate/Advanced Courses",
+                        "quantity": 4
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
                     },
                     "capstones": {
                         "name": "Capstone I & II",
                         "quantity": 2
                     },
                     "advanced2": {
-                        "name": "Advanced Courses",
+                        "name": "Additional Advanced Courses",
                         "quantity": 2
                     }
                 },
@@ -652,6 +668,12 @@
                         "analysis": [
                             "intermediate-advanced1"
                         ],
+                        "intermediate-advanced1": [
+                            "capstones",
+                            "advanced2"
+                        ]
+                    },
+                    "sub-flows": {
                         "intermediate-advanced1": [
                             "capstones",
                             "advanced2"
@@ -692,10 +714,13 @@
                         "name": "Analysis Course",
                         "quantity": 1
                     },
+                    "intermediate-advanced": {
+                        "name": "Intermediate/Advanced Courses",
+                        "quantity": 4
+                    },
                     "intermediate": {
                         "name": "Intermediate Courses",
-                        "level": 2,
-                        "quantity": 2
+                        "level": 2
                     },
                     "advanced": {
                         "name": "Advanced Courses",
@@ -709,9 +734,12 @@
                             "analysis"
                         ],
                         "analysis": [
-                            "intermediate"
-                        ],
-                        "intermediate": [
+                            "intermediate-advanced"
+                        ]
+                    },
+                    "sub-flows": {
+                        "intermediate-advanced": [
+                            "intermediate",
                             "advanced"
                         ]
                     },
@@ -751,7 +779,7 @@
                         "name": "Basic Science",
                         "quantity": 1
                     },
-                    "all": {
+                    "any": {
                         "name": "Engineering Course",
                         "quantity": 1
                     }
@@ -759,19 +787,41 @@
                 "flows": {
                     "main": {
                         "core": [
-                            "math"
+                            "math",
+                            "science"
                         ],
                         "math": [
-                            "all"
+                            "any"
                         ],
                         "science": [
-                            "all"
+                            "any"
                         ]
                     },
                     "course": {
                         "core": {
                             "courses": [
                                 "CORE105"
+                            ],
+                            "quantity": 1
+                        },
+                        "math": {
+                            "courses": [
+                                "MATH101",
+                                "MATH103",
+                                "MATH202",
+                                "MATH201",
+                                "MATH205"
+                            ],
+                            "quantity": 1
+                        },
+                        "science": {
+                            "courses": [
+                                "IS103",
+                                "IS107",
+                                "IS206",
+                                "IS105",
+                                "IS205",
+                                "IS209"
                             ],
                             "quantity": 1
                         }
@@ -784,7 +834,7 @@
                         "name": "Design & Systems Thinking",
                         "quantity": 1
                     },
-                    "all": {
+                    "any": {
                         "name": "Engineering Course",
                         "quantity": 1
                     }
@@ -792,7 +842,7 @@
                 "flows": {
                     "main": {
                         "core": [
-                            "all"
+                            "any"
                         ]
                     },
                     "course": {
@@ -818,12 +868,10 @@
                         "quantity": 6
                     },
                     "math": {
-                        "name": "Mathematics",
-                        "quantity": 3
+                        "name": "Mathematics"
                     },
                     "science": {
-                        "name": "Basic Science",
-                        "quantity": 0
+                        "name": "Basic Science"
                     },
                     "foundation-intermediate": {
                         "name": "Foundation/Intermediate Courses",
@@ -831,48 +879,61 @@
                     },
                     "foundation": {
                         "name": "Foundation Courses",
-                        "quantity": 0,
                         "level": 1
                     },
                     "intermediate": {
                         "name": "Intermediate Courses",
-                        "quantity": 0,
                         "level": 2
                     },
-                    "advanced": {
+                    "advanced1": {
                         "name": "Advanced Courses",
-                        "quantity": 3,
-                        "level": 3
+                        "level": 3,
+                        "quantity": 3
                     },
                     "dev": {
                         "name": "Scholar Development",
                         "quantity": 1
                     },
-                    "capstones": {
-                        "name": "Capstone I & II",
-                        "quantity": 2
+                    "capstone1": {
+                        "name": "Capstone I",
+                        "level": 4,
+                        "quantity": 1
                     },
-                    "all": {
+                    "capstone2": {
+                        "name": "Capstone II",
+                        "level": 4,
+                        "quantity": 1
+                    },
+                    "any": {
                         "name": "Any Engineering Courses",
-                        "quantity": 2
+                        "quantity": 1
+                    },
+                    "advanced2": {
+                        "name": "Additional Advanced Courses",
+                        "level": 3,
+                        "quantity": 1
                     }
                 },
                 "flows": {
                     "main": {
                         "programming": [
-                            "math",
-                            "science"
+                            "math-science"
                         ],
-                        "math": [
-                            "foundation",
-                            " intermediate"
+                        "math-science": [
+                            "foundation-intermediate"
                         ],
-                        "foundation": [
+                        "foundation-intermediate": [
                             "advanced"
                         ],
                         "dev": [
-                            "capstones",
-                            "all"
+                            "capstone1",
+                            "any"
+                        ],
+                        "capstone1": [
+                            "capstone2"
+                        ],
+                        "any": [
+                            "advanced2"
                         ]
                     },
                     "sub-flows": {
@@ -904,26 +965,22 @@
                     },
                     "intermediate": {
                         "name": "Intermediate Courses",
-                        "level": 2,
-                        "quantity": 0
+                        "level": 2
                     },
                     "advanced": {
                         "name": "Advanced Courses",
-                        "level": 3,
-                        "quantity": 0
+                        "level": 3
                     },
-                    "all": {
+                    "any": {
                         "name": "Engineering courses",
                         "quantity": 6
                     }
                 },
                 "flows": {
-                    "main": {
-                        "intermediate-advanced": [
-                            "all"
-                        ]
-                    },
                     "sub-flows": {
+                        "any": [
+                            "intermediate-advanced"
+                        ],
                         "intermediate-advanced": [
                             "intermediate",
                             "advanced"
