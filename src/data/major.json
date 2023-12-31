@@ -266,11 +266,11 @@
                         "level": 4,
                         "quantity": 1
                     },
-                    "advanced2": {
-                        "name": "Advanced Courses",
+                    "any": {
+                        "name": "Any Art & Media Studies Courses",
                         "quantity": 1
                     },
-                    "advanced3": {
+                    "advanced2": {
                         "name": "Advanced Courses",
                         "level": 3,
                         "quantity": 1
@@ -289,13 +289,13 @@
                         ],
                         "advanced1": [
                             "capstone1",
-                            "advanced2"
+                            "any"
                         ],
                         "capstone1": [
                             "capstone2"
                         ],
-                        "advanced2": [
-                            "advanced3"
+                        "any": [
+                            "advanced2"
                         ]
                     },
                     "course": {
@@ -923,7 +923,10 @@
                             "foundation-intermediate"
                         ],
                         "foundation-intermediate": [
-                            "advanced"
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "dev"
                         ],
                         "dev": [
                             "capstone1",
