@@ -7,15 +7,18 @@ import ReactFlow, {
   ReactFlowProvider,
   useEdgesState,
   useNodesState,
+  ConnectionMode
 } from "reactflow";
 import MainBlock from "./MainBlock";
 import CourseBlock from "./CourseBlock";
 import "reactflow/dist/style.css";
 import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
+import FloatingEdge from "@components/flow_chart/FloatingEdge";
 
 const proOptions = { hideAttribution: true };
 const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
+const edgeTypes = { floating: FloatingEdge };
 
 export default function ProviderFlow() {
   const [nodes, setNodes, onNodesChange] = useNodesState([]);
@@ -61,10 +64,12 @@ export default function ProviderFlow() {
           onNodesChange={onNodesChange}
           onEdgesChange={onEdgesChange}
           nodeTypes={nodeTypes}
+          edgeTypes={edgeTypes}
           fitView
           proOptions={proOptions}
+          connectionMode={ConnectionMode.Loose}
         >
-          <Background gap={10} size={1}/>
+          <Background gap={10} size={1} />
           <Controls position="bottom-right" />
         </ReactFlow>
       </div>

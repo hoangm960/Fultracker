@@ -8,15 +8,15 @@ function CourseBlock({ data }) {
       </p>
 
       <Handle
-        id="course"
-        type={data["position"] == "right" ? "target" : "source"}
+        id="r"
+        type="source"
         position={Position.Right}
         isConnectable={false}
       />
 
       <Handle
-        id="course"
-        type={data["position"] == "left" ? "target" : "source"}
+        id="r"
+        type="source"
         position={Position.Left}
         isConnectable={false}
       />
