@@ -12,6 +12,7 @@ import MainBlock from "./MainBlock";
 import CourseBlock from "./CourseBlock";
 import "reactflow/dist/style.css";
 import DeclairCheckBox from "./DeclairCheckBox";
+import getNodesAndEdges from "@scripts/getFlowFromMajor";
 
 const proOptions = { hideAttribution: true };
 const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
@@ -63,101 +64,10 @@ export default function ProviderFlow() {
           fitView
           proOptions={proOptions}
         >
-          <Background />
-          <Controls />
+          <Background gap={10} size={1}/>
+          <Controls position="bottom-right" />
         </ReactFlow>
       </div>
     </ReactFlowProvider>
   );
-}
-
-function getNodesAndEdges(flowData) {
-  let nodes = [];
-  for (const [index, [id, node]] of Object.entries(
-    Object.entries(flowData["nodes"])
-  )) {
-    nodes.push({
-      id: id,
-      type: "mainBlock",
-      targetPosition: "bottom",
-      position: { x: 0, y: -(80 * index) },
-      data: node,
-    });
-  }
-
-  let edges = [];
-  if (flowData["flows"]["main"]) {
-    for (const [id, flow] of Object.entries(flowData["flows"]["main"])) {
-      for (const [j, nextNodeID] of Object.entries(flow)) {
-        edges.push({
-          id: `${id}-${nextNodeID}`,
-          source: id,
-          target: nextNodeID,
-          sourceHandle: "main",
-        });
-
-        nodes.find((node) => node.id === nextNodeID)["position"]["x"] =
-          nodes.find((node) => node.id === id)["position"]["x"] +
-          300 * (+j + 0.5 - flow.length / 2);
-        nodes.find((node) => node.id === nextNodeID)["position"]["y"] =
-          nodes.find((node) => node.id === id)["position"]["y"] - 100;
-      }
-    }
-  }
-
-  if (flowData["flows"]["sub-flows"]) {
-    for (const [id, flow] of Object.entries(flowData["flows"]["sub-flows"])) {
-      for (const [j, nextNodeID] of Object.entries(flow)) {
-        edges.push({
-          id: `${id}-${nextNodeID}`,
-          source: id,
-          target: nextNodeID,
-          sourceHandle: "courseRight",
-          targetHandle: "courseLeft",
-        });
-
-        nodes.find((node) => node.id === nextNodeID)["position"]["x"] =
-          nodes.find((node) => node.id === id)["position"]["x"] + 300;
-        nodes.find((node) => node.id === nextNodeID)["position"]["y"] =
-          10 * (j + 0.5 - flow.length / 2) +
-          nodes.find((node) => node.id === id)["position"]["y"];
-      }
-    }
-  }
-
-  if (flowData["flows"]["course"]) {
-    for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
-      const courses = node["courses"];
-      const nodeIdx = nodes.findIndex((node) => node["id"] == nodeID);
-      for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
-        const courseID = courses[courseIdx];
-        const nodeData = {
-          id: courseID,
-          type: "courseBlock",
-          position: {
-            x: nodeIdx % 2 === 0 ? 300 : -150,
-            y:
-              60 * (courseIdx + 0.5 - courses.length / 2) +
-              nodes[nodeIdx]["position"]["y"],
-          },
-          data: {
-            course: courseID,
-            position: nodeIdx % 2 === 0 ? "left" : "right",
-          },
-        };
-        const edgeData = {
-          id: `${nodeID}-${courseID}`,
-          source: nodeID,
-          target: courseID,
-          sourceHandle: nodeIdx % 2 === 0 ? "courseRight" : "courseLeft",
-        };
-
-        nodes.push(nodeData);
-        edges.push(edgeData);
-      }
-    }
-
-  }
-
-  return [nodes, edges];
 }
