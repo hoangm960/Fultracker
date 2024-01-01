@@ -1622,5 +1622,97 @@
                 }
             }
         }
+    },
+    "PSY": {
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 2
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 6
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 4,
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Additional Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "capstones",
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "PSY101",
+                                "SOCI105"
+                            ],
+                            "quantity": 2
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 2
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 3
+                    },
+                    "advanced": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "foundation": {
+                            "courses": [
+                                "PSY101",
+                                "SOCI105"
+                            ],
+                            "quantity": 2
+                        }
+                    }
+                }
+            }
+        }
     }
 }
