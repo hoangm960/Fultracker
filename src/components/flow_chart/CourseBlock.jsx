@@ -1,27 +1,26 @@
+import { memo } from 'react';
 import { Handle, Position } from 'reactflow';
 
-function CourseBlock({ data }) {
+export default memo(({ data }) => {
   return (
-    <div className="h-12 border-[1px] border-black border-solid rounded-md p-1 bg-white">
-      <p>
+    <div className="h-12 border-[1px] border-black border-solid rounded-md p-1 bg-highlight text-text">
+      <p className="text-lg font-semibold">
         {data["course"]}
       </p>
 
       <Handle
-        id="course"
-        type={data["position"] == "right" ? "target" : "source"}
+        id="r"
+        type="source"
         position={Position.Right}
         isConnectable={false}
       />
 
       <Handle
-        id="course"
-        type={data["position"] == "left" ? "target" : "source"}
+        id="r"
+        type="source"
         position={Position.Left}
         isConnectable={false}
       />
     </div>
   );
-}
-
-export default CourseBlock;
+});

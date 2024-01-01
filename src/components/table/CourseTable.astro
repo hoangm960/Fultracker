@@ -5,10 +5,6 @@ interface Props {
 const { height } = Astro.props;
 ---
 
-<!-- <div
-  class="shadow max-h-[630px] w-full rounded-xl border-text border-r-0 border-2"
-  style=`height:${height}px`
-> -->
 <table class="table-auto w-full h-full text-left">
   <thead class="bg-action flex w-full rounded-xl">
     <tr class="flex mb-4 w-full">
@@ -68,4 +64,5 @@ const { height } = Astro.props;
     <slot />
   </tbody>
 </table>
-<!-- </div> -->
+
+<script src="../../scripts/editCourse.ts"></script>
