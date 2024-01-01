@@ -1955,5 +1955,240 @@
                 }
             }
         }
+    },
+    "VS": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Course",
+                        "level": 2,
+                        "quantity": 1
+                    },
+                    "language": {
+                        "name": "Language Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "language"
+                        ]
+                    },
+                    "course": {
+                        "language": {
+                            "courses": [
+                                "VS106"
+                            ]
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "language": {
+                        "name": "Language Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "language"
+                        ]
+                    },
+                    "course": {
+                        "language": {
+                            "courses": [
+                                "VS106"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "name": "Theory & Methods in Vietnam Studies",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "language1": {
+                        "name": "Introductory Language Course",
+                        "quantity": 1
+                    },
+                    "language2-intermediate1": {
+                        "name": "Intermediate Language Course/Intermediate Course",
+                        "quantity": 1
+                    },
+                    "intermediate1": {
+                        "name": "Intermediate Course",
+                        "level": 2
+                    },
+                    "language2": {
+                        "name": "Intermediate Language Course"
+                    },
+                    "intermediate2": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "advanced2-experiential": {
+                        "name": "Advnaced Courses/Experiential Learning Courses",
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Advanced Courses",
+                        "level": 3
+                    },
+                    "experiential": {
+                        "name": "Experiential Learning Courses"
+                    },
+                    "any": {
+                        "name": "Any Level Elective Course",
+                        "quantity": 1
+                    },
+                    "advanced3": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 4,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "language1"
+                        ],
+                        "language1": [
+                            "language2-intermediate1"
+                        ],
+                        "language2-intermediate1": [
+                            "intermediate2"
+                        ],
+                        "intermediate2": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "advanced2-experiential"
+                        ],
+                        "advanced2-experiential": [
+                            "any",
+                            "capstones"
+                        ],
+                        "any": [
+                            "advanced3"
+                        ]
+                    },
+                    "sub-flows": {
+                        "language2-intermediate1": [
+                            "language2",
+                            "intermediate1"
+                        ],
+                        "advanced2-experiential": [
+                            "advanced2",
+                            "experiential"
+                        ]
+                    },
+                    "course": {
+                        "language1": {
+                            "courses": [
+                                "VS106"
+                            ],
+                            "quantity": 1
+                        },
+                        "language2": {
+                            "courses": [
+                                "VS206"
+                            ]
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intro": {
+                        "name": "Theory & Methods in Vietnam Studies",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "language": {
+                        "name": "Introductory Language Course",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Course",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "language"
+                        ],
+                        "language": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "language": {
+                            "courses": [
+                                "VS106"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
