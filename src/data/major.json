@@ -1427,5 +1427,200 @@
                 }
             }
         }
+    },
+    "LIT": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Literary Studies",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "Any Literature courses",
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "any"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "LIT101"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Literary Studies",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "Any Literature course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "any"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "LIT101"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Literary Studies",
+                        "quantity": 1
+                    },
+                    "method": {
+                        "name": "Critical Methods in Literary Studies",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 3
+                    },
+                    "advanced1": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 3
+                    },
+                    "any1": {
+                        "name": "Literature Elective Course",
+                        "quantity": 1
+                    },
+                    "capstone1": {
+                        "name": "Capstone I",
+                        "level": 4,
+                        "quantity": 1
+                    },
+                    "capstone2": {
+                        "name": "Capstone II",
+                        "level": 4,
+                        "quantity": 1
+                    },
+                    "any2": {
+                        "name": "Any level Literature Course",
+                        "quantity": 1
+                    },
+                    "advanced2": {
+                        "name": "300-level Literature Course",
+                        "level": 3,
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "method"
+                        ],
+                        "method": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "any1"
+                        ],
+                        "any1": [
+                            "capstone1",
+                            "any2"
+                        ],
+                        "capstone1": [
+                            "capstone2"
+                        ],
+                        "any2": [
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "LIT101"
+                            ],
+                            "quantity": 1
+                        },
+                        "method": {
+                            "courses": [
+                                "LIT209"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "intro": {
+                        "name": "Introduction to Literary Studies",
+                        "quantity": 1
+                    },
+                    "method": {
+                        "name": "Critical Methods in Literary Studies",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "Literature Elective Course",
+                        "quantity": 4
+                    },
+                    "advanced": {
+                        "name": "300-level Literature Elective Course",
+                        "level": 3,
+                        "quantity": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "intro": [
+                            "method"
+                        ],
+                        "method": [
+                            "any"
+                        ]
+                    },
+                    "sub-flows": {
+                        "any": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "intro": {
+                            "courses": [
+                                "LIT101"
+                            ],
+                            "quantity": 1
+                        },
+                        "method": {
+                            "courses": [
+                                "LIT209"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
