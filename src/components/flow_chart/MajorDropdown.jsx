@@ -37,7 +37,7 @@ function MajorDropdown({ updateFlow }) {
       <option className="bg-background text-text font-semibold" value="psy">
         Psychology
       </option>
-      <option className="bg-background text-text font-semibold" value="ss">
+      <option className="bg-background text-text font-semibold" value="soci">
         Social Science
       </option>
       <option className="bg-background text-text font-semibold" value="vs">

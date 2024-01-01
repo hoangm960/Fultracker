@@ -1714,5 +1714,246 @@
                 }
             }
         }
+    },
+    "SOCI": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "inquiry": {
+                        "name": "Social Inquiry",
+                        "quantity": 1
+                    },
+                    "foundation-intermediate": {
+                        "name": "100 or 200 level Courses",
+                        "quantity": 2
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "inquiry": [
+                            "foundation-intermediate"
+                        ]
+                    },
+                    "sub-flows": {
+                        "foundation-intermediate": [
+                            "foundation",
+                            "intermediate"
+                        ]
+                    },
+                    "course": {
+                        "inquiry": {
+                            "courses": [
+                                "SOCI102"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "inquiry": {
+                        "name": "Social Inquiry",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "Any Social Studies Course",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "inquiry": [
+                            "any"
+                        ]
+                    },
+                    "course": {
+                        "inquiry": {
+                            "courses": [
+                                "SOCI102"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 3
+                    },
+                    "survey": {
+                        "name": "Foundational Survey Course",
+                        "quantity": 1
+                    },
+                    "method": {
+                        "name": "Foundational Methods Courses",
+                        "quantity": 1
+                    },
+                    "theory": {
+                        "name": "Foundational Theory Courses",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 4
+                    },
+                    "advanced1": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "any1": {
+                        "name": "Major Courses",
+                        "quantity": 2
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 4,
+                        "quantity": 2
+                    },
+                    "any2": {
+                        "name": "Major Courses",
+                        "quantity": 2
+                    },
+                    "advanced2": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced1"
+                        ],
+                        "advanced1": [
+                            "any1"
+                        ],
+                        "any1": [
+                            "capstones",
+                            "any2"
+                        ]
+                    },
+                    "sub-flows": {
+                        "foundation": [
+                            "survey",
+                            "method",
+                            "theory"
+                        ],
+                        "any2": [
+                            "advanced2"
+                        ]
+                    },
+                    "course": {
+                        "survey": {
+                            "courses": [
+                                "SOCI102"
+                            ],
+                            "quantity": 1
+                        },
+                        "method": {
+                            "courses": [
+                                "SOCI105",
+                                "SOCI109"
+                            ],
+                            "quantity": 1
+                        },
+                        "theory": {
+                            "courses": [
+                                "SOCI216",
+                                "HIS203",
+                                "SOCI211"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "quantity": 3
+                    },
+                    "survey": {
+                        "name": "Foundational Survey Course",
+                        "quantity": 1
+                    },
+                    "method": {
+                        "name": "Foundational Methods Courses",
+                        "quantity": 1
+                    },
+                    "theory": {
+                        "name": "Foundational Theory Courses",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "Major Courses",
+                        "quantity": 3
+                    },
+                    "advanced": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "foundation": [
+                            "any"
+                        ]
+                    },
+                    "sub-flows": {
+                        "foundation": [
+                            "survey",
+                            "method",
+                            "theory"
+                        ],
+                        "any": [
+                            "advanced"
+                        ]
+                    },
+                    "course": {
+                        "survey": {
+                            "courses": [
+                                "SOCI102"
+                            ],
+                            "quantity": 1
+                        },
+                        "method": {
+                            "courses": [
+                                "SOCI105",
+                                "SOCI109"
+                            ],
+                            "quantity": 1
+                        },
+                        "theory": {
+                            "courses": [
+                                "SOCI216",
+                                "HIS203",
+                                "SOCI211"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
