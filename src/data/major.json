@@ -952,6 +952,27 @@
                                 "CS201"
                             ],
                             "quantity": 1
+                        },
+                        "math": {
+                            "courses": [
+                                "MATH101",
+                                "MATH103",
+                                "MATH202",
+                                "MATH201",
+                                "MATH205"
+                            ],
+                            "quantity": 1
+                        },
+                        "science": {
+                            "courses": [
+                                "IS103",
+                                "IS107",
+                                "IS206",
+                                "IS105",
+                                "IS205",
+                                "IS209"
+                            ],
+                            "quantity": 1
                         }
                     }
                 }
