@@ -1009,5 +1009,214 @@
                 }
             }
         }
+    },
+    "HIS": {
+        "declair": {
+            "major": {
+                "nodes": {
+                    "past": {
+                        "name": "Exploring the Past",
+                        "quantity": 1
+                    },
+                    "hand": {
+                        "name": "Hand-on History",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "past": [
+                            "hand"
+                        ]
+                    },
+                    "course": {
+                        "past": {
+                            "courses": [
+                                "HIS150"
+                            ],
+                            "quantity": 1
+                        },
+                        "hand": {
+                            "courses": [
+                                "HIS200"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "past": {
+                        "name": "Exploring the Past",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "course": {
+                        "past": {
+                            "courses": [
+                                "HIS150"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        },
+        "flow-chart": {
+            "major": {
+                "nodes": {
+                    "past": {
+                        "name": "Exploring the Past",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 2
+                    },
+                    "hand": {
+                        "name": "Hand-on History",
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 2
+                    },
+                    "advanced": {
+                        "name": "Advanced Courses",
+                        "level": 3,
+                        "quantity": 2
+                    },
+                    "any": {
+                        "name": "History elective",
+                        "quantity": 1
+                    },
+                    "capstones": {
+                        "name": "Capstone I & II",
+                        "level": 4,
+                        "quantity": 2
+                    },
+                    "seminar-experiential": {
+                        "name": "Major Requirement",
+                        "quantity": 2
+                    },
+                    "seminar": {
+                        "name": "Research Seminar"
+                    },
+                    "experiential": {
+                        "name": "Experiential Learning"
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "past": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "hand"
+                        ],
+                        "hand": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "advanced"
+                        ],
+                        "advanced": [
+                            "any"
+                        ],
+                        "any": [
+                            "capstones",
+                            "seminar-experiential"
+                        ]
+                    },
+                    "sub-flows": {
+                        "seminar-experiential": [
+                            "seminar",
+                            "experiential"
+                        ]
+                    },
+                    "course": {
+                        "past": {
+                            "courses": [
+                                "HIS150"
+                            ],
+                            "quantity": 1
+                        },
+                        "hand": {
+                            "courses": [
+                                "HIS200"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            },
+            "minor": {
+                "nodes": {
+                    "past": {
+                        "name": "Exploring the Past",
+                        "quantity": 1
+                    },
+                    "hand": {
+                        "name": "Hand-on History",
+                        "quantity": 1
+                    },
+                    "foundation": {
+                        "name": "Foundation Courses",
+                        "level": 1,
+                        "quantity": 1
+                    },
+                    "intermediate": {
+                        "name": "Intermediate Courses",
+                        "level": 2,
+                        "quantity": 1
+                    },
+                    "seminar": {
+                        "name": "Research Seminar",
+                        "quantity": 1
+                    },
+                    "any": {
+                        "name": "History elective",
+                        "quantity": 1
+                    }
+                },
+                "flows": {
+                    "main": {
+                        "past": [
+                            "hand"
+                        ],
+                        "hand": [
+                            "foundation"
+                        ],
+                        "foundation": [
+                            "intermediate"
+                        ],
+                        "intermediate": [
+                            "seminar"
+                        ],
+                        "seminar": [
+                            "any"
+                        ]
+                    },
+                    "course": {
+                        "past": {
+                            "courses": [
+                                "HIS150"
+                            ],
+                            "quantity": 1
+                        },
+                        "hand": {
+                            "courses": [
+                                "HIS200"
+                            ],
+                            "quantity": 1
+                        }
+                    }
+                }
+            }
+        }
     }
 }
