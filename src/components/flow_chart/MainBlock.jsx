@@ -7,10 +7,11 @@ export default memo(({ data }) => {
       <p className="text-lg font-semibold">
         {data["name"]}
       </p>
-      <p className="text-sm italic">
-        ({data["quantity"]} required)
-      </p>
-
+      {data["quantity"] ?
+        <p className="text-sm italic">
+          ({data["quantity"]} required)
+        </p>:""
+      }
       <Handle
         id="t"
         type="source"

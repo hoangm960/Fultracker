@@ -16,6 +16,7 @@ import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
 import FloatingEdge from "@components/flow_chart/FloatingEdge";
 
+
 const proOptions = { hideAttribution: true };
 const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 const edgeTypes = { floating: FloatingEdge };

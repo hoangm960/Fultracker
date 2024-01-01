@@ -1,3 +1,6 @@
+import { MarkerType } from 'reactflow';
+
+
 export default function getNodesAndEdges(flowData) {
     let nodes = [];
     for (const nodeID of Object.keys(flowData["nodes"])) {
@@ -19,13 +22,25 @@ export default function getNodesAndEdges(flowData) {
                     source: id,
                     target: nextNodeID,
                     sourceHandle: "t",
-                    targetHandle: "b"
+                    targetHandle: "b",
+                    type: "smoothstep",
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                        width: 10,
+                        height: 10,
+                        color: '#005C73',
+                    },
+                    style: {
+                        strokeWidth: 5,
+                        stroke: '#005C73',
+                    },
+                    animated: true
                 });
 
                 const nextNodePos = {
                     x: nodes.find((node) => node.id === id)["position"]["x"] +
                         300 * (+j + 0.5 - flow.length / 2),
-                    y: nodes.find((node) => node.id === id)["position"]["y"] - 100
+                    y: nodes.find((node) => node.id === id)["position"]["y"] - 150
                 };
                 const nextNode = nodes.find((node) => node.id === nextNodeID);
                 nextNode["position"] = nextNodePos;
@@ -33,76 +48,71 @@ export default function getNodesAndEdges(flowData) {
         }
     }
 
-    // if (flowData["flows"]["sub-flows"]) {
-    //     for (const [id, flow] of Object.entries(flowData["flows"]["sub-flows"])) {
-    //         const nodeIdx = nodes.findIndex((node) => node["id"] == id);
+    if (flowData["flows"]["sub-flows"]) {
+        for (const [id, flow] of Object.entries(flowData["flows"]["sub-flows"])) {
+            const nodeIdx = nodes.findIndex((node) => node["id"] == id);
+            const positions = [];
+            const mid = flow.length / 2;
+            for (let i = -mid; i <= mid; i++) {
+                positions.push(i * 60);
+            }
+            if (flow.length % 2 == 0) {
+                positions.splice(mid, 1);
+            }
 
-    //         for (const [j, nextNodeID] of Object.entries(flow)) {
-    //             // edges.push({
-    //             //     id: `${id}-${nextNodeID}`,
-    //             //     source: id,
-    //             //     target: nextNodeID
-    //             // });
+            for (const [j, nextNodeID] of Object.entries(flow)) {
+                const edgeData = {
+                    id: `${id}-${nextNodeID}`,
+                    source: id,
+                    target: nextNodeID,
+                    type: "floating",
+                    markerEnd: {
+                        type: MarkerType.ArrowClosed,
+                        width: 10,
+                        height: 10,
+                        color: '#005C73',
+                    },
+                    style: {
+                        strokeWidth: 5,
+                        stroke: '#005C73',
+                    },
+                    animated: true
+                };
 
-    //             // const nextNodePos = {
-    //             //     x: nodes.find((node) => node.id === id)["position"]["x"] +
-    //             //         300 * (+j + 0.5 - flow.length / 2),
-    //             //     y: nodes.find((node) => node.id === id)["position"]["y"] - 100
-    //             // };
-    //             // const nextNode = nodes.find((node) => node.id === nextNodeID);
-    //             // if (nextNode) {
-    //             //     nextNode["position"] = nextNodePos;
-    //             // } else {
-    //             //     nodes.push({
-    //             //         id: nextNodeID,
-    //             //         type: "mainBlock",
-    //             //         targetPosition: "bottom",
-    //             //         position: nextNodePos,
-    //             //         data: flowData["nodes"][nextNodeID],
-    //             //     });
-    //             // }
-
-    //             const nodeData = {
-    //                 id: nextNodeID,
-    //                 type: "courseBlock",
-    //                 position: {
-    //                     x: nodeIdx % 2 === 0 ? 300 : -150,
-    //                     y:
-    //                         60 * (j + 0.5 - flow.length / 2) +
-    //                         nodes.find((node) => node.id === id)["position"]["y"],
-    //                 },
-    //                 data: {
-    //                     course: nextNodeID,
-    //                     position: nodeIdx % 2 === 0 ? "left" : "right",
-    //                 },
-    //             };
-    //             const edgeData = {
-    //                 id: `${id}-${nextNodeID}`,
-    //                 source: id,
-    //                 target: nextNodeID,
-    //                 sourceHandle: nodeIdx % 2 === 0 ? "courseRight" : "courseLeft",
-    //             };
-
-    //             nodes.push(nodeData);
-    //             edges.push(edgeData);
-    //         }
-    //     }
-    // }
+                const nextNodePos = {
+                    x: nodes.find((node) => node.id === id)["position"]["x"] + (nodeIdx % 2 === 0 ? -300 : 300),
+                    y:
+                        nodes.find((node) => node.id === id)["position"]["y"] + positions[j],
+                };
+                const nextNode = nodes.find((node) => node.id === nextNodeID);
+                nextNode["position"] = nextNodePos;
+                edges.push(edgeData);
+            }
+        }
+    }
 
     if (flowData["flows"]["course"]) {
         for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
             const courses = node["courses"];
             const nodeIdx = nodes.findIndex((node) => node["id"] == nodeID);
+            const positions = [];
+            const mid = courses.length / 2;
+            for (let i = -mid; i <= mid; i++) {
+                positions.push(i * 30);
+            }
+            if (courses.length % 2 == 0) {
+                positions.splice(mid, 1);
+            }
+
             for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
                 const courseID = courses[courseIdx];
                 const nodeData = {
                     id: courseID,
                     type: "courseBlock",
                     position: {
-                        x: nodeIdx % 2 === 0 ? 300 : -150,
+                        x: nodes[nodeIdx]["position"]["x"] + (nodeIdx % 2 === 0 ? 300 : -150),
                         y:
-                            60 * (courseIdx + 0.5 - courses.length / 2) +
-                            nodes[nodeIdx]["position"]["y"],
+                            nodes[nodeIdx]["position"]["y"] + positions[courseIdx],
                     },
                     data: {
                         course: courseID
