@@ -27,33 +27,6 @@
                         ]
                     }
                 }
-            },
-            "minor": {
-                "nodes": {
-                    "foundation1": {
-                        "name": "Foundation Courses",
-                        "level": 1,
-                        "quantity": 1
-                    },
-                    "foundation2": {
-                        "name": "Foundation Courses",
-                        "level": 1,
-                        "quantity": 1
-                    },
-                    "intermediate": {
-                        "name": "Intermediate Courses",
-                        "level": 2,
-                        "quantity": 1
-                    }
-                },
-                "flows": {
-                    "major": {
-                        "foundation1": [
-                            "foundation2",
-                            "intermediate"
-                        ]
-                    }
-                }
             }
         },
         "flow-chart": {
@@ -1222,25 +1195,6 @@
     "IS": {
         "declair": {
             "major": {
-                "nodes": {
-                    "foundation": {
-                        "name": "Foundation Course",
-                        "quantity": 1
-                    }
-                },
-                "flows": {
-                    "course": {
-                        "foundation": {
-                            "courses": [
-                                "IS214",
-                                "IS101"
-                            ],
-                            "quantity": 1
-                        }
-                    }
-                }
-            },
-            "minor": {
                 "nodes": {
                     "foundation": {
                         "name": "Foundation Course",
