@@ -5,7 +5,7 @@ var attemptCreditField = document.getElementById("attempt-credits");
 var coreField = document.getElementById("cores");
 var gpaField = document.getElementById("gpa");
 var categoryFields = {};
-["E1", "E2", "E3", "E4"].map(
+["E1", "E2", "E3", "E4", "EL"].map(
     (category) =>
         (categoryFields[category] = document.getElementById(category))
 );

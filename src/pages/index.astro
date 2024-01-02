@@ -110,9 +110,9 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 						</Button>
 					</InfoField>
 				</div> -->
-				<CourseTable height={510}>
+				<CourseTable height={480}>
 					{
-						[...Array(40).keys()].map((num) => (
+						[...Array(60).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
 								<div class="flex flex-row gap-5">
 									<Button
@@ -187,6 +187,11 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 						id="E4"
 						title="E4 (Mathematics and Computing):"
 						total={2}
+					/>
+					<InfoField
+						id="EL"
+						title="EL (Experiential Learning):"
+						total={1}
 					/>
 				</div>
 			</footer>
