@@ -640,12 +640,16 @@
                         ],
                         "analysis": [
                             "intermediate-advanced1"
+                        ],
+                        "intermediate-advanced1": [
+                            "capstones",
+                            "advanced2"
                         ]
                     },
                     "sub-flows": {
                         "intermediate-advanced1": [
-                            "capstones",
-                            "advanced2"
+                            "intermediate",
+                            "advanced1"
                         ]
                     },
                     "course": {

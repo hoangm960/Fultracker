@@ -53,14 +53,14 @@ export default function getNodesAndEdges(flowData) {
             for (const [id, flow] of Object.entries(flowData["flows"]["sub-flows"])) {
                 const nodeIdx = nodes.findIndex((node) => node["id"] == id);
                 const positions = [];
-                const mid = flow.length / 2;
+                const mid = Math.floor(flow.length / 2);
                 for (let i = -mid; i <= mid; i++) {
                     positions.push(i * 60);
                 }
                 if (flow.length % 2 == 0) {
                     positions.splice(mid, 1);
                 }
-
+                console.log(positions);
                 for (const [j, nextNodeID] of Object.entries(flow)) {
                     const edgeData = {
                         id: `${id}-${nextNodeID}`,
@@ -81,7 +81,7 @@ export default function getNodesAndEdges(flowData) {
                     };
 
                     const nextNodePos = {
-                        x: nodes.find((node) => node.id === id)["position"]["x"] + (nodeIdx % 2 === 0 ? -300 : 300),
+                        x: nodes.find((node) => node.id === id)["position"]["x"] + (nodeIdx % 2 === 0 ? -400 : 400),
                         y:
                             nodes.find((node) => node.id === id)["position"]["y"] + positions[j],
                     };
@@ -97,7 +97,7 @@ export default function getNodesAndEdges(flowData) {
                 const courses = node["courses"];
                 const nodeIdx = nodes.findIndex((node) => node["id"] == nodeID);
                 const positions = [];
-                const mid = courses.length / 2;
+                const mid = Math.floor(courses.length / 2);
                 for (let i = -mid; i <= mid; i++) {
                     positions.push(i * 30);
                 }
