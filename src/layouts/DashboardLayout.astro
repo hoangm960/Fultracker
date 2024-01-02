@@ -14,7 +14,7 @@ var btnStyles: { [key: string]: "action" | "neutral" } = {
 btnStyles[page] = "action";
 
 const terms = Object.keys(courseData);
-const lastestTerm = terms[terms.length - 1].split("_").toSpliced(3, 1).join(" ");
+const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
 ---
 
 <MainLayout>
