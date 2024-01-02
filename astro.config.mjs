@@ -1,13 +1,13 @@
 import { defineConfig } from 'astro/config';
-
 import netlify from "@astrojs/netlify";
 import react from "@astrojs/react";
 import tailwind from "@astrojs/tailwind";
 
+import solidJs from "@astrojs/solid-js";
 
+// https://astro.build/config
 export default defineConfig({
-  output: 'server',
+  output: "server",
   adapter: netlify(),
-  integrations: [react(), tailwind()],
-  prefetch: true,
+  integrations: [react(), tailwind(), solidJs()]
 });
