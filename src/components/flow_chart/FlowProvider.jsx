@@ -5,8 +5,6 @@ import ReactFlow, {
   Background,
   Controls,
   ReactFlowProvider,
-  useEdgesState,
-  useNodesState,
   ConnectionMode
 } from "reactflow";
 import MainBlock from "./MainBlock";
@@ -22,13 +20,32 @@ const proOptions = { hideAttribution: true };
 const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 const edgeTypes = { floating: FloatingEdge };
 
-export default function ProviderFlow() {
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
-  const [edges, setEdges, onEdgesChange] = useEdgesState([]);
+function Flow({ nodes, edges }) {
+  return (
+    <div id="flow-box" className="h-full w-full">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        fitView
+        proOptions={proOptions}
+        connectionMode={ConnectionMode.Loose}
+      >
+        <Background gap={10} size={1} />
+        <Controls position="bottom-right" />
+      </ReactFlow>
+    </div>
+  );
+}
+
+export default () => {
+  const [nodes, setNodes] = useState([]);
+  const [edges, setEdges] = useState([]);
   const [showFlowSelection, setShowFlowSelection] = useState(false);
   const [showChartSelection, setShowChartSelection] = useState(false);
 
-  const updateFlow = (flow, chart) => {
+  function updateFlow(flow, chart) {
     const majorSelect = document.getElementById("major");
     const flowRadios = document.getElementsByName("flow-radio");
     const declairCheckBox = document.getElementById("declair");
@@ -46,27 +63,29 @@ export default function ProviderFlow() {
       return;
     }
 
-    const chartOption = 
-      declairCheckBox ? 
-        declairCheckBox.checked ? 
-          "flow-chart" 
-          : "declair" 
+    const chartOption =
+      declairCheckBox ?
+        declairCheckBox.checked ?
+          "flow-chart"
+          : "declair"
         : "flow-chart";
     setShowFlowSelection(Object.keys(majorData[majorValue][chartOption]).includes("minor"));
 
-    let selectedFlow;
-    flowRadios.forEach((radio) => {
-      if (radio.checked) {
-        selectedFlow = radio.value;
-      }
-    });
+    let selectedFlow = "major";
+    if (!showFlowSelection) {
+      flowRadios.forEach((radio) => {
+        if (radio.checked) {
+          selectedFlow = radio.value;
+        }
+      });
+    }
+
 
     const [newNodes, newEdges] = getNodesAndEdges(
       majorData[majorValue][chartOption][selectedFlow]
     );
     setNodes(newNodes);
     setEdges(newEdges);
-
   };
 
   return (
@@ -83,22 +102,7 @@ export default function ProviderFlow() {
           </div>
           : null}
       </div>
-      <div id="flow-box" className="h-full w-full">
-        <ReactFlow
-          nodes={nodes}
-          edges={edges}
-          onNodesChange={onNodesChange}
-          onEdgesChange={onEdgesChange}
-          nodeTypes={nodeTypes}
-          edgeTypes={edgeTypes}
-          fitView
-          proOptions={proOptions}
-          connectionMode={ConnectionMode.Loose}
-        >
-          <Background gap={10} size={1} />
-          <Controls position="bottom-right" />
-        </ReactFlow>
-      </div>
+      <Flow nodes={nodes} edges={edges} key={String((nodes, edges))} />
     </ReactFlowProvider>
   );
 }
