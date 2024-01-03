@@ -1996,16 +1996,14 @@
                         "name": "Introductory Language Course",
                         "quantity": 1
                     },
-                    "language2-intermediate1": {
-                        "name": "Intermediate Language Course/Intermediate Course",
-                        "quantity": 1
-                    },
                     "intermediate1": {
                         "name": "Intermediate Course",
-                        "level": 2
+                        "level": 2,
+                        "quantity": 1
                     },
                     "language2": {
-                        "name": "Intermediate Language Course"
+                        "name": "Intermediate Language Course",
+                        "quantity": 1
                     },
                     "intermediate2": {
                         "name": "Intermediate Courses",
@@ -2052,9 +2050,13 @@
                             "language1"
                         ],
                         "language1": [
-                            "language2-intermediate1"
+                            "language2",
+                            "intermediate1"
                         ],
-                        "language2-intermediate1": [
+                        "language2": [
+                            "intermediate2"
+                        ],
+                        "intermediate1": [
                             "intermediate2"
                         ],
                         "intermediate2": [
@@ -2072,10 +2074,6 @@
                         ]
                     },
                     "sub-flows": {
-                        "language2-intermediate1": [
-                            "language2",
-                            "intermediate1"
-                        ],
                         "advanced2-experiential": [
                             "advanced2",
                             "experiential"

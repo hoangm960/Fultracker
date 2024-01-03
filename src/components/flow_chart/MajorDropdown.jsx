@@ -1,7 +1,7 @@
 function MajorDropdown({ updateFlow }) {
   return (
     <select
-      className="bg-action rounded-lg border-solid border-text border-2 pt-[15px] pr-2.5 pb-5 pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden text-highlight text-3xl text-center font-bold"
+      className="bg-action rounded-lg border-solid border-text border-2 pt-[15px] pr-2.5 pb-5 pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden text-highlight text-3xl text-center font-bold flex-1"
       name="major"
       id="major"
       onChange={() => updateFlow()}
