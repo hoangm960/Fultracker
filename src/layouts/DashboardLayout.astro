@@ -3,7 +3,7 @@ import MainLayout from "./MainLayout.astro";
 import LogoIcon from "@assets/icons/backgroundIcon1.png";
 import HomeIcon from "@assets/icons/Home.svg";
 import SettingsIcon from "@assets/icons/Gear.svg";
-import Button from "@components/astro/Button.astro";
+import Button from "@components/Button.astro";
 import courseData from "@data/course_data.json";
 
 const { page } = Astro.props;
@@ -18,9 +18,9 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
 ---
 
 <MainLayout>
-  <div class="flex flex-col items-center justify-between h-full">
-    <nav
-      class="w-full bg-background border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between sticky top-0 z-50"
+  <div class="flex flex-col items-center justify-between h-screen">
+    <div
+      class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0"
     >
       <a href="/about">
         <Button theme="neutral" isfilled padding="py-2 pl-2 pr-8">
@@ -52,7 +52,7 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
         </div>
       </div>
 
-      <div class="flex flex-row gap-3 items-center justify-center shrink-0">
+      <nav class="flex flex-row gap-3 items-center justify-center shrink-0">
         <a href="/" data-astro-prefetch>
           <Button theme={btnStyles["home"]} isfilled padding="px-5 py-3">
             <img class="h-5" src={HomeIcon.src} alt="home">
@@ -66,8 +66,8 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
             <span class="text-xl font-semibold">Settings</span>
           </Button>
         </a>
-      </div>
-    </nav>
+      </nav>
+    </div>
     <slot />
   </div>
 </MainLayout>

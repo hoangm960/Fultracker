@@ -1,24 +1,24 @@
 ---
 import DashboardLayout from "@layouts/DashboardLayout.astro";
-import InfoField from "@components/astro/InfoField.astro";
-// import CourseTable from "@components/astro/table/CourseTable.astro";
-import Button from "@components/astro/Button.astro";
-import CourseRow from "@components/astro/table/CourseRow.astro";
+import InfoField from "@components/InfoField.astro";
+import CourseTable from "@components/table/CourseTable.astro";
+import Button from "@components/Button.astro";
+import CourseRow from "@components/table/CourseRow.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
-import { CourseTable } from "@components/solid/table/CourseTable";
+import FlowProvider from "@components/flow_chart/FlowProvider";
 ---
 
 <DashboardLayout page="home">
 	<div
-		class="w-full p-2.5 flex flex-row gap-2.5 items-start justify-start"
+		class="p-2.5 flex flex-row gap-2.5 items-start justify-start self-stretch flex-1 relative"
 	>
 		<div
-			class="w-2/3 flex flex-col gap-2.5 items-start justify-start"
+			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
 		>
 			<main
-				class="bg-highlight flex w-full rounded-[10px] items-start justify-start py-2 px-4"
+				class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 py-2 px-4 relative"
 			>
 				<!-- <div
 					class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
@@ -110,7 +110,7 @@ import { CourseTable } from "@components/solid/table/CourseTable";
 						</Button>
 					</InfoField>
 				</div> -->
-				<!-- <CourseTable>
+				<CourseTable height={480}>
 					{
 						[...Array(60).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -141,8 +141,7 @@ import { CourseTable } from "@components/solid/table/CourseTable";
 							</CourseRow>
 						))
 					}
-				</CourseTable> -->
-				<CourseTable></CourseTable>
+				</CourseTable>
 			</main>
 
 			<footer
@@ -210,6 +209,7 @@ import { CourseTable } from "@components/solid/table/CourseTable";
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
 			<InfoField title="Title:" value="Value" total={8} hasProgressBar /> -->
 
+			<FlowProvider client:load />
 		</side>
 	</div>
 </DashboardLayout>

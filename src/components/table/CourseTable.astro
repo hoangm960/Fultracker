@@ -1,3 +1,10 @@
+---
+interface Props {
+  height: number;
+}
+const { height } = Astro.props;
+---
+
 <table class="table-auto w-full h-full text-left">
   <thead class="bg-action flex w-full rounded-xl">
     <tr class="flex mb-4 w-full">
@@ -51,10 +58,11 @@
     </tr>
   </thead>
   <tbody
-    class=" bg-background flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl"
+    class="bg-background flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl"
+    style=`height:${height}px`
   >
     <slot />
   </tbody>
 </table>
 
-<script src="@scripts/editCourse.ts"></script>
+<script src="../../scripts/editCourse.ts"></script>

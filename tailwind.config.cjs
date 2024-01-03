@@ -8,7 +8,6 @@ module.exports = {
 			},
 			colors: {
 				"highlight": "#DFFCF6",
-				"active-light": "#C5FAEF",
 				"background": "#B7EBF3",
 				"action": "#008CAF",
 				"text": "#445953",
