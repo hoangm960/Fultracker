@@ -7,7 +7,8 @@ import ReactFlow, {
   ReactFlowProvider,
   ConnectionMode,
   useNodesState,
-  useEdgesState
+  useEdgesState,
+  useReactFlow
 } from "reactflow";
 import MainBlock from "./MainBlock";
 import CourseBlock from "./CourseBlock";
@@ -16,7 +17,7 @@ import "reactflow/dist/style.css";
 import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
 import FloatingEdge from "@components/flow_chart/FloatingEdge";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ELK from 'elkjs/lib/elk.bundled.js';
 
 
@@ -106,6 +107,10 @@ function Flow({ initialNodes, initialEdges }) {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
+  const { fitView } = useReactFlow();
+
+  useEffect(() => { fitView() }, [nodes, edges]);
+
   return (
     <div id="flow-box" className="h-full w-full">
       <ReactFlow
@@ -143,15 +148,20 @@ export default function FlowProvider() {
       const [newNodes, newEdges] = getNodesAndEdges(
         majorData[majorValue][chart][flow]
       );
-      // setNodes(newNodes);
-      // setEdges(newEdges);
       getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
       });
 
-      setShowChartSelection(Object.keys(majorData[majorValue]).includes("declair"));
-      setShowFlowSelection(Object.keys(majorData[majorValue][chart]).includes("minor"));
+      const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
+      const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor")
+      setShowChartSelection(hasDeclair);
+      setShowFlowSelection(hasMinor);
+
+      if (hasMinor) {
+        document.getElementById("major-radio").checked = true;
+        document.getElementById("minor-radio").checked = false;
+      }
       return;
     }
 
@@ -161,10 +171,9 @@ export default function FlowProvider() {
           "flow-chart"
           : "declair"
         : "flow-chart";
-    setShowFlowSelection(Object.keys(majorData[majorValue][chartOption]).includes("minor"));
 
     let selectedFlow = "major";
-    if (!showFlowSelection) {
+    if (showFlowSelection) {
       flowRadios.forEach((radio) => {
         if (radio.checked) {
           selectedFlow = radio.value;
@@ -172,12 +181,13 @@ export default function FlowProvider() {
       });
     }
 
-
     const [newNodes, newEdges] = getNodesAndEdges(
       majorData[majorValue][chartOption][selectedFlow]
     );
-    setNodes(newNodes);
-    setEdges(newEdges);
+    getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+      setNodes(layoutedNodes);
+      setEdges(layoutedEdges);
+    });
   };
 
   return (

@@ -79,59 +79,9 @@ export default function getNodesAndEdges(flowData) {
             animated: true
           });
 
-          // const nextNodePos = {
-          //   x: nodes.find((node) => node.id === id)["position"]["x"] +
-          //     300 * (+j + 0.5 - flow.length / 2),
-          //   y: nodes.find((node) => node.id === id)["position"]["y"] - 150
-          // };
-          // const nextNode = nodes.find((node) => node.id === nextNodeID);
-          // nextNode["position"] = nextNodePos;
         }
       }
     }
-
-    // if (flowData["flows"]["sub-flows"]) {
-    //   for (const [id, flow] of Object.entries(flowData["flows"]["sub-flows"])) {
-    //     const nodeIdx = nodes.findIndex((node) => node["id"] == id);
-    //     const positions = [];
-    //     const mid = Math.floor(flow.length / 2);
-    //     for (let i = -mid; i <= mid; i++) {
-    //       positions.push(i * 60);
-    //     }
-    //     if (flow.length % 2 == 0) {
-    //       positions.splice(mid, 1);
-    //     }
-
-    //     for (const [j, nextNodeID] of Object.entries(flow)) {
-    //       const edgeData = {
-    //         id: `${id}-${nextNodeID}`,
-    //         source: id,
-    //         target: nextNodeID,
-    //         type: "floating",
-    //         markerEnd: {
-    //           type: MarkerType.ArrowClosed,
-    //           width: 10,
-    //           height: 10,
-    //           color: '#005C73',
-    //         },
-    //         style: {
-    //           strokeWidth: 5,
-    //           stroke: '#005C73',
-    //         },
-    //         animated: true
-    //       };
-
-    //       const nextNodePos = {
-    //         x: nodes.find((node) => node.id === id)["position"]["x"] + (nodeIdx % 2 === 0 ? -400 : 400),
-    //         y:
-    //           nodes.find((node) => node.id === id)["position"]["y"] + positions[j],
-    //       };
-    //       const nextNode = nodes.find((node) => node.id === nextNodeID);
-    //       nextNode["position"] = nextNodePos;
-    //       edges.push(edgeData);
-    //     }
-    //   }
-    // }
 
     // if (flowData["flows"]["course"]) {
     //   for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
