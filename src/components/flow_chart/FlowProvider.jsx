@@ -5,10 +5,13 @@ import ReactFlow, {
   Background,
   Controls,
   ReactFlowProvider,
-  ConnectionMode
+  ConnectionMode,
+  useNodesState,
+  useEdgesState
 } from "reactflow";
 import MainBlock from "./MainBlock";
 import CourseBlock from "./CourseBlock";
+import SubBlock from "./SubBlock";
 import "reactflow/dist/style.css";
 import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
@@ -17,10 +20,12 @@ import { useState } from "react";
 
 
 const proOptions = { hideAttribution: true };
-const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
+const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock, subBlock: SubBlock };
 const edgeTypes = { floating: FloatingEdge };
 
-function Flow({ nodes, edges }) {
+function Flow({ initialNodes, initialEdges }) {
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   return (
     <div id="flow-box" className="h-full w-full">
       <ReactFlow
@@ -28,6 +33,8 @@ function Flow({ nodes, edges }) {
         edges={edges}
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
         fitView
         proOptions={proOptions}
         connectionMode={ConnectionMode.Loose}
@@ -102,7 +109,7 @@ export default () => {
           </div>
           : null}
       </div>
-      <Flow nodes={nodes} edges={edges} key={String((nodes, edges))} />
+      <Flow initialNodes={nodes} initialEdges={edges} key={String((nodes, edges))} />
     </ReactFlowProvider>
   );
 }

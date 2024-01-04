@@ -20,12 +20,10 @@
                     }
                 },
                 "flows": {
-                    "main": {
-                        "foundation1": [
-                            "foundation2",
-                            "intermediate"
-                        ]
-                    }
+                    "foundation1": [
+                        "foundation2",
+                        "intermediate"
+                    ]
                 }
             }
         },
@@ -34,11 +32,26 @@
                 "nodes": {
                     "foundation": {
                         "name": "Foundation Courses",
-                        "quantity": 4
+                        "quantity": 4,
+                        "course": {
+                            "courses": [
+                                "MATH103",
+                                "MATH101",
+                                "MATH105",
+                                "MATH104"
+                            ],
+                            "quantity": 4
+                        }
                     },
                     "writing": {
                         "name": "Mathematical Writing Course",
-                        "quantity": 1
+                        "quantity": 1,
+                        "course": {
+                            "courses": [
+                                "MATH102"
+                            ],
+                            "quantity": 1
+                        }
                     },
                     "intermediate": {
                         "name": "Intermediate Courses",
@@ -47,7 +60,13 @@
                     },
                     "pure": {
                         "name": "Pure Mathematics",
-                        "quantity": 1
+                        "quantity": 1,
+                        "course": {
+                            "courses": [
+                                "MATH307"
+                            ],
+                            "quantity": 1
+                        }
                     },
                     "advanced1": {
                         "name": "Advanced Courses",
@@ -56,12 +75,16 @@
                     },
                     "elective1": {
                         "name": "Elective Applied Courses",
-                        "quantity": 2
-                    },
-                    "intermediate-elective": {
-                        "name": "Intermediate Elective Courses",
-                        "level": 2,
-                        "quantity": 1
+                        "quantity": 2,
+                        "children": {
+                            "nodes": {
+                                "intermediate-elective": {
+                                    "name": "Intermediate Elective Courses",
+                                    "level": 2,
+                                    "quantity": 1
+                                }
+                            }
+                        }
                     },
                     "seminar": {
                         "name": "Research Seminar",
@@ -73,77 +96,47 @@
                         "level": 4,
                         "quantity": 2
                     },
-                    "advanced2-elective2": {
+                    "advanced2+elective2": {
                         "name": "Advanced/Elective Applied Courses",
-                        "quantity": 2
-                    },
-                    "advanced2": {
-                        "name": "Advanced Courses",
-                        "level": 3,
-                        "quantity": 1
-                    },
-                    "elective2": {
-                        "name": "Elective Applied Courses",
-                        "level": 3
+                        "quantity": 2,
+                        "children": {
+                            "nodes": {
+                                "advanced2": {
+                                    "name": "Advanced Courses",
+                                    "level": 3,
+                                    "quantity": 1
+                                },
+                                "elective2": {
+                                    "name": "Elective Applied Courses",
+                                    "level": 3
+                                }
+                            }
+                        }
                     }
                 },
                 "flows": {
-                    "main": {
-                        "foundation": [
-                            "writing"
-                        ],
-                        "writing": [
-                            "intermediate"
-                        ],
-                        "intermediate": [
-                            "pure"
-                        ],
-                        "pure": [
-                            "advanced1"
-                        ],
-                        "advanced1": [
-                            "elective1"
-                        ],
-                        "elective1": [
-                            "seminar"
-                        ],
-                        "seminar": [
-                            "capstones",
-                            "advanced2-elective2"
-                        ]
-                    },
-                    "sub-flows": {
-                        "elective1": [
-                            "intermediate-elective"
-                        ],
-                        "advanced2-elective2": [
-                            "advanced2",
-                            "elective2"
-                        ]
-                    },
-                    "course": {
-                        "foundation": {
-                            "courses": [
-                                "MATH103",
-                                "MATH101",
-                                "MATH105",
-                                "MATH104"
-                            ],
-                            "quantity": 4
-                        },
-                        "writing": {
-                            "courses": [
-                                "MATH102"
-                            ],
-                            "quantity": 1
-                        },
-                        "pure": {
-                            "courses": [
-                                "MATH307"
-                            ],
-                            "quantity": 1
-                        }
-                    }
+                    "foundation": [
+                        "writing"
+                    ],
+                    "writing": [
+                        "intermediate"
+                    ],
+                    "intermediate": [
+                        "pure"
+                    ],
+                    "pure": [
+                        "advanced1"
+                    ],
+                    "advanced1": [
+                        "elective1"
+                    ],
+                    "elective1": [
+                        "seminar"
+                    ],
+                    "seminar": [
+                        "capstones",
+                        "advanced2+elective2"
+                    ]
                 }
             },
             "minor": {
@@ -164,14 +157,12 @@
                     }
                 },
                 "flows": {
-                    "main": {
-                        "intermediate": [
-                            "advanced"
-                        ],
-                        "advanced": [
-                            "any"
-                        ]
-                    }
+                    "intermediate": [
+                        "advanced"
+                    ],
+                    "advanced": [
+                        "any"
+                    ]
                 }
             }
         }
