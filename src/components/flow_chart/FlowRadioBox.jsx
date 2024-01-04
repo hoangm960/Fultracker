@@ -5,14 +5,14 @@ export default function FlowRadioBox(props) {
         >
             <input
                 defaultChecked={props.checked}
-                id="major"
+                id={props.id}
                 type="radio"
                 value={props.value}
                 name="flow-radio"
                 className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300"
             />
             <label
-                htmlFor="major"
+                htmlFor={props.id}
                 className="w-full py-4 ms-2 text-sm font-semibold text-highlight"
             >
                 {props.label}

@@ -3,7 +3,7 @@ import { Handle, Position } from 'reactflow';
 
 export default memo(({ data }) => {
   return (
-    <div className="flex flex-col items-center justify-center h-24 w-60 border-[1px] border-black border-solid rounded-md p-1 bg-background text-text text-center" >
+    <div>
       <p className="text-lg font-semibold">
         {data["name"]}
       </p>
