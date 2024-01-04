@@ -15,9 +15,10 @@ export default function getNodesAndEdges(flowData) {
       continue;
     }
 
-    const marginFromTop = 100;
-    const spacingBetweenNodes = 30;
-    const childNodeHeight = 96;
+    const MARGIN_TOP = 100;
+    const CHILDREN_SPACING = 30;
+    const CHILD_WIDTH = 240;
+    const SUB_BLOCK_WIDTH = (CHILD_WIDTH + CHILDREN_SPACING) * Object.keys(nodeData["children"]["nodes"]).length;
 
     nodes.push({
       id: nodeID,
@@ -30,22 +31,22 @@ export default function getNodesAndEdges(flowData) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
-        width: 300,
-        height: (childNodeHeight + spacingBetweenNodes) * Object.keys(nodeData["children"]["nodes"]).length + marginFromTop,
+        width: SUB_BLOCK_WIDTH,
+        height: 96 + MARGIN_TOP,
         border: "1px solid black",
         borderRadius: "0.375rem",
         padding: "0.25rem",
         backgroundColor: "#b7ebf3",
         color: "#445953",
         textAlign: "center",
-      }
+      },
+      marginTop: MARGIN_TOP
     });
     for (const [idx, [childNodeID, childNodeData]] of Object.entries(Object.entries(nodeData["children"]["nodes"]))) {
       nodes.push({
         id: childNodeID,
         type: "mainBlock",
-        targetPosition: "bottom",
-        position: { x: 30, y: marginFromTop + (childNodeHeight + spacingBetweenNodes) * idx },
+        position: { x: (CHILD_WIDTH + CHILDREN_SPACING) * idx, y: MARGIN_TOP },
         data: childNodeData,
         parentNode: nodeID,
         extent: 'parent'
@@ -78,13 +79,13 @@ export default function getNodesAndEdges(flowData) {
             animated: true
           });
 
-          const nextNodePos = {
-            x: nodes.find((node) => node.id === id)["position"]["x"] +
-              300 * (+j + 0.5 - flow.length / 2),
-            y: nodes.find((node) => node.id === id)["position"]["y"] - 150
-          };
-          const nextNode = nodes.find((node) => node.id === nextNodeID);
-          nextNode["position"] = nextNodePos;
+          // const nextNodePos = {
+          //   x: nodes.find((node) => node.id === id)["position"]["x"] +
+          //     300 * (+j + 0.5 - flow.length / 2),
+          //   y: nodes.find((node) => node.id === id)["position"]["y"] - 150
+          // };
+          // const nextNode = nodes.find((node) => node.id === nextNodeID);
+          // nextNode["position"] = nextNodePos;
         }
       }
     }
