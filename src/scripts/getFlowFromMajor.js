@@ -15,32 +15,37 @@ export default function getNodesAndEdges(flowData) {
       continue;
     }
 
+    const marginFromTop = 100;
+    const spacingBetweenNodes = 30;
+    const childNodeHeight = 96;
+
     nodes.push({
       id: nodeID,
       type: "subBlock",
       targetPosition: "bottom",
       position: { x: 0, y: 0 },
       data: nodeData,
-      style: { display: "flex",
+      style: {
+        display: "flex",
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "flex-start",
         width: 300,
-        height: 100*Object.keys(nodeData["children"]["nodes"]).length + 100 + 20,
+        height: (childNodeHeight + spacingBetweenNodes) * Object.keys(nodeData["children"]["nodes"]).length + marginFromTop,
         border: "1px solid black",
         borderRadius: "0.375rem",
         padding: "0.25rem",
         backgroundColor: "#b7ebf3",
         color: "#445953",
         textAlign: "center",
-        }
+      }
     });
-    for (const [childNodeID, childNodeData] of Object.entries(nodeData["children"]["nodes"])) {
+    for (const [idx, [childNodeID, childNodeData]] of Object.entries(Object.entries(nodeData["children"]["nodes"]))) {
       nodes.push({
         id: childNodeID,
         type: "mainBlock",
         targetPosition: "bottom",
-        position: { x: 30, y: 100 },
+        position: { x: 30, y: marginFromTop + (childNodeHeight + spacingBetweenNodes) * idx },
         data: childNodeData,
         parentNode: nodeID,
         extent: 'parent'
