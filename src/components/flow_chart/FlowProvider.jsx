@@ -121,21 +121,26 @@ function TopBar() {
     const flowRadios = document.getElementsByName("flow-radio");
     const declairCheckBox = document.getElementById("declair");
 
-    const majorValue = majorSelect.value.toUpperCase();
-    if ((chart !== undefined) & (flow !== undefined)) {
+    const onUpdate = (majorValue, chartOption, selectedFlow) => {
       const [newNodes, newEdges] = getNodesAndEdges(
-        majorData[majorValue][chart][flow]
+        majorData[majorValue][chartOption][selectedFlow]
       );
       getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
       });
-
+  
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
-      const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor")
+      const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
       setShowChartSelection(hasDeclair);
       setShowFlowSelection(hasMinor);
-
+    }
+    
+    const majorValue = majorSelect.value.toUpperCase();
+    if ((chart !== undefined) & (flow !== undefined)) {
+      onUpdate(majorValue, chart, flow);
+      
+      const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor");
       if ((hasMinor) & showFlowSelection) {
         document.getElementById("major-radio").checked = true;
         document.getElementById("minor-radio").checked = false;
@@ -159,18 +164,7 @@ function TopBar() {
       });
     }
 
-    const [newNodes, newEdges] = getNodesAndEdges(
-      majorData[majorValue][chartOption][selectedFlow]
-    );
-    getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-      setNodes(layoutedNodes);
-      setEdges(layoutedEdges);
-    });
-
-    const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
-    const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor")
-    setShowChartSelection(hasDeclair);
-    setShowFlowSelection(hasMinor);
+    onUpdate(majorValue, chartOption, selectedFlow);
   };
 
   return (
