@@ -1214,12 +1214,12 @@
                         "stat-programming"
                     ],
                     "stat-programming": [
-                        "seminar"
-                    ],
-                    "seminar": [
                         "any1"
                     ],
                     "any1": [
+                        "seminar"
+                    ],
+                    "seminar": [
                         "capstones",
                         "any2"
                     ]
