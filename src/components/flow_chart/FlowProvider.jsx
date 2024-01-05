@@ -66,8 +66,6 @@ const getLayoutedElements = async (nodes, edges) => {
           ...child,
           width: DEFAULT_WIDTH,
           height: DEFAULT_HEIGHT,
-          targetPosition: 'bottom',
-          sourcePosition: 'top'
         })) : undefined
       }
     }),
@@ -103,62 +101,47 @@ const getLayoutedElements = async (nodes, edges) => {
   }
 };
 
-function Flow({ initialNodes, initialEdges }) {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  const { fitView } = useReactFlow();
-
-  useEffect(() => { fitView() }, [nodes, edges]);
-
+export default function FlowProvider() {
   return (
-    <div id="flow-box" className="h-full w-full">
-      <ReactFlow
-        nodes={nodes}
-        edges={edges}
-        nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        fitView
-        proOptions={proOptions}
-        connectionMode={ConnectionMode.Loose}
-      >
-        <Background gap={10} size={1} />
-        <Controls position="bottom-right" />
-      </ReactFlow>
-    </div>
+    <ReactFlowProvider>
+      <TopBar />
+      <Flow />
+    </ReactFlowProvider>
   );
 }
 
-export default function FlowProvider() {
-  const [nodes, setNodes] = useState([]);
-  const [edges, setEdges] = useState([]);
+function TopBar() {
+  const { setNodes, setEdges } = useReactFlow();
   const [showFlowSelection, setShowFlowSelection] = useState(false);
   const [showChartSelection, setShowChartSelection] = useState(false);
-
 
   function updateFlow(flow, chart) {
     const majorSelect = document.getElementById("major");
     const flowRadios = document.getElementsByName("flow-radio");
     const declairCheckBox = document.getElementById("declair");
 
-    const majorValue = majorSelect.value.toUpperCase();
-    if ((chart !== undefined) & (flow !== undefined)) {
+    const onUpdate = (majorValue, chartOption, selectedFlow) => {
       const [newNodes, newEdges] = getNodesAndEdges(
-        majorData[majorValue][chart][flow]
+        majorData[majorValue][chartOption][selectedFlow]
       );
       getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
       });
-
+  
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
-      const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor")
+      const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
       setShowChartSelection(hasDeclair);
       setShowFlowSelection(hasMinor);
-
-      if (hasMinor) {
+    }
+    
+    const majorValue = majorSelect.value.toUpperCase();
+    if ((chart !== undefined) & (flow !== undefined)) {
+      onUpdate(majorValue, chart, flow);
+      
+      const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor");
+      if ((hasMinor) & showFlowSelection) {
         document.getElementById("major-radio").checked = true;
         document.getElementById("minor-radio").checked = false;
       }
@@ -181,30 +164,50 @@ export default function FlowProvider() {
       });
     }
 
-    const [newNodes, newEdges] = getNodesAndEdges(
-      majorData[majorValue][chartOption][selectedFlow]
-    );
-    getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-      setNodes(layoutedNodes);
-      setEdges(layoutedEdges);
-    });
+    onUpdate(majorValue, chartOption, selectedFlow);
   };
 
   return (
-    <ReactFlowProvider>
-      <div className="flex flex-row w-full gap-1 justify-center">
-        <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
-        {showChartSelection ?
-          <DeclairCheckBox updateFlow={updateFlow} />
-          : null}
-        {showFlowSelection ?
-          <div id="radio-box" className="flex flex-col items-center justify-center gap-1" onChange={updateFlow}>
-            <FlowRadioBox id="major-radio" value="major" label="Major" checked />
-            <FlowRadioBox id="minor-radio" value="minor" label="Minor" />
-          </div>
-          : null}
-      </div>
-      <Flow initialNodes={nodes} initialEdges={edges} key={String((nodes, edges))} />
-    </ReactFlowProvider>
+    <div className="flex flex-row w-full gap-1 justify-center">
+      <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
+      {showChartSelection ?
+        <DeclairCheckBox updateFlow={updateFlow} />
+        : null}
+      {showFlowSelection ?
+        <div id="radio-box" className="flex flex-col items-center justify-center gap-1" onChange={updateFlow}>
+          <FlowRadioBox id="major-radio" value="major" label="Major" checked />
+          <FlowRadioBox id="minor-radio" value="minor" label="Minor" />
+        </div>
+        : null}
+    </div>
+  );
+}
+
+function Flow({ initialNodes, initialEdges }) {
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+
+  const { fitView } = useReactFlow();
+
+  useEffect(() => { fitView({ duration: 800 }) }, [nodes, edges]);
+
+  return (
+    <div id="flow-box" className="h-full w-full">
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        nodeTypes={nodeTypes}
+        edgeTypes={edgeTypes}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        fitView
+        fitViewOptions={{ duration: 800 }}
+        proOptions={proOptions}
+        connectionMode={ConnectionMode.Loose}
+      >
+        <Background gap={10} size={1} />
+        <Controls position="bottom-right" />
+      </ReactFlow>
+    </div>
   );
 }
