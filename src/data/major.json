@@ -1164,8 +1164,9 @@
                                     "course": {
                                         "courses": [
                                             "CS101",
-                                            "CS201",
-                                            "CS102"
+                                            "CS102",
+                                            "CS103",
+                                            "CS104"
                                         ]
                                     }
                                 }
@@ -1243,23 +1244,23 @@
                         "children": {
                             "nodes": {
                                 "stat": {
-                                    "name": "Introductory Staticstics",
-                                    "quantity": 1,
+                                    "name": "Introductory Staticstics Courses",
                                     "course": {
                                         "courses": [
-                                            "MATH105"
-                                        ],
-                                        "quantity": 1
+                                            "MATH105",
+                                            "MATH205"
+                                        ]
                                     }
                                 },
                                 "programming": {
-                                    "name": "Introductory Programming",
-                                    "quantity": 1,
+                                    "name": "Introductory Programming Courses",
                                     "course": {
                                         "courses": [
-                                            "CS101"
-                                        ],
-                                        "quantity": 1
+                                            "CS101",
+                                            "CS102",
+                                            "CS103",
+                                            "CS104"
+                                        ]
                                     }
                                 }
                             }
