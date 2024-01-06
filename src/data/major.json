@@ -895,28 +895,28 @@
                 "nodes": {
                     "intermediate-advanced": {
                         "name": "Intermediate/Advanced Courses",
-                        "quantity": 3
-                    },
-                    "intermediate": {
-                        "name": "Intermediate Courses",
-                        "level": 2,
+                        "quantity": 3,
                         "children": {
                             "nodes": {
+                                "intermediate": {
+                                    "name": "Intermediate Courses",
+                                    "level": 2
+                                },
                                 "advanced": {
                                     "name": "Advanced Courses",
                                     "level": 3
-                                },
-                                "any": {
-                                    "name": "Engineering courses",
-                                    "quantity": 6
                                 }
                             }
                         }
+                    },
+                    "any": {
+                        "name": "Any Engineering courses",
+                        "quantity": 3
                     }
                 },
                 "flows": {
-                    "any": [
-                        "intermediate-advanced"
+                    "intermediate-advanced": [
+                        "any"
                     ]
                 }
             }
