@@ -48,8 +48,8 @@ const getLayoutedElements = async (nodes, edges) => {
     children: nodes.filter((node) => node.extent != "parent").map((node) => {
       return {
         ...node,
-        width: node.style != undefined ? node.style.width : DEFAULT_WIDTH,
-        height: node.style != undefined ? node.style.height : DEFAULT_HEIGHT,
+        width: node.width ?? DEFAULT_WIDTH,
+        height: node.height ?? DEFAULT_HEIGHT,
         layoutOptions: {
           "elk.algorithm": "layered",
           "elk.direction": "UP",
@@ -62,10 +62,10 @@ const getLayoutedElements = async (nodes, edges) => {
           "elk.padding": "[top=60,left=25,bottom=25,right=25]",
         },
 
-        children: node.style != undefined ? nodes.filter((child) => child.parentNode == node.id).map((child) => ({
+        children: node.type == "subBlock" ? nodes.filter((child) => child.parentNode == node.id).map((child) => ({
           ...child,
-          width: DEFAULT_WIDTH,
-          height: DEFAULT_HEIGHT,
+          width: child.width ?? DEFAULT_WIDTH,
+          height: child.height ?? DEFAULT_HEIGHT,
         })) : undefined
       }
     }),
@@ -125,21 +125,19 @@ function TopBar() {
       const [newNodes, newEdges] = getNodesAndEdges(
         majorData[majorValue][chartOption][selectedFlow]
       );
-      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setNodes(layoutedNodes);
-        setEdges(layoutedEdges);
-      });
-  
+      setNodes(newNodes);
+      setEdges(newEdges);
+
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
       const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
       setShowChartSelection(hasDeclair);
       setShowFlowSelection(hasMinor);
     }
-    
+
     const majorValue = majorSelect.value.toUpperCase();
     if ((chart !== undefined) & (flow !== undefined)) {
       onUpdate(majorValue, chart, flow);
-      
+
       const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor");
       if ((hasMinor) & showFlowSelection) {
         document.getElementById("major-radio").checked = true;
@@ -183,13 +181,26 @@ function TopBar() {
   );
 }
 
-function Flow({ initialNodes, initialEdges }) {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+function Flow() {
+  const [nodes, setNodes, onNodesChange] = useNodesState();
+  const [edges, setEdges, onEdgesChange] = useEdgesState();
+  const [prevNodes, setPrevNodes] = useState();
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const { fitView } = useReactFlow();
 
-  useEffect(() => { fitView({ duration: 800 }) }, [nodes, edges]);
+  useEffect(() => {
+    setIsInitialized(nodes != prevNodes);
+    if (!isInitialized & nodes != undefined) {
+      getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+        setPrevNodes(layoutedNodes);
+        setIsInitialized(true);
+      });
+    }
+    fitView({ duration: 800 });
+  }, [nodes, edges]);
 
   return (
     <div id="flow-box" className="h-full w-full">

@@ -402,7 +402,7 @@
             "minor": {
                 "nodes": {
                     "math": {
-                        "name": "Mathematics for  CS",
+                        "name": "Mathematics for CS",
                         "quantity": 1,
                         "course": {
                             "courses": [
@@ -425,7 +425,7 @@
                         }
                     },
                     "cs2": {
-                        "name": "CS2: Data Structures & Algorithms",
+                        "name": "Computer Science II: Data Structures & Algorithms",
                         "quantity": 1,
                         "course": {
                             "courses": [
