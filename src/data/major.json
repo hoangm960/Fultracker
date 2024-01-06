@@ -425,7 +425,7 @@
                         }
                     },
                     "cs2": {
-                        "name": "Computer Science II: Data Structures & Algorithms",
+                        "name": "CS2: Data Structures & Algorithms",
                         "quantity": 1,
                         "course": {
                             "courses": [
