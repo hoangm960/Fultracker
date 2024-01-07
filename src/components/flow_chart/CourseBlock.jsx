@@ -3,9 +3,9 @@ import { Handle, Position } from 'reactflow';
 
 export default memo(({ data }) => {
   return (
-    <div className="h-12 border-[1px] border-black border-solid rounded-md p-1 bg-highlight text-text">
+    <div className="h-12 w-24 border-[1px] border-black border-solid rounded-md p-1 bg-highlight text-text">
       <p className="text-lg font-semibold">
-        {data["course"]}
+        {data["courseID"]}
       </p>
 
       <Handle
@@ -16,7 +16,7 @@ export default memo(({ data }) => {
       />
 
       <Handle
-        id="r"
+        id="l"
         type="source"
         position={Position.Left}
         isConnectable={false}

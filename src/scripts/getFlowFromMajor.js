@@ -2,6 +2,12 @@ import { MarkerType } from 'reactflow';
 
 
 export default function getNodesAndEdges(flowData) {
+  const nodes = getMainNodes(flowData);
+  const edges = getEdges(flowData);
+  return [nodes, edges];
+}
+
+function getMainNodes(flowData) {
   let nodes = [];
   for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
     const X_PADDING = 40;
@@ -35,126 +41,134 @@ export default function getNodesAndEdges(flowData) {
       height: MAIN_HEIGHT,
     };
 
+    if (nodeData["children"]) {
 
-    if (!nodeData["children"]) {
+      const MARGIN_TOP = 100;
+      const CHILDREN_SPACING = 30;
+      const CHILD_WIDTH = 240;
+      const SUB_BLOCK_WIDTH = (CHILD_WIDTH + CHILDREN_SPACING) * Object.keys(nodeData["children"]["nodes"]).length;
+
+      let subNode = structuredClone(mainNode);
+      subNode = {
+        ...subNode,
+        type: "subBlock",
+        marginTop: MARGIN_TOP,
+        width: SUB_BLOCK_WIDTH,
+        height: 96 + MARGIN_TOP
+      };
+      subNode.style = {
+        ...subNode.style,
+        justifyContent: "start",
+        width: SUB_BLOCK_WIDTH,
+        height: 96 + MARGIN_TOP
+      }
+      nodes.push(subNode);
+      nodes.push(...getChildrenNodes(nodeID, nodeData, CHILD_WIDTH, CHILDREN_SPACING, MARGIN_TOP));
+    } else {
       nodes.push(mainNode);
-      continue;
     }
-
-    const MARGIN_TOP = 100;
-    const CHILDREN_SPACING = 30;
-    const CHILD_WIDTH = 240;
-    const SUB_BLOCK_WIDTH = (CHILD_WIDTH + CHILDREN_SPACING) * Object.keys(nodeData["children"]["nodes"]).length;
-
-    let subNode = structuredClone(mainNode);
-    subNode = {
-      ...subNode,
-      type: "subBlock",
-      marginTop: MARGIN_TOP,
-      width: SUB_BLOCK_WIDTH,
-      height: 96 + MARGIN_TOP
-    };
-    subNode.style = {
-      ...subNode.style,
-      justifyContent: "start",
-      width: SUB_BLOCK_WIDTH,
-      height: 96 + MARGIN_TOP
-    }
-    nodes.push(subNode);
-
-    for (const [idx, [childNodeID, childNodeData]] of Object.entries(Object.entries(nodeData["children"]["nodes"]))) {
-      let childNode = structuredClone(mainNode);
-      const CHILD_HEIGHT =
-        X_PADDING
-        + TITLE_HEIGHT * (Math.floor(childNodeData["name"].split("").length / MAX_TITLE_CHAR) + 1)
-        + SUBTITLE_HEIGHT * +(nodeData["quantity"] != undefined);
-      childNode = {
-        ...childNode,
-        id: childNodeID,
-        type: "mainBlock",
-        position: { x: (CHILD_WIDTH + CHILDREN_SPACING) * idx, y: MARGIN_TOP },
-        height: CHILD_HEIGHT,
-        data: childNodeData,
-        parentNode: nodeID,
-        extent: 'parent'
-      };
-      childNode.style = {
-        ...childNode.style,
-        height: CHILD_HEIGHT
-      };
-      nodes.push(childNode);
+    if (nodeData["course"]) {
+      nodes.push(...getCourseNodes(nodeData));
     }
   }
 
-  let edges = [];
-  if (flowData["flows"]) {
-    if (flowData["flows"]) {
-      for (const [id, flow] of Object.entries(flowData["flows"])) {
-        for (const [j, nextNodeID] of Object.entries(flow)) {
-          edges.push({
-            id: `${id}-${nextNodeID}`,
-            source: id,
-            target: nextNodeID,
-            sourceHandle: "t",
-            targetHandle: "b",
-            type: "smoothstep",
-            markerEnd: {
-              type: MarkerType.ArrowClosed,
-              width: 10,
-              height: 10,
-              color: '#005C73',
-            },
-            style: {
-              strokeWidth: 5,
-              stroke: '#005C73',
-            },
-            animated: true
-          });
+  return nodes;
+}
 
+function getChildrenNodes(nodeID, nodeData, width, spacing, marginTop) {
+  let childrenNodes = getMainNodes(nodeData["children"]);
+  for (const [idx, childNode] of Object.entries(childrenNodes)) {
+    childrenNodes[idx] = {
+      ...childNode,
+      position: { x: (width + spacing) * idx, y: marginTop },
+      parentNode: nodeID,
+      extent: 'parent'
+    };
+  }
+  return childrenNodes;
+}
+
+function getCourseNodes(nodeData) {
+  let courseNodes = [];
+  for (const courseID of nodeData["course"]["courses"]) {
+    const courseNode = {
+      id: courseID,
+      type: "courseBlock",
+      position: { x: 0, y: 0 },
+      data: { courseID: courseID },
+      width: 96,
+      height: 48
+    };
+
+    courseNodes.push(courseNode);
+  }
+
+  return courseNodes;
+}
+
+function getEdges(flowData) {
+  let edges = [];
+  let mainEdge = {
+    sourceHandle: "t",
+    targetHandle: "b",
+    type: "smoothstep",
+    markerEnd: {
+      type: MarkerType.ArrowClosed,
+      width: 10,
+      height: 10,
+      color: '#005C73',
+    },
+    style: {
+      strokeWidth: 5,
+      stroke: '#005C73',
+    },
+    animated: true
+  }
+  if (flowData["flows"]) {
+    for (const [nodeID, flow] of Object.entries(flowData["flows"])) {
+      for (const nextNodeID of flow) {
+        mainEdge = {
+          ...mainEdge,
+          id: `${nodeID}-${nextNodeID}`,
+          source: nodeID,
+          target: nextNodeID,
         }
+        edges.push(mainEdge);
+      }
+
+      const courseData = flowData["nodes"][nodeID]["course"];
+      if (courseData) {
+        const courses = courseData["courses"];
+        edges.push(...getCourseEdges(nodeID, courses));
       }
     }
-
-    // if (flowData["flows"]["course"]) {
-    //   for (const [nodeID, node] of Object.entries(flowData["flows"]["course"])) {
-    //     const courses = node["courses"];
-    //     const nodeIdx = nodes.findIndex((node) => node["id"] == nodeID);
-    //     const positions = [];
-    //     const mid = Math.floor(courses.length / 2);
-    //     for (let i = -mid; i <= mid; i++) {
-    //       positions.push(i * 60);
-    //     }
-    //     if (courses.length % 2 == 0) {
-    //       positions.splice(mid, 1);
-    //     }
-
-    //     for (let courseIdx = 0; courseIdx < courses.length; courseIdx++) {
-    //       const courseID = courses[courseIdx];
-    //       const nodeData = {
-    //         id: courseID,
-    //         type: "courseBlock",
-    //         position: {
-    //           x: nodes[nodeIdx]["position"]["x"] + (nodeIdx % 2 === 0 ? 300 : -150),
-    //           y:
-    //             nodes[nodeIdx]["position"]["y"] + positions[courseIdx],
-    //         },
-    //         data: {
-    //           course: courseID
-    //         },
-    //       };
-    //       const edgeData = {
-    //         id: `${nodeID}-${courseID}`,
-    //         source: nodeID,
-    //         target: courseID,
-    //         type: "floating"
-    //       };
-
-    //       nodes.push(nodeData);
-    //       edges.push(edgeData);
-    //     }
-    //   }
-    // }
   }
+  return edges;
+}
 
-  return [nodes, edges];
+function getCourseEdges(nodeID, courses) {
+  let courseEdges = [];
+  for (const courseID of courses) {
+    const courseEdge = {
+      id: `${nodeID}-${courseID}`,
+      source: nodeID,
+      target: courseID,
+      sourceHandle: "r",
+      targetHandle: "l",
+      type: "smoothstep",
+      markerEnd: {
+        type: MarkerType.ArrowClosed,
+        width: 10,
+        height: 10,
+        color: '#005C73',
+      },
+      style: {
+        strokeWidth: 5,
+        stroke: '#005C73',
+      },
+      animated: true
+    };
+    courseEdges.push(courseEdge);
+  }
+  return courseEdges;
 }
