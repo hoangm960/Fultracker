@@ -29,7 +29,7 @@ function MajorDropdown({ updateFlow }) {
         History
       </option>
       <option className="bg-background text-text font-semibold" value="is">
-        Itegrated Science
+        Integrated Science
       </option>
       <option className="bg-background text-text font-semibold" value="lit">
         Literature
