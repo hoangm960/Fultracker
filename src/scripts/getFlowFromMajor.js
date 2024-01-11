@@ -17,10 +17,9 @@ function getMainNodes(flowData) {
     const TITLE = TITLE_HEIGHT * (Math.floor(nodeData["name"].split("").length / MAX_TITLE_CHAR) + 1);
     const SUBTITLE = SUBTITLE_HEIGHT * +(nodeData["quantity"] != undefined);
     const MAIN_HEIGHT = X_PADDING + TITLE + SUBTITLE;
-    const mainNode = {
+    let mainNode = {
       id: nodeID,
       type: "mainBlock",
-      targetPosition: "bottom",
       position: { x: 0, y: 0 },
       data: nodeData,
       style: {
@@ -42,33 +41,35 @@ function getMainNodes(flowData) {
     };
 
     if (nodeData["children"]) {
-
       const MARGIN_TOP = 100;
       const CHILDREN_SPACING = 30;
       const CHILD_WIDTH = 240;
       const SUB_BLOCK_WIDTH = (CHILD_WIDTH + CHILDREN_SPACING) * Object.keys(nodeData["children"]["nodes"]).length;
 
-      let subNode = structuredClone(mainNode);
-      subNode = {
-        ...subNode,
+      mainNode = {
+        ...mainNode,
         type: "subBlock",
         marginTop: MARGIN_TOP,
         width: SUB_BLOCK_WIDTH,
         height: 96 + MARGIN_TOP
       };
-      subNode.style = {
-        ...subNode.style,
+      mainNode.style = {
+        ...mainNode.style,
         justifyContent: "start",
         width: SUB_BLOCK_WIDTH,
         height: 96 + MARGIN_TOP
       }
-      nodes.push(subNode);
+      nodes.push(mainNode);
       nodes.push(...getChildrenNodes(nodeID, nodeData, CHILD_WIDTH, CHILDREN_SPACING, MARGIN_TOP));
     } else {
+      if (nodeData["course"]) {
+        mainNode = {
+          ...mainNode,
+          hasCourses: true
+        }
+        nodes.push(...getCourseNodes(nodeID, nodeData));
+      }
       nodes.push(mainNode);
-    }
-    if (nodeData["course"]) {
-      nodes.push(...getCourseNodes(nodeData));
     }
   }
 
@@ -88,7 +89,7 @@ function getChildrenNodes(nodeID, nodeData, width, spacing, marginTop) {
   return childrenNodes;
 }
 
-function getCourseNodes(nodeData) {
+function getCourseNodes(nodeID, nodeData) {
   let courseNodes = [];
   for (const courseID of nodeData["course"]["courses"]) {
     const courseNode = {
@@ -97,7 +98,8 @@ function getCourseNodes(nodeData) {
       position: { x: 0, y: 0 },
       data: { courseID: courseID },
       width: 96,
-      height: 48
+      height: 48,
+      parentID: nodeID
     };
 
     courseNodes.push(courseNode);
@@ -122,7 +124,8 @@ function getEdges(flowData) {
       strokeWidth: 5,
       stroke: '#005C73',
     },
-    animated: true
+    animated: true,
+    connectionType: "main"
   }
   if (flowData["flows"]) {
     for (const [nodeID, flow] of Object.entries(flowData["flows"])) {
@@ -136,11 +139,13 @@ function getEdges(flowData) {
         edges.push(mainEdge);
       }
 
-      const courseData = flowData["nodes"][nodeID]["course"];
-      if (courseData) {
-        const courses = courseData["courses"];
-        edges.push(...getCourseEdges(nodeID, courses));
-      }
+    }
+  }
+  for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+    const courseData = nodeData["course"];
+    if (courseData) {
+      const courses = courseData["courses"];
+      edges.push(...getCourseEdges(nodeID, courses));
     }
   }
   return edges;
@@ -166,7 +171,8 @@ function getCourseEdges(nodeID, courses) {
         strokeWidth: 5,
         stroke: '#005C73',
       },
-      animated: true
+      animated: true,
+      connectionType: "course"
     };
     courseEdges.push(courseEdge);
   }
