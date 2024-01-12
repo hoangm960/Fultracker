@@ -793,6 +793,7 @@
                             "nodes": {
                                 "math": {
                                     "name": "Mathematics",
+                                    "quantity": 3,
                                     "course": {
                                         "courses": [
                                             "MATH101",
@@ -801,7 +802,7 @@
                                             "MATH201",
                                             "MATH205"
                                         ],
-                                        "quantity": 1
+                                        "quantity": 3
                                     }
                                 },
                                 "science": {
@@ -814,8 +815,7 @@
                                             "IS105",
                                             "IS205",
                                             "IS209"
-                                        ],
-                                        "quantity": 1
+                                        ]
                                     }
                                 }
                             }
