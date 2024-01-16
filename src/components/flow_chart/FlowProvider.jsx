@@ -17,6 +17,7 @@ import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
 import { useEffect, useState } from "react";
 import ELK from 'elkjs/lib/elk.bundled.js';
+import HomeButton from "./HomeButton.tsx";
 
 
 const proOptions = { hideAttribution: true };
@@ -138,8 +139,11 @@ function TopBar() {
       const [newNodes, newEdges] = getNodesAndEdges(
         majorData[majorValue][chartOption][selectedFlow]
       );
-      setNodes(newNodes);
-      setEdges(newEdges);
+      
+      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+      });
 
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
       const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
@@ -180,21 +184,26 @@ function TopBar() {
       });
     }
 
-    onUpdate(majorValue, chartOption, selectedFlow);
+    if (majorValue != "") {
+      onUpdate(majorValue, chartOption, selectedFlow);
+    }
   };
 
   return (
-    <div className="flex flex-row w-full gap-1 justify-center">
-      <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
-      {showChartSelection ?
-        <DeclairCheckBox updateFlow={updateFlow} />
-        : null}
-      {showFlowSelection ?
-        <div id="radio-box" className="flex flex-col items-center justify-center gap-1" onChange={updateFlow}>
-          <FlowRadioBox id="major-radio" value="major" label="Major" checked />
-          <FlowRadioBox id="minor-radio" value="minor" label="Minor" />
-        </div>
-        : null}
+    <div className="flex flex-col w-full gap-1 justify-center items-center">
+      <div className="flex flex-row w-full gap-1 justify-center">
+        <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
+        {showChartSelection ?
+          <DeclairCheckBox updateFlow={updateFlow} />
+          : null}
+        {showFlowSelection ?
+          <div id="radio-box" className="flex flex-col items-center justify-center gap-1" onChange={updateFlow}>
+            <FlowRadioBox id="major-radio" value="major" label="Major" checked />
+            <FlowRadioBox id="minor-radio" value="minor" label="Minor" />
+          </div>
+          : null}
+      </div>
+      <HomeButton updateFlow={updateFlow} />
     </div>
   );
 }
@@ -232,10 +241,10 @@ function Flow() {
   useEffect(() => {
     if ((nodes != prevNodes) & (getFlowState() != flowState) & nodes != undefined) {
       getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setNodes(layoutedNodes);
-        setEdges(layoutedEdges);
         setPrevNodes(layoutedNodes);
         setFlowState(getFlowState());
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
       });
     }
     fitView({ duration: 800 });

@@ -107,7 +107,6 @@ function getEdges(flowData, mainNode, showCourses) {
   }
 
   if (mainNode) {
-    console.log(mainNode);
     if (mainNode.data.children) {
       for (const nodeID of Object.keys(mainNode.data.children.nodes)) {
         mainEdgeLayout = {
@@ -120,7 +119,7 @@ function getEdges(flowData, mainNode, showCourses) {
       }
     }
 
-    if (showCourses & mainNode.data.course) {
+    if (showCourses & (mainNode.data.course != undefined)) {
       for (const courseID of mainNode.data.course.courses) {
         edges.push({
           ...mainEdgeLayout,
