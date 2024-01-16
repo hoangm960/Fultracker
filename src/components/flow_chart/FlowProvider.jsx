@@ -245,9 +245,12 @@ function Flow() {
     if (node.data.children) {
       const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node);
       getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setPrevNodes(layoutedNodes);
-        setNodes(layoutedNodes);
-        setEdges(layoutedEdges);
+        fitView({ duration: 800, nodes: [node] });
+        setTimeout(() => {
+          setPrevNodes(layoutedNodes);
+          setNodes(layoutedNodes);
+          setEdges(layoutedEdges);
+        }, 1000);
       });
     }
   }
@@ -261,10 +264,10 @@ function Flow() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         fitView
-        fitViewOptions={{ duration: 800 }}
         proOptions={proOptions}
         connectionMode={ConnectionMode.Loose}
         onNodeClick={onNodeClick}
+        nodesDraggable={false}
       >
         <Background gap={10} size={1} />
         <Controls position="bottom-right" />
