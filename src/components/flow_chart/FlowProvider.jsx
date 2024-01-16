@@ -42,7 +42,7 @@ const DEFAULT_WIDTH = 240;
 const DEFAULT_HEIGHT = 96;
 
 const getLayoutedElements = async (nodes, edges) => {
-  const getGraph = () => {
+  const getOriginalMainGraph = () => {
     return {
       id: "root",
       layoutOptions: elkRootOptions,
@@ -63,243 +63,50 @@ const getLayoutedElements = async (nodes, edges) => {
           }
         };
 
-        if (mainNode.type == "subBlock") {
-          layoutedMainNode.children = nodes.filter((child) => (child.parentNode == mainNode.id) & (child.type == "mainBlock")).map((childNode, childIdx) => {
-            const layoutedChildNode = {
-              ...childNode,
-              width: childNode.width ?? DEFAULT_WIDTH,
-              height: childNode.height ?? DEFAULT_HEIGHT
-            }
-
-            const layoutedChildGroupNode = {
-              id: `${childNode.id}Group`,
-              width: childNode.width ?? DEFAULT_WIDTH,
-              height: childNode.height ?? DEFAULT_HEIGHT,
-              layoutOptions: {
-                ...elkRootOptions,
-                "elk.hierarchyHandling": "INCLUDE_CHILDREN",
-                "elk.direction": childIdx % 2 == 0 ? "LEFT" : "RIGHT",
-              }
-            }
-
-            // if (childNode.hasCourses) {
-            //   const courseNodes =
-            //     nodes
-            //       .filter((node) => ((node.type == "courseBlock") & (node.parentID == childNode.id)))
-            //       .map((courseNode) => ({
-            //         ...courseNode,
-            //         width: courseNode.width ?? DEFAULT_WIDTH,
-            //         height: courseNode.height ?? DEFAULT_HEIGHT
-            //       }));
-            //   const courseEdges = edges.filter((edge) => (edge.connectionType == "course") & (edge.source == childNode.id));
-
-            //   return {
-            //     ...layoutedChildGroupNode,
-            //     children: [
-            //       layoutedChildNode,
-            //       ...courseNodes
-            //     ],
-            //     edges: courseEdges
-            //   }
-            // }
-
-            return layoutedChildNode;
-          });
-        }
-
         return layoutedMainNode;
       }),
       edges: edges.filter((edge) => edge.connectionType != "course")
     }
   }
 
-  const getGraphWithCourse = () => {
-    return {
-      id: "root",
-      layoutOptions: elkRootOptions,
-      children: nodes.filter((node) => (node.extent != "parent") & (!["courseBlock", "group"].includes(node.type))).map((mainNode, mainIdx) => {
-        let layoutedMainNode = {
-          ...mainNode,
-          width: mainNode.width ?? DEFAULT_WIDTH,
-          height: mainNode.height ?? DEFAULT_HEIGHT,
-          layoutOptions: {
-            ...elkRootOptions,
-            "elk.spacing.nodeNode": "30",
-            "elk.layered.spacing.nodeNodeBetweenLayers": "30",
-            "elk.layered.spacing": "30",
-            "elk.spacing": "30",
-            "elk.hierarchyHandling": "INCLUDE_CHILDREN",
-            "elk.padding": `[top=${mainNode.marginTop},left=25,bottom=25,right=25]`,
-            "elk.direction": mainIdx % 2 == 0 ? "RIGHT" : "LEFT",
-          }
-        };
-
-        const layoutedMainGroupNode = {
-          id: `${mainNode.id}Group`,
-          type: "group",
-          width: mainNode.width ?? DEFAULT_WIDTH,
-          height: mainNode.height ?? DEFAULT_HEIGHT,
-          layoutOptions: {
-            ...elkRootOptions,
-            "elk.hierarchyHandling": "INCLUDE_CHILDREN",
-            "elk.direction": mainIdx % 2 == 0 ? "RIGHT" : "LEFT",
-          }
-        }
-
-        if (mainNode.type == "subBlock") {
-          layoutedMainNode.children = nodes.filter((child) => (child.parentNode == mainNode.id) & (child.type == "mainBlock")).map((childNode, childIdx) => {
-            const layoutedChildNode = {
-              ...childNode,
-              width: childNode.width ?? DEFAULT_WIDTH,
-              height: childNode.height ?? DEFAULT_HEIGHT
-            }
-
-            const layoutedChildGroupNode = {
-              id: `${childNode.id}Group`,
-              width: childNode.width ?? DEFAULT_WIDTH,
-              height: childNode.height ?? DEFAULT_HEIGHT,
-              layoutOptions: {
-                ...elkRootOptions,
-                "elk.hierarchyHandling": "INCLUDE_CHILDREN",
-                "elk.direction": childIdx % 2 == 0 ? "LEFT" : "RIGHT",
-              }
-            }
-
-            // if (childNode.hasCourses) {
-            //   const courseNodes =
-            //     nodes
-            //       .filter((node) => ((node.type == "courseBlock") & (node.parentID == childNode.id)))
-            //       .map((courseNode) => ({
-            //         ...courseNode,
-            //         width: courseNode.width ?? DEFAULT_WIDTH,
-            //         height: courseNode.height ?? DEFAULT_HEIGHT
-            //       }));
-            //   const courseEdges = edges.filter((edge) => (edge.connectionType == "course") & (edge.source == childNode.id));
-
-            //   return {
-            //     ...layoutedChildGroupNode,
-            //     children: [
-            //       layoutedChildNode,
-            //       ...courseNodes
-            //     ],
-            //     edges: courseEdges
-            //   }
-            // }
-
-            return layoutedChildNode;
-          });
-        }
-
-        if (mainNode.hasCourses) {
-          const courseNodes =
-            nodes
-              .filter((node) => ((node.type == "courseBlock") & (node.parentID == mainNode.id)))
-              .map((courseNode) => ({
-                ...courseNode,
-                width: courseNode.width ?? DEFAULT_WIDTH,
-                height: courseNode.height ?? DEFAULT_HEIGHT
-              }));
-          const courseEdges = edges.filter((edge) => (edge.connectionType == "course") & (edge.source == mainNode.id));
-
-          return {
-            ...layoutedMainGroupNode,
-            children: [
-              layoutedMainNode,
-              ...courseNodes
-            ],
-            edges: courseEdges
-          }
-        }
-
-        return layoutedMainNode;
-      }),
-      edges: edges.filter((edge) => edge.connectionType != "course").map((edge) => {
-        return {
-          ...edge,
-          source: edge.source + (nodes.filter((node) => (node.id == edge.source) & (node.hasCourses)).length != 0 ? "Group" : ""),
-          target: edge.target + (nodes.filter((node) => (node.id == edge.target) & (node.hasCourses)).length != 0 ? "Group" : "")
-        }
-      })
-    }
-  }
-
-  const getAdjustedGraph = (orgGraph, groupGraph) => {
-    let adjustedChildren = {
+  const flattenGraph = (graph) => {
+    let flattenGraphDict = {
       nodes: [],
-      edges: [...edges.filter((edge) => (edge.connectionType != "course"))]
-    };
+      edges: graph.edges ? [...graph.edges] : []
+    }
+    for (const [idx, node] of Object.entries(graph.children)) {
+      flattenGraphDict.nodes.push({
+        ...node,
+        position: { x: node.x, y: node.y },
+        style: { ...node.style, width: node.width, height: node.height }
+      });
 
-    for (const [idx, groupNode] of Object.entries(groupGraph.children)) {
-      if (groupNode.type == "group") {
-        const mainNode = groupNode.children.find((node) => node.id == groupNode.id.replace("Group", ""));
-        const orgChild = orgGraph.children.find((orgNode) => orgNode.id == mainNode.id);
-
-        adjustedChildren.nodes.push(...groupNode.children.map((node) => {
+      if (node.children) {
+        const childrenResult = flattenGraph(node);
+        flattenGraphDict.nodes.push(...childrenResult.nodes.map((child) => ({
+          ...child,
+          parentNode: node.id,
+          extent: "parent"
+        })));
+        flattenGraphDict.edges.push(...childrenResult.edges.map((edge) => {
           return {
-            ...node,
-            x: node.x + orgChild.x - mainNode.x,
-            y: node.y + orgChild.y - mainNode.y
+            ...edge,
+            sourceHandle: idx % 2 == 0 ? "r" : "l",
+            targetHandle: idx % 2 == 0 ? "l" : "r"
           }
         }));
-
-        adjustedChildren.edges.push(
-          ...edges
-            .filter((edge) => (edge.connectionType == "course") & (edge.source == mainNode.id))
-            .map((edge) => {
-              return {
-                ...edge,
-                sourceHandle: idx % 2 == 0 ? "r" : "l",
-                targetHandle: idx % 2 == 0 ? "l" : "r"
-              }
-            })
-        )
       }
-      else {
-        const orgChild = orgGraph.children.find((orgChild) => orgChild.id == groupNode.id);
-        adjustedChildren.nodes.push({
-          ...groupNode,
-          x: orgChild.x,
-          y: orgChild.y
-        });
-      }
-    }
 
-    return {
-      ...groupGraph,
-      children: adjustedChildren.nodes,
-      edges: adjustedChildren.edges
     }
+    return flattenGraphDict;
   }
 
+
   try {
-    let orgGraph = await elk.layout(getGraph());
-    let groupGraph = await elk.layout(getGraphWithCourse());
-    let layoutedGraph = getAdjustedGraph(orgGraph, groupGraph);
-    console.log(layoutedGraph);
-
+    let orgGraph = await elk.layout(getOriginalMainGraph());
     return ({
-      nodes: layoutedGraph.children.reduce((result, current) => {
-        if (current.type != "group") {
-          result.push({
-            ...current,
-            position: { x: current.x, y: current.y },
-            style: { ...current.style, width: current.width, height: current.height }
-          });
-        }
-
-        if (current.children != undefined) {
-          current.children.forEach((child) =>
-            result.push({
-              ...child,
-              position: { x: child.x, y: child.y },
-            })
-          );
-        }
-
-        return result;
-      }, []),
-
-      edges: layoutedGraph.edges,
+      nodes: flattenGraph(orgGraph).nodes,
+      edges: flattenGraph(orgGraph).edges,
     });
   } catch (message) {
     return console.error(message);

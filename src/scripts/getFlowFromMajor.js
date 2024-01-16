@@ -4,7 +4,6 @@ import { MarkerType } from 'reactflow';
 export default function getNodesAndEdges(flowData) {
   const nodes = getMainNodes(flowData);
   const edges = getEdges(flowData);
-  console.log(nodes, edges);
   return [nodes, edges];
 }
 
@@ -43,85 +42,10 @@ function getMainNodes(flowData) {
       height: MAIN_HEIGHT,
     };
 
-    if (nodeData["children"]) {
-      const MARGIN_TOP = MAIN_HEIGHT;
-      const CHILDREN_SPACING = 30;
-      const CHILD_WIDTH = 240;
-      const CHILD_HEIGHT = 96;
-      const COURSE_WIDTH = 96;
-      const COURSE_HEIGHT = 48;
-      const NUM_COURSES_FROM_CHILDREN = Object.values(nodeData.children.nodes)
-        .map((node) => node.course?.courses.length ?? 0);
-      const MAX_COURSES_FROM_CHILDREN = Math.max.apply(null, NUM_COURSES_FROM_CHILDREN);
-      const SUB_BLOCK_WIDTH =
-        (CHILD_WIDTH + CHILDREN_SPACING) * Object.keys(nodeData["children"]["nodes"]).length
-        + COURSE_WIDTH;
-      const SUB_BLOCK_HEIGHT =
-        MARGIN_TOP
-        + CHILD_HEIGHT
-        + (COURSE_HEIGHT + CHILDREN_SPACING) * MAX_COURSES_FROM_CHILDREN;
-
-      mainNode = {
-        ...mainNode,
-        type: "subBlock",
-        marginTop: MARGIN_TOP,
-        width: SUB_BLOCK_WIDTH,
-        height: SUB_BLOCK_HEIGHT
-      };
-      mainNode.style = {
-        ...mainNode.style,
-        justifyContent: "start",
-        width: SUB_BLOCK_WIDTH,
-        height: SUB_BLOCK_HEIGHT
-      }
-
-      nodes.push(...getChildrenNodes(nodeID, nodeData, CHILD_WIDTH, CHILDREN_SPACING, MARGIN_TOP));
-    }
-
-    if (nodeData["course"]) {
-      mainNode = {
-        ...mainNode,
-        hasCourses: true
-      }
-      nodes.push(...getCourseNodes(nodeID, nodeData));
-    }
-
     nodes.push(mainNode);
   }
 
   return nodes;
-}
-
-function getChildrenNodes(nodeID, nodeData, width, spacing, marginTop) {
-  let childrenNodes = getMainNodes(nodeData["children"]);
-  for (const [idx, childNode] of Object.entries(childrenNodes)) {
-    childrenNodes[idx] = {
-      ...childNode,
-      position: { x: (width + spacing) * idx, y: marginTop },
-      parentNode: nodeID,
-      extent: 'parent'
-    };
-  }
-  return childrenNodes;
-}
-
-function getCourseNodes(nodeID, nodeData) {
-  let courseNodes = [];
-  for (const courseID of nodeData["course"]["courses"]) {
-    const courseNode = {
-      id: courseID,
-      type: "courseBlock",
-      position: { x: 0, y: 0 },
-      data: { courseID: courseID },
-      width: 96,
-      height: 48,
-      parentID: nodeID
-    };
-
-    courseNodes.push(courseNode);
-  }
-
-  return courseNodes;
 }
 
 function getEdges(flowData) {
