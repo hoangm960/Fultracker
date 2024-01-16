@@ -42,7 +42,7 @@ const getLayoutedElements = async (nodes, edges, direction = "UP") => {
     return {
       id: "root",
       layoutOptions: { ...elkRootOptions, "elk.direction": direction },
-      children: nodes.filter((node) => (node.extent != "parent") & (!["courseBlock", "group"].includes(node.type))).map((mainNode) => {
+      children: nodes.map((mainNode) => {
         let layoutedMainNode = {
           ...mainNode,
           width: mainNode.width ?? DEFAULT_WIDTH,
@@ -242,17 +242,15 @@ function Flow() {
   }, [nodes, edges]);
 
   const onNodeClick = (event, node) => {
-    if (node.data.children) {
-      const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node);
-      getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        fitView({ duration: 800, nodes: [node] });
-        setTimeout(() => {
-          setPrevNodes(layoutedNodes);
-          setNodes(layoutedNodes);
-          setEdges(layoutedEdges);
-        }, 1000);
-      });
-    }
+    const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node, true);
+    getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+      fitView({ duration: 800, nodes: [node] });
+      setTimeout(() => {
+        setPrevNodes(layoutedNodes);
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+      }, 1000);
+    });
   }
 
   return (

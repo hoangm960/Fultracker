@@ -1,13 +1,13 @@
 import { MarkerType } from 'reactflow';
 
 
-export default function getNodesAndEdges(flowData, mainNode) {
-  const nodes = getMainNodes(flowData, mainNode);
-  const edges = getEdges(flowData, mainNode);
+export default function getNodesAndEdges(flowData, mainNode, showCourses = false) {
+  const nodes = getMainNodes(flowData, mainNode, showCourses);
+  const edges = getEdges(flowData, mainNode, showCourses);
   return [nodes, edges];
 }
 
-function getMainNodes(flowData, mainNode) {
+function getMainNodes(flowData, mainNode, showCourses) {
   const getMainNodeLayout = (nodeID, nodeData) => {
     const X_PADDING = 40;
     const TITLE_HEIGHT = 28;
@@ -40,25 +40,55 @@ function getMainNodes(flowData, mainNode) {
       width: MAIN_WIDTH,
       height: MAIN_HEIGHT,
     };
-    
+
     return mainNode;
   }
-  
+
   let nodes = [];
   if (mainNode) {
     nodes.push(mainNode);
+    if (showCourses) {
+      if (mainNode.data.course) {
+        for (const courseID of mainNode.data.course.courses) {
+          nodes.push({
+            id: courseID,
+            type: "courseBlock",
+            position: { x: 0, y: 0 },
+            data: { courseID: courseID },
+            width: 96,
+            height: 48
+          });
+        }
+      }
+    }
   }
 
-  for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
-    nodes.push(getMainNodeLayout(nodeID, nodeData));
+  if (flowData) {
+    for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+      nodes.push(getMainNodeLayout(nodeID, nodeData));
+      if (showCourses) {
+        if (nodeData["course"]) {
+          for (const courseID of nodeData["course"]["courses"]) {
+            nodes.push({
+              id: courseID,
+              type: "courseBlock",
+              position: { x: 0, y: 0 },
+              data: { courseID: courseID },
+              width: 96,
+              height: 48
+            });
+          }
+        }
+      }
+    }
   }
 
   return nodes;
 }
 
-function getEdges(flowData, mainNode) {
+function getEdges(flowData, mainNode, showCourses) {
   let edges = [];
-  let mainEdge = {
+  let mainEdgeLayout = {
     sourceHandle: "t",
     targetHandle: "b",
     type: "smoothstep",
@@ -77,27 +107,64 @@ function getEdges(flowData, mainNode) {
   }
 
   if (mainNode) {
-    for (const nodeID of Object.keys(flowData["nodes"])) {
-      mainEdge = {
-        ...mainEdge,
-         id: `${mainNode.id}-${nodeID}`,
-         source: mainNode.id,
-         target: nodeID,
+    console.log(mainNode);
+    if (mainNode.data.children) {
+      for (const nodeID of Object.keys(mainNode.data.children.nodes)) {
+        mainEdgeLayout = {
+          ...mainEdgeLayout,
+          id: `${mainNode.id}-${nodeID}`,
+          source: mainNode.id,
+          target: nodeID,
+        }
+        edges.push(mainEdgeLayout);
       }
-      edges.push(mainEdge);
+    }
+
+    if (showCourses & mainNode.data.course) {
+      for (const courseID of mainNode.data.course.courses) {
+        edges.push({
+          ...mainEdgeLayout,
+          id: `${mainNode.id}-${courseID}`,
+          source: mainNode.id,
+          target: courseID,
+          sourceHandle: "r",
+          targetHandle: "l",
+          connectionType: "course"
+        })
+      }
     }
   }
 
-  if (flowData["flows"]) {
-    for (const [nodeID, flow] of Object.entries(flowData["flows"])) {
-      for (const nextNodeID of flow) {
-        mainEdge = {
-          ...mainEdge,
-          id: `${nodeID}-${nextNodeID}`,
-          source: nodeID,
-          target: nextNodeID,
+  if (flowData) {
+    if (flowData["flows"]) {
+      for (const [nodeID, flow] of Object.entries(flowData["flows"])) {
+        for (const nextNodeID of flow) {
+          mainEdgeLayout = {
+            ...mainEdgeLayout,
+            id: `${nodeID}-${nextNodeID}`,
+            source: nodeID,
+            target: nextNodeID,
+          }
+          edges.push(mainEdgeLayout);
         }
-        edges.push(mainEdge);
+      }
+    }
+
+    if (showCourses) {
+      for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+        if (nodeData["course"]) {
+          for (const courseID of nodeData["course"]["courses"]) {
+            edges.push({
+              ...mainEdgeLayout,
+              id: `${nodeID}-${courseID}`,
+              source: nodeID,
+              target: courseID,
+              sourceHandle: "r",
+              targetHandle: "l",
+              connectionType: "course"
+            })
+          }
+        }
       }
     }
   }
