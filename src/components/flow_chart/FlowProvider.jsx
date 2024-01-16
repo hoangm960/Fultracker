@@ -148,6 +148,7 @@ function TopBar() {
     }
 
     const majorValue = majorSelect.value.toUpperCase();
+
     if ((chart !== undefined) & (flow !== undefined)) {
       onUpdate(majorValue, chart, flow);
 
@@ -202,30 +203,51 @@ function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState();
   const [edges, setEdges, onEdgesChange] = useEdgesState();
   const [prevNodes, setPrevNodes] = useState();
-  const [isExpanding, setIsExpanding] = useState(false);
+  const [flowState, setFlowState] = useState();
 
   const { fitView } = useReactFlow();
 
+  const getFlowState = () => {
+    const majorSelect = document.getElementById("major");
+    const flowRadios = document.getElementsByName("flow-radio");
+    const declairCheckBox = document.getElementById("declair");
+    const majorValue = majorSelect.value.toUpperCase();
+    const chartOption =
+      declairCheckBox ?
+        declairCheckBox.checked ?
+          "flow-chart"
+          : "declair"
+        : "flow-chart";
+
+    let selectedFlow = "major";
+    flowRadios.forEach((radio) => {
+      if (radio.checked) {
+        selectedFlow = radio.value;
+      }
+    });
+
+    return `${majorValue}-${chartOption}-${selectedFlow}`;
+  }
+
   useEffect(() => {
-    console.log(nodes, prevNodes);
-    if ((nodes != prevNodes) & !isExpanding & nodes != undefined) {
+    if ((nodes != prevNodes) & (getFlowState() != flowState) & nodes != undefined) {
       getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
         setPrevNodes(layoutedNodes);
+        setFlowState(getFlowState());
       });
     }
     fitView({ duration: 800 });
   }, [nodes, edges]);
-  
+
   const onNodeClick = (event, node) => {
     if (node.data.children) {
       const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node);
       getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setIsExpanding(true);
+        setPrevNodes(layoutedNodes);
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
-        setPrevNodes(layoutedNodes);
       });
     }
   }
