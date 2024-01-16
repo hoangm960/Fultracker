@@ -1,15 +1,14 @@
 import { MarkerType } from 'reactflow';
 
 
-export default function getNodesAndEdges(flowData) {
-  const nodes = getMainNodes(flowData);
-  const edges = getEdges(flowData);
+export default function getNodesAndEdges(flowData, mainNode) {
+  const nodes = getMainNodes(flowData, mainNode);
+  const edges = getEdges(flowData, mainNode);
   return [nodes, edges];
 }
 
-function getMainNodes(flowData) {
-  let nodes = [];
-  for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+function getMainNodes(flowData, mainNode) {
+  const getMainNodeLayout = (nodeID, nodeData) => {
     const X_PADDING = 40;
     const TITLE_HEIGHT = 28;
     const MAX_TITLE_CHAR = 25;
@@ -41,14 +40,23 @@ function getMainNodes(flowData) {
       width: MAIN_WIDTH,
       height: MAIN_HEIGHT,
     };
-
+    
+    return mainNode;
+  }
+  
+  let nodes = [];
+  if (mainNode) {
     nodes.push(mainNode);
+  }
+
+  for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+    nodes.push(getMainNodeLayout(nodeID, nodeData));
   }
 
   return nodes;
 }
 
-function getEdges(flowData) {
+function getEdges(flowData, mainNode) {
   let edges = [];
   let mainEdge = {
     sourceHandle: "t",
@@ -68,6 +76,18 @@ function getEdges(flowData) {
     connectionType: "main"
   }
 
+  if (mainNode) {
+    for (const nodeID of Object.keys(flowData["nodes"])) {
+      mainEdge = {
+        ...mainEdge,
+         id: `${mainNode.id}-${nodeID}`,
+         source: mainNode.id,
+         target: nodeID,
+      }
+      edges.push(mainEdge);
+    }
+  }
+
   if (flowData["flows"]) {
     for (const [nodeID, flow] of Object.entries(flowData["flows"])) {
       for (const nextNodeID of flow) {
@@ -79,54 +99,8 @@ function getEdges(flowData) {
         }
         edges.push(mainEdge);
       }
-
     }
   }
 
-  for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
-    const courseData = nodeData["course"];
-    if (courseData) {
-      const courses = courseData["courses"];
-      edges.push(...getCourseEdges(nodeID, courses));
-    }
-
-    if (nodeData["children"]) {
-      for (const [childID, childData] of Object.entries(nodeData["children"]["nodes"])) {
-        const courseData = childData["course"];
-        if (courseData) {
-          const courses = courseData["courses"];
-          edges.push(...getCourseEdges(childID, courses));
-        }
-      }
-    }
-  }
   return edges;
-}
-
-function getCourseEdges(nodeID, courses) {
-  let courseEdges = [];
-  for (const courseID of courses) {
-    const courseEdge = {
-      id: `${nodeID}-${courseID}`,
-      source: nodeID,
-      target: courseID,
-      sourceHandle: "r",
-      targetHandle: "l",
-      type: "smoothstep",
-      markerEnd: {
-        type: MarkerType.ArrowClosed,
-        width: 10,
-        height: 10,
-        color: '#005C73',
-      },
-      style: {
-        strokeWidth: 5,
-        stroke: '#005C73',
-      },
-      animated: true,
-      connectionType: "course"
-    };
-    courseEdges.push(courseEdge);
-  }
-  return courseEdges;
 }

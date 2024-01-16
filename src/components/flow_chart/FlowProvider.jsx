@@ -32,45 +32,49 @@ const elkRootOptions = {
   "elk.spacing": "50",
   "elk.spacing.individual": "50",
   "elk.edgeRouting": "SPLINES",
-  "elk.direction": "UP",
 };
 
 const DEFAULT_WIDTH = 240;
 const DEFAULT_HEIGHT = 96;
 
-const getLayoutedElements = async (nodes, edges) => {
+const getLayoutedElements = async (nodes, edges, direction = "UP") => {
   const getOriginalMainGraph = () => {
     return {
       id: "root",
-      layoutOptions: elkRootOptions,
-      children: nodes.filter((node) => (node.extent != "parent") & (!["courseBlock", "group"].includes(node.type))).map((mainNode, mainIdx) => {
+      layoutOptions: { ...elkRootOptions, "elk.direction": direction },
+      children: nodes.filter((node) => (node.extent != "parent") & (!["courseBlock", "group"].includes(node.type))).map((mainNode) => {
         let layoutedMainNode = {
           ...mainNode,
           width: mainNode.width ?? DEFAULT_WIDTH,
-          height: mainNode.height ?? DEFAULT_HEIGHT,
-          layoutOptions: {
-            ...elkRootOptions,
-            "elk.spacing.nodeNode": "30",
-            "elk.layered.spacing.nodeNodeBetweenLayers": "30",
-            "elk.layered.spacing": "30",
-            "elk.spacing": "30",
-            "elk.hierarchyHandling": "INCLUDE_CHILDREN",
-            "elk.padding": `[top=${mainNode.marginTop},left=25,bottom=25,right=25]`,
-            "elk.direction": mainIdx % 2 == 0 ? "LEFT" : "RIGHT",
-          }
+          height: mainNode.height ?? DEFAULT_HEIGHT
         };
 
         return layoutedMainNode;
       }),
-      edges: edges.filter((edge) => edge.connectionType != "course")
+      edges: edges
     }
   }
 
   const flattenGraph = (graph) => {
     let flattenGraphDict = {
       nodes: [],
-      edges: graph.edges ? [...graph.edges] : []
+      edges: []
     }
+
+    if (graph.edges) {
+      if (direction == "RIGHT") {
+        flattenGraphDict.edges = graph.edges.map((edge) => {
+          return {
+            ...edge,
+            sourceHandle: "r",
+            targetHandle: "l"
+          }
+        });
+      } else {
+        flattenGraphDict.edges.push(...graph.edges);
+      }
+    }
+
     for (const [idx, node] of Object.entries(graph.children)) {
       flattenGraphDict.nodes.push({
         ...node,
@@ -198,22 +202,33 @@ function Flow() {
   const [nodes, setNodes, onNodesChange] = useNodesState();
   const [edges, setEdges, onEdgesChange] = useEdgesState();
   const [prevNodes, setPrevNodes] = useState();
-  const [isInitialized, setIsInitialized] = useState(false);
+  const [isExpanding, setIsExpanding] = useState(false);
 
   const { fitView } = useReactFlow();
 
   useEffect(() => {
-    if (!isInitialized & nodes != undefined) {
+    console.log(nodes, prevNodes);
+    if ((nodes != prevNodes) & !isExpanding & nodes != undefined) {
       getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setIsInitialized(true);
         setNodes(layoutedNodes);
         setEdges(layoutedEdges);
         setPrevNodes(layoutedNodes);
       });
     }
-    setIsInitialized(nodes != prevNodes);
     fitView({ duration: 800 });
   }, [nodes, edges]);
+  
+  const onNodeClick = (event, node) => {
+    if (node.data.children) {
+      const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node);
+      getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+        setIsExpanding(true);
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+        setPrevNodes(layoutedNodes);
+      });
+    }
+  }
 
   return (
     <div id="flow-box" className="h-full w-full">
@@ -227,6 +242,7 @@ function Flow() {
         fitViewOptions={{ duration: 800 }}
         proOptions={proOptions}
         connectionMode={ConnectionMode.Loose}
+        onNodeClick={onNodeClick}
       >
         <Background gap={10} size={1} />
         <Controls position="bottom-right" />
