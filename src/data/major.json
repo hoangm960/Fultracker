@@ -1678,17 +1678,13 @@
                         "quantity": 2
                     },
                     "any2": {
-                        "name": "Major Courses",
-                        "quantity": 2,
-                        "children": {
-                            "nodes": {
-                                "advanced2": {
-                                    "name": "Advanced Course",
-                                    "level": 3,
-                                    "quantity": 1
-                                }
-                            }
-                        }
+                        "name": "Major Course",
+                        "quantity": 1
+                    },
+                    "advanced2": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
                     }
                 },
                 "flows": {
@@ -1704,6 +1700,9 @@
                     "any1": [
                         "capstones",
                         "any2"
+                    ],
+                    "any2": [
+                        "advanced2"
                     ]
                 }
             },
