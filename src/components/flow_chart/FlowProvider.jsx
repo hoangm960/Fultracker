@@ -12,18 +12,15 @@ import ReactFlow, {
 } from "reactflow";
 import MainBlock from "./MainBlock";
 import CourseBlock from "./CourseBlock";
-import SubBlock from "./SubBlock";
 import "reactflow/dist/style.css";
 import DeclairCheckBox from "./DeclairCheckBox";
 import getNodesAndEdges from "@scripts/getFlowFromMajor";
-import FloatingEdge from "@components/flow_chart/FloatingEdge";
 import { useEffect, useState } from "react";
 import ELK from 'elkjs/lib/elk.bundled.js';
 
 
 const proOptions = { hideAttribution: true };
-const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock, subBlock: SubBlock };
-const edgeTypes = { floating: FloatingEdge };
+const nodeTypes = { mainBlock: MainBlock, courseBlock: CourseBlock };
 
 const elk = new ELK();
 const elkRootOptions = {
@@ -151,9 +148,12 @@ function TopBar() {
       onUpdate(majorValue, chart, flow);
 
       const hasMinor = Object.keys(majorData[majorValue][chart]).includes("minor");
-      if ((hasMinor) & showFlowSelection) {
+      const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
+      if (hasMinor & showFlowSelection) {
         document.getElementById("major-radio").checked = true;
         document.getElementById("minor-radio").checked = false;
+      }
+      if (hasDeclair & showChartSelection) {
         document.getElementById("declair").checked = true;
       }
       return;
@@ -221,7 +221,6 @@ function Flow() {
         nodes={nodes}
         edges={edges}
         nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         fitView
