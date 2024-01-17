@@ -402,7 +402,7 @@
             "minor": {
                 "nodes": {
                     "math": {
-                        "name": "Mathematics for  CS",
+                        "name": "Mathematics for CS",
                         "quantity": 1,
                         "course": {
                             "courses": [
@@ -793,6 +793,7 @@
                             "nodes": {
                                 "math": {
                                     "name": "Mathematics",
+                                    "quantity": 3,
                                     "course": {
                                         "courses": [
                                             "MATH101",
@@ -801,7 +802,7 @@
                                             "MATH201",
                                             "MATH205"
                                         ],
-                                        "quantity": 1
+                                        "quantity": 3
                                     }
                                 },
                                 "science": {
@@ -814,8 +815,7 @@
                                             "IS105",
                                             "IS205",
                                             "IS209"
-                                        ],
-                                        "quantity": 1
+                                        ]
                                     }
                                 }
                             }
@@ -895,28 +895,28 @@
                 "nodes": {
                     "intermediate-advanced": {
                         "name": "Intermediate/Advanced Courses",
-                        "quantity": 3
-                    },
-                    "intermediate": {
-                        "name": "Intermediate Courses",
-                        "level": 2,
+                        "quantity": 3,
                         "children": {
                             "nodes": {
+                                "intermediate": {
+                                    "name": "Intermediate Courses",
+                                    "level": 2
+                                },
                                 "advanced": {
                                     "name": "Advanced Courses",
                                     "level": 3
-                                },
-                                "any": {
-                                    "name": "Engineering courses",
-                                    "quantity": 6
                                 }
                             }
                         }
+                    },
+                    "any": {
+                        "name": "Any Engineering courses",
+                        "quantity": 3
                     }
                 },
                 "flows": {
-                    "any": [
-                        "intermediate-advanced"
+                    "intermediate-advanced": [
+                        "any"
                     ]
                 }
             }
@@ -1164,8 +1164,9 @@
                                     "course": {
                                         "courses": [
                                             "CS101",
-                                            "CS201",
-                                            "CS102"
+                                            "CS102",
+                                            "CS103",
+                                            "CS104"
                                         ]
                                     }
                                 }
@@ -1213,12 +1214,12 @@
                         "stat-programming"
                     ],
                     "stat-programming": [
-                        "seminar"
-                    ],
-                    "seminar": [
                         "any1"
                     ],
                     "any1": [
+                        "seminar"
+                    ],
+                    "seminar": [
                         "capstones",
                         "any2"
                     ]
@@ -1243,23 +1244,23 @@
                         "children": {
                             "nodes": {
                                 "stat": {
-                                    "name": "Introductory Staticstics",
-                                    "quantity": 1,
+                                    "name": "Introductory Staticstics Courses",
                                     "course": {
                                         "courses": [
-                                            "MATH105"
-                                        ],
-                                        "quantity": 1
+                                            "MATH105",
+                                            "MATH205"
+                                        ]
                                     }
                                 },
                                 "programming": {
-                                    "name": "Introductory Programming",
-                                    "quantity": 1,
+                                    "name": "Introductory Programming Courses",
                                     "course": {
                                         "courses": [
-                                            "CS101"
-                                        ],
-                                        "quantity": 1
+                                            "CS101",
+                                            "CS102",
+                                            "CS103",
+                                            "CS104"
+                                        ]
                                     }
                                 }
                             }
@@ -1677,17 +1678,13 @@
                         "quantity": 2
                     },
                     "any2": {
-                        "name": "Major Courses",
-                        "quantity": 2,
-                        "children": {
-                            "nodes": {
-                                "advanced2": {
-                                    "name": "Advanced Course",
-                                    "level": 3,
-                                    "quantity": 1
-                                }
-                            }
-                        }
+                        "name": "Major Course",
+                        "quantity": 1
+                    },
+                    "advanced2": {
+                        "name": "Advanced Course",
+                        "level": 3,
+                        "quantity": 1
                     }
                 },
                 "flows": {
@@ -1703,6 +1700,9 @@
                     "any1": [
                         "capstones",
                         "any2"
+                    ],
+                    "any2": [
+                        "advanced2"
                     ]
                 }
             },
