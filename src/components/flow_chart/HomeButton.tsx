@@ -1,4 +1,5 @@
 import BackIcon from "@assets/icons/back.png";
+import RefreshIcon from "@assets/icons/refresh.png";
 
 
 function HomeButton({ updateFlow }) {
@@ -9,6 +10,9 @@ function HomeButton({ updateFlow }) {
         >
             <img src={BackIcon.src} alt="Back icon" />
             Back to Main Layout
+            <span className="text-background text-2xl text-center font-bold">or</span>
+            <img src={RefreshIcon.src} alt="Refresh icon" />
+            Refresh flowchart
         </button>
     );
 }
