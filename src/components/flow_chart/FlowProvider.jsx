@@ -239,7 +239,7 @@ function Flow() {
   }
 
   useEffect(() => {
-    if ((nodes != prevNodes) & (getFlowState() != flowState) & nodes != undefined) {
+    if ((nodes != prevNodes) & (getFlowState() != flowState) & (nodes != undefined)) {
       getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setPrevNodes(layoutedNodes);
         setFlowState(getFlowState());
