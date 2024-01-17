@@ -50,7 +50,6 @@ function getMainNodes(flowData, mainNode, showCourses) {
     
     if (selectedCourses) {
       selectedCourses = JSON.parse(selectedCourses);
-      console.log(selectedCourses);
       for (const node of nodes) {
         if ((node.type == "courseBlock") & (selectedCourses.map((course) => course.code).includes(node.id))) {
           newNodes.push({ ...node, data: { ...node.data, disabled: true } });
