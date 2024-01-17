@@ -190,7 +190,7 @@ function TopBar() {
   };
 
   return (
-    <div className="flex flex-col w-full gap-1 justify-center items-center">
+    <div className="flex flex-col w-full gap-2 justify-center items-center">
       <div className="flex flex-row w-full gap-1 justify-center">
         <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
         {showChartSelection ?
