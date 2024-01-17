@@ -1834,7 +1834,13 @@
                 "nodes": {
                     "intro": {
                         "name": "Theory & Methods in Vietnam Studies",
-                        "quantity": 1
+                        "quantity": 1,
+                        "course": {
+                            "courses": [
+                                "VS205"
+                            ],
+                            "quantity": 1
+                        }
                     },
                     "foundation": {
                         "name": "Foundation Courses",

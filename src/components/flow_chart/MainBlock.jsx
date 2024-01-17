@@ -3,7 +3,7 @@ import { Handle, Position } from 'reactflow';
 
 export default memo(({ data }) => {
   return (
-    <div>
+    <div className="hover:shadow-2xl hover:opacity-80">
       <p className="text-lg font-semibold">
         {data["name"]}
       </p>

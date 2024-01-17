@@ -1,6 +1,12 @@
 import majorData from "@data/major.json";
+
 import MajorDropdown from "@components/flow_chart/MajorDropdown";
 import FlowRadioBox from "@components/flow_chart/FlowRadioBox";
+import DeclairCheckBox from "@components/flow_chart/DeclairCheckBox";
+import HomeButton from "@components/flow_chart/HomeButton.tsx";
+import MainBlock from "@components/flow_chart/MainBlock";
+import CourseBlock from "@components/flow_chart/CourseBlock";
+
 import ReactFlow, {
   Background,
   Controls,
@@ -10,14 +16,11 @@ import ReactFlow, {
   useEdgesState,
   useReactFlow
 } from "reactflow";
-import MainBlock from "./MainBlock";
-import CourseBlock from "./CourseBlock";
 import "reactflow/dist/style.css";
-import DeclairCheckBox from "./DeclairCheckBox";
-import getNodesAndEdges from "@scripts/getFlowFromMajor";
 import { useEffect, useState } from "react";
+
 import ELK from 'elkjs/lib/elk.bundled.js';
-import HomeButton from "./HomeButton.tsx";
+import getNodesAndEdges from "@scripts/getFlowFromMajor";
 
 
 const proOptions = { hideAttribution: true };
@@ -136,19 +139,19 @@ function TopBar() {
     const declairCheckBox = document.getElementById("declair");
 
     const onUpdate = (majorValue, chartOption, selectedFlow) => {
-      const [newNodes, newEdges] = getNodesAndEdges(
-        majorData[majorValue][chartOption][selectedFlow]
-      );
-      
-      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setNodes(layoutedNodes);
-        setEdges(layoutedEdges);
-      });
-
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
       const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
       setShowChartSelection(hasDeclair);
       setShowFlowSelection(hasMinor);
+
+      const [newNodes, newEdges] = getNodesAndEdges(
+        majorData[majorValue][hasDeclair ? chartOption : "flow-chart"][hasMinor ? selectedFlow : "major"]
+      );
+
+      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+      });
     }
 
     const majorValue = majorSelect.value.toUpperCase();
@@ -190,7 +193,7 @@ function TopBar() {
   };
 
   return (
-    <div className="flex flex-col w-full gap-1 justify-center items-center">
+    <div className="flex flex-col w-full gap-2 justify-center items-center">
       <div className="flex flex-row w-full gap-1 justify-center">
         <MajorDropdown updateFlow={() => updateFlow("major", "flow-chart")} />
         {showChartSelection ?
@@ -239,7 +242,7 @@ function Flow() {
   }
 
   useEffect(() => {
-    if ((nodes != prevNodes) & (getFlowState() != flowState) & nodes != undefined) {
+    if ((nodes != prevNodes) & (getFlowState() != flowState) & (nodes != undefined)) {
       getLayoutedElements(nodes, edges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
         setPrevNodes(layoutedNodes);
         setFlowState(getFlowState());
@@ -248,15 +251,31 @@ function Flow() {
       });
     }
     fitView({ duration: 800 });
+    setTimeout(() => {
+      if (nodes != undefined) {
+        fitView({ duration: 800, nodes: nodes.slice(0, 3) });
+      }
+    }, 1000);
   }, [nodes, edges]);
 
-  const onNodeClick = (event, node) => {
-    const [newNodes, newEdges] = getNodesAndEdges(node.data.children, node, true);
+  const onNodeClick = (event, nodeClicked) => {
+    const [newNodes, newEdges] = getNodesAndEdges(nodeClicked.data.children, nodeClicked, true);
     getLayoutedElements(newNodes, newEdges, "RIGHT").then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-      fitView({ duration: 800, nodes: [node] });
+      fitView({ duration: 800, nodes: [nodeClicked] });
       setTimeout(() => {
         setPrevNodes(layoutedNodes);
-        setNodes(layoutedNodes);
+
+        const deltaPosition = {
+          x: nodeClicked.x - layoutedNodes[0].x,
+          y: nodeClicked.y - layoutedNodes[0].y
+        };
+        setNodes(layoutedNodes.map((node) => ({
+          ...node,
+          position: {
+            x: node.x + deltaPosition.x,
+            y: node.y + deltaPosition.y
+          }
+        })));
         setEdges(layoutedEdges);
       }, 1000);
     });
@@ -275,6 +294,7 @@ function Flow() {
         connectionMode={ConnectionMode.Loose}
         onNodeClick={onNodeClick}
         nodesDraggable={false}
+        minZoom={0.4}
       >
         <Background gap={10} size={1} />
         <Controls position="bottom-right" />

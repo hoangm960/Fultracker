@@ -44,6 +44,25 @@ function getMainNodes(flowData, mainNode, showCourses) {
     return mainNode;
   }
 
+  const filterDoneCourses = (nodes) => {
+    let newNodes = [];
+    let selectedCourses = localStorage["selectedCourses"];
+    
+    if (selectedCourses) {
+      selectedCourses = JSON.parse(selectedCourses);
+      for (const node of nodes) {
+        if ((node.type == "courseBlock") & (selectedCourses.map((course) => course.code).includes(node.id))) {
+          newNodes.push({ ...node, data: { ...node.data, disabled: true } });
+        } else {
+          newNodes.push(node);
+        }
+      }
+    } else {
+      newNodes = [...nodes];
+    }
+    return newNodes;
+  }
+
   let nodes = [];
   if (mainNode) {
     nodes.push(mainNode);
@@ -54,7 +73,7 @@ function getMainNodes(flowData, mainNode, showCourses) {
             id: courseID,
             type: "courseBlock",
             position: { x: 0, y: 0 },
-            data: { courseID: courseID },
+            data: { courseID: courseID, disabled: false },
             width: 96,
             height: 48
           });
@@ -64,11 +83,11 @@ function getMainNodes(flowData, mainNode, showCourses) {
   }
 
   if (flowData) {
-    for (const [nodeID, nodeData] of Object.entries(flowData["nodes"])) {
+    for (const [nodeID, nodeData] of Object.entries(flowData.nodes)) {
       nodes.push(getMainNodeLayout(nodeID, nodeData));
       if (showCourses) {
-        if (nodeData["course"]) {
-          for (const courseID of nodeData["course"]["courses"]) {
+        if (nodeData.course) {
+          for (const courseID of nodeData.course.courses) {
             nodes.push({
               id: courseID,
               type: "courseBlock",
@@ -83,7 +102,7 @@ function getMainNodes(flowData, mainNode, showCourses) {
     }
   }
 
-  return nodes;
+  return filterDoneCourses(nodes);
 }
 
 function getEdges(flowData, mainNode, showCourses) {
