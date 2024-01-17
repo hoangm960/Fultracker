@@ -46,16 +46,20 @@ function getMainNodes(flowData, mainNode, showCourses) {
 
   const filterDoneCourses = (nodes) => {
     let newNodes = [];
-    for (const node of nodes) {
-      let selectedCourses = localStorage["selectedCourses"];
-      if (selectedCourses) {
-        selectedCourses = JSON.parse(selectedCourses);
+    let selectedCourses = localStorage["selectedCourses"];
+    
+    if (selectedCourses) {
+      selectedCourses = JSON.parse(selectedCourses);
+      console.log(selectedCourses);
+      for (const node of nodes) {
         if ((node.type == "courseBlock") & (selectedCourses.map((course) => course.code).includes(node.id))) {
-          newNodes.push({...node, data: {...node.data, disabled: true }});
+          newNodes.push({ ...node, data: { ...node.data, disabled: true } });
         } else {
           newNodes.push(node);
         }
       }
+    } else {
+      newNodes = [...nodes];
     }
     return newNodes;
   }
