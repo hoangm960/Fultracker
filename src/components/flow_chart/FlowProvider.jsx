@@ -136,19 +136,19 @@ function TopBar() {
     const declairCheckBox = document.getElementById("declair");
 
     const onUpdate = (majorValue, chartOption, selectedFlow) => {
-      const [newNodes, newEdges] = getNodesAndEdges(
-        majorData[majorValue][chartOption][selectedFlow]
-      );
-      
-      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
-        setNodes(layoutedNodes);
-        setEdges(layoutedEdges);
-      });
-
       const hasDeclair = Object.keys(majorData[majorValue]).includes("declair");
       const hasMinor = Object.keys(majorData[majorValue][chartOption]).includes("minor");
       setShowChartSelection(hasDeclair);
       setShowFlowSelection(hasMinor);
+
+      const [newNodes, newEdges] = getNodesAndEdges(
+        majorData[majorValue][hasDeclair ? chartOption : "flow-chart"][hasMinor ? selectedFlow : "major"]
+      );
+
+      getLayoutedElements(newNodes, newEdges).then(({ nodes: layoutedNodes, edges: layoutedEdges }) => {
+        setNodes(layoutedNodes);
+        setEdges(layoutedEdges);
+      });
     }
 
     const majorValue = majorSelect.value.toUpperCase();
