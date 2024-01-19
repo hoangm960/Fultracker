@@ -4,6 +4,7 @@ const selectedCourses = JSON.parse(localStorage.getItem('selectedCourses')) || [
 
 function loadCourses(courses: Array<any>) {
     const courseRows = document.querySelectorAll('.course-row');
+    console.log(selectedCourses);
     
     courses.forEach((course, i) => {
         const courseRow = courseRows[i];
