@@ -6,10 +6,10 @@ import CancelIcon from "@assets/icons/cancel.png";
 import courseData from "@data/course_data.json";
 import { updateFooter } from "./updateFooter";
 
-var termValue = document.getElementsByClassName("term");
-var codeValue = document.getElementsByClassName("code");
-var titleValue = document.getElementsByClassName("title");
-var gradeValue = document.getElementsByClassName("grade");
+var termBox = document.getElementsByClassName("term");
+var codeBox = document.getElementsByClassName("code");
+var titleBox = document.getElementsByClassName("title");
+var gradeBox = document.getElementsByClassName("grade");
 
 var editCourseBtns = document.getElementsByClassName("editCourse");
 var deleteCourseBtns = document.getElementsByClassName("deleteCourse"); ("attempt-credits");
@@ -19,7 +19,7 @@ var categoryFields = {};
         (categoryFields[category] = document.getElementById(category))
 )
 
-var selectedCourses = {};
+var selectedCourses = {...(JSON.parse(localStorage.getItem('selectedCourses')) || [])};
 const GRADES = [
     "A",
     "A-",
@@ -39,10 +39,10 @@ const GRADES = [
 
 for (let i = 0; i < editCourseBtns.length; i++) {
     function deleteCourse() {
-        termValue[i].textContent = "Term"
-        codeValue[i].textContent = "Course Code"
-        titleValue[i].textContent = "Course Name"
-        gradeValue[i].textContent = "Grade"
+        termBox[i].textContent = "Term"
+        codeBox[i].textContent = "Course Code"
+        titleBox[i].textContent = "Course Name"
+        gradeBox[i].textContent = "Grade"
 
         if (selectedCourses[i]) {
             delete selectedCourses[i]
@@ -77,22 +77,22 @@ for (let i = 0; i < editCourseBtns.length; i++) {
     }
 
     function saveCourse() {
-        let termSelect = termValue[i].getElementsByTagName("select")[0] as HTMLSelectElement
-        let codeSelect = codeValue[i].getElementsByTagName("select")[0] as HTMLSelectElement
-        let gradeSelect = gradeValue[i].getElementsByTagName("select")[0] as HTMLSelectElement
+        const termSelect = termBox[i].getElementsByTagName("select")[0] as HTMLSelectElement
+        const codeSelect = codeBox[i].getElementsByTagName("select")[0] as HTMLSelectElement
+        const gradeSelect = gradeBox[i].getElementsByTagName("select")[0] as HTMLSelectElement
 
         selectedCourses[i] = { "term": termSelect.value, "code": codeSelect.value, "grade": gradeSelect.value }
         localStorage["selectedCourses"] = JSON.stringify(Object.values(selectedCourses))
 
-        termValue[i].removeChild(termSelect)
-        termValue[i].textContent = termSelect.value.split("_").slice(1, 3).join(" ")
+        termBox[i].removeChild(termSelect)
+        termBox[i].textContent = termSelect.value.split("_").slice(1, 3).join(" ");
         if (codeSelect) {
-            codeValue[i].removeChild(codeSelect);
-            codeValue[i].textContent = codeSelect.value;
+            codeBox[i].removeChild(codeSelect);
+            codeBox[i].textContent = codeSelect.value;
         }
         if (gradeSelect) {
-            gradeValue[i].removeChild(gradeSelect)
-            gradeValue[i].textContent = gradeSelect.value
+            gradeBox[i].removeChild(gradeSelect)
+            gradeBox[i].textContent = gradeSelect.value
         }
     }
 
@@ -101,16 +101,16 @@ for (let i = 0; i < editCourseBtns.length; i++) {
         const delIcon = deleteCourseBtns[i].getElementsByTagName("img")[0]
 
         let currentValue = {
-            term: termValue[i].textContent,
-            code: codeValue[i].textContent,
-            title: titleValue[i].textContent,
-            grade: gradeValue[i].textContent,
+            term: termBox[i].textContent,
+            code: codeBox[i].textContent,
+            title: titleBox[i].textContent,
+            grade: gradeBox[i].textContent,
         }
         let cancelEdit = () => {
-            termValue[i].textContent = currentValue["term"];
-            codeValue[i].textContent = currentValue["code"];
-            titleValue[i].textContent = currentValue["title"];
-            gradeValue[i].textContent = currentValue["grade"];
+            termBox[i].textContent = currentValue["term"];
+            codeBox[i].textContent = currentValue["code"];
+            titleBox[i].textContent = currentValue["title"];
+            gradeBox[i].textContent = currentValue["grade"];
             
             editIcon.src = EditIcon.src
             delIcon.src = DeleteIcon.src
@@ -131,40 +131,40 @@ for (let i = 0; i < editCourseBtns.length; i++) {
             delIcon.src = CancelIcon.src
             
             let codeOnChange = (courseTitle: string) => {
-                titleValue[i].textContent = courseTitle
+                titleBox[i].textContent = courseTitle
                 
                 let gradeSelect = createSelect(GRADES)
-                gradeValue[i].textContent = ""
-                gradeValue[i].appendChild(gradeSelect)
+                gradeBox[i].textContent = ""
+                gradeBox[i].appendChild(gradeSelect)
             }
             let termOnChange = (codes) => {
-                titleValue[i].textContent = "Course Name"
+                titleBox[i].textContent = "Course Name"
                 
                 let codeSelect = createSelect(Object.keys(codes), "Default", "Choose a course...", undefined, () => codeOnChange(codes[codeSelect.value].name))
-                codeValue[i].textContent = ""
-                codeValue[i].appendChild(codeSelect)
+                codeBox[i].textContent = ""
+                codeBox[i].appendChild(codeSelect)
             }
             
-            let isNew = termValue[i].textContent.trim() == "Term"
+            let isNew = termBox[i].textContent.trim() == "Term"
             if (isNew) {
                 let terms = Object.keys(courseData)
                 let termSelect = createSelect(terms, "Default", "Choose a term...", (term: string) => term.split("_").slice(1, 3).join(" "), () => termOnChange(courseData[termSelect.value]))
-                termValue[i].textContent = ""
-                termValue[i].appendChild(termSelect)
+                termBox[i].textContent = ""
+                termBox[i].appendChild(termSelect)
             } else {
                 let terms = Object.keys(courseData)
                 let termSelect = createSelect(terms, selectedCourses[i].term, undefined, (term: string) => term.split("_").slice(1, 3).join(" "), termOnChange)
-                termValue[i].textContent = ""
-                termValue[i].appendChild(termSelect)
+                termBox[i].textContent = ""
+                termBox[i].appendChild(termSelect)
 
                 let codes = Object.keys(courseData[selectedCourses[i].term])
                 let codeSelect = createSelect(codes, selectedCourses[i].code, undefined, undefined, () => codeOnChange(codes[codeSelect.value].name))
-                codeValue[i].textContent = ""
-                codeValue[i].appendChild(codeSelect)
+                codeBox[i].textContent = ""
+                codeBox[i].appendChild(codeSelect)
 
                 let gradeSelect = createSelect(GRADES, selectedCourses[i].grade)
-                gradeValue[i].textContent = ""
-                gradeValue[i].appendChild(gradeSelect)
+                gradeBox[i].textContent = ""
+                gradeBox[i].appendChild(gradeSelect)
             }
             deleteCourseBtns[i].addEventListener("click", cancelEdit);
             deleteCourseBtns[i].removeEventListener("click", deleteCourse);

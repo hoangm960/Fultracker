@@ -113,7 +113,7 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 				<CourseTable>
 					{
 						[...Array(60).keys()].map((num) => (
-							<CourseRow classes="courseRow" num={num + 1}>
+							<CourseRow classes="course-row" num={num + 1}>
 								<div class="flex flex-row gap-5">
 									<Button
 										classes="editCourse"
@@ -207,7 +207,5 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 </DashboardLayout>
 
 <script src="../scripts/editInfo.ts"></script>
-<script>
-	window.localStorage.clear();
-</script>
+<script src="../scripts/loadCourses.ts"></script>
 
