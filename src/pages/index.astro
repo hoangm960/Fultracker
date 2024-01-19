@@ -17,9 +17,9 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 		<div
 			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
 		>
-			<main
-				class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 py-2 px-4 relative"
-			>
+			<!-- <main
+				class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 py-2 px-4"
+			> -->
 				<!-- <div
 					class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
 				>
@@ -110,7 +110,7 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 						</Button>
 					</InfoField>
 				</div> -->
-				<CourseTable height={480}>
+				<CourseTable>
 					{
 						[...Array(60).keys()].map((num) => (
 							<CourseRow classes="courseRow" num={num + 1}>
@@ -142,7 +142,7 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 						))
 					}
 				</CourseTable>
-			</main>
+			<!-- </main> -->
 
 			<footer
 				class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
@@ -201,14 +201,6 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 			class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
 			style="overflow-y: auto"
 		>
-			<!-- <div class="text-text text-left relative font-bold text-2xl">
-				Requirements:
-			</div>
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar />
-			<InfoField title="Title:" value="Value" total={8} hasProgressBar /> -->
-
 			<FlowProvider client:load />
 		</side>
 	</div>
