@@ -1,8 +1,4 @@
 ---
-interface Props {
-  height: number;
-}
-const { height } = Astro.props;
 ---
 
 <table class="table-auto w-full h-full text-left">
@@ -58,8 +54,7 @@ const { height } = Astro.props;
     </tr>
   </thead>
   <tbody
-    class="bg-background flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl"
-    style=`height:${height}px`
+    class="bg-highlight flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl h-[85%]"
   >
     <slot />
   </tbody>

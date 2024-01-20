@@ -297,7 +297,7 @@ function Flow() {
         minZoom={0.4}
       >
         <Background gap={10} size={1} />
-        <Controls position="bottom-right" />
+        <Controls position="bottom-right" fitViewOptions={{ duration: 800 }} />
       </ReactFlow>
     </div>
   );

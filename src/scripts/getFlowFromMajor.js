@@ -45,18 +45,28 @@ function getMainNodes(flowData, mainNode, showCourses) {
   }
 
   const filterDoneCourses = (nodes) => {
-    let newNodes = [];
+    let newNodes = structuredClone(nodes);
     let selectedCourses = localStorage["selectedCourses"];
-    
+
     if (selectedCourses) {
       selectedCourses = JSON.parse(selectedCourses);
-      for (const node of nodes) {
+      // let countDict = {};
+      for (const [idx, node] of Object.entries(nodes)) {
         if ((node.type == "courseBlock") & (selectedCourses.map((course) => course.code).includes(node.id))) {
-          newNodes.push({ ...node, data: { ...node.data, disabled: true } });
-        } else {
-          newNodes.push(node);
+          newNodes[idx] = { ...node, data: { ...node.data, disabled: true } };
+          // if (!(node.parentID in countDict)) {
+          //   countDict[node.parentID] = 1;
+          // } else {
+          //   countDict[node.parentID] += 1;
+          // }
         }
       }
+
+      // for (const [idx, node] of Object.entries(nodes)) {
+      //   if (node.id in countDict) {
+      //     newNodes[idx] = { ...node, data: { ...node.data, quantity: node.data.quantity - countDict[node.id] } };
+      //   }
+      // }
     } else {
       newNodes = [...nodes];
     }
@@ -75,7 +85,8 @@ function getMainNodes(flowData, mainNode, showCourses) {
             position: { x: 0, y: 0 },
             data: { courseID: courseID, disabled: false },
             width: 96,
-            height: 48
+            height: 48,
+            parentID: mainNode.id
           });
         }
       }
@@ -92,9 +103,10 @@ function getMainNodes(flowData, mainNode, showCourses) {
               id: courseID,
               type: "courseBlock",
               position: { x: 0, y: 0 },
-              data: { courseID: courseID },
+              data: { courseID: courseID, disabled: false },
               width: 96,
-              height: 48
+              height: 48,
+              parentID: nodeID
             });
           }
         }
