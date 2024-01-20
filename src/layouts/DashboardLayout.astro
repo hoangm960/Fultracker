@@ -3,6 +3,7 @@ import MainLayout from "./MainLayout.astro";
 import LogoIcon from "@assets/icons/backgroundIcon1.png";
 import HomeIcon from "@assets/icons/Home.svg";
 import SettingsIcon from "@assets/icons/Gear.svg";
+import BugIcon from "@assets/icons/Bug.png";
 import Button from "@components/Button.astro";
 import courseData from "@data/course_data.json";
 
@@ -14,7 +15,7 @@ var btnStyles: { [key: string]: "action" | "neutral" } = {
 btnStyles[page] = "action";
 
 const terms = Object.keys(courseData);
-const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
+const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3).join(" ");
 ---
 
 <MainLayout>
@@ -23,6 +24,11 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
       class="border-solid border-action border-b-2 pt-1 pr-2 pb-2 pl-1 flex flex-row items-center justify-between self-stretch shrink-0"
     >
       <a href="/about">
+        <div
+          class="absolute transform -rotate-45 bg-red-500 text-center text-white font-semibold py-1 left-[-34px] top-[32px] w-40"
+        >
+          Beta release
+        </div>
         <Button theme="neutral" isfilled padding="py-2 pl-2 pr-8">
           <img class="h-16" src={LogoIcon.src} alt="logo" />
           <span class="text-2xl font-black">Fultracker</span>
@@ -46,7 +52,7 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
             text-decoration: underline;
           "
         >
-          <a href="https://onestop.fulbright.edu.vn/s/course-schedule">
+          <a href="https://onestop.fulbright.edu.vn/s/course-schedule" target="_blank">
             {lastestTerm}
           </a>
         </div>
@@ -55,15 +61,21 @@ const lastestTerm = terms[terms.length - 1].split("_").splice(0, 3). join(" ");
       <nav class="flex flex-row gap-3 items-center justify-center shrink-0">
         <a href="/" data-astro-prefetch>
           <Button theme={btnStyles["home"]} isfilled padding="px-5 py-3">
-            <img class="h-5" src={HomeIcon.src} alt="home">
+            <img class="h-5" src={HomeIcon.src} alt="home" />
             <span class="text-xl font-semibold">Home</span>
           </Button>
         </a>
 
         <a href="/settings" data-astro-prefetch>
           <Button theme={btnStyles["settings"]} isfilled padding="px-5 py-3">
-            <img class="h-5" src={SettingsIcon.src} alt="settings">
+            <img class="h-5" src={SettingsIcon.src} alt="settings" />
             <span class="text-xl font-semibold">Settings</span>
+          </Button>
+        </a>
+        <a href="https://forms.gle/hKX3QrHbnkJFVdgn6" target="_blank">
+          <Button theme="destructive" isfilled padding="px-5 py-3">
+            <img class="h-5" src={BugIcon.src} alt="Bugs" />
+            <span class="text-xl font-semibold">Report!</span>
           </Button>
         </a>
       </nav>
