@@ -21,50 +21,57 @@ const GRADES = {
     "C-": 1.7,
     "D+": 1.3,
     D: 1.0,
-    F: 0.0,
-    P: 0.0,
-    NP: 0.0,
+    F: 0.0
 };
+
+const SPECIAL_GRADES = ["P", "NP", "I", "W"];
 
 export function updateFooter() {
     let selectedCourses = JSON.parse(localStorage["selectedCourses"])
-    attemptCreditField.textContent = selectedCourses
-        .map((course) => courseData[course.term][course.code]["credit"])
-        .reduce((total, credit) => total + credit, 0);
 
     earnCreditField.textContent = selectedCourses
         .map((course) => {
-            if (["F", "NP"].includes(course.grade)) {
+            if ([...SPECIAL_GRADES, "F"].includes(course.grade)) {
                 return 0;
             }
             return courseData[course.term][course.code]["credit"];
         })
         .reduce((total, credit) => total + credit, 0);
 
+    attemptCreditField.textContent = selectedCourses
+        .map((course) => courseData[course.term][course.code]["credit"])
+        .reduce((total, credit) => total + credit, 0);
 
     coreField.textContent = selectedCourses.reduce(
         (total, course) =>
             total +
             (courseData[course.term][course.code]["category"].includes("CORE") &&
-                !["F", "NP"].includes(course.grade)),
+                ![...SPECIAL_GRADES, "F"].includes(course.grade)),
         0
     );
 
+    let courseGPAMap = new Map(selectedCourses.map(course => [course.code, course]));
+
+    for (let course of selectedCourses) {
+
+        if (GRADES[course.grade] > GRADES[courseGPAMap.get(course.code)["grade"]])
+            courseGPAMap.set(course["code"], course);
+    }
+
+    let removeRepeated = [...courseGPAMap.values()];
     gpaField.textContent = (
-        selectedCourses.reduce(
-            (total, course) =>
-                total +
-                (!["P", "NP"].includes(course.grade)
-                    ? courseData[course.term][course.code]["credit"] * GRADES[course.grade]
-                    : 0),
+        removeRepeated.reduce(
+            (total, course) => {
+                if (SPECIAL_GRADES.includes(course.grade))
+                    return total;
+                return total + GRADES[course.grade] * courseData[course.term][course.code]["credit"];
+            },
             0
         ) / parseInt(attemptCreditField.textContent)
     ).toFixed(2);
-    gpaField.textContent =
-        gpaField.textContent == "NaN" ? "0" : gpaField.textContent;
 
     for (let [category, field] of Object.entries(categoryFields)) {
-        (field as HTMLElement).textContent = selectedCourses.reduce(
+        field.textContent = selectedCourses.reduce(
             (total, course) =>
                 total + courseData[course.term][course.code]["category"].includes(category),
             0

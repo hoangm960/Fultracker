@@ -34,6 +34,8 @@ const GRADES = [
     "F",
     "P",
     "NP",
+    "I",
+    "W"
 ]
 
 
@@ -138,7 +140,7 @@ for (let i = 0; i < editCourseBtns.length; i++) {
 
             saveCourse();
             updateFooter();
-            
+
             deleteCourseBtns[i].addEventListener("click", deleteCourse);
             deleteCourseBtns[i].removeEventListener("click", cancelEdit);
         } else {
