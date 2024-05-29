@@ -34,11 +34,13 @@ export function updateFooter() {
 
     earnCreditField.textContent = selectedCourses
         .map((course) => {
-            if (!["F", "NP"].includes(course.grade)) {
-                return courseData[course.term][course.code]["credit"];
+            if (["F", "NP"].includes(course.grade)) {
+                return 0;
             }
+            return courseData[course.term][course.code]["credit"];
         })
         .reduce((total, credit) => total + credit, 0);
+
 
     coreField.textContent = selectedCourses.reduce(
         (total, course) =>
