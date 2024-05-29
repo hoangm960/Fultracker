@@ -17,132 +17,38 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 		<div
 			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
 		>
-			<!-- <main
-				class="bg-highlight rounded-[10px] flex flex-col gap-0 items-start justify-start self-stretch flex-1 py-2 px-4"
-			> -->
-				<!-- <div
-					class="pt-2.5 pb-2.5 flex flex-row gap-5 items-start justify-start flex-wrap self-stretch shrink-0"
-				>
-					<InfoField title="Name:" value="Student's Name" isEditable>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-					<InfoField title="Student ID:" value="xxxxxx" isEditable>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-					<InfoField title="DOB:" value="xx/xx/xxxx" isEditable>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-					<InfoField title="Major:" value="Major Name" isEditable>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-					<InfoField
-						title="Double Major:"
-						value="Major Name"
-						isEditable
-					>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-					<InfoField
-						title="Minor(s)"
-						value="Minor Name, Minor Name"
-						isEditable
-					>
-						<Button
-							classes="editInfo"
-							theme="neutral"
-							padding="p-1"
-						>
-							<img
-								class="h-8"
-								src={EditIcon.src}
-								alt="editInfo"
-							/>
-						</Button>
-					</InfoField>
-				</div> -->
-				<CourseTable>
-					{
-						[...Array(60).keys()].map((num) => (
-							<CourseRow classes="course-row" num={num + 1}>
-								<div class="flex flex-row gap-5">
-									<Button
-										classes="editCourse"
-										theme="neutral"
-										padding="p-1"
-									>
-										<img
-											class="h-8"
-											src={EditIcon.src}
-											alt="Edit Course"
-										/>
-									</Button>
-									<Button
-										classes="deleteCourse"
-										theme="neutral"
-										padding="p-1"
-									>
-										<img
-											class="h-8"
-											src={DeleteIcon.src}
-											alt="Delete Course"
-										/>
-									</Button>
-								</div>
-							</CourseRow>
-						))
-					}
-				</CourseTable>
-			<!-- </main> -->
+			<CourseTable>
+				{
+					[...Array(60).keys()].map((num) => (
+						<CourseRow classes="course-row" num={num + 1}>
+							<div class="flex flex-row gap-5 justify-evenly items-center">
+								<Button
+									classes="editCourse"
+									theme="neutral"
+									padding="p-1"
+								>
+									<img
+										class="h-8 w-8"
+										src={EditIcon.src}
+										alt="Edit Course"
+									/>
+								</Button>
+								<Button
+									classes="deleteCourse"
+									theme="neutral"
+									padding="p-1"
+								>
+									<img
+										class="h-8 w-8"
+										src={DeleteIcon.src}
+										alt="Delete Course"
+									/>
+								</Button>
+							</div>
+						</CourseRow>
+					))
+				}
+			</CourseTable>
 
 			<footer
 				class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
@@ -208,4 +114,3 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 
 <script src="../scripts/editInfo.ts"></script>
 <script src="../scripts/loadCourses.ts"></script>
-
