@@ -12,6 +12,7 @@
       "@assets/*": ["src/assets/*"],
       "@data/*": ["src/data/*"],
       "@scripts/*": ["src/scripts/*"],
+      "@styles/*": ["src/styles/*"],
       "@firebase/*": ["src/firebase/*"],
     }
   }

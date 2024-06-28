@@ -1,13 +1,12 @@
 ---
 import DashboardLayout from "@layouts/DashboardLayout.astro";
 import InfoField from "@components/InfoField.astro";
-import CourseTable from "@components/table/CourseTable.astro";
 import Button from "@components/Button.astro";
-import CourseRow from "@components/table/CourseRow.astro";
 
 import EditIcon from "@assets/icons/Edit.svg";
 import DeleteIcon from "@assets/icons/delete.png";
 import FlowProvider from "@components/flow_chart/FlowProvider";
+import { CourseTable } from "@/components/table/CourseTable";
 ---
 
 <DashboardLayout page="home">
@@ -17,38 +16,7 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 		<div
 			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
 		>
-			<CourseTable>
-				{
-					[...Array(60).keys()].map((num) => (
-						<CourseRow classes="course-row" num={num + 1}>
-							<div class="flex flex-row gap-5 justify-evenly items-center">
-								<Button
-									classes="editCourse"
-									theme="neutral"
-									padding="p-1"
-								>
-									<img
-										class="h-8 w-8"
-										src={EditIcon.src}
-										alt="Edit Course"
-									/>
-								</Button>
-								<Button
-									classes="deleteCourse"
-									theme="neutral"
-									padding="p-1"
-								>
-									<img
-										class="h-8 w-8"
-										src={DeleteIcon.src}
-										alt="Delete Course"
-									/>
-								</Button>
-							</div>
-						</CourseRow>
-					))
-				}
-			</CourseTable>
+			<CourseTable client:load></CourseTable>
 
 			<footer
 				class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
