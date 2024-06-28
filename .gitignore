@@ -25,3 +25,5 @@ pnpm-debug.log*
 .firebase
 
 .netlify
+
+src/firebase/credentials.json
