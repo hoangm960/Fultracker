@@ -1,12 +1,11 @@
 import { useState } from "react";
-import "@styles/table.css";
 import {
     createColumnHelper,
     flexRender,
     getCoreRowModel,
     useReactTable,
 } from "@tanstack/react-table";
-import { TableCell } from "./TableCell";
+import { SelectableCell } from "./SelectableCell";
 import { EditCell } from "./EditCell";
 
 type Course = {
@@ -58,28 +57,24 @@ const columnHelper = createColumnHelper<Course>();
 const columns = [
     columnHelper.accessor("term", {
         header: "Term",
-        cell: TableCell,
+        cell: SelectableCell,
         meta: {
             type: "text",
         }
     }),
     columnHelper.accessor("courseID", {
         header: "Course ID",
-        cell: TableCell,
+        cell: SelectableCell,
         meta: {
             type: "text",
         }
     }),
     columnHelper.accessor("title", {
-        header: "Course Name",
-        cell: TableCell,
-        meta: {
-            type: "text",
-        }
+        header: "Course Name"
     }),
     columnHelper.accessor("grade", {
         header: "Grade",
-        cell: TableCell,
+        cell: SelectableCell,
         meta: {
             type: "select",
             options: [
@@ -147,48 +142,56 @@ export const CourseTable = () => {
         },
     });
     return (
-        <table className="table-auto w-full h-full text-left">
-            <thead className="bg-action flex w-full rounded-xl">
-                {
-                    table.getHeaderGroups().map((headerGroup) => (
-                        <tr className="flex mb-4 w-full" key={headerGroup.id}>
-                            {
-                                headerGroup.headers.map((header) => (
-                                    <th
-                                        key={header.id}
-                                        scope="row"
-                                        className="text-highlight p-4 w-1/12 font-montserrat text-2xl font-semibold"
-                                    >
-                                        {
-                                            header.isPlaceholder
-                                                ? null
-                                                : flexRender(
-                                                    header.column.columnDef.header,
-                                                    header.getContext()
-                                                )
-                                        }
-                                    </th>
-                                ))
-                            }
-                        </tr>
-                    ))
-                }
-            </thead>
-            <tbody className="bg-highlight flex flex-col items-center justify-between overflow-y-scroll w-full rounded-xl h-[85%]">
-                {
-                    table.getRowModel().rows.map((row) => (
-                        <tr key={row.id} className="flex w-full mb-4 items-center">
-                            {
-                                row.getVisibleCells().map((cell) => (
-                                    <td key={cell.id} className="num text-text p-4 w-1/12 font-montserrat text-xl font-medium">
-                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                    </td>
-                                ))
-                            }
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
+        <div className="flex flex-col h-full w-full">
+            <div className="overflow-x-auto h-full w-full">
+                <div className="inline-block align-middle h-full w-full">
+                    <div className="rounded-xl overflow-hidden h-full w-full">
+                        <table className="table-auto h-full w-full">
+                            <thead className="bg-action">
+                                {
+                                    table.getHeaderGroups().map((headerGroup) => (
+                                        <tr key={headerGroup.id}>
+                                            {
+                                                headerGroup.headers.map((header) => (
+                                                    <th
+                                                        key={header.id}
+                                                        scope="col"
+                                                        className="text-highlight p-4 font-montserrat text-2xl font-semibold text-center"
+                                                    >
+                                                        {
+                                                            header.isPlaceholder
+                                                                ? null
+                                                                : flexRender(
+                                                                    header.column.columnDef.header,
+                                                                    header.getContext()
+                                                                )
+                                                        }
+                                                    </th>
+                                                ))
+                                            }
+                                        </tr>
+                                    ))
+                                }
+                            </thead>
+                            <tbody className="bg-highlight overflow-y-scroll">
+                                {
+                                    table.getRowModel().rows.map((row) => (
+                                        <tr key={row.id}>
+                                            {
+                                                row.getVisibleCells().map((cell) => (
+                                                    <td key={cell.id} className="text-text p-4 font-montserrat text-xl font-medium text-center">
+                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                    </td>
+                                                ))
+                                            }
+                                        </tr>
+                                    ))
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 };

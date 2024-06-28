@@ -5,7 +5,7 @@ type Option = {
     value: string;
 };
 
-export const TableCell = ({ getValue, row, column, table }) => {
+export const SelectableCell = ({ getValue, row, column, table }) => {
     const initialValue = getValue()
     const columnMeta = column.columnDef.meta
     const tableMeta = table.options.meta
@@ -22,7 +22,7 @@ export const TableCell = ({ getValue, row, column, table }) => {
     }
     if (tableMeta?.editedRows[row.id]) {
         return columnMeta?.type === "select" ? (
-            <select onChange={onSelectChange} value={initialValue}>
+            <select className="text-text font-montserrat text-xl font-medium text-center" onChange={onSelectChange} value={initialValue}>
                 {columnMeta?.options?.map((option: Option) => (
                     <option key={option.value} value={option.value}>
                         {option.label}
@@ -31,6 +31,7 @@ export const TableCell = ({ getValue, row, column, table }) => {
             </select>
         ) : (
             <input
+                className="text-text font-montserrat text-xl font-medium text-center"
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 onBlur={onBlur}
@@ -38,5 +39,5 @@ export const TableCell = ({ getValue, row, column, table }) => {
             />
         )
     }
-    return <span>{value}</span>
+    return <span className="text-text font-montserrat text-xl font-medium">{value}</span>
 }
