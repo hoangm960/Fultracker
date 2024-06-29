@@ -5,6 +5,9 @@ import CancelIcon from "@assets/icons/cancel.png"
 
 export const EditCell = ({ row, table }) => {
     const meta = table.options.meta
+    const validRow = meta?.validRows[row.id];
+    const disableSubmit = validRow ? Object.values(validRow)?.some(item => !item) : false;
+
     const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
         const elementName = e.currentTarget.name
         meta?.setEditedRows((old: []) => ({
@@ -17,7 +20,7 @@ export const EditCell = ({ row, table }) => {
     }
     return meta?.editedRows[row.id] ? (
         <div className="flex gap-5 items-center justify-center">
-            <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRows} name="done">
+            <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2 disabled:cursor-not-allowed" onClick={setEditedRows} name="done" disabled={disableSubmit}>
                 <img className="h-8" src={SaveIcon.src} alt="Save" />
             </button>
             <button className="bg-destructive h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRows} name="cancel">

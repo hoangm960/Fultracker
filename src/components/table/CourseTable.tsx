@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "@styles/table.css"
 import {
     createColumnHelper,
     flexRender,
@@ -61,6 +62,7 @@ const columns = [
         cell: SelectableCell,
         meta: {
             type: "text",
+            required: true,
         }
     }),
     columnHelper.accessor("courseID", {
@@ -68,6 +70,7 @@ const columns = [
         cell: SelectableCell,
         meta: {
             type: "text",
+            required: true,
         }
     }),
     columnHelper.accessor("title", {
@@ -79,6 +82,7 @@ const columns = [
         meta: {
             type: "select",
             options: [
+                { value: '', label: 'Select' },
                 { value: "A", label: "A" },
                 { value: "A-", label: "A-" },
                 { value: "B+", label: "B+" },
@@ -94,12 +98,13 @@ const columns = [
                 { value: "I", label: "I" },
                 { value: "P", label: "P" },
                 { value: "NP", label: "NP" },
-            ]
+            ],
+            required: true,
         }
     }),
     columnHelper.display({
         id: "edit",
-        cell: EditCell
+        cell: EditCell,
     })
 ];
 
@@ -107,6 +112,7 @@ export const CourseTable = () => {
     const [data, setData] = useState(() => [...defaultData]);
     const [originalData, setOriginalData] = useState(() => [...defaultData]);
     const [editedRows, setEditedRows] = useState({});
+    const [validRows, setValidRows] = useState({});
     const table = useReactTable({
         data,
         columns,
@@ -114,6 +120,8 @@ export const CourseTable = () => {
         meta: {
             editedRows,
             setEditedRows,
+            validRows,
+            setValidRows,
             revertData: (rowIndex: number, revert: boolean) => {
                 if (revert) {
                     setData((old) =>
@@ -127,7 +135,7 @@ export const CourseTable = () => {
                     );
                 }
             },
-            updateData: (rowIndex: number, columnId: string, value: string) => {
+            updateData: (rowIndex: number, columnId: string, value: string, isValid: boolean) => {
                 setData((old) =>
                     old.map((row, index) => {
                         if (index === rowIndex) {
@@ -139,6 +147,10 @@ export const CourseTable = () => {
                         return row;
                     })
                 );
+                setValidRows((old) => ({
+                    ...old,
+                    [rowIndex]: { ...old[rowIndex], [columnId]: isValid },
+                }));
             },
             addRow: () => {
                 const newRow: Course = {
@@ -150,7 +162,7 @@ export const CourseTable = () => {
                 const setFunc = (old: Course[]) => [...old, newRow];
                 setData(setFunc);
                 setOriginalData(setFunc);
-            }
+            },
         },
     });
     return (
@@ -202,7 +214,7 @@ export const CourseTable = () => {
                             </tbody>
                             <tfoot className="bg-action">
                                 <tr>
-                                    <th colSpan={table.getCenterLeafColumns().length} align="right">
+                                    <th colSpan={table.getCenterLeafColumns().length} align="center">
                                         <FooterCell table={table} />
                                     </th>
                                 </tr>
