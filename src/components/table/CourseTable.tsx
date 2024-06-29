@@ -7,6 +7,7 @@ import {
 } from "@tanstack/react-table";
 import { SelectableCell } from "./SelectableCell";
 import { EditCell } from "./EditCell";
+import { FooterCell } from "./FooterCell";
 
 type Course = {
     term: string,
@@ -139,6 +140,17 @@ export const CourseTable = () => {
                     })
                 );
             },
+            addRow: () => {
+                const newRow: Course = {
+                    term: "",
+                    courseID: "",
+                    title: "",
+                    grade: "",
+                };
+                const setFunc = (old: Course[]) => [...old, newRow];
+                setData(setFunc);
+                setOriginalData(setFunc);
+            }
         },
     });
     return (
@@ -146,7 +158,7 @@ export const CourseTable = () => {
             <div className="overflow-x-auto h-full w-full">
                 <div className="inline-block align-middle h-full w-full">
                     <div className="rounded-xl overflow-hidden h-full w-full">
-                        <table className="table-auto h-full w-full">
+                        <table className="bg-highlight table-auto h-full w-full">
                             <thead className="bg-action">
                                 {
                                     table.getHeaderGroups().map((headerGroup) => (
@@ -173,7 +185,7 @@ export const CourseTable = () => {
                                     ))
                                 }
                             </thead>
-                            <tbody className="bg-highlight overflow-y-scroll">
+                            <tbody className="bg-highlight">
                                 {
                                     table.getRowModel().rows.map((row) => (
                                         <tr key={row.id}>
@@ -188,6 +200,13 @@ export const CourseTable = () => {
                                     ))
                                 }
                             </tbody>
+                            <tfoot className="bg-action">
+                                <tr>
+                                    <th colSpan={table.getCenterLeafColumns().length} align="right">
+                                        <FooterCell table={table} />
+                                    </th>
+                                </tr>
+                            </tfoot>
                         </table>
                     </div>
                 </div>
