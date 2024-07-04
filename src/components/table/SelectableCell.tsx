@@ -13,18 +13,8 @@ export const SelectableCell = ({ getValue, row, column, table }) => {
     const [validationMessage, setValidationMessage] = useState("");
 
     useEffect(() => {
-        setValue(initialValue)
+        setValue(initialValue);
     }, [initialValue])
-
-    const onBlur = (e: ChangeEvent<HTMLInputElement>) => {
-        displayValidationMessage(e);
-        tableMeta?.updateData(row.index, column.id, value, e.target.validity.valid);
-    }
-    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
-        displayValidationMessage(e);
-        setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value, e.target.validity.valid);
-    }
 
     const displayValidationMessage = <T extends HTMLInputElement | HTMLSelectElement>(e: ChangeEvent<T>) => {
         if (e.target.validity.valid) {
@@ -34,22 +24,47 @@ export const SelectableCell = ({ getValue, row, column, table }) => {
         }
     };
 
+    const onBlur = (e: ChangeEvent<HTMLInputElement>) => {
+        displayValidationMessage(e);
+        tableMeta?.updateData(row.index, column.id, value, e.target.validity.valid);
+    }
+
+    const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        displayValidationMessage(e);
+        setValue(e.target.value);
+        tableMeta?.updateData(row.index, column.id, e.target.value, e.target.validity.valid);
+        console.log(tableMeta?.getCourses(row.index));
+    }
+
+    const termIdToTermName = (termID: string) => {
+        const words = termID.split("_")
+        return words[1] + " " + words[2]
+    }
+
+
     if (tableMeta?.editedRows[row.id]) {
-        return columnMeta?.type === "select" ? (
+        return columnMeta?.type === "select" ?
             <select
                 className="text-text font-montserrat text-xl font-medium text-center"
                 onChange={onSelectChange}
                 value={initialValue}
                 required={columnMeta?.required}
             >
-                {columnMeta?.options?.map((option: Option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
-                    </option>
-                ))}
+                {
+                    column.columnDef.header === "Term" ?
+                        Object.keys(tableMeta?.courseData).map((termID: string) => (
+                            <option key={termID} value={termID}>
+                                {termIdToTermName(termID)}
+                            </option>
+                        ))
+                        : columnMeta?.options?.map((option: Option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.label}
+                            </option>
+                        ))
+                }
             </select>
-        ) : (
-            <input
+            : <input
                 className="text-text font-montserrat text-xl font-medium text-center"
                 value={value}
                 onChange={e => setValue(e.target.value)}
@@ -57,7 +72,8 @@ export const SelectableCell = ({ getValue, row, column, table }) => {
                 type={columnMeta?.type || "text"}
                 required={columnMeta?.required}
             />
-        )
+
     }
+
     return <span className="text-text font-montserrat text-xl font-medium">{value}</span>
 }

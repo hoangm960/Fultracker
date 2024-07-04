@@ -18,6 +18,8 @@ export const EditCell = ({ row, table }) => {
             meta?.revertData(row.index, e.currentTarget.name === "cancel")
         }
     }
+
+
     return meta?.editedRows[row.id] ? (
         <div className="flex gap-5 items-center justify-center">
             <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2 disabled:cursor-not-allowed" onClick={setEditedRows} name="done" disabled={disableSubmit}>

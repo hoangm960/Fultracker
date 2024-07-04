@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "@styles/table.css"
 import {
     createColumnHelper,
@@ -9,6 +9,7 @@ import {
 import { SelectableCell } from "./SelectableCell";
 import { EditCell } from "./EditCell";
 import { FooterCell } from "./FooterCell";
+import useCourses from "@/hooks/getCourses";
 
 type Course = {
     term: string,
@@ -61,7 +62,7 @@ const columns = [
         header: "Term",
         cell: SelectableCell,
         meta: {
-            type: "text",
+            type: "select",
             required: true,
         }
     }),
@@ -113,6 +114,7 @@ export const CourseTable = () => {
     const [originalData, setOriginalData] = useState(() => [...defaultData]);
     const [editedRows, setEditedRows] = useState({});
     const [validRows, setValidRows] = useState({});
+    const {courseData, isLoading} = useCourses();
     const table = useReactTable({
         data,
         columns,
@@ -122,6 +124,7 @@ export const CourseTable = () => {
             setEditedRows,
             validRows,
             setValidRows,
+            courseData,
             revertData: (rowIndex: number, revert: boolean) => {
                 if (revert) {
                     setData((old) =>
@@ -161,10 +164,11 @@ export const CourseTable = () => {
                 };
                 const setFunc = (old: Course[]) => [...old, newRow];
                 setData(setFunc);
-                setOriginalData(setFunc);
             },
         },
     });
+
+
     return (
         <div className="flex flex-col h-full w-full">
             <div className="overflow-x-auto h-full w-full">
