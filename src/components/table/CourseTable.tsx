@@ -10,6 +10,7 @@ import { SelectableCell } from "./SelectableCell";
 import { EditCell } from "./EditCell";
 import { FooterCell } from "./FooterCell";
 import useCourses from "@/hooks/getCourses";
+import useTerms from "@/hooks/getAllTerms";
 
 type Course = {
     term: string,
@@ -57,7 +58,7 @@ const defaultData: Course[] = [
     },
 ];
 const columnHelper = createColumnHelper<Course>();
-const columns = [
+const originalColumns = [
     columnHelper.accessor("term", {
         header: "Term",
         cell: SelectableCell,
@@ -70,7 +71,7 @@ const columns = [
         header: "Course ID",
         cell: SelectableCell,
         meta: {
-            type: "text",
+            type: "select",
             required: true,
         }
     }),
@@ -115,9 +116,32 @@ export const CourseTable = () => {
     const [editedRows, setEditedRows] = useState({});
     const [validRows, setValidRows] = useState({});
     const {courseData, isLoading} = useCourses();
+    const terms = useTerms();
+    const [columns, setColumns] = useState(originalColumns);
+
+    useEffect(() => {
+        if (terms.length > 0) {
+            setColumns(getColumns());
+        }
+    }, [terms]);
+
+    const getColumns = () => {
+        const copiedColumns = [...originalColumns];
+        copiedColumns[0] = columnHelper.accessor("term", {
+            header: "Term",
+            cell: SelectableCell,
+            meta: {
+                type: "select",
+                options: terms,
+                required: true,
+            }
+        });
+        return copiedColumns;
+    };
+
     const table = useReactTable({
         data,
-        columns,
+        columns: columns,
         getCoreRowModel: getCoreRowModel(),
         meta: {
             editedRows,
@@ -167,6 +191,7 @@ export const CourseTable = () => {
             },
         },
     });
+
 
 
     return (
