@@ -5,6 +5,7 @@ import { EditCell } from "./EditCell";
 import { FooterCell } from "./FooterCell";
 import useCourses from "@/hooks/getCourses";
 import useTerms from "@/hooks/getAllTerms";
+import { CourseRow } from "./CourseRow";
 
 const columns = {
     "term": {
@@ -84,6 +85,12 @@ export const CourseTable = () => {
         }
     }
 
+    const updateData = (rowIdx: number, columnId: string, value: string, valid: boolean) => {
+        const newData = [...data];
+        newData[rowIdx][columnId] = value;
+        setData(newData);
+    }
+
     return (
         <div className="flex flex-col h-full w-full">
             <div className="overflow-x-auto h-full w-full">
@@ -106,26 +113,16 @@ export const CourseTable = () => {
                             <tbody className="bg-highlight">
                                 {
                                     data.map((row, index) => (
-                                        <tr key={index}>
-                                            {
-                                                Object.entries(row).map(([key, value]) => (
-                                                    <td
-                                                        key={key}
-                                                        className="text-text p-4 font-montserrat text-xl font-medium text-center"
-                                                    >
-                                                        {String(value)}
-                                                    </td>
-                                                ))
-                                            }
-                                            <td className="p-4">
-                                                <EditCell
-                                                    rowIdx={index}
-                                                    editedRows={editedRows}
-                                                    revertData={revertData}
-                                                    setEditedRows={setEditedRows}
-                                                />
-                                            </td>
-                                        </tr>
+                                        <CourseRow
+                                            key={index}
+                                            columns={columns}
+                                            row={row}
+                                            rowIdx={index}
+                                            editedRows={editedRows}
+                                            setEditedRows={setEditedRows}
+                                            revertData={revertData}
+                                            updateData={updateData}
+                                        />
                                     ))
                                 }
                             </tbody>

@@ -5,10 +5,7 @@ type Option = {
     value: string;
 };
 
-export const SelectableCell = ({ getValue, row, column, table }) => {
-    const initialValue = getValue()
-    const columnMeta = column.columnDef.meta
-    const tableMeta = table.options.meta
+export const SelectableCell = ({ initialValue, rowIdx, editedRows, column, columnKey, updateData }) => {
     const [value, setValue] = useState(initialValue)
     const [validationMessage, setValidationMessage] = useState("");
 
@@ -26,26 +23,26 @@ export const SelectableCell = ({ getValue, row, column, table }) => {
 
     const onBlur = (e: ChangeEvent<HTMLInputElement>) => {
         displayValidationMessage(e);
-        tableMeta?.updateData(row.index, column.id, value, e.target.validity.valid);
+        updateData(rowIdx, columnKey, value, e.target.validity.valid);
     }
 
     const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         displayValidationMessage(e);
         setValue(e.target.value);
-        tableMeta?.updateData(row.index, column.id, e.target.value, e.target.validity.valid);
+        updateData(rowIdx, columnKey, e.target.value, e.target.validity.valid);
     }
 
 
-    if (tableMeta?.editedRows[row.id]) {
-        return columnMeta?.type === "select" ?
+    if (editedRows[rowIdx]) {
+        return column.meta?.type === "select" ?
             <select
                 className="text-text font-montserrat text-xl font-medium text-center"
                 onChange={onSelectChange}
                 value={initialValue}
-                required={columnMeta?.required}
+                required={column.meta.required}
             >
                 {
-                    columnMeta?.options?.map((option: Option) => (
+                    column.meta.options?.map((option: Option) => (
                         <option key={option.value} value={option.value}>
                             {option.label}
                         </option>
@@ -57,9 +54,9 @@ export const SelectableCell = ({ getValue, row, column, table }) => {
                 value={value}
                 onChange={e => setValue(e.target.value)}
                 onBlur={onBlur}
-                type={columnMeta?.type || "text"}
+                type={column.meta?.type || "text"}
                 title={validationMessage}
-                required={columnMeta?.required}
+                required={column.meta?.required}
             />
 
     }
