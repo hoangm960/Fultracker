@@ -1,84 +1,32 @@
 import { useEffect, useState } from "react";
 import "@styles/table.css"
-import {
-    createColumnHelper,
-    flexRender,
-    getCoreRowModel,
-    useReactTable,
-} from "@tanstack/react-table";
 import { SelectableCell } from "./SelectableCell";
 import { EditCell } from "./EditCell";
 import { FooterCell } from "./FooterCell";
 import useCourses from "@/hooks/getCourses";
 import useTerms from "@/hooks/getAllTerms";
 
-type Course = {
-    term: string,
-    courseID: string,
-    title: string,
-    grade: string,
-};
-
-const defaultData: Course[] = [
-    {
-        term: "Fall 2021",
-        courseID: "CS 3150",
-        title: "Data Structures and Algorithms",
-        grade: "B",
-    },
-    {
-        term: "Fall 2021",
-        courseID: "CS 3350",
-        title: "Database Systems",
-        grade: "C",
-    },
-    {
-        term: "Fall 2021",
-        courseID: "CS 3500",
-        title: "Computer Architecture",
-        grade: "A-",
-    },
-    {
-        term: "Fall 2021",
-        courseID: "CS 3610",
-        title: "Operating Systems",
-        grade: "D",
-    },
-    {
-        term: "Fall 2021",
-        courseID: "CS 3850",
-        title: "Computer Networks",
-        grade: "F",
-    },
-    {
-        term: "Fall 2021",
-        courseID: "CS 3860",
-        title: "Computer Security",
-        grade: "A",
-    },
-];
-const columnHelper = createColumnHelper<Course>();
-const originalColumns = [
-    columnHelper.accessor("term", {
+const columns = {
+    "term": {
         header: "Term",
         cell: SelectableCell,
         meta: {
             type: "select",
             required: true,
         }
-    }),
-    columnHelper.accessor("courseID", {
+    },
+    "courseID": {
         header: "Course ID",
         cell: SelectableCell,
         meta: {
             type: "select",
             required: true,
         }
-    }),
-    columnHelper.accessor("title", {
+    },
+    "title": {
         header: "Course Name"
-    }),
-    columnHelper.accessor("grade", {
+    },
+    "grade": {
         header: "Grade",
         cell: SelectableCell,
         meta: {
@@ -103,96 +51,38 @@ const originalColumns = [
             ],
             required: true,
         }
-    }),
-    columnHelper.display({
-        id: "edit",
-        cell: EditCell,
-    })
-];
+    },
+    "action": {
+        header: "Actions",
+        cell: EditCell
+    },
+};
 
 export const CourseTable = () => {
-    const [data, setData] = useState(() => [...defaultData]);
-    const [originalData, setOriginalData] = useState(() => [...defaultData]);
-    const [editedRows, setEditedRows] = useState({});
-    const [validRows, setValidRows] = useState({});
-    const {courseData, isLoading} = useCourses();
+    const [data, setData] = useState([]);
+    const [originalData, setOriginalData] = useState([]);
+    const [editedRows, setEditedRows] = useState(Array.apply(null, Array(5)).map(() => false));
+    const { courseData, isLoading } = useCourses();
     const terms = useTerms();
-    const [columns, setColumns] = useState(originalColumns);
 
-    useEffect(() => {
-        if (terms.length > 0) {
-            setColumns(getColumns());
+    const addRow = () => {
+        const newRow = {
+            term: "1",
+            courseID: "2",
+            title: "3",
+            grade: "4",
+        };
+        setData([...data, newRow]);
+        setOriginalData([...originalData, newRow]);
+    }
+
+    const revertData = (revert: boolean) => {
+        if (revert) {
+            setData(originalData);
+        } else {
+            setOriginalData(data);
         }
-    }, [terms]);
-
-    const getColumns = () => {
-        const copiedColumns = [...originalColumns];
-        copiedColumns[0] = columnHelper.accessor("term", {
-            header: "Term",
-            cell: SelectableCell,
-            meta: {
-                type: "select",
-                options: terms,
-                required: true,
-            }
-        });
-        return copiedColumns;
-    };
-
-    const table = useReactTable({
-        data,
-        columns: columns,
-        getCoreRowModel: getCoreRowModel(),
-        meta: {
-            editedRows,
-            setEditedRows,
-            validRows,
-            setValidRows,
-            courseData,
-            revertData: (rowIndex: number, revert: boolean) => {
-                if (revert) {
-                    setData((old) =>
-                        old.map((row, index) =>
-                            index === rowIndex ? originalData[rowIndex] : row
-                        )
-                    );
-                } else {
-                    setOriginalData((old) =>
-                        old.map((row, index) => (index === rowIndex ? data[rowIndex] : row))
-                    );
-                }
-            },
-            updateData: (rowIndex: number, columnId: string, value: string, isValid: boolean) => {
-                setData((old) =>
-                    old.map((row, index) => {
-                        if (index === rowIndex) {
-                            return {
-                                ...old[rowIndex],
-                                [columnId]: value,
-                            };
-                        }
-                        return row;
-                    })
-                );
-                setValidRows((old) => ({
-                    ...old,
-                    [rowIndex]: { ...old[rowIndex], [columnId]: isValid },
-                }));
-            },
-            addRow: () => {
-                const newRow: Course = {
-                    term: "",
-                    courseID: "",
-                    title: "",
-                    grade: "",
-                };
-                const setFunc = (old: Course[]) => [...old, newRow];
-                setData(setFunc);
-            },
-        },
-    });
-
-
+    }
 
     return (
         <div className="flex flex-col h-full w-full">
@@ -202,49 +92,47 @@ export const CourseTable = () => {
                         <table className="bg-highlight table-auto h-full w-full">
                             <thead className="bg-action">
                                 {
-                                    table.getHeaderGroups().map((headerGroup) => (
-                                        <tr key={headerGroup.id}>
-                                            {
-                                                headerGroup.headers.map((header) => (
-                                                    <th
-                                                        key={header.id}
-                                                        scope="col"
-                                                        className="text-highlight p-4 font-montserrat text-2xl font-semibold text-center"
-                                                    >
-                                                        {
-                                                            header.isPlaceholder
-                                                                ? null
-                                                                : flexRender(
-                                                                    header.column.columnDef.header,
-                                                                    header.getContext()
-                                                                )
-                                                        }
-                                                    </th>
-                                                ))
-                                            }
-                                        </tr>
+                                    Object.keys(columns).map((key) => (
+                                        <th
+                                            key={key}
+                                            scope="col"
+                                            className="text-highlight p-4 font-montserrat text-2xl font-semibold text-center"
+                                        >
+                                            {columns[key].header}
+                                        </th>
                                     ))
                                 }
                             </thead>
                             <tbody className="bg-highlight">
                                 {
-                                    table.getRowModel().rows.map((row) => (
-                                        <tr key={row.id}>
+                                    data.map((row, index) => (
+                                        <tr key={index}>
                                             {
-                                                row.getVisibleCells().map((cell) => (
-                                                    <td key={cell.id} className="text-text p-4 font-montserrat text-xl font-medium text-center">
-                                                        {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                                Object.entries(row).map(([key, value]) => (
+                                                    <td
+                                                        key={key}
+                                                        className="text-text p-4 font-montserrat text-xl font-medium text-center"
+                                                    >
+                                                        {String(value)}
                                                     </td>
                                                 ))
                                             }
+                                            <td className="p-4">
+                                                <EditCell
+                                                    rowIdx={index}
+                                                    editedRows={editedRows}
+                                                    revertData={revertData}
+                                                    setEditedRows={setEditedRows}
+                                                />
+                                            </td>
                                         </tr>
                                     ))
                                 }
                             </tbody>
                             <tfoot className="bg-action">
                                 <tr>
-                                    <th colSpan={table.getCenterLeafColumns().length} align="center">
-                                        <FooterCell table={table} />
+                                    <th colSpan={Object.keys(columns).length} align="center">
+                                        <FooterCell addRow={addRow} />
                                     </th>
                                 </tr>
                             </tfoot>

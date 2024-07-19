@@ -3,35 +3,36 @@ import EditIcon from "@assets/icons/Edit.svg"
 import SaveIcon from "@assets/icons/save.png"
 import CancelIcon from "@assets/icons/cancel.png"
 
-export const EditCell = ({ row, table }) => {
-    const meta = table.options.meta
-    const validRow = meta?.validRows[row.id];
-    const disableSubmit = validRow ? Object.values(validRow)?.some(item => !item) : false;
-
-    const setEditedRows = (e: MouseEvent<HTMLButtonElement>) => {
+export const EditCell = ({ rowIdx, editedRows, setEditedRows, revertData }) => {
+    const setEditedRow = (e: MouseEvent<HTMLButtonElement>) => {
         const elementName = e.currentTarget.name
-        meta?.setEditedRows((old: []) => ({
-            ...old,
-            [row.id]: !old[row.id],
-        }))
         if (elementName !== "edit") {
-            meta?.revertData(row.index, e.currentTarget.name === "cancel")
+            revertData(e.currentTarget.name === "cancel")
+            const copiedEditedRows = [...editedRows]
+            copiedEditedRows[rowIdx] = false
+            setEditedRows(copiedEditedRows)
+        } else {
+            const copiedEditedRows = [...editedRows]
+            copiedEditedRows[rowIdx] = true
+            setEditedRows(copiedEditedRows)
         }
     }
 
-
-    return meta?.editedRows[row.id] ? (
-        <div className="flex gap-5 items-center justify-center">
-            <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2 disabled:cursor-not-allowed" onClick={setEditedRows} name="done" disabled={disableSubmit}>
-                <img className="h-8" src={SaveIcon.src} alt="Save" />
-            </button>
-            <button className="bg-destructive h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRows} name="cancel">
-                <img className="h-8" src={CancelIcon.src} alt="Cancel" />
-            </button>
-        </div>
-    ) : (
-        <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRows} name="edit">
-            <img className="h-8" src={EditIcon.src} alt="Edit" />
-        </button>
-    )
+    return <div className="flex gap-5 items-center justify-center">
+        {
+            editedRows[rowIdx] ? (
+                <div className="flex gap-5 items-center justify-center">
+                    <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2 disabled:cursor-not-allowed" onClick={setEditedRow} name="done">
+                        <img className="h-8" src={SaveIcon.src} alt="Save" />
+                    </button>
+                    <button className="bg-destructive h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRow} name="cancel">
+                        <img className="h-8" src={CancelIcon.src} alt="Cancel" />
+                    </button>
+                </div>
+            ) : (
+                <button className="bg-action h-fit rounded-2xl flex flex-row gap-5 items-center justify-center hover:shadow-2xl hover:opacity-80 min-w-fit p-2" onClick={setEditedRow} name="edit">
+                    <img className="h-8" src={EditIcon.src} alt="Edit" />
+                </button>
+            )}
+    </div>
 }
