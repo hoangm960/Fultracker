@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import "@styles/table.css"
-import { SelectableCell } from "./SelectableCell";
-import { EditCell } from "./EditCell";
 import { FooterCell } from "./FooterCell";
 import useCourses from "@/hooks/getCourses";
 import { CourseRow } from "./CourseRow";
@@ -21,10 +19,8 @@ const originalColumns = {
         header: "Course ID",
         meta: {
             type: "select",
-            parrent: "term",
             options: [
                 { value: '', label: 'Select A Course ID...' },
-                { value: 'parrent-select', label: 'Select A Term...' }
             ],
             required: true,
         }
@@ -36,10 +32,8 @@ const originalColumns = {
         header: "Grade",
         meta: {
             type: "select",
-            parrent: "courseID",
             options: [
                 { value: '', label: 'Select A Grade' },
-                { value: 'parrent-select', label: 'Select A CourseID...' },
                 { value: "A", label: "A" },
                 { value: "A-", label: "A-" },
                 { value: "B+", label: "B+" },
@@ -112,7 +106,6 @@ export const CourseTable = () => {
     const updateData = (rowIdx: number, columnID: string, value: string, valid: boolean) => {
         const newData = [...data];
         newData[rowIdx][columnID] = value;
-        setData(newData);
         if (columnID === "term") {
             const tmpColumns = { ...columns };
             tmpColumns["courseID"].meta.options = [...tmpColumns.courseID.meta.options, ...Object.keys(courseData[value]).map((courseID) => ({
@@ -120,7 +113,10 @@ export const CourseTable = () => {
                 label: courseID,
             }))];
             setColumns(tmpColumns);
+        } else if (columnID === "courseID") {
+            newData[rowIdx]["title"] = courseData[newData[rowIdx].term][value]?.name;
         }
+        setData(newData);
     }
 
     return (

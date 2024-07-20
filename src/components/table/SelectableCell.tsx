@@ -49,16 +49,16 @@ export const SelectableCell = ({ initialValue, rowIdx, editedRows, column, colum
                     ))
                 }
             </select>
-            : <input
-                className="text-text font-montserrat text-xl font-medium text-center"
-                value={value}
-                onChange={e => setValue(e.target.value)}
-                onBlur={onBlur}
-                type={column.meta?.type || "text"}
-                title={validationMessage}
-                required={column.meta?.required}
-            />
-
+            // : <input
+            //     className="text-text font-montserrat text-xl font-medium text-center"
+            //     value={value}
+            //     onChange={e => setValue(e.target.value)}
+            //     onBlur={onBlur}
+            //     type={column.meta?.type || "text"}
+            //     title={validationMessage}
+            //     required={column.meta?.required}
+            // />
+            : <span className="text-text font-montserrat text-xl font-medium">{value}</span>
     }
 
     return <span className="text-text font-montserrat text-xl font-medium">{value}</span>
