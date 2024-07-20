@@ -65,16 +65,11 @@ export const CourseTable = () => {
     const [editedRows, setEditedRows] = useState(Array.apply(null, data).map(() => false));
     const [courseData, isCourseLoaded] = useCourses();
 
-    const termIdToTermName = (termID: string) => {
-        const words = termID.split("_");
-        return words[1] + " " + words[2];
-    }
-
     useEffect(() => {
-        if (!isCourseLoaded) {
+        if (isCourseLoaded) {
             const allTerms = Object.keys(courseData).map((termID) => ({
                 value: termID,
-                label: termIdToTermName(termID),
+                label: termID.replace("_", " "),
             }));
             const tmpColumns = { ...originalColumns };
             tmpColumns.term.meta.options = [...tmpColumns.term.meta.options, ...allTerms];
@@ -106,16 +101,19 @@ export const CourseTable = () => {
     const updateData = (rowIdx: number, columnID: string, value: string, valid: boolean) => {
         const newData = [...data];
         newData[rowIdx][columnID] = value;
+
         if (columnID === "term") {
             const tmpColumns = { ...columns };
             tmpColumns["courseID"].meta.options = [...tmpColumns.courseID.meta.options, ...Object.keys(courseData[value]).map((courseID) => ({
                 value: courseID,
-                label: courseID,
+                label: courseID.replace("_", ""),
             }))];
             setColumns(tmpColumns);
+
         } else if (columnID === "courseID") {
-            newData[rowIdx]["title"] = courseData[newData[rowIdx].term][value]?.name;
+            newData[rowIdx]["title"] = courseData[newData[rowIdx].term][value].name;
         }
+
         setData(newData);
     }
 
