@@ -4,20 +4,20 @@ import { ref, get } from "firebase/database";
 
 const useCourses = () => {
 	const [courses, setCourses] = useState([]);
-	const [isLoading, setIsLoading] = useState(false);
+	const [isSuccess, setIsSuccess] = useState(false);
 
 	const getCourses = async () => {
-		setIsLoading(true);
+		setIsSuccess(true);
 		const root = ref(db, "/");
 		const snapshot = await get(root)
 		setCourses(snapshot.val());
-		setIsLoading(false);
+		setIsSuccess(false);
 	}
 	useEffect(() => {
 		getCourses();
 	}, []);
 
-	return {courseData: courses, isLoading: isLoading};
+	return [courses, isSuccess];
 };
 
 export default useCourses;
