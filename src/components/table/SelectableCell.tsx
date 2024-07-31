@@ -28,6 +28,8 @@ export const SelectableCell = ({ initialValue, rowIdx, editedRows, column, colum
 
     const onSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         displayValidationMessage(e);
+        if (e.target.value === "")
+            return;
         setValue(e.target.value);
         updateData(rowIdx, columnKey, e.target.value, e.target.validity.valid);
     }

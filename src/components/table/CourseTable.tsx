@@ -33,7 +33,7 @@ const originalColumns = {
         meta: {
             type: "select",
             options: [
-                { value: '', label: 'Select A Grade' },
+                { value: '', label: 'Select A Grade...' },
                 { value: "A", label: "A" },
                 { value: "A-", label: "A-" },
                 { value: "B+", label: "B+" },
@@ -63,6 +63,7 @@ export const CourseTable = () => {
     const [columns, setColumns] = useState(originalColumns);
     const [originalData, setOriginalData] = useState([]);
     const [editedRows, setEditedRows] = useState(Array.apply(null, data).map(() => false));
+    const [validRows, setValidRows] = useState(Array.apply(null, data).map(() => false));
     const [courseData, isCourseLoaded] = useCourses();
 
     useEffect(() => {
@@ -73,6 +74,7 @@ export const CourseTable = () => {
             }));
             const tmpColumns = { ...originalColumns };
             tmpColumns.term.meta.options = [...tmpColumns.term.meta.options, ...allTerms];
+
             setColumns(tmpColumns);
         }
     }, [isCourseLoaded]);
@@ -85,36 +87,53 @@ export const CourseTable = () => {
             title: "",
             grade: "",
         };
-        setData([...data, newRow]);
-        setOriginalData([...originalData, newRow]);
+
+        setData([...data, { ...newRow }]);
+        setOriginalData([...originalData, { ...newRow }]);
         setEditedRows([...editedRows, true]);
     }
 
-    const revertData = (revert: boolean) => {
-        if (revert) {
-            setData(originalData);
-        } else {
-            setOriginalData(data);
+    const revertData = (rowIdx: number) => {
+        if (originalData[rowIdx].term === "") {
+            setData(old => old.filter((row, idx) => idx !== rowIdx));
+            setOriginalData(old => old.filter((row, idx) => idx !== rowIdx));
+            setEditedRows(old => old.filter((row, idx) => idx !== rowIdx));
+            return;
         }
+
+        setData([...originalData]);
     }
 
-    const updateData = (rowIdx: number, columnID: string, value: string, valid: boolean) => {
+    const updateRow = (rowIdx: number) => {
+        const tmpData = [...originalData];
+        tmpData[rowIdx] = data[rowIdx];
+        setOriginalData(tmpData);
+    }
+
+    const updateData = (rowIdx: number, columnID: string, value: string, isValid: boolean) => {
         const newData = [...data];
         newData[rowIdx][columnID] = value;
 
         if (columnID === "term") {
             const tmpColumns = { ...columns };
-            tmpColumns["courseID"].meta.options = [...tmpColumns.courseID.meta.options, ...Object.keys(courseData[value]).map((courseID) => ({
-                value: courseID,
-                label: courseID.replace("_", ""),
-            }))];
+            tmpColumns["courseID"].meta.options = [
+                { value: '', label: 'Select A Course ID...' },
+                ...Object.keys(courseData[value]).map((courseID) => ({
+                    value: courseID,
+                    label: courseID.replace("_", ""),
+                }))
+            ];
             setColumns(tmpColumns);
-
         } else if (columnID === "courseID") {
             newData[rowIdx]["title"] = courseData[newData[rowIdx].term][value].name;
         }
 
         setData(newData);
+        setValidRows(validRows.map(
+            (old, idx) => idx !== rowIdx ?
+                old :
+                { ...old, [columnID]: isValid },
+        ));
     }
 
     return (
@@ -150,6 +169,8 @@ export const CourseTable = () => {
                                             setEditedRows={setEditedRows}
                                             revertData={revertData}
                                             updateData={updateData}
+                                            updateRow={updateRow}
+                                            validRows={validRows}
                                         />
                                     ))
                                 }

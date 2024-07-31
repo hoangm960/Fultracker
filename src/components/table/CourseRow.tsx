@@ -1,7 +1,7 @@
 import { EditCell } from "./EditCell"
 import { SelectableCell } from "./SelectableCell"
 
-export const CourseRow = ({ row, rowIdx, editedRows, setEditedRows, revertData, columns, updateData }) => {
+export const CourseRow = ({ row, rowIdx, editedRows, setEditedRows, revertData, columns, updateData, updateRow, validRows }) => {
     return (
         <tr key={rowIdx}>
             {
@@ -30,6 +30,8 @@ export const CourseRow = ({ row, rowIdx, editedRows, setEditedRows, revertData, 
                     editedRows={editedRows}
                     revertData={revertData}
                     setEditedRows={setEditedRows}
+                    updateRow={updateRow}
+                    validRow={validRows[rowIdx]}
                 />
             </td>
         </tr>
