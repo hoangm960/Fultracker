@@ -3,6 +3,8 @@ import "@styles/table.css"
 import { FooterCell } from "./FooterCell";
 import useCourses from "@/hooks/getCourses";
 import { CourseRow } from "./CourseRow";
+import { tableData, setTableData } from "@/store/table_store";
+import { useStore } from "@nanostores/react";
 
 const originalColumns = {
     "term": {
@@ -60,8 +62,8 @@ const originalColumns = {
 
 export const CourseTable = () => {
     const [data, setData] = useState([]);
+    const originalData = useStore(tableData);
     const [columns, setColumns] = useState(originalColumns);
-    const [originalData, setOriginalData] = useState([]);
     const [editedRows, setEditedRows] = useState(Array.apply(null, data).map(() => false));
     const [validRows, setValidRows] = useState(Array.apply(null, data).map(() => false));
     const [courseData, isCourseLoaded] = useCourses();
@@ -89,14 +91,14 @@ export const CourseTable = () => {
         };
 
         setData([...data, { ...newRow }]);
-        setOriginalData([...originalData, { ...newRow }]);
+        setTableData([...originalData, { ...newRow }]);
         setEditedRows([...editedRows, true]);
     }
 
     const revertData = (rowIdx: number) => {
         if (originalData[rowIdx].term === "") {
             setData(old => old.filter((row, idx) => idx !== rowIdx));
-            setOriginalData(old => old.filter((row, idx) => idx !== rowIdx));
+            setTableData(old => old.filter((row, idx) => idx !== rowIdx));
             setEditedRows(old => old.filter((row, idx) => idx !== rowIdx));
             return;
         }
@@ -107,7 +109,7 @@ export const CourseTable = () => {
     const updateRow = (rowIdx: number) => {
         const tmpData = [...originalData];
         tmpData[rowIdx] = data[rowIdx];
-        setOriginalData(tmpData);
+        setTableData(tmpData);
     }
 
     const updateData = (rowIdx: number, columnID: string, value: string, isValid: boolean) => {

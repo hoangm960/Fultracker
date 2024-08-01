@@ -1,7 +1,7 @@
 ---
 import DashboardLayout from "@layouts/DashboardLayout.astro";
-import { InfoField } from "@/components/InfoField";
 import FlowProvider from "@components/flow_chart/FlowProvider";
+import { InfoFooter } from "@/components/info_footer/InfoFooter";
 import { CourseTable } from "@/components/table/CourseTable";
 ---
 
@@ -13,50 +13,7 @@ import { CourseTable } from "@/components/table/CourseTable";
 			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1"
 		>
 			<CourseTable client:load />
-			<div
-				class="bg-highlight rounded-xl pt-8 pr-2.5 pb-8 pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
-			>
-				<div
-					class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-				>
-					<InfoField
-						title="Earned Credits:"
-						total={128}
-					/>
-					<InfoField
-						title="Attempted Credits:"
-						total={128}
-					/>
-					<!-- TODO: calculate major credits -->
-					<!-- <InfoField title="Major Credits:" value="16" total={128} /> -->
-					<InfoField title="Core Courses:" total={5} />
-					<InfoField title="GPA:" total={4} />
-				</div>
-				<div
-					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-				>
-					<InfoField
-						title="E1 (Arts and Humanities):"
-						total={2}
-					/>
-					<InfoField
-						title="E2 (Social Sciences):"
-						total={2}
-					/>
-					<InfoField
-						title="E3 (Sciences and Engineering):"
-						total={2}
-					/>
-					<InfoField
-						title="E4 (Mathematics and Computing):"
-						total={2}
-					/>
-					<InfoField
-						title="EL (Experiential Learning):"
-						total={1}
-					/>
-				</div>
-			</div>
+			<InfoFooter client:load />
 		</div>
 
 		<side

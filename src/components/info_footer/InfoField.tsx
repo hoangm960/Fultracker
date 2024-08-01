@@ -1,4 +1,4 @@
-export const InfoField = ({ title, total }) => {
+export const InfoField = ({ title, value, total }) => {
 	return (
 		<div
 			className="pr-5 pl-5 flex flex-row gap-2.5 items-center justify-start"
@@ -13,7 +13,7 @@ export const InfoField = ({ title, total }) => {
 				<div
 					className="text-action text-left relative font-semibold text-lg"
 				>
-					0
+					{value}
 				</div>
 
 				<div
