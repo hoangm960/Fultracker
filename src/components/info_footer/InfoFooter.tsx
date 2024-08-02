@@ -31,7 +31,7 @@ export const InfoFooter = () => {
         F: 0.0
     };
     const SPECIAL_GRADES = ["P", "NP", "I", "W"];
-    const [courseData, isCourseLoaded] = useCourses();
+    const [coursesData, isCourseLoaded] = useCourses();
 
     useEffect(() => {
         if (!isCourseLoaded) {
@@ -50,18 +50,18 @@ export const InfoFooter = () => {
                 if ([...SPECIAL_GRADES, "F"].includes(course.grade)) {
                     return 0;
                 }
-                return courseData[course.term][course.courseID]["credit"];
+                return coursesData[course.term][course.courseID]["credit"];
             })
             .reduce((total, credit) => total + credit, 0);
 
         newInfoData.attempted = selectedCourses
-            .map((course) => courseData[course.term][course.courseID]["credit"])
+            .map((course) => coursesData[course.term][course.courseID]["credit"])
             .reduce((total, credit) => total + credit, 0);
 
         newInfoData.core = selectedCourses.reduce(
             (total, course) =>
                 total +
-                (courseData[course.term][course.courseID]["level"].toLowerCase() === "core" &&
+                (coursesData[course.term][course.courseID]["level"].toLowerCase() === "core" &&
                     ![...SPECIAL_GRADES, "F"].includes(course.grade)),
             0
         );
@@ -78,7 +78,7 @@ export const InfoFooter = () => {
                 (total, course) => {
                     if (SPECIAL_GRADES.includes(course.grade))
                         return total;
-                    return total + GRADES[course.grade] * courseData[course.term][course.courseID]["credit"];
+                    return total + GRADES[course.grade] * coursesData[course.term][course.courseID]["credit"];
                 },
                 0
             ) / newInfoData.attempted
@@ -88,8 +88,18 @@ export const InfoFooter = () => {
         for (let categoryKey of Object.keys(infoData)) {
             if (categories.includes(categoryKey)) {
                 newInfoData[categoryKey] = selectedCourses.reduce(
-                    (total, course) =>
-                        total + courseData[course.term][course.courseID]["categories"].filter(category => category.toLowerCase() === categoryKey).length,
+                    (total, course) => {
+                        let courseData = coursesData[course.term][course.courseID];
+                        total +
+                            (courseData["level"].toLowerCase() === "experiential learning" ?
+                                (categoryKey === "el") :
+                                "categories" in courseData ?
+                                    courseData["categories"]
+                                        .map(category =>
+                                            category.toLowerCase() === categoryKey).length :
+                                    0
+                            )
+                    },
                     0
                 );
             }
