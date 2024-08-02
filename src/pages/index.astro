@@ -1,13 +1,8 @@
 ---
 import DashboardLayout from "@layouts/DashboardLayout.astro";
-import InfoField from "@components/InfoField.astro";
-import CourseTable from "@components/table/CourseTable.astro";
-import Button from "@components/Button.astro";
-import CourseRow from "@components/table/CourseRow.astro";
-
-import EditIcon from "@assets/icons/Edit.svg";
-import DeleteIcon from "@assets/icons/delete.png";
 import FlowProvider from "@components/flow_chart/FlowProvider";
+import { InfoFooter } from "@/components/info_footer/InfoFooter";
+import { CourseTable } from "@/components/table/CourseTable";
 ---
 
 <DashboardLayout page="home">
@@ -15,92 +10,10 @@ import FlowProvider from "@components/flow_chart/FlowProvider";
 		class="p-2.5 flex flex-row gap-2.5 items-start justify-start self-stretch flex-1 relative"
 	>
 		<div
-			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1 relative"
+			class="flex flex-col gap-2.5 items-start justify-start self-stretch flex-1"
 		>
-			<CourseTable>
-				{
-					[...Array(60).keys()].map((num) => (
-						<CourseRow classes="course-row" num={num + 1}>
-							<div class="flex flex-row gap-5 justify-evenly items-center">
-								<Button
-									classes="editCourse"
-									theme="neutral"
-									padding="p-1"
-								>
-									<img
-										class="h-8 w-8"
-										src={EditIcon.src}
-										alt="Edit Course"
-									/>
-								</Button>
-								<Button
-									classes="deleteCourse"
-									theme="neutral"
-									padding="p-1"
-								>
-									<img
-										class="h-8 w-8"
-										src={DeleteIcon.src}
-										alt="Delete Course"
-									/>
-								</Button>
-							</div>
-						</CourseRow>
-					))
-				}
-			</CourseTable>
-
-			<footer
-				class="bg-highlight rounded-[10px] pt-[30px] pr-2.5 pb-[30px] pl-2.5 flex flex-row gap-0 items-start justify-start flex-wrap shrink-0 self-stretch"
-			>
-				<div
-					class="flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-				>
-					<InfoField
-						id="earn-credits"
-						title="Earned Credits:"
-						total={128}
-					/>
-					<InfoField
-						id="attempt-credits"
-						title="Attempted Credits:"
-						total={128}
-					/>
-					<!-- TODO: calculate major credits -->
-					<!-- <InfoField title="Major Credits:" value="16" total={128} /> -->
-					<InfoField id="cores" title="Core Courses:" total={5} />
-					<InfoField id="gpa" title="GPA:" total={4} />
-				</div>
-				<div
-					class="border-solid border-text border-l flex flex-col gap-2.5 items-start justify-start flex-1 relative"
-				>
-					<InfoField
-						id="E1"
-						title="E1 (Arts and Humanities):"
-						total={2}
-					/>
-					<InfoField
-						id="E2"
-						title="E2 (Social Sciences):"
-						total={2}
-					/>
-					<InfoField
-						id="E3"
-						title="E3 (Sciences and Engineering):"
-						total={2}
-					/>
-					<InfoField
-						id="E4"
-						title="E4 (Mathematics and Computing):"
-						total={2}
-					/>
-					<InfoField
-						id="EL"
-						title="EL (Experiential Learning):"
-						total={1}
-					/>
-				</div>
-			</footer>
+			<CourseTable client:load />
+			<InfoFooter client:load />
 		</div>
 
 		<side

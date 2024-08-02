@@ -11,6 +11,7 @@ module.exports = {
 				"background": "#B7EBF3",
 				"action": "#008CAF",
 				"text": "#445953",
+				"destructive": "#F49531"
 			},
 			fontFamily: {
 				"montserrat": ["Montserrat", "san-serif"]
