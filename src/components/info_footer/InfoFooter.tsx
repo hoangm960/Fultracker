@@ -90,7 +90,7 @@ export const InfoFooter = () => {
                 newInfoData[categoryKey] = selectedCourses.reduce(
                     (total, course) => {
                         let courseData = coursesData[course.term][course.courseID];
-                        total +
+                        return total +
                             (courseData["level"].toLowerCase() === "experiential learning" ?
                                 (categoryKey === "el") :
                                 "categories" in courseData ?
