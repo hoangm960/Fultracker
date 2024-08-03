@@ -4,7 +4,7 @@ import { useStore } from "@nanostores/react";
 import { tableData } from "@/store/table_store";
 import useCourses from "@/hooks/getCourses";
 
-export const InfoFooter = () => {
+export default function InfoFooter() {
     const [infoData, setInfoData] = useState({
         earned: 0,
         attempted: 0,

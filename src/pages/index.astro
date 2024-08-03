@@ -1,7 +1,8 @@
 ---
 import DashboardLayout from "@layouts/DashboardLayout.astro";
-import { InfoFooter } from "@/components/info_footer/InfoFooter";
-import { CourseTable } from "@/components/table/CourseTable";
+import InfoFooter from "@/components/info_footer/InfoFooter";
+import CourseTable from "@/components/table/CourseTable";
+import MajorFlow from "@/components/flow_chart/MajorFlow";
 ---
 
 <DashboardLayout page="home">
@@ -19,6 +20,7 @@ import { CourseTable } from "@/components/table/CourseTable";
 			class="bg-highlight rounded-[10px] pt-[15px] pr-5 pb-[15px] pl-5 flex flex-col gap-5 items-start justify-start self-stretch shrink-0 w-1/3"
 			style="overflow-y: auto"
 		>
+			<MajorFlow client:load/>
 		</side>
 	</div>
 </DashboardLayout>

@@ -60,7 +60,7 @@ const originalColumns = {
     },
 };
 
-export const CourseTable = () => {
+export default function CourseTable() {
     const [data, setData] = useState([]);
     const originalData = useStore(tableData);
     const [columns, setColumns] = useState(originalColumns);
