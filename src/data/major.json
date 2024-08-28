@@ -2,125 +2,107 @@
     "MATH": {
         "declair": {
             "major": {
-                "nodes": {
-                    "1": {
+                "nodes": [
+                    {
                         "title": "Foundation Course",
                         "pre-requisite": "level-major 1 1"
                     },
-                    "2": {
+                    {
                         "title": "Foundation Course",
                         "pre-requisite": "level-major 1 1"
                     },
-                    "3": {
+                    {
                         "title": "Intermediate Course",
                         "pre-requisite": "level-major 2 1"
                     }
-                },
-                "flows": {
-                    "1": [
-                        "2",
-                        "3"
+                ],
+                "edges": [
+                    [
+                        1,
+                        2
+                    ],
+                    [
+                        1,
+                        3
                     ]
-                }
+                ]
             }
         },
         "flow-chart": {
             "major": {
-                "nodes": {
-                    "1": {
+                "nodes": [
+                    {
                         "title": "Foundation Courses",
                         "pre-requisite": "level-major 1 4"
                     },
-                    "2": {
+                    {
                         "title": "Mathematical Writing Course",
                         "pre-requisite": "course MATH 102"
                     },
-                    "3": {
+                    {
                         "title": "Intermediate Courses",
                         "pre-requisite": "level-major 2 2"
                     },
-                    "4": {
+                    {
                         "title": "Pure  Mathematics Course",
                         "pre-requisite": "course MATH 302 | course MATH 307"
                     },
-                    "5": {
+                    {
                         "title": "Advanced Courses",
                         "pre-requisite": "level-major 3 2"
                     },
-                    "6": {
+                    {
                         "title": "Elective Applied Courses",
                         "pre-requisite": "other elective 2"
                     },
-                    "7": {
+                    {
                         "title": "Math Research Seminar",
                         "pre-requisite": "other seminar 1"
                     },
-                    "8": {
+                    {
                         "title": "Capstone I",
                         "pre-requisite": "other capstone 1"
                     },
-                    "9": {
+                    {
                         "title": "Capstone II",
                         "pre-requisite": "other 1"
                     },
-                    "10": {
+                    {
                         "title": "Advanced Courses",
                         "pre-requisite": "level-major 3 2"
                     }
-                },
-                "flows": {
-                    "1": [
-                        "2"
-                    ],
-                    "2": [
-                        "3"
-                    ],
-                    "3": [
-                        "4"
-                    ],
-                    "4": [
-                        "5"
-                    ],
-                    "5": [
-                        "6"
-                    ],
-                    "6": [
-                        "7"
-                    ],
-                    "7": [
-                        "8"
-                    ],
-                    "8": [
-                        "9"
-                    ],
-                    "9": [
-                        "10"
-                    ]
-                }
+                ],
+                "edges": [
+                    [1, 2],
+                    [2, 3],
+                    [3, 4],
+                    [4, 5],
+                    [5, 6],
+                    [6, 7],
+                    [7, 8],
+                    [8, 9],
+                    [9, 10]
+                ]
             },
             "minor": {
-                "nodes": {
-                    "1": {
+                "nodes": [
+                    {
                         "title": "Intermediate Courses",
                         "pre-requisite": "level-major 2 2"
                     },
-                    "2": {
+                    {
                         "title": "Advanced Courses",
                         "pre-requisite": "level-major 3 1"
                     },
-                    "3": {
+                    {
                         "title": "Other Applied Courses",
                         "pre-requisite": "other elective 3"
                     }
-                },
-                "flows": {
-                    "1": [
-                        "2"
-                    ],
-                    "2": [
-                        "3"
-                    ]
-                }
+                ],
+                "edges": [
+                    [1, 2],
+                    [2, 3]
+                ]
             }
         }
     },
@@ -128,21 +110,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -155,11 +137,11 @@
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -167,21 +149,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -189,21 +171,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -211,7 +193,7 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {}
@@ -220,11 +202,11 @@
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -237,11 +219,11 @@
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -249,21 +231,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -271,11 +253,11 @@
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -283,21 +265,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     },
@@ -305,21 +287,21 @@
         "declair": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         },
         "flow-chart": {
             "major": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             },
             "minor": {
                 "nodes": {},
-                "flows": {}
+                "edges": {}
             }
         }
     }
