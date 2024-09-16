@@ -1,11 +1,9 @@
-import { Background, Controls, ReactFlow, ReactFlowProvider, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
+import { Background, Controls, MarkerType, ReactFlow, ReactFlowProvider, useEdgesState, useNodesState, useReactFlow } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import MajorNode from './nodes/MajorNode';
 import { useEffect, useState } from 'react';
 import majorData from '@data/major.json';
-import DagreNodePositioning from './Layout';
 import dagre from "dagre";
-
 
 
 const nodeTypes = { majorNode: MajorNode };
@@ -36,6 +34,18 @@ function MajorFlow() {
                 id: `${index + 1}`,
                 source: `${edge[0]}`,
                 target: `${edge[1]}`,
+                type: 'smoothstep',
+                animated: true,
+                markerEnd: {
+                    type: MarkerType.ArrowClosed,
+                    width: 20,
+                    height: 20,
+                    color: 'var(--dark-action)',
+                },
+                style: {
+                    strokeWidth: 2,
+                    stroke: 'var(--action)',
+                },
             }
         });
         setNodes(majorNodes);
@@ -48,10 +58,16 @@ function MajorFlow() {
             dagreGraph.setDefaultEdgeLabel(() => ({}));
 
             const getLayoutedElements = (nodes, edges) => {
-                dagreGraph.setGraph({ rankdir: 'BT' });
+                dagreGraph.setGraph({ rankdir: 'BT', edgesep: 10, ranksep: 40, nodesep: 10 });
 
+                nodes.forEach((node) => dagreGraph.setNode(
+                    node.id,
+                    {
+                        width: node.measured.width,
+                        height: node.measured.height
+                    }
+                ));
                 edges.forEach((edge) => dagreGraph.setEdge(edge.source, edge.target));
-                nodes.forEach((node) => dagreGraph.setNode(node.id, node));
 
                 dagre.layout(dagreGraph);
 
@@ -90,6 +106,8 @@ function MajorFlow() {
             onEdgesChange={onEdgesChange}
             nodeTypes={nodeTypes}
             fitView
+            nodesDraggable={false}
+            proOptions={{ hideAttribution: true }}
         >
             <Background />
             <Controls />
@@ -102,7 +120,6 @@ export default function MajorFlowProvider() {
     return (
         <div className='w-full h-full'>
             <ReactFlowProvider>
-                <DagreNodePositioning />
                 <MajorFlow />
             </ReactFlowProvider>
 
