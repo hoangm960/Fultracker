@@ -4,6 +4,8 @@ import MajorNode from './nodes/MajorNode';
 import { useEffect, useState } from 'react';
 import majorData from '@data/major.json';
 import dagre from "dagre";
+import MajorSelect from './top_panel/MajorSelect';
+import TopPanel from './top_panel/TopPanel';
 
 
 const nodeTypes = { majorNode: MajorNode };
@@ -109,20 +111,24 @@ function MajorFlow() {
             nodesDraggable={false}
             proOptions={{ hideAttribution: true }}
         >
-            <Background />
-            <Controls />
-
+            <Background
+                gap={10}
+                size={1}
+            />
+            <Controls
+                position="bottom-right"
+                fitViewOptions={{ duration: 800 }}
+                showInteractive={false}
+            />
         </ReactFlow>
     );
 }
 
 export default function MajorFlowProvider() {
     return (
-        <div className='w-full h-full'>
-            <ReactFlowProvider>
-                <MajorFlow />
-            </ReactFlowProvider>
-
-        </div>
+        <ReactFlowProvider>
+            <TopPanel/>
+            <MajorFlow />
+        </ReactFlowProvider>
     );
 }

@@ -1,0 +1,49 @@
+function MajorSelect({ updateFlow }) {
+    return (
+        <select
+            className="w-full bg-action rounded-lg border-solid border-text border-2 pt-[15px] pr-2.5 pb-5 pl-5 flex flex-row items-center justify-between self-stretch shrink-0 relative overflow-hidden text-highlight text-2xl text-center font-bold flex-1"
+            name="major"
+            id="major"
+            onChange={() => updateFlow()}
+        >
+            <option value="" defaultChecked hidden>
+                {" "}
+                Choose a major ...
+            </option>
+            <option className="bg-background text-text font-semibold" value="math">
+                Mathematics
+            </option>
+            <option className="bg-background text-text font-semibold" value="arts">
+                Arts
+            </option>
+            <option className="bg-background text-text font-semibold" value="cs">
+                Computer Science
+            </option>
+            <option className="bg-background text-text font-semibold" value="econ">
+                Economics
+            </option>
+            <option className="bg-background text-text font-semibold" value="eng">
+                Engineering
+            </option>
+            <option className="bg-background text-text font-semibold" value="his">
+                History
+            </option>
+            <option className="bg-background text-text font-semibold" value="is">
+                Integrated Science
+            </option>
+            <option className="bg-background text-text font-semibold" value="lit">
+                Literature
+            </option>
+            <option className="bg-background text-text font-semibold" value="psy">
+                Psychology
+            </option>
+            <option className="bg-background text-text font-semibold" value="soci">
+                Social Science
+            </option>
+            <option className="bg-background text-text font-semibold" value="vs">
+                Vietnam Studies
+            </option>
+        </select>
+    );
+}
+export default MajorSelect;
