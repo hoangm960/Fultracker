@@ -1,8 +1,11 @@
-import { Background, Controls, ReactFlow, useEdgesState, useNodesState } from '@xyflow/react';
+import { Background, Controls, ReactFlow, ReactFlowProvider, useEdgesState, useNodesState } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import MajorNode from './nodes/MajorNode';
 import { useEffect } from 'react';
 import majorData from '@data/major.json';
+import DagreNodePositioning from './Layout';
+
+
 const nodeTypes = { majorNode: MajorNode };
 
 export default function MajorFlow() {
@@ -10,43 +13,46 @@ export default function MajorFlow() {
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
 
     useEffect(() => {
-        const majorNodes = majorData["MATH"]["declair"]["major"]["nodes"].map((major, index) => {
+        const majorNodes = majorData["MATH"]["flow-chart"]["major"]["nodes"].map((major, index) => {
             return {
-                id: `${index+1}`,
+                id: `${index + 1}`,
+                position: { x: 0, y: 0 },
                 type: 'majorNode',
-                position: { x: 0, y: index * -100 },
                 data: {
                     label: major.title,
                     major: major
                 }
             }
         });
-        setNodes(majorNodes);
 
-        const majorEdges = majorData["MATH"]["declair"]["major"]["edges"].map((edge, index) => {
+        const majorEdges = majorData["MATH"]["flow-chart"]["major"]["edges"].map((edge, index) => {
             return {
-                id: `${index+1}`,
+                id: `${index + 1}`,
                 source: `${edge[0]}`,
                 target: `${edge[1]}`,
             }
         });
+        setNodes(majorNodes);
         setEdges(majorEdges);
     }, []);
 
     return (
         <div className='w-full h-full'>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                nodeTypes={nodeTypes}
-                fitView
-            >
-                <Background />
-                <Controls />
+            <ReactFlowProvider>
+                <DagreNodePositioning />
+                <ReactFlow
+                    nodes={nodes}
+                    edges={edges}
+                    onNodesChange={onNodesChange}
+                    onEdgesChange={onEdgesChange}
+                    nodeTypes={nodeTypes}
+                    fitView
+                >
+                    <Background />
+                    <Controls />
 
-            </ReactFlow>
+                </ReactFlow>
+            </ReactFlowProvider>
 
         </div>
     );

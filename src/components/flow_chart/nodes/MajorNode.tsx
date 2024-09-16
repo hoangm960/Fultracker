@@ -9,7 +9,7 @@ export default function MajorNode({ data }) {
       <div>
         <label htmlFor="text">{data.label}</label>
       </div>
-      <Handle type="target" position={Position.Bottom} id="a" />
+      <Handle type="target" position={Position.Bottom} />
     </>
   );
 }
