@@ -4,22 +4,20 @@ import MajorNode from './nodes/MajorNode';
 import { useEffect, useState } from 'react';
 import majorData from '@data/major.json';
 import dagre from "dagre";
-import MajorSelect from './top_panel/MajorSelect';
 import TopPanel from './top_panel/TopPanel';
 
 
 const nodeTypes = { majorNode: MajorNode };
 
-function MajorFlow() {
+function MajorFlow({ major, flowType, declaired }) {
     const [nodes, setNodes, onNodesChange] = useNodesState([]);
     const [edges, setEdges, onEdgesChange] = useEdgesState([]);
     const { fitView } = useReactFlow();
 
-    const [nodesPositioned, setNodesPositioned] = useState(false);
-
-
     useEffect(() => {
-        const majorNodes = majorData["MATH"]["flow-chart"]["major"]["nodes"].map((major, index) => {
+        if (!major || !flowType) return;
+
+        const majorNodes = majorData[major][declaired ? "flow-chart" : "declair"][flowType]["nodes"].map((major, index) => {
             return {
                 id: `${index + 1}`,
                 position: { x: 0, y: 0 },
@@ -31,7 +29,7 @@ function MajorFlow() {
             }
         });
 
-        const majorEdges = majorData["MATH"]["flow-chart"]["major"]["edges"].map((edge, index) => {
+        const majorEdges = majorData[major][declaired ? "flow-chart" : "declair"][flowType]["edges"].map((edge, index) => {
             return {
                 id: `${index + 1}`,
                 source: `${edge[0]}`,
@@ -52,7 +50,7 @@ function MajorFlow() {
         });
         setNodes(majorNodes);
         setEdges(majorEdges);
-    }, []);
+    }, [major, flowType, declaired]);
 
     useEffect(() => {
         if (nodes[0]?.measured?.width) {
@@ -60,7 +58,7 @@ function MajorFlow() {
             dagreGraph.setDefaultEdgeLabel(() => ({}));
 
             const getLayoutedElements = (nodes, edges) => {
-                dagreGraph.setGraph({ rankdir: 'BT', edgesep: 10, ranksep: 40, nodesep: 10 });
+                dagreGraph.setGraph({ rankdir: 'BT', edgesep: 10, ranksep: 50, nodesep: 10 });
 
                 nodes.forEach((node) => dagreGraph.setNode(
                     node.id,
@@ -88,12 +86,11 @@ function MajorFlow() {
                 };
             };
 
-            if (nodes.length > 0 && !nodesPositioned) {
+            if (nodes.length > 0) {
                 const layouted = getLayoutedElements(nodes, edges);
 
                 setNodes(layouted.nodes);
                 setEdges(layouted.edges);
-                setNodesPositioned(true);
             }
         }
 
@@ -125,10 +122,22 @@ function MajorFlow() {
 }
 
 export default function MajorFlowProvider() {
+    const [major, setMajor] = useState(null);
+    const [flowType, setFlowType] = useState("major");
+    const [declaired, setDeclaired] = useState(true);
+
     return (
         <ReactFlowProvider>
-            <TopPanel/>
-            <MajorFlow />
+            <TopPanel
+                setMajor={setMajor}
+                setFlowType={setFlowType}
+                setDeclaired={setDeclaired}
+            />
+            <MajorFlow
+                major={major}
+                flowType={flowType}
+                declaired={declaired}
+            />
         </ReactFlowProvider>
     );
 }
