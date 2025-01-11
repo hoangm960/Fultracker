@@ -8,7 +8,7 @@ I have to give credit to my group from Orientation Week at school for this idea 
 
 ### ⚙️ Functionalities
 
-* [ ] Display all courses in a flowchart.
-* [ ] Track total earned credit and the progress to the requirement.
-* [ ] Check Core & Exploratory courses requirement.
-* [ ] Calculate GPA (Total & Major).
+- [ ] Display all courses in a flowchart.
+- [x] Track total earned credit and the progress to the requirement.
+- [x] Check Core & Exploratory courses requirement.
+- [ ] Calculate GPA (Total & Major).
