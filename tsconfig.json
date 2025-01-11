@@ -14,7 +14,7 @@
       "@scripts/*": ["src/scripts/*"],
       "@styles/*": ["src/styles/*"],
       "@hooks/*": ["src/hooks/*"],
-      "@firebase/*": ["src/firebase/*"],
+      "@firebase/*": ["src/firebase/*"]
     }
   }
 }
